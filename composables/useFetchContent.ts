@@ -3,11 +3,11 @@ export const useFetchContent = () => {
     {
       emoji: "🤖",
       title: "AI-Powered Solutions",
-      description: "Building intelligent systems that automate complex workflows and business processes",
+      description: "Creating systems that run on autopilot, giving you back your valuable time",
       items: [
-        "Machine Learning Integration",
-        "Natural Language Processing",
-        "Predictive Analytics"
+        "Workflow Optimization",
+        "Process Automation",
+        "System Integration"
       ]
     },
     {
@@ -28,6 +28,16 @@ export const useFetchContent = () => {
         "Workflow Optimization",
         "Process Automation",
         "System Integration"
+      ]
+    },
+    {
+      emoji: "😎",
+      title: "Personal Branding",
+      description: "Funnel potential prospects to my AI-driven SaaS",
+      items: [
+        "Branding",
+        "Marketing",
+        "Sales"
       ]
     }
   ]
