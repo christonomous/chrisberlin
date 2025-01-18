@@ -3,7 +3,7 @@
     <div class="hero-content text-center flex flex-col">
       <div class="flex justify-center py-8">
         <div class="avatar">
-          <div class="ring-primary ring-offset-base-100 w-36 rounded-full ring ring-offset-2">
+          <div class="w-36 rounded-full ring-gradient">
             <img src="/profile.jpg" />
           </div>
         </div>
@@ -15,7 +15,7 @@
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent">Grow on Autopilot</span>
           <span class="text-4xl">📈</span>
         </div>
-        <p class="py-6 text-xl text-base-content/80">AI Solopreneur | SaaS Builder | Automation Expert</p>
+        <p class="py-6 text-xl text-base-content/80">AI Solopreneur | Content Creator</p>
         <div class="flex justify-center gap-4">
           <button class="btn btn-lg btn-gradient">Explore My Work</button>
           <div class="flex gap-3">
