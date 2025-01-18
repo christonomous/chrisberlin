@@ -72,7 +72,7 @@
               <div class="badge badge-outline">Market Research</div>
               <div class="badge badge-outline">Validation</div>
             </div>
-            <button class="btn btn-primary">Learn More</button>
+            <button class="btn btn-gradient">Learn More</button>
           </div>
         </div>
       </div>
