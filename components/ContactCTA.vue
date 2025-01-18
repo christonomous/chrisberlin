@@ -1,3 +1,17 @@
+<script setup lang="ts">
+import { ref } from 'vue'
+
+const { subscribe, subscribing, error, success } = useSubscribe()
+const email = ref('')
+
+const handleSubscribe = async () => {
+  await subscribe(email.value)
+  if (success.value) {
+    email.value = ''
+  }
+}
+</script>
+
 <template>
   <div class="py-20 bg-base-200">
     <div class="container mx-auto px-4">
@@ -10,8 +24,23 @@
               Get notified about new business launches and automation insights
             </p>
             <div class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
-              <input type="email" placeholder="Enter your email" class="input input-bordered flex-grow" />
-              <button class="btn btn-gradient">Subscribe</button>
+              <input 
+                v-model="email"
+                type="email" 
+                placeholder="Enter your email" 
+                class="input input-bordered flex-grow" 
+                :class="{ 'input-error': error }"
+              />
+              <button 
+                class="btn btn-gradient" 
+                :class="{ 'loading': subscribing }"
+                @click="handleSubscribe"
+                :disabled="subscribing"
+              >
+                Subscribe
+              </button>
+              <div v-if="error" class="text-error text-sm mt-2">{{ error }}</div>
+              <div v-if="success" class="text-success text-sm mt-2">Successfully subscribed!</div>
             </div>
           </div>
         </div>
