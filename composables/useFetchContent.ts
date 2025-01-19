@@ -1,4 +1,23 @@
-export const useFetchContent = () => {
+import { useFetch } from 'nuxt/app'
+
+interface Launch {
+  emoji: string
+  title: string
+  description: string
+  launchDate: string
+  badges: Array<{
+    text: string
+    color: string
+  }>
+}
+
+interface LaunchesResponse {
+  launches: Launch[]
+}
+
+export const useFetchContent = async () => {  
+  const { launchData } = await useFetch<LaunchesResponse>('https://raw.githubusercontent.com/nujinDevelopment/cline/refs/heads/main/launches.json')
+
   const features = [
     {
       emoji: "🔍",
@@ -62,40 +81,10 @@ export const useFetchContent = () => {
     }
   ]
 
-  const businesses = {
-    launches: [
-      {
-        emoji: "🤖",
-        title: "AutoContent Pro",
-        description: "AI-powered content generation and scheduling platform for social media automation.",
-        badges: [
-          { text: "AI", color: "primary" },
-          { text: "SaaS", color: "secondary" }
-        ]
-      },
-      {
-        emoji: "📊",
-        title: "MetricsMaster",
-        description: "Automated analytics and reporting tool for data-driven business decisions.",
-        badges: [
-          { text: "Analytics", color: "secondary" },
-          { text: "Dashboard", color: "accent" }
-        ]
-      },
-      {
-        emoji: "🔄",
-        title: "WorkflowWizard",
-        description: "No-code automation platform for streamlining business processes.",
-        badges: [
-          { text: "Automation", color: "accent" },
-          { text: "No-Code", color: "primary" }
-        ]
-      }
-    ]
-  }
-
   return {
     features,
-    businesses
+    businesses: {
+      launches: (launchData.value as LaunchesResponse)?.launches || []
+    }
   }
 }
