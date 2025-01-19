@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
     config.supabase.url,
     config.supabase.key
   )
-
+  
   try {
     const { data, error } = await supabase
       .from('subscribers')
