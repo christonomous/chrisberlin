@@ -65,8 +65,8 @@
 
 <script setup>
 import { computed, reactive, onMounted, onUnmounted } from 'vue'
-const { businesses } = useFetchContent()
-const businessList = computed(() => businesses.value?.launches || [])
+
+const { data: businessList } = await useFetch('/api/launches')
 
 // Set target date (e.g., 1 month from now)
 const targetDate = new Date()

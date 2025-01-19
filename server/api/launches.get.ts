@@ -7,7 +7,7 @@ export default defineEventHandler(async (event) => {
   const supabase = createClient(config.supabase.url, config.supabase.key)
   
   const { data, error } = await supabase.from('launches').select('*')
-  if (error) throw createError({ statusCode: 500, message: error.message })
+  // if (error) throw createError({ statusCode: 500, message: error.message })
   
   return data
 })
