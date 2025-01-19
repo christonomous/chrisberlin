@@ -30,6 +30,7 @@ const handleSubscribe = async () => {
                 placeholder="Enter your email" 
                 class="input input-bordered flex-grow" 
                 :class="{ 'input-error': error }"
+                @keyup.enter="handleSubscribe"
               />
               <button 
                 class="btn btn-gradient" 
