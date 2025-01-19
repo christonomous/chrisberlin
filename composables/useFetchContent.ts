@@ -1,4 +1,5 @@
 import { useFetch } from 'nuxt/app'
+import { logger } from 'nuxt/kit'
 
 interface Launch {
   emoji: string
@@ -16,8 +17,8 @@ interface LaunchesResponse {
 }
 
 export const useFetchContent = async () => {  
-  const { launchData } = await useFetch<LaunchesResponse>('https://raw.githubusercontent.com/nujinDevelopment/cline/refs/heads/main/launches.json')
-
+  const { launchData } = await useFetch<LaunchesResponse>('https://raw.githubusercontent.com/christonomous/chrisberlin/refs/heads/main/launches.json?token=GHSAT0AAAAAAC45MHZPO4B6MP7YZKWBJ3QGZ4M2LHA')
+console.log(launchData)
   const features = [
     {
       emoji: "🔍",
