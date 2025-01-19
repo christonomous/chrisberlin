@@ -9,6 +9,7 @@
     "@nuxtjs/tailwindcss": "^6",
     "@supabase/supabase-js": "^2.47.16",
     "daisyui": "^3",
+    "nodemailer": "^6.9.16",
     "nuxt": "^3"
   }
 }

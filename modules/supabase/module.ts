@@ -28,10 +28,15 @@ export default defineNuxtModule<ModuleOptions>({
     // Add composables
     addImportsDir(resolve(runtimeDir, 'composables'))
 
-    // Add server handler
+    // Add server handlers
     addServerHandler({
       route: '/api/subscribe',
       handler: resolve(runtimeDir, 'server/api/subscribe.post')
+    })
+    
+    addServerHandler({
+      route: '/api/unsubscribe',
+      handler: resolve(runtimeDir, 'server/api/unsubscribe.get')
     })
   }
 })

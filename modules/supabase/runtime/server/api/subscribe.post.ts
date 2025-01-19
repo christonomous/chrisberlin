@@ -1,6 +1,8 @@
 import { createClient } from '@supabase/supabase-js'
 import { defineEventHandler, readBody, createError } from 'h3'
 import { useRuntimeConfig } from '#imports'
+import { generateUnsubscribeToken } from '../../utils/token'
+import { sendWelcomeEmail } from '../../utils/email'
 
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
@@ -19,11 +21,19 @@ export default defineEventHandler(async (event) => {
   )
   
   try {
+    const unsubscribeToken = generateUnsubscribeToken()
+    
     const { data, error } = await supabase
       .from('subscribers')
-      .insert([{ email: body.email }])
+      .insert([{ 
+        email: body.email,
+        unsubscribe_token: unsubscribeToken 
+      }])
 
     if (error) throw error
+
+    // Send welcome email
+    await sendWelcomeEmail(body.email, unsubscribeToken)
 
     return { success: true, data }
   } catch (error: any) {
