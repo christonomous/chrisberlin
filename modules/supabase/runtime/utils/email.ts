@@ -102,9 +102,6 @@ export const sendWelcomeEmail = async (email: string, unsubscribeToken: string) 
             <div class="divider"></div>
             <p>Get ready for insights that will transform your approach to business growth!</p>
             <p>To your success,<br>Chris</p>
-            <div class="footer">
-              <p>If you wish to unsubscribe, <a href="${config.public.siteUrl}/api/unsubscribe?token=${unsubscribeToken}" style="color: #7c3aed;">click here</a></p>
-            </div>
           </div>
         </div>
       </body>

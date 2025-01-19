@@ -66,7 +66,20 @@ export default defineEventHandler(async (event) => {
 
     console.log('Database access verified:', tableCheck)
     
-    // Try to delete subscriber directly with the token
+    // Set the unsubscribe token in the database session
+    console.log('Setting unsubscribe token via RPC...')
+    const { error: rpcError } = await supabase
+      .rpc('set_unsubscribe_token', { token })
+    
+    if (rpcError) {
+      console.error('Failed to set unsubscribe token:', rpcError)
+      throw createError({
+        statusCode: 500,
+        message: 'Error preparing unsubscribe operation'
+      })
+    }
+
+    // Try to delete subscriber with token
     console.log('Attempting to delete subscriber with token...')
     const { data: deleted, error: deleteError } = await supabase
       .from('subscribers')

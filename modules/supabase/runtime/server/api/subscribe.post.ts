@@ -17,7 +17,13 @@ export default defineEventHandler(async (event) => {
 
   const supabase = createClient(
     config.supabase.url,
-    config.supabase.key
+    config.supabase.key,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
   )
   
   try {
