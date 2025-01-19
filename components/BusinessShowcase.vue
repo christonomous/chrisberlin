@@ -32,7 +32,7 @@
       </div>
       
       <div class="mt-12 flex flex-col justify-center items-center">
-        <h3 class="text-2xl font-bold text-center mb-6">Time till next Business Launch</h3>
+        <h3 class="text-2xl font-bold text-center mb-6">Time till {{ isFirstLaunch ? 'first' : 'next' }} Business Launch</h3>
         <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
           <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
             <span class="countdown font-mono text-5xl">
@@ -78,9 +78,17 @@ const formatDate = (dateString) => {
   })
 }
 
+// Determine if this is the first business launch
+const isFirstLaunch = computed(() => {
+  return !businessList.value || businessList.value.length === 0
+})
+
 // Find the latest launch date and set target date to 30 days after that
 const getLatestLaunchDate = computed(() => {
-  if (!businessList.value || businessList.value.length === 0) return new Date()
+  if (!businessList.value || businessList.value.length === 0) {
+    // If no businesses, set to February 19th 2025
+    return new Date('2025-02-19')
+  }
   
   const latestBusiness = businessList.value.reduce((latest, current) => {
     const currentDate = new Date(current.launch_date)
