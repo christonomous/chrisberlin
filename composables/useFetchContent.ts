@@ -41,16 +41,6 @@ export const useFetchContent = () => {
       ]
     },
     {
-      emoji: "🎉",
-      title: "User Conversion",
-      description: "Automated onboarding and engagement workflows for user success",
-      items: [
-        "Seamless Onboarding",
-        "Tailored Support",
-        "Retention Optimization"
-      ]
-    },
-    {
       emoji: "⚙️",
       title: "Automated Business Operation",
       description: "Set-and-forget systems for running your business autonomously",
@@ -58,6 +48,16 @@ export const useFetchContent = () => {
         "Automated Customer Support",
         "Revenue Management",
         "Performance Monitoring"
+      ]
+    },
+    {
+      emoji: "💸",
+      title: "Maximize Capital",
+      description: "Automated cash-flow and investment management for optimal returns",
+      items: [
+        "Cash-flow Strategy",
+        "Investment Automation",
+        "Financial Optimization"
       ]
     }
   ]
