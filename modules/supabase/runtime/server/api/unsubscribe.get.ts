@@ -5,39 +5,92 @@ import { useRuntimeConfig } from '#imports'
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig()
   const query = getQuery(event)
+  const token = decodeURIComponent(query.token as string)
 
-  if (!query.token) {
+  console.log('Unsubscribe attempt with token:', token)
+  console.log('Supabase config:', {
+    url: config.supabase.url,
+    keyLength: config.supabase.key?.length || 0
+  })
+
+  if (!token) {
     throw createError({
       statusCode: 400,
       message: 'Token is required'
     })
   }
 
+  // Validate token format (should be 64 characters hex string from 32 bytes)
+  if (!/^[0-9a-f]{64}$/.test(token)) {
+    console.error('Invalid token format:', token)
+    throw createError({
+      statusCode: 400,
+      message: 'Invalid token format'
+    })
+  }
+
   const supabase = createClient(
     config.supabase.url,
-    config.supabase.key
+    config.supabase.key,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
   )
 
   try {
-    const { data: subscriber, error: fetchError } = await supabase
+    console.log('Token format validated, querying subscribers table with token:', token)
+    
+    // First verify the table exists and we have access
+    console.log('Verifying database access...')
+    const { data: tableCheck, error: tableError } = await supabase
       .from('subscribers')
-      .select('*')
-      .eq('unsubscribe_token', query.token)
-      .single()
+      .select('count')
+      .limit(1)
+    
+    if (tableError) {
+      console.error('Database access verification failed')
+      console.error('Table access error:', {
+        message: tableError.message,
+        code: tableError.code,
+        details: tableError.details,
+        hint: tableError.hint
+      })
+      throw createError({
+        statusCode: 500,
+        message: 'Database configuration error'
+      })
+    }
 
-    if (fetchError || !subscriber) {
+    console.log('Database access verified:', tableCheck)
+    
+    // Try to delete subscriber directly with the token
+    console.log('Attempting to delete subscriber with token...')
+    const { data: deleted, error: deleteError } = await supabase
+      .from('subscribers')
+      .delete()
+      .eq('unsubscribe_token', token)
+      .select()
+
+    if (deleteError) {
+      console.error('Delete operation failed:', deleteError)
+      throw createError({
+        statusCode: 500,
+        message: 'Error removing subscription'
+      })
+    }
+
+    if (!deleted || deleted.length === 0) {
+      console.log('No subscriber found with token')
       throw createError({
         statusCode: 404,
         message: 'Invalid unsubscribe token'
       })
     }
 
-    const { error: deleteError } = await supabase
-      .from('subscribers')
-      .delete()
-      .eq('id', subscriber.id)
-
-    if (deleteError) throw deleteError
+    console.log('Successfully deleted subscriber:', deleted)
 
     // Return HTML response
     event.node.res.setHeader('Content-Type', 'text/html')
@@ -76,9 +129,14 @@ export default defineEventHandler(async (event) => {
       </html>
     `
   } catch (error: any) {
+    // If it's already an h3 error (like our 404), pass it through
+    if (error.statusCode) {
+      throw error
+    }
+    // Otherwise wrap it as a 500
     throw createError({
       statusCode: 500,
-      message: error.message
+      message: 'An unexpected error occurred'
     })
   }
 })
