@@ -1,43 +1,63 @@
 export const useFetchContent = () => {
   const features = [
     {
-      emoji: "🤖",
-      title: "AI-Powered Solutions",
-      description: "Creating systems that run on autopilot, giving you back your valuable time",
+      emoji: "🔍",
+      title: "Finding Your Niche",
+      description: "AI-powered market analysis to identify high-potential business opportunities",
       items: [
-        "Workflow Optimization",
-        "Process Automation",
-        "System Integration"
+        "Market Trend Analysis",
+        "Customer Pain Points",
+        "Underserved Segments"
       ]
     },
     {
-      emoji: "🚀",
-      title: "Monthly Business Launch",
-      description: "Consistently launching autonomous online businesses as proof of concept",
+      emoji: "🏗️",
+      title: "Rapid MVP Development",
+      description: "Streamlined product development using AI automation tools",
       items: [
-        "Rapid Prototyping",
-        "Market Validation",
-        "Scalable Architecture"
+        "Automated Coding",
+        "UI/UX Design",
+        "Third-party Integration"
       ]
     },
     {
-      emoji: "⚡",
-      title: "Automation Expert",
-      description: "Creating systems that run on autopilot, giving you back your valuable time",
+      emoji: "📢",
+      title: "Storytelling & Marketing",
+      description: "AI-driven content creation and marketing campaign automation",
       items: [
-        "Workflow Optimization",
-        "Process Automation",
-        "System Integration"
+        "Content Generation",
+        "Multi-channel Marketing",
+        "SEO Optimization"
       ]
     },
     {
-      emoji: "😎",
-      title: "Personal Branding",
-      description: "Funnel potential prospects to my AI-driven SaaS",
+      emoji: "💰",
+      title: "Sales Automation",
+      description: "Intelligent lead generation and prospect engagement systems",
       items: [
-        "Branding",
-        "Marketing",
-        "Sales"
+        "AI Chatbots",
+        "Email Sequences",
+        "Data-driven Strategies"
+      ]
+    },
+    {
+      emoji: "🎉",
+      title: "User Conversion",
+      description: "Automated onboarding and engagement workflows for user success",
+      items: [
+        "Seamless Onboarding",
+        "Tailored Support",
+        "Retention Optimization"
+      ]
+    },
+    {
+      emoji: "⚙️",
+      title: "Automated Business Operation",
+      description: "Set-and-forget systems for running your business autonomously",
+      items: [
+        "Automated Customer Support",
+        "Revenue Management",
+        "Performance Monitoring"
       ]
     }
   ]

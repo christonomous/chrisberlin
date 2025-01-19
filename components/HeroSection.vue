@@ -37,7 +37,7 @@
             <div class="text-2xl space-y-2">
               <span class="text-3xl">💎</span>
               <p class="leading-relaxed">
-                I empower you to find your leverage, so you can grow effortless on autopilot, 
+                I empower you to find your business leverage, so you can grow effortless on autopilot, 
                 save time, and become free.
               </p>
             </div>

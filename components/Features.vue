@@ -1,7 +1,7 @@
 <template>
   <div class="py-20 bg-base-300">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12">What Sets Me Apart</h2>
+      <h2 class="text-3xl font-bold text-center mb-12">My AI Solopreneur Engine for you</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <div v-for="feature in features" :key="feature.title" class="card bg-base-100 shadow-xl hover:shadow-accent/20 transition-all duration-300">
           <div class="card-body">
