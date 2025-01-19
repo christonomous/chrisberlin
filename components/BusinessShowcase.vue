@@ -14,7 +14,7 @@
       </div>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-        <div v-if="businesses" v-for="business in businesses.launches" :key="business.title" class="card bg-base-100 shadow-xl hover:shadow-primary/20 transition-all duration-300">
+        <div v-for="business in businessList" :key="business.title" class="card bg-base-100 shadow-xl hover:shadow-primary/20 transition-all duration-300">
           <figure class="px-6 pt-6">
             <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
               <span class="text-4xl">{{ business.emoji }}</span>
@@ -64,7 +64,9 @@
 </template>
 
 <script setup>
+import { computed, reactive, onMounted, onUnmounted } from 'vue'
 const { businesses } = useFetchContent()
+const businessList = computed(() => businesses.value?.launches || [])
 
 // Set target date (e.g., 1 month from now)
 const targetDate = new Date()
