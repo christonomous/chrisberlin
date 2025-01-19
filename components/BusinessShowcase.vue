@@ -25,13 +25,14 @@
             <p class="text-base-content/70">{{ business.description }}</p>
             <div class="card-actions justify-end mt-4">
               <div v-for="badge in business.badges" :key="badge.text" :class="`badge badge-${badge.color}`">{{ badge.text }}</div>
+              <div class="badge badge-outline">Launched {{ formatDate(business.launch_date) }}</div>
             </div>
           </div>
         </div>
       </div>
       
       <div class="mt-12 flex flex-col justify-center items-center">
-        <h3 class="text-2xl font-bold text-center mb-6">Time till launch a new Business</h3>
+        <h3 class="text-2xl font-bold text-center mb-6">Time till next Business Launch</h3>
         <div class="grid auto-cols-max grid-flow-col gap-5 text-center">
           <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
             <span class="countdown font-mono text-5xl">
@@ -68,9 +69,28 @@ import { computed, reactive, onMounted, onUnmounted } from 'vue'
 
 const { data: businessList } = await useFetch('/api/launches')
 
-// Set target date (e.g., 1 month from now)
-const targetDate = new Date()
-targetDate.setMonth(targetDate.getMonth() + 1)
+const formatDate = (dateString) => {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('en-US', { 
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric'
+  })
+}
+
+// Find the latest launch date and set target date to 30 days after that
+const getLatestLaunchDate = computed(() => {
+  if (!businessList.value || businessList.value.length === 0) return new Date()
+  
+  const latestBusiness = businessList.value.reduce((latest, current) => {
+    const currentDate = new Date(current.launch_date)
+    const latestDate = new Date(latest.launch_date)
+    return currentDate > latestDate ? current : latest
+  }, businessList.value[0])
+  
+  const launchDate = new Date(latestBusiness.launch_date)
+  return new Date(launchDate.getTime() + (30 * 24 * 60 * 60 * 1000))
+})
 
 // Reactive countdown values
 const countdown = reactive({
@@ -83,7 +103,16 @@ const countdown = reactive({
 // Update countdown
 const updateCountdown = () => {
   const now = new Date().getTime()
+  const targetDate = getLatestLaunchDate.value
   const distance = targetDate.getTime() - now
+
+  if (distance < 0) {
+    countdown.days = 0
+    countdown.hours = 0
+    countdown.minutes = 0
+    countdown.seconds = 0
+    return
+  }
 
   countdown.days = Math.floor(distance / (1000 * 60 * 60 * 24))
   countdown.hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
