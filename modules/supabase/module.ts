@@ -20,10 +20,19 @@ export default defineNuxtModule<ModuleOptions>({
     const runtimeDir = fileURLToPath(new URL('./runtime', import.meta.url))
 
     // Add runtime config
-    nuxt.options.runtimeConfig.supabase = {
-      url: options.supabaseUrl,
-      key: options.supabaseKey
+    const runtimeConfig = nuxt.options.runtimeConfig as {
+      supabase?: {
+        url?: string
+        key?: string
+      }
     }
+    
+    // Initialize if not exists
+    runtimeConfig.supabase = runtimeConfig.supabase || {}
+    
+    // Set values from module options
+    runtimeConfig.supabase.url = runtimeConfig.supabase.url || options.supabaseUrl
+    runtimeConfig.supabase.key = runtimeConfig.supabase.key || options.supabaseKey
 
     // Add composables
     addImportsDir(resolve(runtimeDir, 'composables'))

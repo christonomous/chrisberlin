@@ -1,7 +1,10 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
-    '~/modules/supabase/module'
+    ['~/modules/supabase/module', {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseKey: process.env.SUPABASE_KEY
+    }]
   ],
   compatibilityDate: '2025-01-18',
   runtimeConfig: {
