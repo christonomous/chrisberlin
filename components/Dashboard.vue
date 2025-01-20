@@ -1,49 +1,49 @@
 <template>
-  <div class="p-6 bg-gray-50 min-h-screen">
-    <h1 class="text-3xl font-bold mb-8">Business Performance Dashboard</h1>
+  <div class="p-6 bg-base-300 min-h-screen" data-theme="dark">
+    <h1 class="text-3xl font-bold mb-8 text-base-content">Business Performance Dashboard</h1>
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <!-- Revenue Chart -->
-      <div class="bg-white p-6 rounded-xl shadow-sm">
+      <div class="bg-base-200 p-6 rounded-xl shadow-lg border border-base-content/10">
         <h2 class="text-lg font-semibold mb-4">Revenue Overview</h2>
         <Line :data="revenueData" :options="chartOptions" />
       </div>
 
       <!-- Inbound Payments -->
-      <div class="bg-white p-6 rounded-xl shadow-sm">
+      <div class="bg-base-200 p-6 rounded-xl shadow-lg border border-base-content/10">
         <h2 class="text-lg font-semibold mb-4">Inbound Payments</h2>
         <Bar :data="paymentsData" :options="chartOptions" />
       </div>
 
       <!-- Expenses -->
-      <div class="bg-white p-6 rounded-xl shadow-sm">
+      <div class="bg-base-200 p-6 rounded-xl shadow-lg border border-base-content/10">
         <h2 class="text-lg font-semibold mb-4">Expenses Breakdown</h2>
         <Doughnut :data="expensesData" :options="chartOptions" />
       </div>
 
       <!-- Leads Growth -->
-      <div class="bg-white p-6 rounded-xl shadow-sm">
+      <div class="bg-base-200 p-6 rounded-xl shadow-lg border border-base-content/10">
         <h2 class="text-lg font-semibold mb-4">Leads Growth</h2>
         <Line :data="leadsData" :options="chartOptions" />
       </div>
 
       <!-- User Growth -->
-      <div class="bg-white p-6 rounded-xl shadow-sm">
+      <div class="bg-base-200 p-6 rounded-xl shadow-lg border border-base-content/10">
         <h2 class="text-lg font-semibold mb-4">User Growth</h2>
         <Line :data="usersData" :options="chartOptions" />
       </div>
 
       <!-- Conversion Rate -->
-      <div class="bg-white p-6 rounded-xl shadow-sm">
+      <div class="bg-base-200 p-6 rounded-xl shadow-lg border border-base-content/10">
         <h2 class="text-lg font-semibold mb-4">Conversion Rate</h2>
         <Bar :data="conversionData" :options="chartOptions" />
       </div>
     </div>
 
     <!-- Transactions Table -->
-    <div class="mt-8 bg-white p-6 rounded-xl shadow-sm overflow-x-auto">
-      <h2 class="text-2xl font-bold mb-6">Recent Transactions</h2>
-      <table class="table table-zebra w-full">
+    <div class="mt-8 bg-base-200 p-6 rounded-xl shadow-lg border border-base-content/10 overflow-x-auto">
+      <h2 class="text-2xl font-bold mb-6 text-base-content">Recent Transactions</h2>
+      <table class="table table-zebra w-full bg-base-100">
         <thead>
           <tr>
             <th>Date</th>
@@ -59,14 +59,14 @@
             <td>{{ transaction.date }}</td>
             <td>
               <span :class="[
-                'px-2 py-1 rounded-full text-sm',
-                transaction.type === 'inbound' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+                'badge badge-lg',
+                transaction.type === 'inbound' ? 'badge-primary' : 'badge-secondary'
               ]">
                 {{ transaction.type.charAt(0).toUpperCase() + transaction.type.slice(1) }}
               </span>
             </td>
             <td>
-              <span :class="transaction.type === 'inbound' ? 'text-green-600' : 'text-red-600'">
+              <span :class="transaction.type === 'inbound' ? 'text-primary' : 'text-secondary'">
                 {{ transaction.type === 'inbound' ? '+' : '-' }}${{ transaction.amount.toLocaleString() }}
               </span>
             </td>
@@ -74,11 +74,11 @@
             <td>{{ transaction.description }}</td>
             <td>
               <span :class="[
-                'px-2 py-1 rounded-full text-sm',
+                'badge badge-lg',
                 {
-                  'bg-green-100 text-green-800': transaction.status === 'completed',
-                  'bg-yellow-100 text-yellow-800': transaction.status === 'pending',
-                  'bg-red-100 text-red-800': transaction.status === 'failed'
+                  'badge-success': transaction.status === 'completed',
+                  'badge-warning': transaction.status === 'pending',
+                  'badge-error': transaction.status === 'failed'
                 }
               ]">
                 {{ transaction.status.charAt(0).toUpperCase() + transaction.status.slice(1) }}
