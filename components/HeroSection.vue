@@ -1,7 +1,7 @@
 <template>
   <div class="hero min-h-screen bg-gradient-to-br from-base-300 via-base-200 to-base-300">
     <div class="hero-content text-center flex flex-col">
-      <div class="flex justify-center py-8">
+      <div class="flex justify-center py-8" data-aos="fade-up">
         <div class="avatar">
           <div class="w-36 rounded-full ring-gradient">
             <img src="/profile.jpg" />
@@ -9,16 +9,16 @@
         </div>
       </div>
       <div class="max-w-3xl">
-        <h1 class="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">Chris</h1>
-        <div class="text-3xl font-bold mb-6 flex items-center justify-center gap-2">
+        <h1 class="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient" data-aos="fade-right" data-aos-delay="200">Chris</h1>
+        <div class="text-3xl font-bold mb-6 flex items-center justify-center gap-2" data-aos="fade-left" data-aos-delay="400">
           <span class="text-4xl">🧑‍💻</span>
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent">Grow on Autopilot</span>
           <span class="text-4xl">📈</span>
         </div>
-        <p class="py-6 text-xl text-base-content/80">AI Solopreneur | Content Creator</p>
+        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">AI Solopreneur | Content Creator</p>
         <div class="flex justify-center gap-4">
           <!-- <button class="btn btn-lg btn-gradient">Explore My Work</button> -->
-          <div class="flex gap-3">
+          <div class="flex gap-3" data-aos="fade-up" data-aos-delay="800">
             <a href="https://www.linkedin.com/in/christonomous/" target="_blank" class="btn btn-circle btn-lg">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
             </a>
@@ -35,7 +35,7 @@
         </div>
       </div>
       <div class="container mx-auto px-4 mt-8">
-        <div class="card bg-base-100 shadow-xl max-w-4xl mx-auto">
+        <div class="card bg-base-100 shadow-xl max-w-4xl mx-auto" data-aos="zoom-in" data-aos-delay="1000">
           <div class="card-body text-center">
             <div class="text-2xl space-y-2">
               <span class="text-3xl">💎</span>
