@@ -60,13 +60,13 @@
             <td>
               <span :class="[
                 'badge badge-lg',
-                transaction.type === 'inbound' ? 'badge-primary' : 'badge-secondary'
+                transaction.type === 'inbound' ? 'badge-primary' : 'badge-error'
               ]">
                 {{ transaction.type.charAt(0).toUpperCase() + transaction.type.slice(1) }}
               </span>
             </td>
             <td>
-              <span :class="transaction.type === 'inbound' ? 'text-primary' : 'text-secondary'">
+              <span :class="transaction.type === 'inbound' ? 'text-primary' : 'text-error'">
                 {{ transaction.type === 'inbound' ? '+' : '-' }}${{ transaction.amount.toLocaleString() }}
               </span>
             </td>
