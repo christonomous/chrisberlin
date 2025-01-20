@@ -9,8 +9,10 @@
     "@nuxtjs/tailwindcss": "^6",
     "@supabase/supabase-js": "^2.47.16",
     "aos": "^2.3.4",
+    "chart.js": "^4.4.7",
     "daisyui": "^3",
     "nodemailer": "^6.9.16",
-    "nuxt": "^3"
+    "nuxt": "^3",
+    "vue-chartjs": "^5.3.2"
   }
 }
