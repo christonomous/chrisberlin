@@ -87,7 +87,7 @@ const isFirstLaunch = computed(() => {
 const getLatestLaunchDate = computed(() => {
   if (!businessList.value || businessList.value.length === 0) {
     // If no businesses, set to February 19th 2025
-    return new Date('2025-02-19')
+    return new Date('2025-05-21')
   }
   
   const latestBusiness = businessList.value.reduce((latest, current) => {
