@@ -4,6 +4,7 @@
     <Features />
     <BusinessShowcase />
     <ImageGrid />
+    <VideoSection />
     <ContactCTA />
   </div>
 </template>
@@ -14,6 +15,7 @@ import Features from '~/components/Features.vue'
 import BusinessShowcase from '~/components/BusinessShowcase.vue'
 import ContactCTA from '~/components/ContactCTA.vue'
 import ImageGrid from '~/components/ImageGrid.vue'
+import VideoSection from '~/components/VideoSection.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
