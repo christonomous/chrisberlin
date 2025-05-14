@@ -3,7 +3,7 @@
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-4">My Old Startup Life</h2>
       <p class="text-center max-w-2xl mx-auto mb-8 text-lg">
-        Through my journey of unsuccessful startups in the past, I've gained invaluable experience and wisdom. Each failure has been a stepping stone to greater understanding and resilience. <br> The most important lesson I've learned is to never give up - persistence and continuous learning are the keys to eventual success.
+        Through my journey of unsuccessful startups in the past, I've gained invaluable experience and wisdom. Each failure has been a stepping stone to greater understanding and resilience. <br> The most important lesson I've learned is to <b>never give up</b> - persistence and continuous learning are the keys to eventual success.
       </p>
       <div class="flex justify-center">
         <iframe 

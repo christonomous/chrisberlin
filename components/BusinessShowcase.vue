@@ -1,8 +1,13 @@
 <template>
   <div class="py-20 bg-gradient-to-br from-base-300 via-base-200 to-base-300">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">Monthly Business Launches</h2>
-      <div class="max-w-3xl mx-auto mt-16 mb-12 text-center bg-base-100 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
+      <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-down">Monthly Business Launches</h2>
+      <div class="max-w-3xl mx-auto mb-8 text-center" data-aos="fade-up" data-aos-delay="100">
+        <p class="text-base-content/80">
+          Beginning 2024 I have successfully launched my <b>AI Automation Agency BRANE Media Ltd</b>. Now the next steps are to <b>launch one SaaS after another to achieve passive income</b> and I want to show you how you can do as well.
+        </p>
+      </div>
+      <div class="max-w-3xl mx-auto mb-12 text-center bg-base-100 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
         <h3 class="text-2xl font-bold mb-4">30-Day Business Challenge</h3>
         <p class="text-base-content/80 mb-6">
           I'm not just teaching—I'm doing. In February 2025, I'll prove you can build a profitable online business in just 30 days using my AI Solopreneur Engine. Each business launched will be a proof of concept, demonstrating how you can leverage my tools to do the same effortlessly.
