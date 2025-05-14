@@ -3,6 +3,7 @@
     <HeroSection />
     <Features />
     <BusinessShowcase />
+    <ImageGrid />
     <ContactCTA />
   </div>
 </template>
@@ -12,6 +13,7 @@ import HeroSection from '~/components/HeroSection.vue'
 import Features from '~/components/Features.vue'
 import BusinessShowcase from '~/components/BusinessShowcase.vue'
 import ContactCTA from '~/components/ContactCTA.vue'
+import ImageGrid from '~/components/ImageGrid.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
