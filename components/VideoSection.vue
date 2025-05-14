@@ -20,7 +20,7 @@
       </div>
       <div class="mt-8 text-center italic text-lg text-gray-400 max-w-2xl mx-auto">
         <p>
-          Special thanks to the guys from Lisk and Builders On The Block. You definitely should check out 
+          Special thanks to the guys from Lisk and Builders On The Block for the massive support. You definitely should check out 
           <a href="https://onchain.org/foundation/" class="text-blue-400 hover:text-blue-300 underline" target="_blank" rel="noopener noreferrer">
             Onchain Foundation
           </a>
