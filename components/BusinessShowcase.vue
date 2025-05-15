@@ -70,9 +70,21 @@
 </template>
 
 <script setup>
-import { computed, reactive, onMounted, onUnmounted } from 'vue'
+import { computed, reactive, onMounted, onUnmounted, ref } from 'vue'
 
 const { data: businessList } = await useFetch('/api/launches')
+const showStartupsModal = ref(false)
+
+// Get all startup images
+const startupImages = ref([])
+onMounted(() => {
+  // Get all images from the startups folder
+  const images = []
+  for (let i = 1; i <= 19; i++) {
+    images.push(`/imgs/startups/photo_${i}_2025-05-15_12-31-16.jpg`)
+  }
+  startupImages.value = images
+})
 
 const formatDate = (dateString) => {
   const date = new Date(dateString)

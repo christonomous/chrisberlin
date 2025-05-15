@@ -1,3 +1,20 @@
+<script setup>
+import { ref, onMounted } from 'vue'
+
+const showStartupsModal = ref(false)
+
+// Get all startup images
+const startupImages = ref([])
+onMounted(() => {
+  // Get all images from the startups folder
+  const images = []
+  for (let i = 1; i <= 19; i++) {
+    images.push(`/imgs/startups/photo_${i}_2025-05-15_12-31-16.jpg`)
+  }
+  startupImages.value = images
+})
+</script>
+
 <template>
   <section class="py-16 bg-base-200">
     <div class="container mx-auto px-4">
@@ -26,6 +43,40 @@
           </a>
         </p>
       </div>
+      
+      <!-- Button to show startup materials -->
+      <div class="mt-8 text-center">
+        <button 
+          class="btn btn-outline"
+          @click="showStartupsModal = true"
+        >
+          View Startup Journey Materials
+        </button>
+      </div>
     </div>
+
+    <!-- Modal for startup materials -->
+    <dialog :class="['modal', showStartupsModal ? 'modal-open' : '']">
+      <div class="modal-box max-w-7xl">
+        <h3 class="font-bold text-2xl mb-2">Startup Journey Materials</h3>
+        <p class="text-base-content/70 mb-6">These materials showcase my past startup ventures which are now closed. They represent valuable learning experiences that have shaped my current approach to business.</p>
+        <!-- Masonry grid -->
+        <div class="columns-2 md:columns-3 lg:columns-4 gap-4">
+          <div v-for="(image, index) in startupImages" :key="index" class="break-inside-avoid mb-4">
+            <img 
+              :src="image" 
+              :alt="`Startup material ${index + 1}`"
+              class="rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
+            />
+          </div>
+        </div>
+        <div class="modal-action">
+          <button class="btn" @click="showStartupsModal = false">Close</button>
+        </div>
+      </div>
+      <form method="dialog" class="modal-backdrop" @click="showStartupsModal = false">
+        <button>close</button>
+      </form>
+    </dialog>
   </section>
 </template>
