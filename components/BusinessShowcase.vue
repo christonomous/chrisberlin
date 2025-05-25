@@ -77,7 +77,7 @@
         </a>
       </div>
       
-      <div class="mt-12 flex flex-col justify-center items-center" data-aos="fade-up" data-aos-delay="800">
+      <!-- <div class="mt-12 flex flex-col justify-center items-center" data-aos="fade-up" data-aos-delay="800">
         <h3 class="text-2xl font-bold text-center mb-6">Time till {{ isFirstLaunch ? 'first' : 'next' }} Business Showcase</h3>
         <div class="grid auto-cols-max grid-flow-col gap-5 text-center" data-aos="zoom-in" data-aos-delay="1000">
           <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
@@ -105,7 +105,7 @@
             sec
           </div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
