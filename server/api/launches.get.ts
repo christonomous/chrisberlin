@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
       title: "BRANE Media Ltd",
       description: "The Most Effortless Sales Solution. Our AI handles everything - from finding leads to closing deals with automated funnels and instant payments.",
       emoji: "🚀",
-      launch_date: "2024-01-15",
+      launch_date: "2025-05-26",
       badges: [
         { text: "AI-Powered", color: "primary" },
         { text: "SaaS", color: "secondary" },
