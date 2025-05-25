@@ -18,22 +18,63 @@
         </div>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-        <div v-for="(business, index) in businessList" :key="business.title" class="card bg-base-100 shadow-xl hover:shadow-primary/20 transition-all duration-300" :data-aos="'fade-up'" :data-aos-delay="400 + (index * 100)">
-          <figure class="px-6 pt-6">
-            <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center">
-              <span class="text-4xl">{{ business.emoji }}</span>
-            </div>
+      <div class="max-w-7xl mx-auto">
+        <a v-for="(business, index) in businessList" 
+           :key="business.title" 
+           :href="business.title === 'BRANE Media Ltd' ? 'https://brane.media' : '#'"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="card bg-base-100 shadow-xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden cursor-pointer" 
+           :data-aos="'fade-up'" 
+           :data-aos-delay="400 + (index * 100)">
+          <!-- Cover Image -->
+          <figure class="relative h-48">
+            <img :src="business.cover" :alt="business.title + ' cover'" class="w-full h-full object-cover">
+            <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-base-100 to-transparent"></div>
           </figure>
-          <div class="card-body">
-            <h3 class="card-title">{{ business.title }}</h3>
-            <p class="text-base-content/70">{{ business.description }}</p>
-            <div class="card-actions justify-end mt-4">
-              <div v-for="badge in business.badges" :key="badge.text" :class="`badge badge-${badge.color}`">{{ badge.text }}</div>
+          
+          <div class="card-body relative">
+            <!-- Logo -->
+            <div class="absolute -top-8 left-6">
+              <div class="w-16 h-16 rounded-full bg-base-100 p-1 shadow-lg">
+                <img :src="business.logo" :alt="business.title + ' logo'" class="w-full h-full object-cover rounded-full">
+              </div>
+            </div>
+            
+            <!-- Title and Description -->
+            <div class="mt-8">
+              <h3 class="card-title text-2xl mb-2">{{ business.title }}</h3>
+              <p class="text-base-content/70 mb-6">{{ business.description }}</p>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+              <div v-for="stat in business.stats" :key="stat.label" class="text-center">
+                <div class="text-2xl font-bold text-primary">{{ stat.value }}</div>
+                <div class="text-sm text-base-content/70">{{ stat.label }}</div>
+              </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="mb-6">
+              <h4 class="font-semibold mb-3">Platform Features</h4>
+              <div class="grid grid-cols-2 gap-2">
+                <div v-for="feature in business.features" :key="feature" class="flex items-center gap-2">
+                  <div class="text-primary">✓</div>
+                  <div class="text-sm">{{ feature }}</div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Badges -->
+            <div class="card-actions justify-between items-center mt-4">
+              <div class="flex gap-2">
+                <div v-for="badge in business.badges" :key="badge.text" :class="`badge badge-${badge.color}`">{{ badge.text }}</div>
+              </div>
               <div class="badge badge-outline">Launched {{ formatDate(business.launch_date) }}</div>
             </div>
           </div>
-        </div>
+        </a>
       </div>
       
       <div class="mt-12 flex flex-col justify-center items-center" data-aos="fade-up" data-aos-delay="800">
@@ -104,7 +145,7 @@ const isFirstLaunch = computed(() => {
 const getLatestLaunchDate = computed(() => {
   if (!businessList.value || businessList.value.length === 0) {
     // If no businesses, set to February 19th 2025
-    return new Date('2025-05-21')
+    return new Date('2025-06-21')
   }
   
   const latestBusiness = businessList.value.reduce((latest, current) => {

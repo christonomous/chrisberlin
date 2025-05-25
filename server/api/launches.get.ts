@@ -1,13 +1,31 @@
-import { createClient } from '@supabase/supabase-js'
-import { defineEventHandler, createError } from 'h3'
-import { useRuntimeConfig } from '#imports'
+import { defineEventHandler } from 'h3'
 
 export default defineEventHandler(async (event) => {
-  const config = useRuntimeConfig()
-  const supabase = createClient(config.supabase.url, config.supabase.key)
-  
-  const { data, error } = await supabase.from('launches').select('*')
-  // if (error) throw createError({ statusCode: 500, message: error.message })
-  
-  return data
+  return [
+    {
+      title: "BRANE Media Ltd",
+      description: "The Most Effortless Sales Solution. Our AI handles everything - from finding leads to closing deals with automated funnels and instant payments.",
+      emoji: "🚀",
+      launch_date: "2024-01-15",
+      badges: [
+        { text: "AI-Powered", color: "primary" },
+        { text: "SaaS", color: "secondary" },
+        { text: "Sales Automation", color: "accent" }
+      ],
+      logo: "/imgs/businesses/branemedia_logo.jpg",
+      cover: "/imgs/businesses/branemedia_cover.jpg",
+      stats: [
+        { value: "95%", label: "Lead Accuracy" },
+        { value: "3x", label: "Faster Outreach" },
+        { value: "70%", label: "Close Rate" },
+        { value: "24/7", label: "AI Generation" }
+      ],
+      features: [
+        "AI Lead Generation",
+        "Newsletter Automation",
+        "Analytics Dashboard",
+        "Digital Contracts & Payments"
+      ]
+    }
+  ]
 })
