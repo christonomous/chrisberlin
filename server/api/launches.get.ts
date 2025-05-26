@@ -17,7 +17,6 @@ export default defineEventHandler(async (event) => {
       stats: [
         { value: "95%", label: "Lead Accuracy" },
         { value: "3x", label: "Faster Outreach" },
-        { value: "70%", label: "Close Rate" },
         { value: "24/7", label: "AI Generation" }
       ],
       features: [
