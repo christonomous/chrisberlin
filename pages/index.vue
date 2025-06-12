@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-base-300" data-theme="dark">
-    <!-- Chat Button -->
+    <!-- Chat Button - Always visible -->
     <button 
       class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-white btn-circle btn-lg fixed bottom-5 right-5 shadow-lg hover:shadow-xl transition-shadow z-50"
       @click="toggleWidget"
@@ -12,7 +12,7 @@
 
     <!-- Chat Widget -->
     <div v-if="isOpen" class="fixed bottom-24 right-5 z-50 w-[400px]">
-      <ChatWidget/>
+      <ChatWidget @close="closeWidget" />
     </div>
 
     <HeroSection />
