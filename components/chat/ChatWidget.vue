@@ -16,8 +16,8 @@
           </svg>
         </div> -->
         <div>
-          <h3 class="font-semibold text-sm">AI Architect Assistant</h3>
-          <p class="text-xs opacity-70">Building systems that scale</p>
+          <h3 class="font-semibold text-sm">Solopreneurship AI Assistant</h3>
+          <p class="text-xs opacity-70">Helping you grow on Autopilot</p>
         </div>
       </div>
       
@@ -66,19 +66,6 @@
             stroke-linejoin="round"
           >
             <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/>
-          </svg>
-        </button>
-        
-        <!-- Close button (only show in fullscreen) -->
-        <button 
-          v-if="isFullscreen"
-          @click="closeFullscreen"
-          class="btn btn-ghost btn-sm btn-circle"
-          title="Close fullscreen"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
           </svg>
         </button>
       </div>
