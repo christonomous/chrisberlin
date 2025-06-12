@@ -48,32 +48,20 @@ const handleSubscribe = async () => {
         </div>
 
         <!-- Contact Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <!-- Schedule a Call -->
+        <div class="w-full gap-6">
+          <!-- Activate Assistant -->
           <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="200">
             <div class="card-body">
               <h3 class="card-title flex gap-2">
-                <span class="text-2xl">📅</span>
-                Schedule a Call
+                <span class="text-2xl">🤖</span>
+                My Solopreneurship AI Assistant for free
               </h3>
               <p class="text-base-content/70 mb-4">
-                Let's discuss how automation can transform your business
+                Use my personal AI assistant — trained on the exact system I use — to generate your own quiet path to wealth. No sign-up. No noise. Just clarity.
               </p>
-              <a href="https://calendly.com/chris-ecosis/session" target="_blank" class="btn btn-gradient">Book a Session</a>
-            </div>
-          </div>
-
-          <!-- General Information -->
-          <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="400">
-            <div class="card-body">
-              <h3 class="card-title flex gap-2">
-                <span class="text-2xl">ℹ️</span>
-                General Information
-              </h3>
-              <div class="space-y-3 text-base-content/70">
-                <p>First one hour consultation we will brainstorm about solutions you need.</p>
-                <p>Keep up to date by following my social media with weekly content and subscribe with email for insights.</p>
-              </div>
+              <button class="btn btn-gradient" @click="startChat">
+                Activate the Assistant
+              </button>
             </div>
           </div>
         </div>

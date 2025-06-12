@@ -18,8 +18,8 @@
     <HeroSection />
     <Features />
     <BusinessShowcase />
-    <ImageGrid />
-    <VideoSection />
+<!--     <ImageGrid />
+    <VideoSection /> -->
     <ContactCTA />
   </div>
 </template>

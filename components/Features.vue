@@ -1,7 +1,16 @@
 <template>
   <div class="py-20 bg-base-300">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">My AI Solopreneur Engine for you</h2>
+      <h1 class="text-4xl font-bold text-center mb-2" data-aos="fade-down">
+        The Silent Path to Wealth
+      </h1>
+      <h2 class="text-xl text-center text-base-content/70 mb-10" data-aos="fade-up" data-aos-delay="100">
+        Building for myself. Sharing with you.
+      </h2>
+      <p class="text-center max-w-3xl mx-auto mb-12 text-base-content/70" data-aos="fade-up" data-aos-delay="100">
+        I’m building a <strong>self-sustaining stack of AI-powered tools</strong> to <strong>replace busywork with leverage</strong> — in my own business first. Each product <strong>automates a critical piece of the solopreneur journey</strong>: selling, shipping, and scaling. What starts as an <strong>internal system</strong> becomes a <strong>tool others can use</strong> to <strong>grow on autopilot</strong> — without hustle, noise, or complexity.
+      </p>
+
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
         <div v-for="(feature, index) in features" :key="feature.title" class="card bg-base-100 shadow-xl hover:shadow-accent/20 transition-all duration-300" :data-aos="'fade-up'" :data-aos-delay="index * 100">
           <div class="card-body">
@@ -26,64 +35,36 @@
 <script setup>
 const features = [
   {
-    emoji: "🔍",
-    title: "Finding Your Niche",
-    description: "AI-powered market analysis to identify high-potential business opportunities",
+    emoji: "🚀",
+    title: "Effortless Sales",
+    description: "I built this to replace cold outreach and client chasing. It handles lead gen, smart emails, replies, and custom landing pages — all on autopilot.",
     items: [
-      "Market Trend Analysis",
-      "Customer Pain Points",
-      "Underserved Segments"
+      "AI-powered outreach engine",
+      "Personalized follow-ups & replies",
+      "Dynamic pages for each prospect"
     ]
   },
   {
     emoji: "🏗️",
-    title: "Rapid MVP Development",
-    description: "Streamlined product development using AI automation tools",
+    title: "Autonomous Product Creation",
+    description: "I’m building an AI-driven platform that lets me turn ideas into working SaaS apps without touching a line of code — so I can launch faster, with less friction.",
     items: [
-      "Automated Coding",
-      "UI/UX Design",
-      "Third-party Integration"
-    ]
-  },
-  {
-    emoji: "📢",
-    title: "Storytelling & Marketing",
-    description: "AI-driven content creation and marketing campaign automation",
-    items: [
-      "Content Generation",
-      "Multi-channel Marketing",
-      "SEO Optimization"
-    ]
-  },
-  {
-    emoji: "💰",
-    title: "Sales Automation",
-    description: "Intelligent lead generation and prospect engagement systems",
-    items: [
-      "AI Chatbots",
-      "Email Sequences",
-      "Data-driven Strategies"
-    ]
-  },
-  {
-    emoji: "⚙️",
-    title: "Automated Business Operation",
-    description: "Set-and-forget systems for running your business autonomously",
-    items: [
-      "Automated Customer Support",
-      "Revenue Management",
-      "Performance Monitoring"
+      "Prompt-to-MVP system",
+      "No-code backend + frontend",
+      "Internal tools → public products"
     ]
   },
   {
     emoji: "💸",
-    title: "Maximize Capital",
-    description: "Automated cash-flow and investment management for optimal returns",
+    title: "Capital That Compounds",
+    description: "The end goal isn’t just revenue — it’s automated wealth. Profits get reinvested through intelligent AI systems to create long-term freedom.",
     items: [
-      "Cash-flow Strategy",
-      "Investment Automation",
-      "Financial Optimization"
+      "Smart allocation engine",
+      "Passive investing logic",
+      "Fully hands-off capital growth"
     ]
   }
 ]
+
+
 </script>

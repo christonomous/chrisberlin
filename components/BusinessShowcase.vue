@@ -1,20 +1,23 @@
 <template>
   <div class="py-20 bg-gradient-to-br from-base-300 via-base-200 to-base-300">
     <div class="container mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-down">Monthly Business Launches</h2>
+      <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-down">
+        Tools I Build to Grow on Autopilot
+      </h2>
       <div class="max-w-3xl mx-auto mb-8 text-center" data-aos="fade-up" data-aos-delay="100">
         <p class="text-base-content/80">
-          Beginning 2024 I have successfully launched my <b>AI Automation Agency BRANE Media Ltd</b>. Now the next steps are to <b>launch one SaaS after another to achieve passive income</b> and I want to show you how you can do as well.
+          I don't build startups. I build systems. Each tool I launch solves a real need in my own business — then becomes something others can use to do the same. These aren’t experiments. They’re working pieces of a quiet, self-sustaining growth engine.
         </p>
       </div>
+
       <div class="max-w-3xl mx-auto mb-12 text-center bg-base-100 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="text-2xl font-bold mb-4">30-Day Business Challenge</h3>
+        <h3 class="text-2xl font-bold mb-4">🛠️ Now Live: Effortless Sales</h3>
         <p class="text-base-content/80 mb-6">
-          I'm not just teaching—I'm doing. In February 2025, I'll prove you can build a profitable online business in just 30 days using my AI Solopreneur Engine. Each business launched will be a proof of concept, demonstrating how you can leverage my tools to do the same effortlessly.
+          The first product in the stack is <strong>Sales on Autopilot</strong> — a complete system for lead generation, outreach, smart follow-ups, and dynamic landing pages. Built to run my agency pipeline without manual effort. Now, it’s available to help you fill yours.
         </p>
         <div class="inline-flex items-center gap-2 text-primary">
-          <span class="text-xl">🚀</span>
-          <span class="font-semibold">Follow my journey to see exactly how it's done</span>
+          <span class="text-xl">🧩</span>
+          <span class="font-semibold">Part 1 of a 3-part AI growth engine</span>
         </div>
       </div>
       
