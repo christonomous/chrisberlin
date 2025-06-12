@@ -12,12 +12,12 @@
           :alt="message.role === 'assistant' ? 'KI Assistant' : 'Nutzer'"
           :src="message.role === 'assistant' 
             ? 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'
-            : 'https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp'"
+            : 'https://cdn0.iconfinder.com/data/icons/human-diversity-avatars-flat/64/human-avatar-user-ui-account-round-512.png'"
         />
       </div>
     </div>
     <div class="chat-header">
-      {{ message.role === 'assistant' ? 'KI Assistant' : 'Sie' }}
+      {{ message.role === 'assistant' ? 'AI Assistant' : 'You' }}
       <time class="text-xs opacity-50">{{ formatTime(message.timestamp) }}</time>
     </div>
     <div class="chat-bubble prose text-white" v-html="parseMarkdown(message.content)"></div>

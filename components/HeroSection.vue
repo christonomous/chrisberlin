@@ -15,7 +15,7 @@
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent animate-gradient">Grow on Autopilot</span>
           <span class="text-4xl">📈</span>
         </div>
-        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">AI Solopreneur | Content Creator</p>
+        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">AI Solopreneur</p>
         <div class="flex justify-center gap-4">
           <!-- <button class="btn btn-lg btn-gradient">Explore My Work</button> -->
           <div class="flex gap-3" data-aos="fade-up" data-aos-delay="800">

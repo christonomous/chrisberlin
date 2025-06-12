@@ -115,7 +115,7 @@ export const useChat = () => {
   const startNewChat = () => {
     clearMessages()
     // Add initial greeting message like when first mounted
-    addMessage("Hi there! I'm Chris's AI Architect Assistant. I'm here to help you build calm, self-sustaining systems that compound over time.\n\nBefore we begin, let me ask a few questions so I can guide you more precisely:\n\n1. What skill, experience, or asset do you already have that people find valuable?\n2. What outcome do you want your business to create — income, time, autonomy, impact?\n3. Do you want to sell a product, a service, or a system?\n4. What type of work drains you — and what type energizes you?\n5. Do you already have any audience, clients, or traction?\n\nFeel free to answer one or all of these questions, or simply tell me what's on your mind about your business!", 'assistant')
+    addMessage("Hi there! I'm Chris's Solopreneurship AI Assistant. I'm here to help you build calm, self-sustaining systems for your business that compounds cashflow over time to become free.\n\nBefore we begin, let me ask a few questions so I can guide you more precisely:\n\n1. What skill, experience, or asset do you already have that people find valuable?\n2. What outcome do you want your business to create — income, time, autonomy, impact?\n3. Do you want to sell a product, a service, or a system?\n4. What type of work drains you — and what type energizes you?\n5. Do you already have any audience, clients, or traction?\n\nFeel free to answer one or all of these questions, or simply tell me what's on your mind about your business!", 'assistant')
   }
 
   return {
