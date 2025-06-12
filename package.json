@@ -11,8 +11,10 @@
     "aos": "^2.3.4",
     "chart.js": "^4.4.7",
     "daisyui": "^3",
+    "marked": "^15.0.12",
     "nodemailer": "^6.9.16",
     "nuxt": "^3",
+    "openai": "^5.3.0",
     "vue-chartjs": "^5.3.2"
   }
 }
