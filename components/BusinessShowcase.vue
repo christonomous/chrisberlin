@@ -23,30 +23,23 @@
       
       <div class="max-w-7xl mx-auto">
         <a v-for="(business, index) in businessList" 
-           :key="business.title" 
-           :href="business.title === 'BRANE Media Ltd' ? 'https://brane.media' : '#'"
-           target="_blank"
-           rel="noopener noreferrer"
-           class="card bg-base-100 shadow-xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden cursor-pointer" 
-           :data-aos="'fade-up'" 
-           :data-aos-delay="400 + (index * 100)">
-          <!-- Cover Image -->
-          <figure class="relative h-48">
-            <img :src="business.cover" :alt="business.title + ' cover'" class="w-full h-full object-cover">
-            <div class="absolute bottom-0 left-0 w-full h-full bg-gradient-to-t from-base-100 to-transparent"></div>
-          </figure>
+          :key="business.title" 
+          :href="business.title === 'BRANE Media Ltd' ? 'https://brane.media' : '#'"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="card bg-base-100 shadow-xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden cursor-pointer" 
+          :data-aos="'fade-up'" 
+          :data-aos-delay="400 + (index * 100)">
           
           <div class="card-body relative">
             <!-- Logo -->
-            <div class="absolute -top-8 left-6">
-              <div class="w-16 h-16 rounded-full bg-base-100 p-1 shadow-lg">
-                <img :src="business.logo" :alt="business.title + ' logo'" class="w-full h-full object-cover rounded-full">
-              </div>
+            <div class="w-16 h-16 rounded-full bg-base-100 p-1 shadow-lg mb-4 mx-auto">
+              <img :src="business.logo" :alt="business.title + ' logo'" class="w-full h-full object-cover rounded-full">
             </div>
             
             <!-- Title and Description -->
-            <div class="mt-8">
-              <h3 class="card-title text-2xl mb-2">{{ business.title }}</h3>
+            <div class="text-center">
+              <h3 class="text-2xl font-bold mb-2 text-center">{{ business.title }}</h3>
               <p class="text-base-content/70 mb-6">{{ business.description }}</p>
             </div>
             
@@ -79,36 +72,6 @@
           </div>
         </a>
       </div>
-      
-      <!-- <div class="mt-12 flex flex-col justify-center items-center" data-aos="fade-up" data-aos-delay="800">
-        <h3 class="text-2xl font-bold text-center mb-6">Time till {{ isFirstLaunch ? 'first' : 'next' }} Business Showcase</h3>
-        <div class="grid auto-cols-max grid-flow-col gap-5 text-center" data-aos="zoom-in" data-aos-delay="1000">
-          <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-            <span class="countdown font-mono text-5xl">
-              <span :style="`--value:${countdown.days}`"></span>
-            </span>
-            days
-          </div>
-          <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-            <span class="countdown font-mono text-5xl">
-              <span :style="`--value:${countdown.hours}`"></span>
-            </span>
-            hours
-          </div>
-          <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-            <span class="countdown font-mono text-5xl">
-              <span :style="`--value:${countdown.minutes}`"></span>
-            </span>
-            min
-          </div>
-          <div class="bg-neutral rounded-box text-neutral-content flex flex-col p-2">
-            <span class="countdown font-mono text-5xl">
-              <span :style="`--value:${countdown.seconds}`"></span>
-            </span>
-            sec
-          </div>
-        </div>
-      </div> -->
     </div>
   </div>
 </template>

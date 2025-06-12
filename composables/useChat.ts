@@ -115,7 +115,7 @@ export const useChat = () => {
   const startNewChat = () => {
     clearMessages()
     // Add initial greeting message like when first mounted
-    addMessage("Hi there! I'm Chris's Solopreneurship AI Assistant. I'm here to help you build calm, self-sustaining systems for your business that compounds cashflow over time to become free.\n\nBefore we begin, let me ask a few questions so I can guide you more precisely:\n\n1. What skill, experience, or asset do you already have that people find valuable?\n2. What outcome do you want your business to create — income, time, autonomy, impact?\n3. Do you want to sell a product, a service, or a system?\n4. What type of work drains you — and what type energizes you?\n5. Do you already have any audience, clients, or traction?\n\nFeel free to answer one or all of these questions, or simply tell me what's on your mind about your business!", 'assistant')
+    addMessage("Hi, I’m Chris’s Solopreneurship AI Assistant.\n\nI’m here to help you design a calm, self-sustaining business — using the same systems Chris built to automate income and grow quietly.\n\nTo get started, just tell me:\n- What do you already have — skills, assets, or experience?\n- What outcome are you aiming for — freedom, income, impact?\n- And do you want to sell a service, a product, or a system?\n\nYou can answer one or all — or just share what’s on your mind.", 'assistant')
   }
 
   return {

@@ -14,13 +14,10 @@
     <div v-if="isOpen" class="fixed bottom-24 right-5 z-50 w-[400px]">
       <ChatWidget @close="closeWidget" />
     </div>
-
     <HeroSection />
     <Features />
     <BusinessShowcase />
-<!--     <ImageGrid />
-    <VideoSection /> -->
-    <ContactCTA />
+    <ContactCTA @open-chat="toggleWidget" />
   </div>
 </template>
 

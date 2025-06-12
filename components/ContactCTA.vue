@@ -22,7 +22,7 @@ const handleSubscribe = async () => {
           <div class="card-body text-center">
             <h2 class="text-3xl font-bold mb-6">Stay Updated</h2>
             <p class="mb-8 text-lg text-base-content/80">
-              Get notified about new business launches and automation insights
+              Get notified about new launches and automation insights!
             </p>
             <div class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
               <input 
@@ -47,19 +47,19 @@ const handleSubscribe = async () => {
           </div>
         </div>
 
-        <!-- Contact Grid -->
+        <!-- CTA -->
         <div class="w-full gap-6">
           <!-- Activate Assistant -->
-          <div class="card bg-base-100 shadow-xl" data-aos="fade-up" data-aos-delay="200">
-            <div class="card-body">
-              <h3 class="card-title flex gap-2">
+          <div class="card bg-base-100 shadow-xl text-center" data-aos="fade-up" data-aos-delay="200">
+            <div class="card-body items-center text-center">
+              <h3 class="card-title flex gap-2 justify-center">
                 <span class="text-2xl">🤖</span>
-                My Solopreneurship AI Assistant for free
+                My Solopreneurship AI Assistant for Free
               </h3>
               <p class="text-base-content/70 mb-4">
                 Use my personal AI assistant — trained on the exact system I use — to generate your own quiet path to wealth. No sign-up. No noise. Just clarity.
               </p>
-              <button class="btn btn-gradient" @click="startChat">
+              <button class="btn btn-gradient w-full" @click="$emit('open-chat')">
                 Activate the Assistant
               </button>
             </div>

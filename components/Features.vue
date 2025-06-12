@@ -8,7 +8,7 @@
         Building for myself. Sharing with you.
       </h2>
       <p class="text-center max-w-3xl mx-auto mb-12 text-base-content/70" data-aos="fade-up" data-aos-delay="100">
-        I’m building a <strong>self-sustaining stack of AI-powered tools</strong> to <strong>replace busywork with leverage</strong> — in my own business first. Each product <strong>automates a critical piece of the solopreneur journey</strong>: selling, shipping, and scaling. What starts as an <strong>internal system</strong> becomes a <strong>tool others can use</strong> to <strong>grow on autopilot</strong> — without hustle, noise, or complexity.
+        I’m building a <strong>self-sustaining stack of AI-powered tools</strong> to <strong>replace busywork with leverage</strong>. Each product I am building <strong>automates a critical piece of the solopreneur journey</strong>: selling, shipping, and scaling. What starts as an <strong>internal system</strong> becomes a <strong>tool others can use</strong> to <strong>grow on autopilot</strong> — without hustle, noise, or complexity.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -37,7 +37,7 @@ const features = [
   {
     emoji: "🚀",
     title: "Effortless Sales",
-    description: "I built this to replace cold outreach and client chasing. It handles lead gen, smart emails, replies, and custom landing pages — all on autopilot.",
+    description: "I replace cold outreach and client chasing. My handles lead gen, smart emails, replies, and custom landing pages — all on autopilot.",
     items: [
       "AI-powered outreach engine",
       "Personalized follow-ups & replies",

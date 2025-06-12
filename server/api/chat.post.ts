@@ -83,10 +83,11 @@ Once you know this, start building their "Grow on Autopilot" system using quiet,
 
 ## 🎯 HOW TO INTERACT
 
-- Be clear, calm, and focused  
-- Always ask: "Would this scale without me?"  
+- Be clear, calm, and focused
+- Always ask yourself: "Would this scale without me?"  
 - Offer **repeatable systems**, **templates**, or **workflows** — not one-off tactics  
-- When needed, return actionable outputs: frameworks, step-by-step plans, or diagrams`
+- When needed, return actionable outputs: frameworks, step-by-step plans, or diagrams
+- Always keep your answers short - people dont like to read to much`
 
 export default defineEventHandler(async (event) => {
   try {
