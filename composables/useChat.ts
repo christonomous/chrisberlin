@@ -1,12 +1,38 @@
-// composables/useChat.js
-import { ref } from 'vue'
+// composables/useChat.ts
+import { ref, onMounted } from 'vue'
+import { $fetch } from 'ofetch'
+
+interface ChatMessage {
+  id: number
+  content: string
+  role: 'user' | 'assistant'
+  timestamp: string
+}
+
+interface ChatResponse {
+  message: string
+  timestamp: string
+}
 
 export const useChat = () => {
-  const messages = ref([])
+  const messages = ref<ChatMessage[]>([])
   const isLoading = ref(false)
   const error = ref(null)
 
-  const addMessage = (content, role = 'user', timestamp = new Date().toISOString()) => {
+  // Load messages from localStorage on mount
+  onMounted(() => {
+    const savedMessages = localStorage.getItem('chatMessages')
+    if (savedMessages) {
+      messages.value = JSON.parse(savedMessages)
+    }
+  })
+
+  // Save messages to localStorage whenever they change
+  const saveMessages = () => {
+    localStorage.setItem('chatMessages', JSON.stringify(messages.value))
+  }
+
+  const addMessage = (content: string, role: 'user' | 'assistant' = 'user', timestamp: string = new Date().toISOString()) => {
     const message = {
       id: Date.now() + Math.random(),
       content,
@@ -14,6 +40,7 @@ export const useChat = () => {
       timestamp
     }
     messages.value.push(message)
+    saveMessages()
     return message
   }
 
@@ -31,7 +58,7 @@ export const useChat = () => {
 
     try {
       // Send to API
-      const response = await $fetch('/api/chat', {
+      const response = await $fetch<ChatResponse>('/api/chat', {
         method: 'POST',
         body: {
           message: content,
@@ -39,8 +66,11 @@ export const useChat = () => {
         }
       })
 
-      // Add assistant response
-      addMessage(response.message, 'assistant', response.timestamp)
+      // Add assistant response if we got data
+      if (response) {
+        const { message, timestamp } = response
+        addMessage(message, 'assistant', timestamp)
+      }
     } catch (fetchError) {
       console.error('Chat error:', fetchError)
       error.value = fetchError
@@ -65,6 +95,7 @@ export const useChat = () => {
   const clearMessages = () => {
     messages.value = []
     error.value = null
+    localStorage.removeItem('chatMessages')
   }
 
   const retryLastMessage = async () => {
@@ -81,6 +112,12 @@ export const useChat = () => {
     }
   }
 
+  const startNewChat = () => {
+    clearMessages()
+    // Add initial greeting message like when first mounted
+    addMessage("Hi there! I'm Chris's AI Architect Assistant. I'm here to help you build calm, self-sustaining systems that compound over time.\n\nBefore we begin, let me ask a few questions so I can guide you more precisely:\n\n1. What skill, experience, or asset do you already have that people find valuable?\n2. What outcome do you want your business to create — income, time, autonomy, impact?\n3. Do you want to sell a product, a service, or a system?\n4. What type of work drains you — and what type energizes you?\n5. Do you already have any audience, clients, or traction?\n\nFeel free to answer one or all of these questions, or simply tell me what's on your mind about your business!", 'assistant')
+  }
+
   return {
     messages,
     isLoading,
@@ -88,6 +125,7 @@ export const useChat = () => {
     addMessage,
     sendMessage,
     clearMessages,
-    retryLastMessage
+    retryLastMessage,
+    startNewChat
   }
 }
