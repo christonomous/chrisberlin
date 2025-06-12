@@ -17,7 +17,7 @@
         </div> -->
         <div>
           <h3 class="font-semibold text-sm">Solopreneurship AI Assistant</h3>
-          <p class="text-xs opacity-70">Helping you grow on Autopilot</p>
+          <p class="text-xs opacity-70">Helping you to grow on Autopilot</p>
         </div>
       </div>
       
