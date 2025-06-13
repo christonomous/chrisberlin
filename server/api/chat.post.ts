@@ -4,10 +4,111 @@ import { H3Event } from 'h3'
 import { defineEventHandler, getRequestHeaders, readBody, createError } from 'h3'
 import { supabase } from '../../utils/supabase'
 import type { ChatHistory } from '../../utils/supabase'
+import { sendPlaybook } from '../../utils/email/send-playbook'
+
+// Email regex pattern
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+
+// Function to extract email from message
+const extractEmail = (message: string): string | null => {
+  const words = message.split(/\s+/)
+  for (const word of words) {
+    if (EMAIL_REGEX.test(word)) {
+      return word.toLowerCase()
+    }
+  }
+  return null
+}
+
+// Function to count assistant messages to track interview progress
+const getInterviewProgress = (messages: ChatMessage[]): number => {
+  return messages.filter(msg => msg.role === 'assistant').length - 1 // -1 for initial greeting
+}
+
+// Function to handle email subscription
+const handleEmailSubscription = async (email: string, chatId: string, messages: ChatMessage[]) => {
+  try {
+    // Get chat messages for playbook
+    const { data: existingChat } = await supabase
+      .from('chats')
+      .select('messages')
+      .eq('id', chatId)
+      .single()
+
+    // Insert into subscribers table
+    const { data: subscriber, error: subscribeError } = await supabase
+      .from('subscribers')
+      .insert([{ 
+        email,
+        unsubscribe_token: Math.random().toString(36).substring(2) // Simple token generation
+      }])
+      .select()
+      .single()
+
+    if (subscribeError) {
+      if (subscribeError.code === '23505') { // Unique constraint violation
+        // Get existing subscriber
+        const { data: existingSubscriber } = await supabase
+          .from('subscribers')
+          .select('id')
+          .eq('email', email)
+          .single()
+        
+        if (existingSubscriber) {
+          // Update chat with existing subscriber id
+          await supabase
+            .from('chats')
+            .update({ subscriber_id: existingSubscriber.id })
+            .eq('id', chatId)
+        }
+      } else {
+        throw subscribeError
+      }
+    } else if (subscriber) {
+      // Update chat with new subscriber id
+      await supabase
+        .from('chats')
+        .update({ subscriber_id: subscriber.id })
+        .eq('id', chatId)
+    }
+
+    // Send playbook email using all chat messages
+    console.log('Preparing to send playbook email to:', email)
+    const allMessages = existingChat?.messages || messages
+    try {
+      await sendPlaybook(email, allMessages)
+      console.log('Playbook email sent successfully')
+    } catch (emailError) {
+      console.error('Failed to send playbook email:', emailError)
+      // Continue execution - we don't want to fail the chat if email fails
+    }
+  } catch (error) {
+    console.error('Error handling subscription:', error)
+    if (error.data) {
+      console.error('API error details:', error.data)
+    }
+    throw error
+  }
+}
+
+interface ChatMessage {
+  id: number
+  content: string
+  role: 'user' | 'assistant'
+  timestamp: string
+}
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 })
+
+const INTERVIEW_QUESTIONS = [
+  "What specific skills or expertise do you have that could be turned into a business? Think about your professional experience, personal interests, or unique knowledge.",
+  "What's your main goal for building this business? Are you looking for financial freedom, location independence, or perhaps creating impact in a specific field?",
+  "How much time can you realistically dedicate to building this business right now? This helps me suggest the most suitable approach.",
+  "What's your comfort level with technology and automation? This will help me recommend appropriate tools and systems.",
+  "Have you tried starting any business ventures before? What worked and what didn't?"
+]
 
 const SYSTEM_PROMPT = `You are "The AI Architect" — a systems strategist trained on the personal methodology, principles, and product design philosophy of Chris, the AI solopreneur behind "Grow on Autopilot."
 
@@ -69,19 +170,24 @@ Use this cycle to guide users:
 
 ---
 
-## 🧭 INTAKE: CLARIFY THE USER'S FOUNDATION
+## 🧭 INTERVIEW PROCESS
 
-Begin by asking:
+You will conduct a focused 5-question interview to understand the user's needs and goals. Here's how to proceed:
 
-> Before we begin, let me ask a few questions so I can guide you more precisely:
+1. Start with a brief welcome and ask the first question from INTERVIEW_QUESTIONS.
+2. For each response, acknowledge key points and ask the next question.
+3. After collecting all 5 responses, summarize the insights and say:
+   "I have a good understanding of your situation now. I can create a tailored playbook with specific strategies and systems for your business. To receive this, please share your email address."
+4. When they provide an email:
+   - Thank them
+   - Mention you'll send the playbook to their email
+   - Continue the conversation by starting to outline key strategies based on their answers
 
-1. What skill, experience, or asset do you already have that people find valuable?  
-2. What outcome do you want your business to create — income, time, autonomy, impact?  
-3. Do you want to sell a product, a service, or a system?  
-4. What type of work drains you — and what type energizes you?  
-5. Do you already have any audience, clients, or traction?
-
-Once you know this, start building their "Grow on Autopilot" system using quiet, leveraged, and asynchronous principles.
+Important:
+- Keep responses focused and concise
+- Ask only one question at a time
+- Track which question you're on (1-5)
+- After email collection, shift to providing actionable advice
 
 ---
 
@@ -91,12 +197,31 @@ Once you know this, start building their "Grow on Autopilot" system using quiet,
 - Always ask yourself: "Would this scale without me?"  
 - Offer **repeatable systems**, **templates**, or **workflows** — not one-off tactics  
 - When needed, return actionable outputs: frameworks, step-by-step plans, or diagrams
-- Always keep your answers short - people dont like to read to much`
+- Always keep your answers short - people dont like to read to much
+
+## 📧 EMAIL COLLECTION
+
+When a user provides their email:
+1. Validate it's a proper email format
+2. If valid, respond with gratitude and mention the playbook
+3. If invalid, politely ask for a valid email address
+
+Example response after valid email:
+"Thank you! I'll send your personalized playbook to [email]. Based on what you've shared, let me start outlining some key strategies for your business..."`
 
 export default defineEventHandler(async (event: H3Event) => {
   try {
     const body = await readBody(event)
     const { message, messages = [], chatId = null } = body
+    
+    // Check for email in message after 5 interview questions
+    const interviewProgress = getInterviewProgress(messages)
+    if (interviewProgress >= 5) {
+      const email = extractEmail(message)
+      if (email && chatId) {
+        await handleEmailSubscription(email, chatId, messages)
+      }
+    }
     
     // Get client info for audit trail
     const headers = getRequestHeaders(event)
