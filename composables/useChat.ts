@@ -12,24 +12,33 @@ interface ChatMessage {
 interface ChatResponse {
   message: string
   timestamp: string
+  chatId: string
 }
 
 export const useChat = () => {
   const messages = ref<ChatMessage[]>([])
   const isLoading = ref(false)
   const error = ref(null)
+  const chatId = ref<string | null>(null)
 
-  // Load messages from localStorage on mount
+  // Load messages and chatId from localStorage on mount
   onMounted(() => {
     const savedMessages = localStorage.getItem('chatMessages')
+    const savedChatId = localStorage.getItem('chatId')
     if (savedMessages) {
       messages.value = JSON.parse(savedMessages)
     }
+    if (savedChatId) {
+      chatId.value = savedChatId
+    }
   })
 
-  // Save messages to localStorage whenever they change
+  // Save messages and chatId to localStorage whenever they change
   const saveMessages = () => {
     localStorage.setItem('chatMessages', JSON.stringify(messages.value))
+    if (chatId.value) {
+      localStorage.setItem('chatId', chatId.value)
+    }
   }
 
   const addMessage = (content: string, role: 'user' | 'assistant' = 'user', timestamp: string = new Date().toISOString()) => {
@@ -62,9 +71,16 @@ export const useChat = () => {
         method: 'POST',
         body: {
           message: content,
-          messages: messages.value.slice(-10) // Send last 10 messages for context
+          messages: messages.value.slice(-10), // Send last 10 messages for context
+          chatId: chatId.value
         }
       })
+
+      // Store chatId if received
+      if (response.chatId) {
+        chatId.value = response.chatId
+        localStorage.setItem('chatId', response.chatId)
+      }
 
       // Add assistant response if we got data
       if (response) {
@@ -95,7 +111,9 @@ export const useChat = () => {
   const clearMessages = () => {
     messages.value = []
     error.value = null
+    chatId.value = null
     localStorage.removeItem('chatMessages')
+    localStorage.removeItem('chatId')
   }
 
   const retryLastMessage = async () => {
@@ -113,15 +131,16 @@ export const useChat = () => {
   }
 
   const startNewChat = () => {
-    clearMessages()
+    clearMessages() // This already clears chatId and localStorage
     // Add initial greeting message like when first mounted
-    addMessage("Hi, I’m Chris’s Solopreneurship AI Assistant.\n\nI’m here to help you design a calm, self-sustaining business — using the same systems Chris built to automate income and grow quietly.\n\nTo get started, just tell me:\n- What do you already have — skills, assets, or experience?\n- What outcome are you aiming for — freedom, income, impact?\n- And do you want to sell a service, a product, or a system?\n\nYou can answer one or all — or just share what’s on your mind.", 'assistant')
+    addMessage("Hi, I'm Chris's Solopreneurship AI Assistant.\n\nI'm here to help you design a calm, self-sustaining business — using the same systems Chris built to automate income and grow quietly.\n\nTo get started, just tell me:\n- What do you already have — skills, assets, or experience?\n- What outcome are you aiming for — freedom, income, impact?\n- And do you want to sell a service, a product, or a system?\n\nYou can answer one or all — or just share what's on your mind.", 'assistant')
   }
 
   return {
     messages,
     isLoading,
     error,
+    chatId,
     addMessage,
     sendMessage,
     clearMessages,

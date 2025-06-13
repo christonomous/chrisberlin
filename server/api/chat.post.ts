@@ -1,5 +1,9 @@
-// server/api/chat.post.js
 import OpenAI from 'openai'
+import type { ChatCompletionMessageParam } from 'openai/resources/chat'
+import { H3Event } from 'h3'
+import { defineEventHandler, getRequestHeaders, readBody, createError } from 'h3'
+import { supabase } from '../../utils/supabase'
+import type { ChatHistory } from '../../utils/supabase'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -89,10 +93,15 @@ Once you know this, start building their "Grow on Autopilot" system using quiet,
 - When needed, return actionable outputs: frameworks, step-by-step plans, or diagrams
 - Always keep your answers short - people dont like to read to much`
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async (event: H3Event) => {
   try {
     const body = await readBody(event)
-    const { message, messages = [] } = body
+    const { message, messages = [], chatId = null } = body
+    
+    // Get client info for audit trail
+    const headers = getRequestHeaders(event)
+    const ip = headers['x-forwarded-for'] || headers['x-real-ip'] || '0.0.0.0'
+    const userAgent = headers['user-agent'] || 'Unknown'
 
     if (!message) {
       throw createError({
@@ -102,7 +111,7 @@ export default defineEventHandler(async (event) => {
     }
 
     // Build conversation history for context
-    const conversationMessages = [
+    const conversationMessages: ChatCompletionMessageParam[] = [
       {
         role: 'system',
         content: SYSTEM_PROMPT
@@ -114,7 +123,7 @@ export default defineEventHandler(async (event) => {
     for (const msg of recentMessages) {
       if (msg.role === 'user' || msg.role === 'assistant') {
         conversationMessages.push({
-          role: msg.role,
+          role: msg.role === 'user' ? 'user' : 'assistant',
           content: msg.content
         })
       }
@@ -144,9 +153,89 @@ export default defineEventHandler(async (event) => {
       })
     }
 
+    const timestamp = new Date().toISOString()
+
+    // Prepare chat data
+    const newMessage = {
+      id: Date.now() + Math.random(),
+      content: message,
+      role: 'user' as const,
+      timestamp
+    }
+    
+    const assistantEntry = {
+      id: Date.now() + Math.random() + 1,
+      content: assistantMessage,
+      role: 'assistant' as const,
+      timestamp
+    }
+
+    let finalChatId = chatId
+
+    // If chatId exists, update existing chat, otherwise create new one
+    if (finalChatId) {
+      const { data: existingChat, error: fetchError } = await supabase
+        .from('chats')
+        .select('messages')
+        .eq('id', chatId)
+        .single()
+
+      if (fetchError) {
+        console.error('Error fetching chat:', fetchError)
+        throw createError({
+          statusCode: 500,
+          statusMessage: 'Error fetching chat history'
+        })
+      }
+
+      const updatedMessages = [...(existingChat?.messages || []), newMessage, assistantEntry]
+
+      const { error: updateError } = await supabase
+        .from('chats')
+        .update({ 
+          messages: updatedMessages,
+          updated_at: timestamp
+        })
+        .eq('id', chatId)
+
+      if (updateError) {
+        console.error('Error updating chat:', updateError)
+        throw createError({
+          statusCode: 500,
+          statusMessage: 'Error updating chat history'
+        })
+      }
+    } else {
+      // Create new chat entry
+      const { data: chat, error: insertError } = await supabase
+        .from('chats')
+        .insert({
+          messages: [newMessage, assistantEntry],
+          audit_trail: {
+            ip,
+            user_agent: userAgent,
+            created_at: timestamp,
+            last_updated: timestamp
+          }
+        })
+        .select()
+        .single()
+
+      if (insertError) {
+        console.error('Error creating chat:', insertError)
+        throw createError({
+          statusCode: 500,
+          statusMessage: 'Error creating chat history'
+        })
+      }
+
+      finalChatId = chat.id
+    }
+
     return {
       message: assistantMessage,
-      timestamp: new Date().toISOString()
+      timestamp,
+      chatId: finalChatId
     }
 
   } catch (error) {
