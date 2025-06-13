@@ -41,19 +41,20 @@ export const handleEmailSubscription = async (email: string, chatId: string, mes
 
     console.log('Updated chat with email:', email)
 
-    // Insert into subscribers table (keep this for the subscription module)
-    const { error: subscribeError } = await supabase
-      .from('subscribers')
-      .insert([{ 
-        email,
-        unsubscribe_token: Math.random().toString(36).substring(2)
-      }])
-      .select()
-      .single()
-
-    if (subscribeError && subscribeError.code !== '23505') { // Ignore if subscriber already exists
+    // Try to insert into subscribers table, but don't fail if it errors
+    // The subscription module handles proper subscriber management
+    try {
+      await supabase
+        .from('subscribers')
+        .insert([{ 
+          email,
+          unsubscribe_token: Math.random().toString(36).substring(2)
+        }])
+        .select()
+        .single()
+    } catch (subscribeError) {
+      // Log but don't throw - subscription module will handle proper signup
       console.error('Error inserting subscriber:', subscribeError)
-      // Don't throw error - we want to continue with playbook sending
     }
 
     // Send playbook email using all chat messages
@@ -64,7 +65,7 @@ export const handleEmailSubscription = async (email: string, chatId: string, mes
       console.log('Playbook email sent successfully to:', email)
     } catch (emailError) {
       console.error('Failed to send playbook email:', emailError)
-      // Continue execution - we don't want to fail the chat if email fails
+      throw emailError // Throw email errors since playbook sending is critical
     }
   } catch (error) {
     console.error('Error handling subscription:', error)
