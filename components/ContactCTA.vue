@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { useSubscribe } from '../modules/supabase/runtime/composables/useSubscribe'
+import { useSubscribe } from '../modules/subscription/runtime/composables/useSubscribe'
 
 const { subscribe, subscribing, error, success } = useSubscribe()
 const email = ref('')

@@ -22,7 +22,7 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
-    ['~/modules/supabase/module', {
+    ['~/modules/subscription/module', {
       supabaseUrl: process.env.SUPABASE_URL,
       supabaseKey: process.env.SUPABASE_KEY
     }]
