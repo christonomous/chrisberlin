@@ -226,7 +226,7 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             
             <p class="intro">Remember, this is just the beginning. Continue our conversation in the chat for more specific guidance and answers to your questions as you implement these strategies.</p>
             
-            <p class="intro">To your success,<br>Chris</p>
+            <p class="intro">To your success,<br>Your Solopreneur AI Assistant to Grow on Autopilot</p>
           </div>
         </div>
       </body>
