@@ -1,11 +1,12 @@
 import OpenAI from 'openai'
 import type { ChatMessage } from '../../server/api/types/chat'
+import type { ChatCompletionMessageParam } from 'openai/resources/chat'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 })
 
-const PLAYBOOK_SYSTEM_PROMPT = `You are "The AI Architect" — a systems strategist trained on the personal methodology, principles, and product design philosophy of Chris, the AI solopreneur behind "Grow on Autopilot."
+const SYSTEM_PROMPT = `You are a "Solopreneur Assistant for 'Grow on Autopilot'" — a systems strategist trained on the personal methodology, principles, and product design philosophy of Chris, the AI solopreneur behind "Grow on Autopilot."
 
 Your role is to help users design a life and business modeled after Chris's approach: building calm, self-sustaining systems that compound over time — using automation, AI, and asynchronous leverage.
 
@@ -22,65 +23,20 @@ Core Philosophy You Embody:
 - Leverage is created through asynchronous workflows, not real-time effort
 - Every hour of work should create residual impact, not one-time results
 
-IMPORTANT: Your task is to create a HIGHLY PERSONALIZED playbook based on the user's specific situation. Do not give generic advice. Every recommendation must be:
-- Directly tied to the user's skills, experience, and goals
+Your task is to analyze the user's interview responses and create a comprehensive playbook. You will do this through a self-reasoning process, building each section progressively while maintaining context and connections between sections.
+
+Important: Be extremely specific and personalized. Every recommendation must be:
+- Directly tied to their skills, experience, and goals
 - Specific and actionable (name exact tools, methods, steps)
 - Realistic given their time availability and tech comfort
 - Focused on their unique advantages and constraints
 
-Analyze their responses in detail and create a comprehensive playbook with these sections:
+For each section:
+1. First reason about what needs to be covered based on previous sections
+2. Then provide detailed, actionable content
+3. Finally, analyze how this connects to the next section
 
-1. Executive Summary
-- Brief overview of their unique situation
-- Key opportunities specific to their skills
-- Primary challenges to address
-- Quick wins they can implement immediately
-
-2. Business Model Analysis
-- Detailed evaluation of THEIR specific skills and how to monetize them
-- 2-3 concrete business model options tailored to their situation
-- Specific target audience identification based on their expertise
-- Exact pricing models with numbers and tiers
-- Revenue projections based on their time commitment
-
-3. Automation Strategy
-- Specific tools and platforms they should use (name exact products)
-- Step-by-step setup instructions for their tech stack
-- Detailed workflow automations for their specific business
-- AI tools they should implement (with exact use cases)
-- Templates and systems tailored to their business model
-
-4. Growth Roadmap
-- Week-by-week plan for the first 90 days
-- Specific marketing channels based on their strengths
-- Content strategy customized to their expertise
-- Exact metrics they should track (with target numbers)
-- Customer acquisition strategy for their target audience
-
-5. Risk Mitigation
-- Specific risks for their chosen business model
-- Concrete backup plans for their situation
-- Resource allocation based on their available time
-- Specific challenges they might face (with solutions)
-
-6. Scaling Framework
-- Detailed scaling plan for their specific business
-- Exact tools and infrastructure they'll need
-- Team structure based on their business model
-- Quality control systems for their specific offering
-- Growth targets with specific numbers
-
-Be extremely specific and actionable. Every recommendation should be customized to their:
-- Skill level
-- Time availability
-- Tech comfort
-- Industry knowledge
-- Target market
-- Available resources
-
-Format your response with clear section headings (##) for each major area. Within each section, provide detailed, actionable insights that are 100% personalized to their situation.
-
-Remember: NO generic advice. Every single recommendation should be specifically tailored to their unique situation and goals.`
+Format each section with ## [Section Name] and ensure thorough, detailed content.`
 
 interface PlaybookSection {
   title: string
@@ -98,7 +54,6 @@ export interface GeneratedPlaybook {
 
 export const generateAIPlaybook = async (messages: ChatMessage[]): Promise<GeneratedPlaybook> => {
   try {
-    // Extract user responses (first 5 messages from user)
     const userResponses = messages
       .filter(msg => msg.role === 'user')
       .slice(0, 5)
@@ -114,60 +69,151 @@ export const generateAIPlaybook = async (messages: ChatMessage[]): Promise<Gener
       })
       .join('\n\n')
 
-    const completion = await openai.chat.completions.create({
-      model: 'gpt-4',
-      messages: [
-        {
-          role: 'system',
-          content: PLAYBOOK_SYSTEM_PROMPT
-        },
-        {
-          role: 'user',
-          content: `Please analyze these interview responses and create a highly personalized playbook:
+    let conversationHistory: ChatCompletionMessageParam[] = [
+      {
+        role: 'system',
+        content: SYSTEM_PROMPT
+      },
+      {
+        role: 'user',
+        content: `Let's create a comprehensive playbook based on these interview responses:
 
 ${userResponses}
 
-Remember: Every recommendation must be specifically tailored to their unique situation. No generic advice.`
-        }
-      ],
+First, analyze their situation thoroughly and create an executive summary that captures their unique position, opportunities, and challenges.`
+      }
+    ]
+
+    // Generate Executive Summary
+    const summaryCompletion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: conversationHistory,
       temperature: 0.7,
-      max_tokens: 4000
+      max_tokens: 1000
     })
 
-    const response = completion.choices[0]?.message?.content || ''
-    
-    // Process the response into structured sections
-    const sections = response.split('##').filter(Boolean)
-    
-    const playbook: GeneratedPlaybook = {
-      executiveSummary: '',
-      businessModel: { title: 'Business Model Strategy', content: [] },
-      automationStrategy: { title: 'Automation Strategy', content: [] },
-      growthRoadmap: { title: '90-Day Growth Roadmap', content: [] },
-      riskMitigation: { title: 'Risk Mitigation', content: [] },
-      scalingFramework: { title: 'Scaling Framework', content: [] }
+    const executiveSummary = summaryCompletion.choices[0]?.message?.content || ''
+    conversationHistory.push({
+      role: 'assistant',
+      content: `Let me analyze the executive summary I've created and plan how it informs the business model strategy:
+
+${executiveSummary}
+
+Based on this analysis, I'll now develop a detailed business model strategy that leverages their unique advantages and addresses their constraints.`
+    })
+
+    // Generate Business Model
+    const businessModelCompletion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: conversationHistory,
+      temperature: 0.7,
+      max_tokens: 1000
+    })
+
+    const businessModel = businessModelCompletion.choices[0]?.message?.content || ''
+    conversationHistory.push({
+      role: 'assistant',
+      content: `Now that we have a solid business model defined, let me analyze how this informs our automation strategy:
+
+${businessModel}
+
+I'll create an automation strategy that specifically supports this business model while considering their technical comfort level.`
+    })
+
+    // Generate Automation Strategy
+    const automationCompletion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: conversationHistory,
+      temperature: 0.7,
+      max_tokens: 1000
+    })
+
+    const automationStrategy = automationCompletion.choices[0]?.message?.content || ''
+    conversationHistory.push({
+      role: 'assistant',
+      content: `With our business model and automation strategy in place, let me plan our growth roadmap:
+
+${automationStrategy}
+
+I'll create a detailed 90-day plan that implements these automated systems while scaling the business.`
+    })
+
+    // Generate Growth Roadmap
+    const roadmapCompletion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: conversationHistory,
+      temperature: 0.7,
+      max_tokens: 1000
+    })
+
+    const growthRoadmap = roadmapCompletion.choices[0]?.message?.content || ''
+    conversationHistory.push({
+      role: 'assistant',
+      content: `Based on our growth plans, let me identify and address potential risks:
+
+${growthRoadmap}
+
+I'll create specific mitigation strategies for each risk area we've identified.`
+    })
+
+    // Generate Risk Mitigation
+    const riskCompletion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: conversationHistory,
+      temperature: 0.7,
+      max_tokens: 1000
+    })
+
+    const riskMitigation = riskCompletion.choices[0]?.message?.content || ''
+    conversationHistory.push({
+      role: 'assistant',
+      content: `Now that we've addressed risks, let me create a scaling framework that builds on everything we've developed:
+
+${riskMitigation}
+
+I'll outline how to scale while maintaining our automated, low-risk approach.`
+    })
+
+    // Generate Scaling Framework
+    const scalingCompletion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: conversationHistory,
+      temperature: 0.7,
+      max_tokens: 1000
+    })
+
+    const scalingFramework = scalingCompletion.choices[0]?.message?.content || ''
+
+    const formatContent = (content: string): string[] => {
+      return content
+        .split('\n')
+        .filter(line => line.trim())
+        .map(line => line.trim())
     }
 
-    sections.forEach(section => {
-      const [title, ...content] = section.split('\n').filter(Boolean)
-      const cleanTitle = title.trim().toLowerCase()
-      
-      if (cleanTitle.includes('summary')) {
-        playbook.executiveSummary = content.join('\n')
-      } else if (cleanTitle.includes('business model')) {
-        playbook.businessModel.content = content
-      } else if (cleanTitle.includes('automation')) {
-        playbook.automationStrategy.content = content
-      } else if (cleanTitle.includes('growth')) {
-        playbook.growthRoadmap.content = content
-      } else if (cleanTitle.includes('risk')) {
-        playbook.riskMitigation.content = content
-      } else if (cleanTitle.includes('scaling')) {
-        playbook.scalingFramework.content = content
+    return {
+      executiveSummary,
+      businessModel: {
+        title: 'Business Model Strategy',
+        content: formatContent(businessModel)
+      },
+      automationStrategy: {
+        title: 'Automation Strategy',
+        content: formatContent(automationStrategy)
+      },
+      growthRoadmap: {
+        title: '90-Day Growth Roadmap',
+        content: formatContent(growthRoadmap)
+      },
+      riskMitigation: {
+        title: 'Risk Mitigation',
+        content: formatContent(riskMitigation)
+      },
+      scalingFramework: {
+        title: 'Scaling Framework',
+        content: formatContent(scalingFramework)
       }
-    })
-
-    return playbook
+    }
   } catch (error) {
     console.error('Error generating AI playbook:', error)
     throw error

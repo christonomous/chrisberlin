@@ -28,27 +28,54 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
     })
   })
 
-  const formatSection = (content: string[]) => {
-    let html = '<ul class="recommendations">'
+  const formatSection = (content: string[]): string => {
+    let html = ''
+    let currentList = ''
+    
     content.forEach(item => {
       const trimmedItem = item.trim()
-      if (trimmedItem.startsWith('-') || trimmedItem.startsWith('•')) {
-        // List item
-        html += `<li>${trimmedItem.substring(1).trim()}</li>`
-      } else if (trimmedItem.includes(':')) {
-        // Subheading
-        const [heading, ...rest] = trimmedItem.split(':')
-        html += `</ul><h3 class="subheading">${heading.trim()}:</h3><ul class="recommendations">`
-        if (rest.length > 0) {
-          html += `<li>${rest.join(':').trim()}</li>`
+      
+      // Handle numbered items (e.g., "1.", "2.", etc.)
+      if (/^\d+\./.test(trimmedItem)) {
+        if (!currentList) {
+          currentList = '<ol class="numbered-list">'
         }
-      } else {
-        // Regular paragraph
-        html += `</ul><p>${trimmedItem}</p><ul class="recommendations">`
+        currentList += `<li>${trimmedItem.replace(/^\d+\.\s*/, '')}</li>`
+      }
+      // Handle bullet points
+      else if (trimmedItem.startsWith('-') || trimmedItem.startsWith('•')) {
+        if (!currentList) {
+          currentList = '<ul class="recommendations">'
+        }
+        currentList += `<li>${trimmedItem.substring(1).trim()}</li>`
+      }
+      // Handle subheadings (ends with : or contains :)
+      else if (trimmedItem.includes(':')) {
+        if (currentList) {
+          html += currentList + (currentList.startsWith('<ul') ? '</ul>' : '</ol>')
+          currentList = ''
+        }
+        const [heading, ...rest] = trimmedItem.split(':')
+        html += `<h3 class="subheading">${heading.trim()}:</h3>`
+        if (rest.length > 0) {
+          html += `<p>${rest.join(':').trim()}</p>`
+        }
+      }
+      // Regular paragraph
+      else {
+        if (currentList) {
+          html += currentList + (currentList.startsWith('<ul') ? '</ul>' : '</ol>')
+          currentList = ''
+        }
+        html += `<p>${trimmedItem}</p>`
       }
     })
-    html += '</ul>'
-    return html.replace(/<ul class="recommendations"><\/ul>/g, '')
+
+    if (currentList) {
+      html += currentList + (currentList.startsWith('<ul') ? '</ul>' : '</ol>')
+    }
+
+    return html
   }
 
   const mailOptions = {
@@ -123,12 +150,12 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             margin: 30px 0;
             border-radius: 3px;
           }
-          ul.recommendations {
+          ul.recommendations, ol.numbered-list {
             list-style-type: none;
             padding-left: 0;
             margin: 15px 0;
           }
-          ul.recommendations li {
+          ul.recommendations li, ol.numbered-list li {
             margin: 12px 0;
             padding-left: 25px;
             position: relative;
@@ -136,6 +163,18 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
           }
           ul.recommendations li:before {
             content: "→";
+            color: #7c3aed;
+            position: absolute;
+            left: 0;
+          }
+          ol.numbered-list {
+            counter-reset: item;
+          }
+          ol.numbered-list li {
+            counter-increment: item;
+          }
+          ol.numbered-list li:before {
+            content: counter(item) ".";
             color: #7c3aed;
             position: absolute;
             left: 0;
@@ -158,6 +197,10 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             line-height: 1.8;
             margin: 25px 0;
           }
+          .executive-summary {
+            white-space: pre-line;
+            line-height: 1.8;
+          }
         </style>
       </head>
       <body>
@@ -171,9 +214,9 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             
             <div class="divider"></div>
             
-            <div class="summary">
-              <h2>Executive Summary</h2>
-              <p>${playbook.executiveSummary}</p>
+            <h2>Executive Summary</h2>
+            <div class="section">
+              <div class="executive-summary">${playbook.executiveSummary}</div>
             </div>
 
             <div class="divider"></div>
