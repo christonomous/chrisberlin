@@ -28,56 +28,6 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
     })
   })
 
-  const formatSection = (content: string[]): string => {
-    let html = ''
-    let currentList = ''
-    
-    content.forEach(item => {
-      const trimmedItem = item.trim()
-      
-      // Handle numbered items (e.g., "1.", "2.", etc.)
-      if (/^\d+\./.test(trimmedItem)) {
-        if (!currentList) {
-          currentList = '<ol class="numbered-list">'
-        }
-        currentList += `<li>${trimmedItem.replace(/^\d+\.\s*/, '')}</li>`
-      }
-      // Handle bullet points
-      else if (trimmedItem.startsWith('-') || trimmedItem.startsWith('•')) {
-        if (!currentList) {
-          currentList = '<ul class="recommendations">'
-        }
-        currentList += `<li>${trimmedItem.substring(1).trim()}</li>`
-      }
-      // Handle subheadings (ends with : or contains :)
-      else if (trimmedItem.includes(':')) {
-        if (currentList) {
-          html += currentList + (currentList.startsWith('<ul') ? '</ul>' : '</ol>')
-          currentList = ''
-        }
-        const [heading, ...rest] = trimmedItem.split(':')
-        html += `<h3 class="subheading">${heading.trim()}:</h3>`
-        if (rest.length > 0) {
-          html += `<p>${rest.join(':').trim()}</p>`
-        }
-      }
-      // Regular paragraph
-      else {
-        if (currentList) {
-          html += currentList + (currentList.startsWith('<ul') ? '</ul>' : '</ol>')
-          currentList = ''
-        }
-        html += `<p>${trimmedItem}</p>`
-      }
-    })
-
-    if (currentList) {
-      html += currentList + (currentList.startsWith('<ul') ? '</ul>' : '</ol>')
-    }
-
-    return html
-  }
-
   const mailOptions = {
     from: `"${process.env.EMAIL_NAME}" <${process.env.EMAIL_USER}>`,
     to: email,
@@ -124,7 +74,7 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             border-bottom: 2px solid #00ff9d;
             padding-bottom: 10px;
           }
-          h3.subheading {
+          h3 {
             color: #ff006e;
             margin: 25px 0 15px;
             font-size: 18px;
@@ -150,30 +100,30 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             margin: 30px 0;
             border-radius: 3px;
           }
-          ul.recommendations, ol.numbered-list {
+          ul, ol {
             list-style-type: none;
             padding-left: 0;
             margin: 15px 0;
           }
-          ul.recommendations li, ol.numbered-list li {
+          li {
             margin: 12px 0;
             padding-left: 25px;
             position: relative;
             color: #e2e8f0;
           }
-          ul.recommendations li:before {
+          ul li:before {
             content: "→";
             color: #7c3aed;
             position: absolute;
             left: 0;
           }
-          ol.numbered-list {
+          ol {
             counter-reset: item;
           }
-          ol.numbered-list li {
+          ol li {
             counter-increment: item;
           }
-          ol.numbered-list li:before {
+          ol li:before {
             content: counter(item) ".";
             color: #7c3aed;
             position: absolute;
@@ -197,9 +147,33 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             line-height: 1.8;
             margin: 25px 0;
           }
-          .executive-summary {
-            white-space: pre-line;
-            line-height: 1.8;
+          code {
+            background: rgba(124, 58, 237, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #00ff9d;
+          }
+          pre {
+            background: rgba(124, 58, 237, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+          }
+          pre code {
+            background: none;
+            padding: 0;
+          }
+          strong {
+            color: #00ff9d;
+            font-weight: bold;
+          }
+          blockquote {
+            border-left: 4px solid #7c3aed;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background: rgba(124, 58, 237, 0.1);
+            font-style: italic;
           }
         </style>
       </head>
@@ -216,34 +190,34 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             
             <h2>Executive Summary</h2>
             <div class="section">
-              <div class="executive-summary">${playbook.executiveSummary}</div>
+              ${playbook.executiveSummary}
             </div>
 
             <div class="divider"></div>
             
             <h2>${playbook.businessModel.title}</h2>
             <div class="section">
-              ${formatSection(playbook.businessModel.content)}
+              ${playbook.businessModel.content.join('\n')}
             </div>
 
             <h2>${playbook.automationStrategy.title}</h2>
             <div class="section">
-              ${formatSection(playbook.automationStrategy.content)}
+              ${playbook.automationStrategy.content.join('\n')}
             </div>
 
             <h2>${playbook.growthRoadmap.title}</h2>
             <div class="section">
-              ${formatSection(playbook.growthRoadmap.content)}
+              ${playbook.growthRoadmap.content.join('\n')}
             </div>
 
             <h2>${playbook.riskMitigation.title}</h2>
             <div class="section">
-              ${formatSection(playbook.riskMitigation.content)}
+              ${playbook.riskMitigation.content.join('\n')}
             </div>
 
             <h2>${playbook.scalingFramework.title}</h2>
             <div class="section">
-              ${formatSection(playbook.scalingFramework.content)}
+              ${playbook.scalingFramework.content.join('\n')}
             </div>
 
             <div class="divider"></div>

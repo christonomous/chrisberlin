@@ -1,12 +1,13 @@
 import OpenAI from 'openai'
 import type { ChatMessage } from '../../server/api/types/chat'
 import type { ChatCompletionMessageParam } from 'openai/resources/chat'
+import { convertMarkdownToHtml } from './markdown-to-html'
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 })
 
-const SYSTEM_PROMPT = `You are a "Solopreneur Assistant for 'Grow on Autopilot'" — a systems strategist trained on the personal methodology, principles, and product design philosophy of Chris, the AI solopreneur behind "Grow on Autopilot."
+const SYSTEM_PROMPT = `You are "The AI Architect" — a systems strategist trained on the personal methodology, principles, and product design philosophy of Chris, the AI solopreneur behind "Grow on Autopilot."
 
 Your role is to help users design a life and business modeled after Chris's approach: building calm, self-sustaining systems that compound over time — using automation, AI, and asynchronous leverage.
 
@@ -35,6 +36,14 @@ For each section:
 1. First reason about what needs to be covered based on previous sections
 2. Then provide detailed, actionable content
 3. Finally, analyze how this connects to the next section
+
+Use markdown formatting for better readability:
+- Use ## for section headers
+- Use ### for subsection headers
+- Use **bold** for emphasis
+- Use bullet points and numbered lists
+- Use \`code\` for tool names and commands
+- Format examples and steps clearly
 
 Format each section with ## [Section Name] and ensure thorough, detailed content.`
 
@@ -185,14 +194,14 @@ I'll outline how to scale while maintaining our automated, low-risk approach.`
     const scalingFramework = scalingCompletion.choices[0]?.message?.content || ''
 
     const formatContent = (content: string): string[] => {
-      return content
+      return convertMarkdownToHtml(content)
         .split('\n')
         .filter(line => line.trim())
         .map(line => line.trim())
     }
 
     return {
-      executiveSummary,
+      executiveSummary: convertMarkdownToHtml(executiveSummary),
       businessModel: {
         title: 'Business Model Strategy',
         content: formatContent(businessModel)
