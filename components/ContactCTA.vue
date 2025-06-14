@@ -50,7 +50,7 @@ const handleSubscribe = async () => {
         <!-- CTA -->
         <div class="w-full gap-6">
           <!-- Activate Assistant -->
-          <div class="card bg-base-100 shadow-xl text-center" data-aos="fade-up" data-aos-delay="200">
+<!--           <div class="card bg-base-100 shadow-xl text-center" data-aos="fade-up" data-aos-delay="200">
             <div class="card-body items-center text-center">
               <h3 class="card-title flex gap-2 justify-center">
                 <span class="text-2xl">🤖</span>
@@ -64,7 +64,7 @@ const handleSubscribe = async () => {
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- Social Links -->
         <div class="flex justify-center gap-4" data-aos="fade-up" data-aos-delay="600">
