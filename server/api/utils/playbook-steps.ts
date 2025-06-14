@@ -25,7 +25,7 @@ export const createPlaybookSteps = (email: string, chatId: string, messages: Cha
       }
     },
     {
-      message: "I'm carefully reviewing our discussion to understand your unique situation. I'll identify the specific opportunities that align with your skills and goals, following the principle of 'build once, scale silently'...",
+      message: "I'm carefully reviewing our discussion to understand your unique situation. I'll identify the specific opportunities that align with your skills and goals, following the principle of 'build once, scale on autopilot'...",
       action: async () => {
         // Get chat messages for playbook
         const { data: existingChat, error } = await supabase
