@@ -65,13 +65,25 @@ export const handleEmailSubscription = async (email: string, chatId: string, mes
       console.log('Playbook email sent successfully to:', email)
     } catch (emailError) {
       console.error('Failed to send playbook email:', emailError)
-      throw emailError // Throw email errors since playbook sending is critical
+      // Don't throw since we're running in background
+      // But do log the full error for debugging
+      console.error('Playbook email error details:', {
+        error: emailError,
+        email,
+        chatId,
+        messageCount: allMessages.length
+      })
     }
   } catch (error) {
-    console.error('Error handling subscription:', error)
-    if (error.data) {
-      console.error('API error details:', error.data)
-    }
-    throw error
+    console.error('Error in background email subscription process:', error)
+    console.error('Full context:', {
+      email,
+      chatId,
+      error: error.message,
+      errorData: error.data,
+      stack: error.stack
+    })
+    // Don't throw since we're running in background
+    // But ensure all error details are logged
   }
 }

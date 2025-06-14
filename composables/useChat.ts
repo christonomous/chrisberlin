@@ -20,6 +20,7 @@ export const useChat = () => {
   const isLoading = ref(false)
   const error = ref(null)
   const chatId = ref<string | null>(null)
+  const isProcessingPlaybook = ref(false)
 
   // Load messages and chatId from localStorage on mount
   onMounted(() => {
@@ -51,6 +52,37 @@ export const useChat = () => {
     messages.value.push(message)
     saveMessages()
     return message
+  }
+
+  const triggerNextStep = async () => {
+    if (!isProcessingPlaybook.value) return
+    
+    try {
+      // Send empty message to trigger next step
+      const response = await $fetch<ChatResponse>('/api/chat', {
+        method: 'POST',
+        body: {
+          message: '_next_step',
+          messages: messages.value.slice(-10),
+          chatId: chatId.value
+        }
+      })
+
+      if (response) {
+        const { message, timestamp } = response
+        addMessage(message, 'assistant', timestamp)
+
+        // If it's not the final message, trigger next step after a delay
+        if (!message.includes("Perfect! I've sent your personalized playbook")) {
+          setTimeout(triggerNextStep, 2000)
+        } else {
+          isProcessingPlaybook.value = false
+        }
+      }
+    } catch (error) {
+      console.error('Error triggering next step:', error)
+      isProcessingPlaybook.value = false
+    }
   }
 
   const sendMessage = async (content) => {
@@ -86,10 +118,18 @@ export const useChat = () => {
       if (response) {
         const { message, timestamp } = response
         addMessage(message, 'assistant', timestamp)
+
+        // Check if this is the start of playbook process
+        if (message.includes("Thank you for providing your email")) {
+          isProcessingPlaybook.value = true
+          // Trigger next step after a delay
+          setTimeout(triggerNextStep, 2000)
+        }
       }
     } catch (fetchError) {
       console.error('Chat error:', fetchError)
       error.value = fetchError
+      isProcessingPlaybook.value = false
       
       // Add error message based on status
       let errorMessage = 'Sorry, I encountered an error. Please try again.'
@@ -112,6 +152,7 @@ export const useChat = () => {
     messages.value = []
     error.value = null
     chatId.value = null
+    isProcessingPlaybook.value = false
     localStorage.removeItem('chatMessages')
     localStorage.removeItem('chatId')
   }
@@ -145,6 +186,7 @@ export const useChat = () => {
     sendMessage,
     clearMessages,
     retryLastMessage,
-    startNewChat
+    startNewChat,
+    isProcessingPlaybook
   }
 }

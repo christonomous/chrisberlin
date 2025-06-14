@@ -10,11 +10,6 @@
     <!-- Header with fullscreen toggle -->
     <div class="chat-header p-4 border-b border-base-300 flex items-center justify-between bg-base-100">
       <div class="flex items-center gap-2">
-        <!-- <div class="w-8 h-8 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-          </svg>
-        </div> -->
         <div>
           <h3 class="font-semibold text-sm">Solopreneurship AI Assistant</h3>
           <p class="text-xs opacity-70">Helping you to grow on Autopilot</p>
@@ -82,8 +77,9 @@
         :message="message"
         :class="isFullscreen ? 'max-w-[800px] mx-auto' : 'max-w-[400px]'"
       />
-      <div v-if="isLoading" class="flex justify-start">
-        <svg class="typing-indicator" width="50" height="20" viewBox="0 0 50 20">
+      <div v-if="isLoading || isProcessingPlaybook" class="flex justify-start">
+        <div class="flex flex-col gap-2">
+          <svg class="typing-indicator" width="50" height="20" viewBox="0 0 50 20">
             <circle class="dot" cx="10" cy="10" r="3" fill="currentColor">
               <animate
                 attributeName="opacity"
@@ -112,6 +108,10 @@
               />
             </circle>
           </svg>
+          <div v-if="isProcessingPlaybook" class="text-sm opacity-70">
+            Creating your personalized playbook...
+          </div>
+        </div>
       </div>
     </div>
 
@@ -124,11 +124,12 @@
           placeholder="Describe your business challenge..."
           class="input bg-base-200 join-item w-full focus:outline-none"
           @keyup.enter="handleSend"
+          :disabled="isProcessingPlaybook"
         />
         <button 
           @click="handleSend" 
           class="btn join-item"
-          :disabled="!newMessage.trim()"
+          :disabled="!newMessage.trim() || isProcessingPlaybook"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 2L11 13"></path>
@@ -145,7 +146,7 @@ import { ref, watch, nextTick, onMounted } from 'vue'
 import { useChat } from '../../composables/useChat'
 import ChatMessage from './ChatMessage.vue'
 
-const { messages, isLoading, sendMessage, addMessage, startNewChat } = useChat()
+const { messages, isLoading, isProcessingPlaybook, sendMessage, addMessage, startNewChat } = useChat()
 const newMessage = ref('')
 const messagesContainer = ref(null)
 const isFullscreen = ref(false)
@@ -157,7 +158,7 @@ const scrollToBottom = () => {
 }
 
 // Scroll on new messages or when container size changes
-watch([messages, isLoading], () => {
+watch([messages, isLoading, isProcessingPlaybook], () => {
   nextTick(() => {
     scrollToBottom()
   })
@@ -173,7 +174,7 @@ watch(isFullscreen, () => {
 // Initial scroll and greeting when component mounts
 onMounted(() => {
   if (messages.value.length === 0) {
-    addMessage("Hi, I’m Chris’s Solopreneurship AI Assistant.\n\nI’m here to help you design a calm, self-sustaining business — using the same systems Chris built to automate income and grow quietly.\n\nTo get started, just tell me:\n- What do you already have — skills, assets, or experience?\n- What outcome are you aiming for — freedom, income, impact?\n- And do you want to sell a service, a product, or a system?\n\nYou can answer one or all — or just share what’s on your mind.", 'assistant')
+    addMessage("Hi, I'm Chris's Solopreneurship AI Assistant.\n\nI'm here to help you design a calm, self-sustaining business — using the same systems Chris built to automate income and grow quietly.\n\nTo get started, just tell me:\n- What do you already have — skills, assets, or experience?\n- What outcome are you aiming for — freedom, income, impact?\n- And do you want to sell a service, a product, or a system?\n\nYou can answer one or all — or just share what's on your mind.", 'assistant')
   }
   nextTick(() => {
     scrollToBottom()
@@ -181,7 +182,7 @@ onMounted(() => {
 })
 
 const handleSend = async () => {
-  if (!newMessage.value.trim()) return
+  if (!newMessage.value.trim() || isProcessingPlaybook.value) return
   await sendMessage(newMessage.value)
   newMessage.value = ''
 }
