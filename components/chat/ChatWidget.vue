@@ -108,8 +108,8 @@
               />
             </circle>
           </svg>
-          <div v-if="isProcessingPlaybook" class="text-sm opacity-70">
-            Creating your personalized playbook...
+          <div class="text-sm opacity-70">
+            {{ isProcessingPlaybook ? 'Creating your personalized playbook...' : 'Thinking...' }}
           </div>
         </div>
       </div>
@@ -124,12 +124,12 @@
           placeholder="Describe your business challenge..."
           class="input bg-base-200 join-item w-full focus:outline-none"
           @keyup.enter="handleSend"
-          :disabled="isProcessingPlaybook"
+          :disabled="isProcessingPlaybook || isLoading"
         />
         <button 
           @click="handleSend" 
           class="btn join-item"
-          :disabled="!newMessage.trim() || isProcessingPlaybook"
+          :disabled="!newMessage.trim() || isProcessingPlaybook || isLoading"
         >
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M22 2L11 13"></path>
@@ -183,8 +183,9 @@ onMounted(() => {
 
 const handleSend = async () => {
   if (!newMessage.value.trim() || isProcessingPlaybook.value) return
-  await sendMessage(newMessage.value)
-  newMessage.value = ''
+  const messageToSend = newMessage.value
+  newMessage.value = '' // Clear immediately
+  await sendMessage(messageToSend)
 }
 
 const toggleFullscreen = () => {
