@@ -174,7 +174,7 @@ export const useChat = () => {
   const startNewChat = () => {
     clearMessages() // This already clears chatId and localStorage
     // Add initial greeting and first interview question
-    addMessage("Hi! I'm Chris's AI Assistant, and I'm here to help you design a calm, self-sustaining business. Let me ask you a few questions to understand your situation better.\n\nFirst question: What specific skills or expertise do you have that could be turned into a business? Think about your professional experience, personal interests, or unique knowledge.", 'assistant')
+    addMessage("Hi! I'm Chris's AI Assistant, and I would love to help you grow on autopilot. What's your overall goal? I can create a personalized playbook to help you get there, with specific strategies and systems tailored to your situation.", 'assistant')
   }
 
   return {

@@ -183,7 +183,7 @@ watch(isFullscreen, () => {
 // Initial scroll and greeting when component mounts
 onMounted(() => {
   if (messages.value.length === 0) {
-    addMessage("Hi, I'm Chris's Solopreneurship AI Assistant.\n\nI'm here to help you design a calm, self-sustaining business — using the same systems Chris built to automate income and grow quietly.\n\nTo get started, just tell me:\n- What do you already have — skills, assets, or experience?\n- What outcome are you aiming for — freedom, income, impact?\n- And do you want to sell a service, a product, or a system?\n\nYou can answer one or all — or just share what's on your mind.", 'assistant')
+    addMessage("Hi! I'm Chris's AI Assistant, and I would love to help you grow on autopilot. What's your overall goal? I can create a personalized playbook to help you get there, with specific strategies and systems tailored to your situation.", 'assistant')
   }
   nextTick(() => {
     scrollToBottom()

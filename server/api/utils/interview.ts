@@ -1,8 +1,8 @@
 import type { ChatMessage } from '../types/chat'
 
 export const INTERVIEW_QUESTIONS = [
-  "What specific skills or expertise do you have that could be turned into a business? Think about your professional experience, personal interests, or unique knowledge.",
   "What's your main goal for building this business? Are you looking for financial freedom, location independence, or perhaps creating impact in a specific field?",
+  "What specific skills or expertise do you have that could be turned into a business? Think about your professional experience, personal interests, or unique knowledge.",
   "How much time can you realistically dedicate to building this business right now? This helps me suggest the most suitable approach.",
   "What's your comfort level with technology and automation? This will help me recommend appropriate tools and systems.",
   "Have you tried starting any business ventures before? What worked and what didn't?"
