@@ -7,11 +7,9 @@ const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 })
 
-const SYSTEM_PROMPT = `You are "The AI Architect" — a systems strategist trained on the personal methodology, principles, and product design philosophy of Chris, the AI solopreneur behind "Grow on Autopilot."
+const SYSTEM_PROMPT = `You are creating sections of a business playbook. Write in a direct, professional style that speaks to the reader using "you" and "your". Avoid welcome messages, introductions, or any meta-commentary about the playbook itself.
 
-Your role is to write a personalized playbook that speaks directly to the reader, using "you" and "your" throughout. You are calm, focused, minimalist, and long-term in your thinking. Avoid hype and trends.
-
-Core Philosophy You Embody:
+Core Principles to Follow:
 - Build once, scale silently
 - Business should serve life — not the other way around
 - Systems > hustle
@@ -19,32 +17,30 @@ Core Philosophy You Embody:
 - Ownership > effort
 - Tools > tactics
 - Clarity through subtraction
-- Leverage is created through asynchronous workflows, not real-time effort
-- Every hour of work should create residual impact, not one-time results
+- Leverage through asynchronous workflows
+- Every hour creates residual impact
 
-Your task is to analyze the reader's interview responses and create a comprehensive playbook that speaks directly to them. Write as if you're having a one-on-one conversation, maintaining a personal tone throughout all sections.
+Content Requirements:
+1. Start each section immediately with actionable content
+2. Connect advice directly to the reader's skills and goals
+3. Provide specific, realistic steps based on their tech comfort
+4. Focus on their unique advantages and constraints
+5. Maintain consistent tone across sections
 
-Important: Every section must:
-- Address the reader directly using "you" and "your"
-- Connect recommendations directly to their skills and goals
-- Provide specific, actionable steps they can take
-- Stay realistic given their time and tech comfort level
-- Focus on their unique advantages and constraints
-
-For each section:
-1. First consider what the reader needs based on previous sections
-2. Then provide detailed, actionable content speaking directly to them
-3. Finally, connect this to what they'll learn in the next section
-
-Use markdown formatting for better readability:
+Formatting:
 - Use ## for section headers
 - Use ### for subsection headers
 - Use **bold** for emphasis
-- Use bullet points and numbered lists
-- Use \`code\` for tool names and commands
-- Format examples and steps clearly
+- Use bullet points for lists
+- Use \`code\` for tool names
+- Format examples clearly
 
-Format each section with ## [Section Name] and ensure thorough, detailed content that maintains a direct, personal tone throughout.`
+Important:
+- Never use welcome messages or introductions
+- Don't reference the playbook itself
+- Start each section with immediate value
+- Focus on actionable content
+- Maintain professional, direct tone`
 
 interface PlaybookSection {
   title: string
@@ -69,12 +65,12 @@ export interface GeneratedPlaybook {
 }
 
 const SECTION_PROMPTS: Record<PlaybookSectionName, string> = {
-  executiveSummary: "Let me analyze your situation and create an executive summary that captures your unique position, opportunities, and challenges. I'll speak directly to you throughout this playbook.",
-  businessModel: "Based on this analysis, I'll develop a detailed business model strategy that leverages your unique advantages and addresses your constraints.",
-  automationStrategy: "Now I'll create an automation strategy that specifically supports your business model while considering your technical comfort level.",
-  growthRoadmap: "Here's your detailed 90-day plan to implement these automated systems while scaling your business.",
-  riskMitigation: "Let's address the specific risks in your situation and create strategies to mitigate them.",
-  scalingFramework: "Finally, here's how you can scale while maintaining your automated, low-risk approach."
+  executiveSummary: "Analyze the current situation, opportunities, and challenges. Focus on specific strengths and actionable insights.",
+  businessModel: "Design a business model that leverages existing advantages and addresses key constraints. Provide concrete steps and implementation details.",
+  automationStrategy: "Create an automation strategy that supports the business model while considering technical comfort level. Include specific tools and workflows.",
+  growthRoadmap: "Develop a 90-day implementation plan with clear milestones and metrics. Break down complex tasks into manageable steps.",
+  riskMitigation: "Identify potential risks and provide specific mitigation strategies. Include preventive measures and contingency plans.",
+  scalingFramework: "Define a framework for sustainable growth that maintains automation and efficiency. Focus on systems that scale without proportional effort."
 }
 
 export const generatePlaybookSection = async (messages: ChatMessage[], sectionName: PlaybookSectionName): Promise<string> => {
@@ -182,7 +178,7 @@ ${recentMessages}
 
 ${userResponses}
 
-Let me analyze your situation and create an executive summary that captures your unique position, opportunities, and challenges. I'll speak directly to you throughout this playbook.`
+${SECTION_PROMPTS.executiveSummary}`
       }
     ]
 
@@ -197,11 +193,9 @@ Let me analyze your situation and create an executive summary that captures your
     const executiveSummary = summaryCompletion.choices[0]?.message?.content || ''
     conversationHistory.push({
       role: 'assistant',
-      content: `Let me analyze the executive summary I've created and plan how it informs your business model strategy:
+      content: `${executiveSummary}
 
-${executiveSummary}
-
-Based on this analysis, I'll now develop a detailed business model strategy that leverages your unique advantages and addresses your constraints.`
+${SECTION_PROMPTS.businessModel}`
     })
 
     // Generate Business Model
@@ -215,11 +209,9 @@ Based on this analysis, I'll now develop a detailed business model strategy that
     const businessModel = businessModelCompletion.choices[0]?.message?.content || ''
     conversationHistory.push({
       role: 'assistant',
-      content: `Now that we have your business model defined, let me analyze how this informs your automation strategy:
+      content: `${businessModel}
 
-${businessModel}
-
-I'll create an automation strategy that specifically supports your business model while considering your technical comfort level.`
+${SECTION_PROMPTS.automationStrategy}`
     })
 
     // Generate Automation Strategy
@@ -233,11 +225,9 @@ I'll create an automation strategy that specifically supports your business mode
     const automationStrategy = automationCompletion.choices[0]?.message?.content || ''
     conversationHistory.push({
       role: 'assistant',
-      content: `With your business model and automation strategy in place, let me plan your growth roadmap:
+      content: `${automationStrategy}
 
-${automationStrategy}
-
-I'll create a detailed 90-day plan that implements these automated systems while scaling your business.`
+${SECTION_PROMPTS.growthRoadmap}`
     })
 
     // Generate Growth Roadmap
@@ -251,11 +241,9 @@ I'll create a detailed 90-day plan that implements these automated systems while
     const growthRoadmap = roadmapCompletion.choices[0]?.message?.content || ''
     conversationHistory.push({
       role: 'assistant',
-      content: `Based on your growth plans, let me identify and address potential risks:
+      content: `${growthRoadmap}
 
-${growthRoadmap}
-
-I'll create specific mitigation strategies for each risk area in your business.`
+${SECTION_PROMPTS.riskMitigation}`
     })
 
     // Generate Risk Mitigation
@@ -269,11 +257,9 @@ I'll create specific mitigation strategies for each risk area in your business.`
     const riskMitigation = riskCompletion.choices[0]?.message?.content || ''
     conversationHistory.push({
       role: 'assistant',
-      content: `Now that we've addressed your risks, let me create a scaling framework that builds on everything we've developed:
+      content: `${riskMitigation}
 
-${riskMitigation}
-
-I'll outline how you can scale while maintaining your automated, low-risk approach.`
+${SECTION_PROMPTS.scalingFramework}`
     })
 
     // Generate Scaling Framework

@@ -9,8 +9,8 @@
         </div>
       </div>
       <div class="max-w-3xl">
-        <h1 class="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient" data-aos="fade-right" data-aos-delay="200">Chris</h1>
-        <div class="text-3xl font-bold mb-6 flex items-center justify-center gap-2" data-aos="fade-left" data-aos-delay="400">
+        <h1 class="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient" data-aos="fade-down" data-aos-delay="200">Chris</h1>
+        <div class="text-3xl font-bold mb-6 flex items-center justify-center gap-2" data-aos="fade-up" data-aos-delay="400">
           <span class="text-4xl">🧑‍💻</span>
           <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent animate-gradient">Grow on Autopilot</span>
           <span class="text-4xl">📈</span>
