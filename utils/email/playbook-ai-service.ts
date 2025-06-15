@@ -52,6 +52,14 @@ interface PlaybookSection {
   content: string[]
 }
 
+export type PlaybookSectionName = 
+  | 'executiveSummary'
+  | 'businessModel'
+  | 'automationStrategy'
+  | 'growthRoadmap'
+  | 'riskMitigation'
+  | 'scalingFramework'
+
 export interface GeneratedPlaybook {
   executiveSummary: string
   businessModel: PlaybookSection
@@ -59,6 +67,62 @@ export interface GeneratedPlaybook {
   growthRoadmap: PlaybookSection
   riskMitigation: PlaybookSection
   scalingFramework: PlaybookSection
+}
+
+const SECTION_PROMPTS: Record<PlaybookSectionName, string> = {
+  executiveSummary: "First, analyze their situation thoroughly and create an executive summary that captures their unique position, opportunities, and challenges.",
+  businessModel: "Based on this analysis, develop a detailed business model strategy that leverages their unique advantages and addresses their constraints.",
+  automationStrategy: "Create an automation strategy that specifically supports this business model while considering their technical comfort level.",
+  growthRoadmap: "Create a detailed 90-day plan that implements these automated systems while scaling the business.",
+  riskMitigation: "Create specific mitigation strategies for each risk area we've identified.",
+  scalingFramework: "Outline how to scale while maintaining our automated, low-risk approach."
+}
+
+export const generatePlaybookSection = async (messages: ChatMessage[], sectionName: PlaybookSectionName): Promise<string> => {
+  try {
+    const userResponses = messages
+      .filter(msg => msg.role === 'user')
+      .slice(0, 5)
+      .map((msg, index) => {
+        const questions = [
+          "Skills & Expertise:",
+          "Business Goals:",
+          "Time Availability:",
+          "Tech Comfort:",
+          "Previous Experience:"
+        ]
+        return `${questions[index]}\n${msg.content}`
+      })
+      .join('\n\n')
+
+    const conversationHistory: ChatCompletionMessageParam[] = [
+      {
+        role: 'system',
+        content: SYSTEM_PROMPT
+      },
+      {
+        role: 'user',
+        content: `Let's create a comprehensive playbook section based on these interview responses:
+
+${userResponses}
+
+${SECTION_PROMPTS[sectionName]}`
+      }
+    ]
+
+    const completion = await openai.chat.completions.create({
+      model: 'gpt-4',
+      messages: conversationHistory,
+      temperature: 0.7,
+      max_tokens: 1000
+    })
+
+    const content = completion.choices[0]?.message?.content || ''
+    return convertMarkdownToHtml(content)
+  } catch (error) {
+    console.error(`Error generating ${sectionName}:`, error)
+    throw error
+  }
 }
 
 export const generateAIPlaybook = async (messages: ChatMessage[]): Promise<GeneratedPlaybook> => {

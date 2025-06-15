@@ -1,6 +1,7 @@
 import { supabase } from '../../../utils/supabase'
 import type { ChatMessage } from '../types/chat'
-import { generateAIPlaybook } from '../../../utils/email/playbook-ai-service'
+import type { PlaybookSectionName } from '../../../utils/email/playbook-ai-service'
+import type { PlaybookSectionResponse } from '../types/playbook'
 import { sendPlaybook } from '../../../utils/email/send-playbook'
 
 export interface PlaybookStep {
@@ -8,70 +9,100 @@ export interface PlaybookStep {
   action: () => Promise<void>
 }
 
-export const createPlaybookSteps = (email: string, chatId: string, messages: ChatMessage[]): PlaybookStep[] => {
-  let generatedPlaybook: any = null
+const SECTIONS: PlaybookSectionName[] = [
+  'executiveSummary',
+  'businessModel',
+  'automationStrategy',
+  'growthRoadmap',
+  'riskMitigation',
+  'scalingFramework'
+]
 
-  return [
+const SECTION_MESSAGES = {
+  executiveSummary: "I'm analyzing your unique situation to identify the specific opportunities that align with your skills and goals...",
+  businessModel: "Now I'm designing a minimalist business model that leverages your strengths while maintaining work-life harmony...",
+  automationStrategy: "Creating automation strategies to help your business run smoothly with minimal daily intervention...",
+  growthRoadmap: "Mapping out a 90-day plan to implement these systems and start scaling your impact...",
+  riskMitigation: "Identifying potential challenges and creating specific strategies to address them...",
+  scalingFramework: "Finally, designing a framework to help you scale sustainably while maintaining your automated, low-touch approach..."
+}
+
+export const createPlaybookSteps = (email: string, chatId: string, messages: ChatMessage[]): PlaybookStep[] => {
+  const steps: PlaybookStep[] = [
     {
       message: `Thank you for providing your email! I'll create a personalized playbook for your business journey and send it to ${email}. Let me start analyzing our conversation...`,
       action: async () => {
-        // Update chat with email
+        // Update chat with email and create initial playbook entry
         const { error: updateError } = await supabase
           .from('chats')
           .update({ email })
           .eq('id', chatId)
 
         if (updateError) throw updateError
+
+        // Create initial playbook entry
+        const { error: playBookError } = await supabase
+          .from('playbooks')
+          .insert([{
+            chat_id: chatId,
+            email,
+            sections: {}
+          }])
+
+        if (playBookError && playBookError.code !== '23505') { // Ignore unique violation
+          throw playBookError
+        }
       }
-    },
-    {
-      message: "I'm carefully reviewing our discussion to understand your unique situation. I'll identify the specific opportunities that align with your skills and goals, following the principle of 'build once, scale on autopilot'...",
+    }
+  ]
+
+  // Add steps for each section
+  SECTIONS.forEach((section) => {
+    steps.push({
+      message: SECTION_MESSAGES[section],
       action: async () => {
-        // Get chat messages for playbook
-        const { data: existingChat, error } = await supabase
-          .from('chats')
-          .select('messages')
-          .eq('id', chatId)
+        // Generate section via API
+        const response = await $fetch<PlaybookSectionResponse>('/api/playbook-section', {
+          method: 'POST',
+          body: {
+            chatId,
+            sectionName: section
+          }
+        })
+
+        if (!response.success) {
+          throw new Error(`Failed to generate ${section}`)
+        }
+      }
+    })
+  })
+
+  // Add final step to send email
+  steps.push({
+    message: "Your playbook is ready! I'm preparing to send it now...",
+    action: async () => {
+      // Send playbook email
+      await sendPlaybook(email, chatId)
+
+      // Try to insert into subscribers table, but don't fail if it errors
+      try {
+        await supabase
+          .from('subscribers')
+          .insert([{ 
+            email,
+            unsubscribe_token: Math.random().toString(36).substring(2)
+          }])
+          .select()
           .single()
-
-        if (error) throw error
+      } catch (error) {
+        console.error('Error inserting subscriber:', error)
       }
-    },
-    {
-      message: "Now I'm crafting your personalized playbook. I'm designing systems and automation strategies specifically for your situation, focusing on creating residual impact rather than one-time results...",
-      action: async () => {
-        // Generate playbook content
-        generatedPlaybook = await generateAIPlaybook(messages)
-      }
-    },
-    {
-      message: "Your playbook is ready! I'm preparing to send it now. It includes detailed strategies for building calm, self-sustaining systems that will help your business grow on autopilot...",
-      action: async () => {
-        if (!generatedPlaybook) {
-          // Regenerate if somehow lost
-          generatedPlaybook = await generateAIPlaybook(messages)
-        }
+    }
+  })
 
-        // Send playbook email
-        await sendPlaybook(email, messages)
-
-        // Try to insert into subscribers table, but don't fail if it errors
-        try {
-          await supabase
-            .from('subscribers')
-            .insert([{ 
-              email,
-              unsubscribe_token: Math.random().toString(36).substring(2)
-            }])
-            .select()
-            .single()
-        } catch (error) {
-          console.error('Error inserting subscriber:', error)
-        }
-      }
-    },
-    {
-      message: `Perfect! I've sent your personalized playbook to ${email}. You'll find detailed strategies for:
+  // Add completion message
+  steps.push({
+    message: `Perfect! I've sent your personalized playbook to ${email}. You'll find detailed strategies for:
 
 - Building a minimalist business model aligned with your skills
 - Setting up automated systems that work while you sleep
@@ -79,9 +110,10 @@ export const createPlaybookSteps = (email: string, chatId: string, messages: Cha
 - Scaling calmly and sustainably over time
 
 Take your time to review the playbook. Feel free to ask me any questions about implementing the strategies - I'm here to help you build a business that serves your life, not the other way around.`,
-      action: async () => {
-        // No action needed for final message
-      }
+    action: async () => {
+      // No action needed for final message
     }
-  ]
+  })
+
+  return steps
 }

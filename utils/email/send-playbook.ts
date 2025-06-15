@@ -1,9 +1,38 @@
 import nodemailer from 'nodemailer'
-import { generateAIPlaybook } from './playbook-ai-service'
+import { supabase } from '../supabase'
 import type { ChatMessage } from '../../server/api/types/chat'
 
-export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
-  const playbook = await generateAIPlaybook(messages)
+interface PlaybookData {
+  sections: {
+    executiveSummary?: string
+    businessModel?: string
+    automationStrategy?: string
+    growthRoadmap?: string
+    riskMitigation?: string
+    scalingFramework?: string
+  }
+}
+
+const SECTION_TITLES = {
+  businessModel: 'Business Model Strategy',
+  automationStrategy: 'Automation Strategy',
+  growthRoadmap: '90-Day Growth Roadmap',
+  riskMitigation: 'Risk Mitigation',
+  scalingFramework: 'Scaling Framework'
+}
+
+export const sendPlaybook = async (email: string, chatId: string) => {
+  // Fetch playbook from database
+  const { data: playbook, error } = await supabase
+    .from('playbooks')
+    .select('sections')
+    .eq('chat_id', chatId)
+    .single()
+
+  if (error) throw error
+  if (!playbook) throw new Error('Playbook not found')
+
+  const playbookData = playbook as PlaybookData
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
@@ -190,35 +219,17 @@ export const sendPlaybook = async (email: string, messages: ChatMessage[]) => {
             
             <h2>Executive Summary</h2>
             <div class="section">
-              ${playbook.executiveSummary}
+              ${playbookData.sections.executiveSummary || 'Executive summary not available'}
             </div>
 
             <div class="divider"></div>
             
-            <h2>${playbook.businessModel.title}</h2>
-            <div class="section">
-              ${playbook.businessModel.content.join('\n')}
-            </div>
-
-            <h2>${playbook.automationStrategy.title}</h2>
-            <div class="section">
-              ${playbook.automationStrategy.content.join('\n')}
-            </div>
-
-            <h2>${playbook.growthRoadmap.title}</h2>
-            <div class="section">
-              ${playbook.growthRoadmap.content.join('\n')}
-            </div>
-
-            <h2>${playbook.riskMitigation.title}</h2>
-            <div class="section">
-              ${playbook.riskMitigation.content.join('\n')}
-            </div>
-
-            <h2>${playbook.scalingFramework.title}</h2>
-            <div class="section">
-              ${playbook.scalingFramework.content.join('\n')}
-            </div>
+            ${Object.entries(SECTION_TITLES).map(([key, title]) => `
+              <h2>${title}</h2>
+              <div class="section">
+                ${playbookData.sections[key as keyof typeof SECTION_TITLES] || `${title} not available`}
+              </div>
+            `).join('\n')}
 
             <div class="divider"></div>
             
