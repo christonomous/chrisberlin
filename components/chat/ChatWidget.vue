@@ -119,6 +119,7 @@
     <div class="message-input p-4 border-t border-base-300 bg-base-100">
       <div class="join w-full">
         <input
+          ref="messageInput"
           v-model="newMessage"
           type="text"
           placeholder="Describe your business challenge..."
@@ -149,7 +150,14 @@ import ChatMessage from './ChatMessage.vue'
 const { messages, isLoading, isProcessingPlaybook, sendMessage, addMessage, startNewChat } = useChat()
 const newMessage = ref('')
 const messagesContainer = ref(null)
+const messageInput = ref(null)
 const isFullscreen = ref(false)
+
+const focusInput = () => {
+  if (messageInput.value && !isProcessingPlaybook.value && !isLoading.value) {
+    messageInput.value.focus()
+  }
+}
 
 const scrollToBottom = () => {
   if (messagesContainer.value) {
@@ -161,6 +169,7 @@ const scrollToBottom = () => {
 watch([messages, isLoading, isProcessingPlaybook], () => {
   nextTick(() => {
     scrollToBottom()
+    focusInput()
   })
 }, { deep: true })
 
@@ -178,6 +187,7 @@ onMounted(() => {
   }
   nextTick(() => {
     scrollToBottom()
+    focusInput()
   })
 })
 

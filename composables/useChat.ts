@@ -63,7 +63,7 @@ export const useChat = () => {
         method: 'POST',
         body: {
           message: '_next_step',
-          messages: messages.value.slice(-10),
+          messages: messages.value.slice(-50),
           chatId: chatId.value
         }
       })
@@ -103,7 +103,7 @@ export const useChat = () => {
         method: 'POST',
         body: {
           message: content,
-          messages: messages.value.slice(-10), // Send last 10 messages for context
+          messages: messages.value.slice(-50), // Send last 50 messages for context
           chatId: chatId.value
         }
       })

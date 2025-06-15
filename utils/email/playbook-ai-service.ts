@@ -79,7 +79,8 @@ const SECTION_PROMPTS: Record<PlaybookSectionName, string> = {
 
 export const generatePlaybookSection = async (messages: ChatMessage[], sectionName: PlaybookSectionName): Promise<string> => {
   try {
-    const userResponses = messages
+    // Get the first 5 messages for interview responses
+    const interviewResponses = messages
       .filter(msg => msg.role === 'user')
       .slice(0, 5)
       .map((msg, index) => {
@@ -93,6 +94,20 @@ export const generatePlaybookSection = async (messages: ChatMessage[], sectionNa
         return `${questions[index]}\n${msg.content}`
       })
       .join('\n\n')
+
+    // Get additional context from recent messages
+    const recentMessages = messages.slice(-40)
+      .filter(msg => !interviewResponses.includes(msg.content)) // Exclude interview responses
+      .map(msg => `${msg.role.toUpperCase()}: ${msg.content}`)
+      .join('\n\n')
+
+    const userResponses = `
+Interview Responses:
+${interviewResponses}
+
+Additional Context from Recent Conversation:
+${recentMessages}
+`
 
     const conversationHistory: ChatCompletionMessageParam[] = [
       {
@@ -110,7 +125,7 @@ ${SECTION_PROMPTS[sectionName]}`
     ]
 
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4',
+      model: 'gpt-4.1-nano',
       messages: conversationHistory,
       temperature: 0.7,
       max_tokens: 1000
@@ -126,7 +141,8 @@ ${SECTION_PROMPTS[sectionName]}`
 
 export const generateAIPlaybook = async (messages: ChatMessage[]): Promise<GeneratedPlaybook> => {
   try {
-    const userResponses = messages
+    // Get the first 5 messages for interview responses
+    const interviewResponses = messages
       .filter(msg => msg.role === 'user')
       .slice(0, 5)
       .map((msg, index) => {
@@ -140,6 +156,20 @@ export const generateAIPlaybook = async (messages: ChatMessage[]): Promise<Gener
         return `${questions[index]}\n${msg.content}`
       })
       .join('\n\n')
+
+    // Get additional context from recent messages
+    const recentMessages = messages.slice(-40)
+      .filter(msg => !interviewResponses.includes(msg.content)) // Exclude interview responses
+      .map(msg => `${msg.role.toUpperCase()}: ${msg.content}`)
+      .join('\n\n')
+
+    const userResponses = `
+Interview Responses:
+${interviewResponses}
+
+Additional Context from Recent Conversation:
+${recentMessages}
+`
 
     let conversationHistory: ChatCompletionMessageParam[] = [
       {
@@ -158,7 +188,7 @@ Let me analyze your situation and create an executive summary that captures your
 
     // Generate Executive Summary
     const summaryCompletion = await openai.chat.completions.create({
-      model: 'gpt-4',
+      model: 'gpt-4.1-nano',
       messages: conversationHistory,
       temperature: 0.7,
       max_tokens: 1000

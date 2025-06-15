@@ -32,8 +32,8 @@ Important context: The user just provided their email (${email}) and I've sent t
     }
   ]
 
-  // Add previous messages for context (last 10 messages)
-  const recentMessages = previousMessages.slice(-10)
+  // Add previous messages for context (last 50 messages)
+  const recentMessages = previousMessages.slice(-50)
   for (const msg of recentMessages) {
     if (msg.role === 'user' || msg.role === 'assistant') {
       conversationMessages.push({
@@ -52,7 +52,7 @@ Important context: The user just provided their email (${email}) and I've sent t
   try {
     // Call OpenAI API
     const completion = await openai.chat.completions.create({
-      model: 'gpt-4o-mini', // or 'gpt-4' if you prefer
+      model: 'gpt-4.1-nano',
       messages: conversationMessages,
       max_tokens: 1000,
       temperature: 0.7,
