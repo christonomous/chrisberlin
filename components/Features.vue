@@ -37,7 +37,7 @@ const features = [
   {
     emoji: "🚀",
     title: "Effortless Sales",
-    description: "I replace cold outreach and client chasing. My handles lead gen, smart emails, replies, and custom landing pages — all on autopilot.",
+    description: "I replace cold outreach and client chasing. My SaaS handles lead gen, smart emails, replies, and custom landing pages — all on autopilot.",
     items: [
       "AI-powered outreach engine",
       "Personalized follow-ups & replies",
@@ -46,7 +46,7 @@ const features = [
   },
   {
     emoji: "🏗️",
-    title: "Autonomous Product Creation",
+    title: "Text-to-SaaS",
     description: "I’m building an AI-driven platform that lets me turn ideas into working SaaS apps without touching a line of code — so I can launch faster, with less friction.",
     items: [
       "Prompt-to-MVP system",
@@ -56,12 +56,12 @@ const features = [
   },
   {
     emoji: "💸",
-    title: "Capital That Compounds",
+    title: "Compounding Capital",
     description: "The end goal isn’t just revenue — it’s automated wealth. Profits get reinvested through intelligent AI systems to create long-term freedom.",
     items: [
       "Smart allocation engine",
       "Passive investing logic",
-      "Fully hands-off capital growth"
+      "AI-Trading"
     ]
   }
 ]
