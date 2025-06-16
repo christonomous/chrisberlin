@@ -33,65 +33,61 @@ export default defineEventHandler(async (event: H3Event) => {
     const interviewProgress = getInterviewProgress(messages)
     const email = extractEmail(message)
 
-    // Check if this is a step progression message
-    if (message === '_next_step' && chatId) {
-      const steps = playbookSteps.get(chatId)
-      const currentStep = playbookProgress.get(chatId) || 0
+    // Check if playbook generation is in progress
+    if (chatId && playbookSteps.has(chatId)) {
+      // During playbook generation, only process _next_step messages
+      if (message === '_next_step') {
+        const steps = playbookSteps.get(chatId)
+        const currentStep = playbookProgress.get(chatId) || 0
 
-      if (steps && currentStep < steps.length) {
-        try {
-          await steps[currentStep].action()
-          assistantMessage = steps[currentStep].message
-          playbookProgress.set(chatId, currentStep + 1)
-        } catch (error) {
-          console.error('Error executing playbook step:', error)
-          // On error, skip to final message
-          assistantMessage = steps[steps.length - 1].message
-          playbookProgress.set(chatId, steps.length)
-          playbookSteps.delete(chatId)
+        if (steps && currentStep < steps.length) {
+          try {
+            await steps[currentStep].action()
+            assistantMessage = steps[currentStep].message
+            playbookProgress.set(chatId, currentStep + 1)
+          } catch (error) {
+            console.error('Error executing playbook step:', error)
+            assistantMessage = steps[steps.length - 1].message
+            playbookProgress.set(chatId, steps.length)
+          }
+        } else {
+          // Playbook generation complete
+          assistantMessage = await generateChatResponse(message, messages)
         }
       } else {
-        // If no steps or completed, generate normal response
-        assistantMessage = await generateChatResponse(message, messages)
+        // Ignore any other messages during playbook generation
+        return { message: '', timestamp, chatId }
       }
     }
-    // Check if this is an email message and we should start playbook process
-    else if (interviewProgress >= 4 && chatId) {
-      // Check for email in current message or history
-      const emailInHistory = messages.some(msg => extractEmail(msg.content))
+    // Check if we should start playbook generation
+    else if (interviewProgress >= 4 && chatId && (email || messages.some(msg => extractEmail(msg.content)))) {
+      // Start playbook generation
+      const foundEmail = email || messages.find(msg => extractEmail(msg.content))?.content || ''
+      const steps = createPlaybookSteps(extractEmail(foundEmail) || '', chatId, messages)
+      playbookSteps.set(chatId, steps)
+      playbookProgress.set(chatId, 0)
       
-      if ((email || emailInHistory) && !playbookSteps.has(chatId)) {
-        // Start playbook generation if we have email and haven't started yet
-        const foundEmail = email || messages.find(msg => extractEmail(msg.content))?.content || ''
-        const steps = createPlaybookSteps(extractEmail(foundEmail) || '', chatId, messages)
-        playbookSteps.set(chatId, steps)
-        playbookProgress.set(chatId, 0)
-        
-        // Execute first step
-        try {
-          await steps[0].action()
-          assistantMessage = steps[0].message
-          playbookProgress.set(chatId, 1)
-        } catch (error) {
-          console.error('Error executing first playbook step:', error)
-          assistantMessage = steps[steps.length - 1].message
-          playbookProgress.set(chatId, steps.length)
-          playbookSteps.delete(chatId)
-        }
-      } else {
-        // Already processing playbook or no email yet, generate normal response
-        assistantMessage = await generateChatResponse(message, messages)
+      // Execute first step
+      try {
+        await steps[0].action()
+        assistantMessage = steps[0].message
+        playbookProgress.set(chatId, 1)
+      } catch (error) {
+        console.error('Error executing first playbook step:', error)
+        assistantMessage = steps[steps.length - 1].message
+        playbookProgress.set(chatId, steps.length)
       }
-    } else {
-      // Normal chat flow
+    }
+    // Normal chat flow
+    else {
       assistantMessage = await generateChatResponse(message, messages)
     }
 
     // Prepare new messages
     const newMessages: ChatMessage[] = []
     
-    // Only add user message if it's not a step trigger
-    if (message !== '_next_step') {
+    // Only add user message if it's not a step trigger and not during playbook generation
+    if (message !== '_next_step' && (!chatId || !playbookSteps.has(chatId))) {
       newMessages.push({
         id: Date.now() + Math.random(),
         content: message,
@@ -100,13 +96,15 @@ export default defineEventHandler(async (event: H3Event) => {
       })
     }
 
-    // Add assistant message
-    newMessages.push({
-      id: Date.now() + Math.random() + 1,
-      content: assistantMessage,
-      role: 'assistant' as const,
-      timestamp
-    })
+    // Add assistant message if not empty
+    if (assistantMessage) {
+      newMessages.push({
+        id: Date.now() + Math.random() + 1,
+        content: assistantMessage,
+        role: 'assistant' as const,
+        timestamp
+      })
+    }
 
     let finalChatId = chatId
 
@@ -126,7 +124,7 @@ export default defineEventHandler(async (event: H3Event) => {
     }
 
     const response: ChatResponse = {
-      message: assistantMessage,
+      message: assistantMessage || '',
       timestamp,
       chatId: finalChatId
     }
