@@ -16,15 +16,28 @@ export const generateChatResponse = async (
   // Check interview progress and handle email collection
   const interviewProgress = getInterviewProgress(previousMessages)
   const email = extractEmail(message)
-  const isPlaybookSent = interviewProgress >= 4 && email
   
-  // Force email collection after exactly 5 questions
-  if (interviewProgress === 5 && !email) {
+  // Find email in history if not in current message
+  let foundEmail = email
+  if (!foundEmail) {
+    for (const msg of previousMessages) {
+      const emailInMsg = extractEmail(msg.content)
+      if (emailInMsg) {
+        foundEmail = emailInMsg
+        break
+      }
+    }
+  }
+  
+  const isPlaybookSent = interviewProgress >= 4 && foundEmail
+  
+  // Force email collection after exactly 5 questions, but only if no email was found
+  if (interviewProgress === 5 && !foundEmail) {
     return "Great! I have enough information to create a personalized playbook that will help you achieve your goals. To receive your playbook with specific strategies and systems, please share your email address."
   }
   
   // If we're past 5 questions and still no email, keep asking
-  if (interviewProgress > 5 && !email) {
+  if (interviewProgress > 5 && !foundEmail) {
     return "To receive your personalized playbook, I just need your email address. Please share it with me, and I'll send you detailed strategies tailored to your situation."
   }
 
@@ -34,7 +47,7 @@ export const generateChatResponse = async (
       role: 'system',
       content: SYSTEM_PROMPT + (isPlaybookSent ? `
 
-Important context: The user just provided their email (${email}) and I've sent them a personalized playbook. Acknowledge this in your response, but keep the conversation natural and continue providing value. For example:
+Important context: The user has provided their email (${foundEmail}) and I've sent them a personalized playbook. Acknowledge this in your response, but keep the conversation natural and continue providing value. For example:
 - Thank them for their email
 - Mention that the playbook has been sent
 - Offer to help them implement the strategies

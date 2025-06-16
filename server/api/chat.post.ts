@@ -56,10 +56,14 @@ export default defineEventHandler(async (event: H3Event) => {
       }
     }
     // Check if this is an email message and we should start playbook process
-    else if (interviewProgress >= 4 && email && chatId) {
-      // Initialize steps if not already done
-      if (!playbookSteps.has(chatId)) {
-        const steps = createPlaybookSteps(email, chatId, messages)
+    else if (interviewProgress >= 4 && chatId) {
+      // Check for email in current message or history
+      const emailInHistory = messages.some(msg => extractEmail(msg.content))
+      
+      if ((email || emailInHistory) && !playbookSteps.has(chatId)) {
+        // Start playbook generation if we have email and haven't started yet
+        const foundEmail = email || messages.find(msg => extractEmail(msg.content))?.content || ''
+        const steps = createPlaybookSteps(extractEmail(foundEmail) || '', chatId, messages)
         playbookSteps.set(chatId, steps)
         playbookProgress.set(chatId, 0)
         
@@ -75,7 +79,7 @@ export default defineEventHandler(async (event: H3Event) => {
           playbookSteps.delete(chatId)
         }
       } else {
-        // Already processing playbook, generate normal response
+        // Already processing playbook or no email yet, generate normal response
         assistantMessage = await generateChatResponse(message, messages)
       }
     } else {
