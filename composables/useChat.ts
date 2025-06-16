@@ -58,6 +58,13 @@ export const useChat = () => {
     if (!isProcessingPlaybook.value) return
     
     try {
+      // Check if this step was already completed
+      const lastMessage = messages.value[messages.value.length - 1]
+      if (lastMessage?.role === 'assistant' && lastMessage.content.includes("Perfect! I've sent your personalized playbook")) {
+        isProcessingPlaybook.value = false
+        return
+      }
+
       // Send empty message to trigger next step
       const response = await $fetch<ChatResponse>('/api/chat', {
         method: 'POST',
@@ -68,12 +75,18 @@ export const useChat = () => {
         }
       })
 
-      if (response) {
-        const { message, timestamp } = response
-        addMessage(message, 'assistant', timestamp)
+      if (response && response.message) {
+        // Check if this message was already added
+        const isDuplicate = messages.value.some(msg => 
+          msg.role === 'assistant' && msg.content === response.message
+        )
+
+        if (!isDuplicate) {
+          addMessage(response.message, 'assistant', response.timestamp)
+        }
 
         // If it's not the final message, trigger next step after a delay
-        if (!message.includes("Perfect! I've sent your personalized playbook")) {
+        if (!response.message.includes("Perfect! I've sent your personalized playbook")) {
           setTimeout(triggerNextStep, 2000)
         } else {
           isProcessingPlaybook.value = false
