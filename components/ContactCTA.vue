@@ -84,7 +84,7 @@ const handleSubscribe = async () => {
 
         <!-- Copyright -->
         <div class="text-center mt-8">
-          <span class="text-sm text-base-content/70" data-aos="fade-up" data-aos-delay="800">All rights reserved | No Cookies</span>
+          <span class="text-sm text-base-content/70" data-aos="fade-up" data-aos-delay="800">All rights reserved</span>
         </div>
       </div>
     </div>
