@@ -13,10 +13,20 @@ export const generateChatResponse = async (
   message: string,
   previousMessages: ChatMessage[] = []
 ): Promise<string> => {
-  // Check if this is an email message and playbook was sent
+  // Check interview progress and handle email collection
   const interviewProgress = getInterviewProgress(previousMessages)
   const email = extractEmail(message)
   const isPlaybookSent = interviewProgress >= 4 && email
+  
+  // Force email collection after exactly 5 questions
+  if (interviewProgress === 5 && !email) {
+    return "Great! I have enough information to create a personalized playbook that will help you achieve your goals. To receive your playbook with specific strategies and systems, please share your email address."
+  }
+  
+  // If we're past 5 questions and still no email, keep asking
+  if (interviewProgress > 5 && !email) {
+    return "To receive your personalized playbook, I just need your email address. Please share it with me, and I'll send you detailed strategies tailored to your situation."
+  }
 
   // Build conversation history for context
   const conversationMessages: ChatCompletionMessageParam[] = [
