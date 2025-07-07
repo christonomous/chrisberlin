@@ -24,7 +24,7 @@
       <div class="max-w-7xl mx-auto">
         <a v-for="(business, index) in businessList" 
           :key="business.title" 
-          :href="business.title === 'BRANE Media Ltd' ? 'https://brane.media' : '#'"
+          :href="business.title === 'BRANE Media Ltd' ? 'https://brane.media/saas' : '#'"
           target="_blank"
           rel="noopener noreferrer"
           class="card bg-base-100 shadow-xl hover:shadow-primary/20 transition-all duration-300 overflow-hidden cursor-pointer" 
