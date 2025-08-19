@@ -11,11 +11,11 @@
       <div class="max-w-3xl">
         <h1 class="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient" data-aos="fade-down" data-aos-delay="200">Chris</h1>
         <div class="text-3xl font-bold mb-6 flex items-center justify-center gap-2" data-aos="fade-up" data-aos-delay="400">
-          <span class="text-4xl">🧑‍💻</span>
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent animate-gradient">Grow on Autopilot</span>
-          <span class="text-4xl">📈</span>
+          <span class="text-4xl">⌛</span>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent animate-gradient">Time is Your Most Valuable Asset</span>
+          <span class="text-4xl">💎</span>
         </div>
-        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">AI Solopreneur</p>
+        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">Solopreneur</p>
         <div class="flex justify-center gap-4">
           <!-- <button class="btn btn-lg btn-gradient">Explore My Work</button> -->
           <div class="flex gap-3" data-aos="fade-up" data-aos-delay="800">
@@ -38,10 +38,10 @@
         <div class="card bg-base-100 shadow-xl max-w-4xl mx-auto" data-aos="zoom-in" data-aos-delay="1000">
           <div class="card-body text-center">
             <div class="text-2xl space-y-2">
-              <span class="text-3xl">💎</span>
+              <span class="text-3xl">🤖</span>
               <p class="leading-relaxed">
-                I empower you to grow effortless on autopilot, 
-                save time, and become free.
+                I help you buy back your time through AI, coding, and automation.
+                Specializing in cutting-edge tech to fuel your growth.
               </p>
             </div>
           </div>

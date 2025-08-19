@@ -2,13 +2,13 @@
   <div class="py-20 bg-base-300">
     <div class="container mx-auto px-4">
       <h1 class="text-4xl font-bold text-center mb-2" data-aos="fade-down">
-        The Silent Path to Wealth
+        Buy Back Your Most Precious Asset: Time
       </h1>
       <h2 class="text-xl text-center text-base-content/70 mb-10" data-aos="fade-up" data-aos-delay="100">
-        Building for myself. Sharing with you.
+        Automation is the key to freedom
       </h2>
       <p class="text-center max-w-3xl mx-auto mb-12 text-base-content/70" data-aos="fade-up" data-aos-delay="100">
-        I’m building a <strong>self-sustaining stack of AI-powered tools</strong> to <strong>replace busywork with leverage</strong>. Each product I am building <strong>automates a critical piece of the solopreneur journey</strong>: selling, shipping, and scaling. What starts as an <strong>internal system</strong> becomes a <strong>tool others can use</strong> to <strong>grow on autopilot</strong> — without hustle, noise, or complexity.
+        I leverage <strong>AI, coding, and crypto expertise</strong> to help you <strong>reclaim your time through automation</strong>. By combining <strong>cutting-edge technology with practical solutions</strong>, I create systems that work for you 24/7. Transform your <strong>time-consuming tasks</strong> into <strong>automated workflows</strong> that run themselves — giving you back hours every day for what truly matters.
       </p>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
@@ -35,33 +35,33 @@
 <script setup>
 const features = [
   {
-    emoji: "🚀",
-    title: "Effortless Sales",
-    description: "I replace cold outreach and client chasing. My SaaS handles lead gen, smart emails, replies, and custom landing pages — all on autopilot.",
+    emoji: "🤖",
+    title: "AI Automation",
+    description: "Harness the power of artificial intelligence to automate repetitive tasks and decision-making processes, freeing up your valuable time.",
     items: [
-      "AI-powered outreach engine",
-      "Personalized follow-ups & replies",
-      "Dynamic pages for each prospect"
+      "Custom AI solutions development",
+      "Workflow automation systems",
+      "Smart decision algorithms"
     ]
   },
   {
-    emoji: "🏗️",
-    title: "Text-to-SaaS",
-    description: "I’m building an AI-driven platform that lets me turn ideas into working SaaS apps without touching a line of code — so I can launch faster, with less friction.",
+    emoji: "⚡",
+    title: "Code & Integration",
+    description: "Expert development services to create efficient, scalable systems that connect your tools and automate your processes end-to-end.",
     items: [
-      "Prompt-to-MVP system",
-      "No-code backend + frontend",
-      "Internal tools → public products"
+      "Custom software development",
+      "API integrations & automation",
+      "Technical architecture design"
     ]
   },
   {
-    emoji: "💸",
-    title: "Compounding Capital",
-    description: "The end goal isn’t just revenue — it’s automated wealth. Profits get reinvested through intelligent AI systems to create long-term freedom.",
+    emoji: "📈",
+    title: "Crypto & DeFi",
+    description: "Leverage blockchain technology and DeFi protocols to create automated income streams and optimize your crypto investments.",
     items: [
-      "Smart allocation engine",
-      "Passive investing logic",
-      "AI-Trading"
+      "Smart contract development",
+      "DeFi automation strategies",
+      "Crypto portfolio optimization"
     ]
   }
 ]

@@ -20,9 +20,9 @@ const handleSubscribe = async () => {
         <!-- Newsletter Section -->
         <div class="card bg-base-100 shadow-xl" data-aos="fade-down">
           <div class="card-body text-center">
-            <h2 class="text-3xl font-bold mb-6">Stay Updated</h2>
+            <h2 class="text-3xl font-bold mb-6">Get your time back</h2>
             <p class="mb-8 text-lg text-base-content/80">
-              Get notified about new launches and automation insights!
+              Receive exclusive automation strategies and insights on buying back your time!
             </p>
             <div class="flex flex-col md:flex-row gap-4 max-w-2xl mx-auto">
               <input 
@@ -53,11 +53,11 @@ const handleSubscribe = async () => {
           <div class="card bg-base-100 shadow-xl text-center" data-aos="fade-up" data-aos-delay="200">
             <div class="card-body items-center text-center">
               <h3 class="card-title flex gap-2 justify-center">
-                <span class="text-2xl">🤖</span>
-                My Solopreneurship AI Assistant for Free
+                <span class="text-2xl">⚡</span>
+                Your Personal AI Assistant
               </h3>
               <p class="text-base-content/70 mb-4">
-                Use my personal AI assistant — trained on the exact system I use — to generate your own quiet path to wealth. No sign-up. No noise. Just clarity.
+                Access my AI assistant — powered by my expertise in automation, coding, and crypto — to discover personalized ways to buy back your time through technology. No complexity. Just pure time-saving solutions.
               </p>
               <button class="btn btn-gradient w-full" @click="$emit('open-chat')">
                 Activate the Assistant
