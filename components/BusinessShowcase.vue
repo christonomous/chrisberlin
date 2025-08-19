@@ -45,10 +45,15 @@
             
             <!-- Stats -->
             <div class="px-4 md:px-8">
-              <div class="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-3 mb-6 max-w-lg mx-auto">
-                <div v-for="stat in business.stats" :key="stat.label" class="text-center">
-                  <div class="text-2xl font-bold text-primary">{{ stat.value }}</div>
-                  <div class="text-sm text-base-content/70">{{ stat.label }}</div>
+              <div class="flex flex-row justify-center mb-6 max-w-lg mx-auto">
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary">70%</div>
+                  <div class="text-sm text-base-content/70">Average reduction in development costs</div>
+                </div>
+
+                <div class="text-center">
+                  <div class="text-2xl font-bold text-primary">5x</div>
+                  <div class="text-sm text-base-content/70">Faster development and deployment cycles</div>
                 </div>
               </div>
             </div>
