@@ -2,11 +2,11 @@
   <div class="py-20 bg-gradient-to-br from-base-300 via-base-200 to-base-300">
     <div class="container mx-auto px-4">
       <h2 class="text-3xl font-bold text-center mb-6" data-aos="fade-down">
-        Time-Saving Solutions & Automation Tools
+        Time-Saving Solutions
       </h2>
       <div class="max-w-3xl mx-auto mb-8 text-center" data-aos="fade-up" data-aos-delay="100">
         <p class="text-base-content/80">
-          I specialize in building automated systems that give you back your time. By combining AI, advanced coding, and blockchain technology, I create solutions that work 24/7 so you don't have to. These aren't just tools - they're your personal time-multipliers.
+          I specialize in building automated systems that give you back your time. By combining AI, and advanced coding, I create solutions that work 24/7 so you don't have to. These aren't just tools - they're your personal time-multipliers.
         </p>
       </div>
 
