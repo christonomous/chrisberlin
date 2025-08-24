@@ -11,11 +11,9 @@
       <div class="max-w-3xl">
         <h1 class="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient" data-aos="fade-down" data-aos-delay="200">Chris</h1>
         <div class="text-3xl font-bold mb-6 flex items-center justify-center gap-2" data-aos="fade-up" data-aos-delay="400">
-          <span class="text-4xl">⌛</span>
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent animate-gradient">Time is Your Most Valuable Asset</span>
-          <span class="text-4xl">💎</span>
+          <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent animate-gradient">Buy back your time</span>
         </div>
-        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">Solopreneur</p>
+        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">Time is Your Most Valuable Asset</p>
         <div class="flex justify-center gap-4">
           <!-- <button class="btn btn-lg btn-gradient">Explore My Work</button> -->
           <div class="flex gap-3" data-aos="fade-up" data-aos-delay="800">
@@ -37,11 +35,15 @@
       <div class="container mx-auto px-4 mt-8">
         <div class="card bg-base-100 shadow-xl max-w-4xl mx-auto" data-aos="zoom-in" data-aos-delay="1000">
           <div class="card-body text-center">
-            <div class="text-2xl space-y-2">
-              <span class="text-3xl">🤖</span>
+            <div class="flex flex-col justify-center items-center text-2xl space-y-2">
+                <svg width="32px" height="32px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <g transform="translate(16 16)">
+                    <circle cx="80" cy="80" r="74" style="fill:none;stroke:#fff;stroke-width:12;stroke-linejoin:round;stroke-opacity:1"/>
+                    <path d="M80 30v50l40 32" style="fill:none;stroke:#fff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"/>
+                  </g>
+                </svg>
               <p class="leading-relaxed">
-                I help you buy back your time through AI, coding, and automation.
-                Specializing in cutting-edge tech to fuel your growth.
+                I turn opportunities into reality before anyone else even knows it exists.
               </p>
             </div>
           </div>
