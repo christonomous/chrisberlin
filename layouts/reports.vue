@@ -8,7 +8,7 @@
     </div>
 
     <!-- Header / Hero -->
-    <header class="relative z-10 border-b border-base-300/60 bg-base-100/60 backdrop-blur">
+    <header class="sticky top-0 z-40 border-b border-base-300/60 bg-base-100/60 backdrop-blur">
       <div class="container mx-auto px-4 py-10">
         <div class="grid md:grid-cols-[1.2fr_.8fr] gap-8 items-end">
           <div>
@@ -29,7 +29,7 @@
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </label>
-              <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow-lg bg-base-100 rounded-box w-52 border border-base-300/60">
+              <ul tabindex="0" class="dropdown-content menu p-2 shadow-lg bg-base-100 rounded-box w-52 border border-base-300/60 max-h-[80vh] overflow-y-auto mt-1">
                 <li v-for="report in reports" :key="report.path">
                   <NuxtLink :to="report.path" class="font-medium">
                     <span class="text-sm">{{ formatDate(report.date, 'short') }}</span>

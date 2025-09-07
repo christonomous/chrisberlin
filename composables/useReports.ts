@@ -15,9 +15,9 @@ export function useReports() {
   // For now, we'll hardcode the one report we have
   const reports = ref<ReportMeta[]>([
     {
-      path: '/reports/09-07-2025',
+      path: '/reports/ai-defi-uniswap-v4-permissioned-agents-rwa-ethereum-etf-2025-09-07',
       date: '2025-09-07T09:00:00+02:00',
-      title: 'AI × DeFi — Daily Market Insights',
+      title: 'Uniswap v4 Hooks, Permissioned Agents, RWA Growth & Ethereum ETF Flows',
       tags: ['Programmable AMMs', 'Indexing', 'Agents', 'ETFs', 'RWA', 'Security']
     }
   ])
