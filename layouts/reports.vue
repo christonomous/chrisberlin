@@ -29,11 +29,11 @@
                   <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
                 </svg>
               </label>
-              <ul tabindex="0" class="dropdown-content menu p-2 shadow-lg bg-base-100 rounded-box w-52 border border-base-300/60 max-h-[80vh] overflow-y-auto mt-1">
+              <ul tabindex="0" class="dropdown-content menu p-2 shadow-lg bg-base-100 rounded-box w-80 border border-base-300/60 max-h-[80vh] overflow-y-auto mt-1">
                 <li v-for="report in reports" :key="report.path">
-                  <NuxtLink :to="report.path" class="font-medium">
+                  <NuxtLink :to="report.path" class="font-medium flex flex-col gap-0.5 py-3">
                     <span class="text-sm">{{ formatDate(report.date, 'short') }}</span>
-                    <span class="text-xs opacity-70">{{ report.title }}</span>
+                    <span class="text-xs opacity-70 line-clamp-2">{{ report.title }}</span>
                   </NuxtLink>
                 </li>
               </ul>

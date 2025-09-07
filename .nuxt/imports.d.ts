@@ -31,6 +31,7 @@ export { injectHead, useHead, useSeoMeta, useHeadSafe, useServerHead, useServerS
 export { useChat } from '../composables/useChat';
 export { useCookieConsent } from '../composables/useCookieConsent';
 export { usePostImages } from '../composables/usePostImages';
+export { useReports, ReportMeta } from '../composables/useReports';
 export { sendPlaybookEmail } from '../utils/playbook-email';
 export { supabase, ChatHistory } from '../utils/supabase';
 export { useSubscribe } from '../modules/subscription/runtime/composables/useSubscribe';
