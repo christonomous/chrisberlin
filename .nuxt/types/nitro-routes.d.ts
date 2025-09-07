@@ -3,8 +3,44 @@ import type { Serialize, Simplify } from "nitropack/types";
 declare module "nitropack/types" {
   type Awaited<T> = T extends PromiseLike<infer U> ? Awaited<U> : T
   interface InternalApi {
+    '/api/chat': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/chat.post').default>>>>
+    }
+    '/api/launches': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/launches.get').default>>>>
+    }
+    '/api/playbook-section': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/playbook-section.post').default>>>>
+    }
+    '/api/types/chat': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/types/chat').default>>>>
+    }
+    '/api/types/playbook': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/types/playbook').default>>>>
+    }
+    '/api/utils/chat-service': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/utils/chat-service').default>>>>
+    }
+    '/api/utils/database': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/utils/database').default>>>>
+    }
+    '/api/utils/email': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/utils/email').default>>>>
+    }
+    '/api/utils/interview': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/utils/interview').default>>>>
+    }
+    '/api/utils/playbook-steps': {
+      'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../server/api/utils/playbook-steps').default>>>>
+    }
     '/__nuxt_error': {
       'default': Simplify<Serialize<Awaited<ReturnType<typeof import('../../node_modules/nuxt/dist/core/runtime/nitro/renderer').default>>>>
+    }
+    '/api/subscribe': {
+      'post': Simplify<Serialize<Awaited<ReturnType<typeof import('../../modules/subscription/runtime/server/api/subscribe.post').default>>>>
+    }
+    '/api/unsubscribe': {
+      'get': Simplify<Serialize<Awaited<ReturnType<typeof import('../../modules/subscription/runtime/server/api/unsubscribe.get').default>>>>
     }
   }
 }

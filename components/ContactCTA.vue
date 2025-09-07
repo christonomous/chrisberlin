@@ -57,7 +57,7 @@ const handleSubscribe = async () => {
                 Your Personal AI Assistant
               </h3>
               <p class="text-base-content/70 mb-4">
-                Access my AI assistant — powered by my expertise in automation, coding, and crypto — to discover personalized ways to buy back your time through technology. No complexity. Just pure time-saving solutions.
+                Access my AI assistant - powered by my expertise in automation, coding, and crypto - to discover personalized ways to buy back your time through technology. No complexity. Just pure time-saving solutions.
               </p>
               <button class="btn btn-gradient w-full" @click="$emit('open-chat')">
                 Activate the Assistant

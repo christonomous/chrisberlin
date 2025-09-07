@@ -1,13 +1,16 @@
-import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { getRequestHeader, splitCookiesString, setResponseStatus, setResponseHeader, send, getRequestHeaders, defineEventHandler, handleCacheHeaders, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, setResponseHeaders, createError, getRouterParam, getQuery as getQuery$1, readBody, getResponseStatusText } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/h3/dist/index.mjs';
+import process from 'node:process';globalThis._importMeta_={url:import.meta.url,env:process.env};import { getRequestHeader, splitCookiesString, setResponseStatus, setResponseHeader, send, getRequestHeaders, defineEventHandler, readBody, createError, getQuery, handleCacheHeaders, createEvent, fetchWithEvent, isEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, createApp, createRouter as createRouter$1, toNodeListener, lazyEventHandler, getResponseStatus, setResponseHeaders, getRouterParam, getResponseStatusText } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/h3/dist/index.mjs';
 import { Server } from 'node:http';
 import { mkdirSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { parentPort, threadId } from 'node:worker_threads';
+import nodemailer from 'file:///home/christonomous/Coding/chrisberlin/node_modules/nodemailer/lib/nodemailer.js';
+import OpenAI from 'file:///home/christonomous/Coding/chrisberlin/node_modules/openai/index.mjs';
+import { createClient } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/@supabase/supabase-js/dist/main/index.js';
 import { getRequestDependencies, getPreloadLinks, getPrefetchLinks, createRenderer } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/vue-bundle-renderer/dist/runtime.mjs';
 import { stringify, uneval } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/devalue/index.js';
 import destr from 'file:///home/christonomous/Coding/chrisberlin/node_modules/destr/dist/index.mjs';
-import { withQuery, joinURL, withTrailingSlash, parseURL, withoutBase, getQuery, joinRelativeURL } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/ufo/dist/index.mjs';
+import { withQuery, joinURL, withTrailingSlash, parseURL, withoutBase, getQuery as getQuery$1, joinRelativeURL } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/ufo/dist/index.mjs';
 import { renderToString } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/vue/server-renderer/index.mjs';
 import { propsToString, renderSSRHead } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/@unhead/ssr/dist/index.mjs';
 import { createHooks } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/hookable/dist/index.mjs';
@@ -24,6 +27,7 @@ import { AsyncLocalStorage } from 'node:async_hooks';
 import { consola } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/consola/dist/index.mjs';
 import { captureRawStackTrace, parseRawStackTrace } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/errx/dist/index.js';
 import { isVNode, version, unref } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/vue/index.mjs';
+import crypto from 'crypto';
 import { hash } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/ohash/dist/index.mjs';
 import { createServerHead as createServerHead$1, CapoPlugin } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/unhead/dist/index.mjs';
 import { defineHeadPlugin } from 'file:///home/christonomous/Coding/chrisberlin/node_modules/@unhead/shared/dist/index.mjs';
@@ -180,7 +184,7 @@ const _1Vfw4pn4Z5 = (function(nitro) {
 
 const rootDir = "/home/christonomous/Coding/chrisberlin";
 
-const appHead = {"meta":[{"name":"viewport","content":"width=device-width, initial-scale=1"},{"charset":"utf-8"}],"link":[],"style":[],"script":[],"noscript":[]};
+const appHead = {"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"name":"description","content":"Empowering entrepreneurs to grow their business on autopilot through AI and automation. Learn how to save time and achieve freedom in your business."},{"property":"og:title","content":"Chris | Grow on Autopilot"},{"property":"og:description","content":"Empowering entrepreneurs to grow their business on autopilot through AI and automation. Learn how to save time and achieve freedom in your business."},{"property":"og:type","content":"website"},{"property":"og:image","content":"https://chris.berlin/profile.jpg"},{"name":"twitter:card","content":"summary_large_image"},{"name":"twitter:title","content":"Chris | Grow on Autopilot"},{"name":"twitter:description","content":"Empowering entrepreneurs to grow their business on autopilot through AI and automation."},{"name":"twitter:image","content":"https://chris.berlin/profile.jpg"}],"link":[{"rel":"icon","type":"image/x-icon","href":"/favicon.ico"}],"style":[],"script":[],"noscript":[],"title":"Chris | Grow on Autopilot"};
 
 const appRootTag = "div";
 
@@ -271,10 +275,441 @@ const plugins = [
 _q9nJLkonSC
 ];
 
+const inlineAppConfig = {
+  "nuxt": {}
+};
+
+
+
+const appConfig = defuFn(inlineAppConfig);
+
+function getEnv(key, opts) {
+  const envKey = snakeCase(key).toUpperCase();
+  return destr(
+    process.env[opts.prefix + envKey] ?? process.env[opts.altPrefix + envKey]
+  );
+}
+function _isObject(input) {
+  return typeof input === "object" && !Array.isArray(input);
+}
+function applyEnv(obj, opts, parentKey = "") {
+  for (const key in obj) {
+    const subKey = parentKey ? `${parentKey}_${key}` : key;
+    const envValue = getEnv(subKey, opts);
+    if (_isObject(obj[key])) {
+      if (_isObject(envValue)) {
+        obj[key] = { ...obj[key], ...envValue };
+        applyEnv(obj[key], opts, subKey);
+      } else if (envValue === undefined) {
+        applyEnv(obj[key], opts, subKey);
+      } else {
+        obj[key] = envValue ?? obj[key];
+      }
+    } else {
+      obj[key] = envValue ?? obj[key];
+    }
+    if (opts.envExpansion && typeof obj[key] === "string") {
+      obj[key] = _expandFromEnv(obj[key]);
+    }
+  }
+  return obj;
+}
+const envExpandRx = /{{(.*?)}}/g;
+function _expandFromEnv(value) {
+  return value.replace(envExpandRx, (match, key) => {
+    return process.env[key] || match;
+  });
+}
+
+const _inlineRuntimeConfig = {
+  "app": {
+    "baseURL": "/",
+    "buildId": "dev",
+    "buildAssetsDir": "/_nuxt/",
+    "cdnURL": ""
+  },
+  "nitro": {
+    "envPrefix": "NUXT_",
+    "routeRules": {
+      "/__nuxt_error": {
+        "cache": false
+      },
+      "/_nuxt/builds/meta/**": {
+        "headers": {
+          "cache-control": "public, max-age=31536000, immutable"
+        }
+      },
+      "/_nuxt/builds/**": {
+        "headers": {
+          "cache-control": "public, max-age=1, immutable"
+        }
+      }
+    }
+  },
+  "public": {
+    "siteUrl": "https://chris.berlin"
+  },
+  "supabase": {
+    "url": "https://wnyjcdcusyepqduaoqhq.supabase.co",
+    "key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndueWpjZGN1c3llcHFkdWFvcWhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzcyMDQxMTAsImV4cCI6MjA1Mjc4MDExMH0.oeX4U6-nxKk51w802akVWT_hCeE1s_7xvGYVgsCxVoU"
+  },
+  "email": {
+    "user": "no-reply@chris.berlin",
+    "password": "pP2FFc!wz4E",
+    "name": "AI Solopreneur Chris",
+    "smtp": {
+      "host": "ssl0.ovh.net",
+      "port": "465",
+      "secure": true
+    }
+  }
+};
+const envOptions = {
+  prefix: "NITRO_",
+  altPrefix: _inlineRuntimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_",
+  envExpansion: _inlineRuntimeConfig.nitro.envExpansion ?? process.env.NITRO_ENV_EXPANSION ?? false
+};
+const _sharedRuntimeConfig = _deepFreeze(
+  applyEnv(klona(_inlineRuntimeConfig), envOptions)
+);
+function useRuntimeConfig(event) {
+  if (!event) {
+    return _sharedRuntimeConfig;
+  }
+  if (event.context.nitro.runtimeConfig) {
+    return event.context.nitro.runtimeConfig;
+  }
+  const runtimeConfig = klona(_inlineRuntimeConfig);
+  applyEnv(runtimeConfig, envOptions);
+  event.context.nitro.runtimeConfig = runtimeConfig;
+  return runtimeConfig;
+}
+_deepFreeze(klona(appConfig));
+function _deepFreeze(object) {
+  const propNames = Object.getOwnPropertyNames(object);
+  for (const name of propNames) {
+    const value = object[name];
+    if (value && typeof value === "object") {
+      _deepFreeze(value);
+    }
+  }
+  return Object.freeze(object);
+}
+new Proxy(/* @__PURE__ */ Object.create(null), {
+  get: (_, prop) => {
+    console.warn(
+      "Please use `useRuntimeConfig()` instead of accessing config directly."
+    );
+    const runtimeConfig = useRuntimeConfig();
+    if (prop in runtimeConfig) {
+      return runtimeConfig[prop];
+    }
+    return undefined;
+  }
+});
+
+const generateUnsubscribeToken = () => {
+  return crypto.randomBytes(32).toString("hex");
+};
+
+const config$1 = useRuntimeConfig();
+const transporter = nodemailer.createTransport({
+  host: config$1.email.smtp.host,
+  port: config$1.email.smtp.port,
+  secure: config$1.email.smtp.secure,
+  auth: {
+    user: config$1.email.user,
+    pass: config$1.email.password
+  }
+});
+const sendWelcomeEmail = async (email, unsubscribeToken) => {
+  const mailOptions = {
+    from: `"${config$1.email.name}" <${config$1.email.user}>`,
+    to: email,
+    subject: "Welcome to the newsletter!",
+    html: `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1b1e;
+            color: #ffffff;
+          }
+          .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          .header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #00ff9d, #7c3aed, #ff006e);
+            border-radius: 8px 8px 0 0;
+          }
+          .content {
+            background-color: #1f2937;
+            padding: 30px;
+            border-radius: 0 0 8px 8px;
+          }
+          h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          .highlight {
+            color: #00ff9d;
+            font-weight: bold;
+          }
+          .accent {
+            color: #ff006e;
+          }
+          .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(90deg, #00ff9d, #7c3aed);
+            color: #000000;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin: 20px 0;
+          }
+          .footer {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 12px;
+            color: #ffffff80;
+          }
+          .divider {
+            height: 2px;
+            background: linear-gradient(90deg, #00ff9d, #7c3aed, #ff006e);
+            margin: 20px 0;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>Welcome to the Future of Growth! \u{1F680}</h1>
+          </div>
+          <div class="content">
+            <p>Hey there,</p>
+            <p>You've just taken the first step towards <span class="highlight">effortless business growth</span>. I'm Chris, and I'm here to help you discover your business leverage points and set up systems that work for you while you sleep.</p>
+            <div class="divider"></div>
+            <p><span class="accent">Here's what you can expect:</span></p>
+            <ul>
+              <li>\u{1F916} Automation strategies that save you precious time</li>
+              <li>\u{1F48E} Tips to identify and leverage your business strengths</li>
+              <li>\u{1F4C8} Growth tactics that scale without burning you out</li>
+              <li>\u{1F504} Systems that work on autopilot while you focus on what matters</li>
+            </ul>
+            <div class="divider"></div>
+            <p>Get ready for insights that will transform your approach to business growth!</p>
+            <p>To your success,<br>Chris</p>
+          </div>
+        </div>
+      </body>
+    </html>
+    `
+  };
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (error) {
+    console.error("Error sending welcome email:", error);
+    throw error;
+  }
+};
+
+const _pf0D8b = defineEventHandler(async (event) => {
+  const config = useRuntimeConfig();
+  const body = await readBody(event);
+  if (!body.email) {
+    throw createError({
+      statusCode: 400,
+      message: "Email is required"
+    });
+  }
+  const supabase = createClient(
+    config.supabase.url,
+    config.supabase.key,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
+  );
+  try {
+    const unsubscribeToken = generateUnsubscribeToken();
+    const { data, error } = await supabase.from("subscribers").insert([{
+      email: body.email,
+      unsubscribe_token: unsubscribeToken
+    }]);
+    if (error) throw error;
+    await sendWelcomeEmail(body.email, unsubscribeToken);
+    return { success: true, data };
+  } catch (error) {
+    throw createError({
+      statusCode: 500,
+      message: error.message
+    });
+  }
+});
+
+const _Bdwr2b = defineEventHandler(async (event) => {
+  var _a;
+  const config = useRuntimeConfig();
+  const query = getQuery(event);
+  const token = decodeURIComponent(query.token);
+  console.log("Unsubscribe attempt with token:", token);
+  console.log("Supabase config:", {
+    url: config.supabase.url,
+    keyLength: ((_a = config.supabase.key) == null ? undefined : _a.length) || 0
+  });
+  if (!token) {
+    throw createError({
+      statusCode: 400,
+      message: "Token is required"
+    });
+  }
+  if (!/^[0-9a-f]{64}$/.test(token)) {
+    console.error("Invalid token format:", token);
+    throw createError({
+      statusCode: 400,
+      message: "Invalid token format"
+    });
+  }
+  const supabase = createClient(
+    config.supabase.url,
+    config.supabase.key,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
+  );
+  try {
+    console.log("Token format validated, querying subscribers table with token:", token);
+    console.log("Verifying database access...");
+    const { data: tableCheck, error: tableError } = await supabase.from("subscribers").select("count").limit(1);
+    if (tableError) {
+      console.error("Database access verification failed");
+      console.error("Table access error:", {
+        message: tableError.message,
+        code: tableError.code,
+        details: tableError.details,
+        hint: tableError.hint
+      });
+      throw createError({
+        statusCode: 500,
+        message: "Database configuration error"
+      });
+    }
+    console.log("Database access verified:", tableCheck);
+    console.log("Setting unsubscribe token via RPC...");
+    const { error: rpcError } = await supabase.rpc("set_unsubscribe_token", { token });
+    if (rpcError) {
+      console.error("Failed to set unsubscribe token:", rpcError);
+      throw createError({
+        statusCode: 500,
+        message: "Error preparing unsubscribe operation"
+      });
+    }
+    console.log("Attempting to delete subscriber with token...");
+    const { data: deleted, error: deleteError } = await supabase.from("subscribers").delete().eq("unsubscribe_token", token).select();
+    if (deleteError) {
+      console.error("Delete operation failed:", deleteError);
+      throw createError({
+        statusCode: 500,
+        message: "Error removing subscription"
+      });
+    }
+    if (!deleted || deleted.length === 0) {
+      console.log("No subscriber found with token");
+      throw createError({
+        statusCode: 404,
+        message: "Invalid unsubscribe token"
+      });
+    }
+    console.log("Successfully deleted subscriber:", deleted);
+    event.node.res.setHeader("Content-Type", "text/html");
+    return `
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <title>Unsubscribed</title>
+          <style>
+            body {
+              font-family: system-ui, -apple-system, sans-serif;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              height: 100vh;
+              margin: 0;
+              background-color: #f5f5f5;
+            }
+            .container {
+              text-align: center;
+              padding: 2rem;
+              background: white;
+              border-radius: 8px;
+              box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            h1 { color: #333; }
+            p { color: #666; }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <h1>Successfully Unsubscribed</h1>
+            <p>You have been removed from our newsletter list.</p>
+          </div>
+        </body>
+      </html>
+    `;
+  } catch (error) {
+    if (error.statusCode) {
+      throw error;
+    }
+    throw createError({
+      statusCode: 500,
+      message: "An unexpected error occurred"
+    });
+  }
+});
+
+const _lazy_oOuuRM = () => Promise.resolve().then(function () { return chat_post$1; });
+const _lazy_rBDbbO = () => Promise.resolve().then(function () { return launches_get$1; });
+const _lazy_9gqVrY = () => Promise.resolve().then(function () { return playbookSection_post$1; });
+const _lazy_WtEo1d = () => Promise.resolve().then(function () { return chat; });
+const _lazy_BoPJ9Y = () => Promise.resolve().then(function () { return playbook; });
+const _lazy_kYCP5F = () => Promise.resolve().then(function () { return chatService; });
+const _lazy_5378vI = () => Promise.resolve().then(function () { return database; });
+const _lazy_D50LoK = () => Promise.resolve().then(function () { return email; });
+const _lazy_QbZNgc = () => Promise.resolve().then(function () { return interview; });
+const _lazy_OR71IB = () => Promise.resolve().then(function () { return playbookSteps$1; });
 const _lazy_qmOFnK = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
+  { route: '/api/chat', handler: _lazy_oOuuRM, lazy: true, middleware: false, method: "post" },
+  { route: '/api/launches', handler: _lazy_rBDbbO, lazy: true, middleware: false, method: "get" },
+  { route: '/api/playbook-section', handler: _lazy_9gqVrY, lazy: true, middleware: false, method: "post" },
+  { route: '/api/types/chat', handler: _lazy_WtEo1d, lazy: true, middleware: false, method: undefined },
+  { route: '/api/types/playbook', handler: _lazy_BoPJ9Y, lazy: true, middleware: false, method: undefined },
+  { route: '/api/utils/chat-service', handler: _lazy_kYCP5F, lazy: true, middleware: false, method: undefined },
+  { route: '/api/utils/database', handler: _lazy_5378vI, lazy: true, middleware: false, method: undefined },
+  { route: '/api/utils/email', handler: _lazy_D50LoK, lazy: true, middleware: false, method: undefined },
+  { route: '/api/utils/interview', handler: _lazy_QbZNgc, lazy: true, middleware: false, method: undefined },
+  { route: '/api/utils/playbook-steps', handler: _lazy_OR71IB, lazy: true, middleware: false, method: undefined },
   { route: '/__nuxt_error', handler: _lazy_qmOFnK, lazy: true, middleware: false, method: undefined },
+  { route: '/api/subscribe', handler: _pf0D8b, lazy: false, middleware: false, method: "post" },
+  { route: '/api/unsubscribe', handler: _Bdwr2b, lazy: false, middleware: false, method: "get" },
   { route: '/**', handler: _lazy_qmOFnK, lazy: true, middleware: false, method: undefined }
 ];
 
@@ -634,123 +1069,6 @@ function cloneWithProxy(obj, overrides) {
 }
 const cachedEventHandler = defineCachedEventHandler;
 
-const inlineAppConfig = {
-  "nuxt": {}
-};
-
-
-
-const appConfig = defuFn(inlineAppConfig);
-
-function getEnv(key, opts) {
-  const envKey = snakeCase(key).toUpperCase();
-  return destr(
-    process.env[opts.prefix + envKey] ?? process.env[opts.altPrefix + envKey]
-  );
-}
-function _isObject(input) {
-  return typeof input === "object" && !Array.isArray(input);
-}
-function applyEnv(obj, opts, parentKey = "") {
-  for (const key in obj) {
-    const subKey = parentKey ? `${parentKey}_${key}` : key;
-    const envValue = getEnv(subKey, opts);
-    if (_isObject(obj[key])) {
-      if (_isObject(envValue)) {
-        obj[key] = { ...obj[key], ...envValue };
-        applyEnv(obj[key], opts, subKey);
-      } else if (envValue === undefined) {
-        applyEnv(obj[key], opts, subKey);
-      } else {
-        obj[key] = envValue ?? obj[key];
-      }
-    } else {
-      obj[key] = envValue ?? obj[key];
-    }
-    if (opts.envExpansion && typeof obj[key] === "string") {
-      obj[key] = _expandFromEnv(obj[key]);
-    }
-  }
-  return obj;
-}
-const envExpandRx = /{{(.*?)}}/g;
-function _expandFromEnv(value) {
-  return value.replace(envExpandRx, (match, key) => {
-    return process.env[key] || match;
-  });
-}
-
-const _inlineRuntimeConfig = {
-  "app": {
-    "baseURL": "/",
-    "buildId": "dev",
-    "buildAssetsDir": "/_nuxt/",
-    "cdnURL": ""
-  },
-  "nitro": {
-    "envPrefix": "NUXT_",
-    "routeRules": {
-      "/__nuxt_error": {
-        "cache": false
-      },
-      "/_nuxt/builds/meta/**": {
-        "headers": {
-          "cache-control": "public, max-age=31536000, immutable"
-        }
-      },
-      "/_nuxt/builds/**": {
-        "headers": {
-          "cache-control": "public, max-age=1, immutable"
-        }
-      }
-    }
-  },
-  "public": {}
-};
-const envOptions = {
-  prefix: "NITRO_",
-  altPrefix: _inlineRuntimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_",
-  envExpansion: _inlineRuntimeConfig.nitro.envExpansion ?? process.env.NITRO_ENV_EXPANSION ?? false
-};
-const _sharedRuntimeConfig = _deepFreeze(
-  applyEnv(klona(_inlineRuntimeConfig), envOptions)
-);
-function useRuntimeConfig(event) {
-  if (!event) {
-    return _sharedRuntimeConfig;
-  }
-  if (event.context.nitro.runtimeConfig) {
-    return event.context.nitro.runtimeConfig;
-  }
-  const runtimeConfig = klona(_inlineRuntimeConfig);
-  applyEnv(runtimeConfig, envOptions);
-  event.context.nitro.runtimeConfig = runtimeConfig;
-  return runtimeConfig;
-}
-_deepFreeze(klona(appConfig));
-function _deepFreeze(object) {
-  const propNames = Object.getOwnPropertyNames(object);
-  for (const name of propNames) {
-    const value = object[name];
-    if (value && typeof value === "object") {
-      _deepFreeze(value);
-    }
-  }
-  return Object.freeze(object);
-}
-new Proxy(/* @__PURE__ */ Object.create(null), {
-  get: (_, prop) => {
-    console.warn(
-      "Please use `useRuntimeConfig()` instead of accessing config directly."
-    );
-    const runtimeConfig = useRuntimeConfig();
-    if (prop in runtimeConfig) {
-      return runtimeConfig[prop];
-    }
-    return undefined;
-  }
-});
-
 getContext("nitro-app", {
   asyncContext: false,
   AsyncLocalStorage: undefined
@@ -776,7 +1094,7 @@ function createRouteRulesHandler(ctx) {
         }
         target = joinURL(target.slice(0, -3), targetPath);
       } else if (event.path.includes("?")) {
-        const query = getQuery(event.path);
+        const query = getQuery$1(event.path);
         target = withQuery(target, query);
       }
       return sendRedirect(event, target, routeRules.redirect.statusCode);
@@ -791,7 +1109,7 @@ function createRouteRulesHandler(ctx) {
         }
         target = joinURL(target.slice(0, -3), targetPath);
       } else if (event.path.includes("?")) {
-        const query = getQuery(event.path);
+        const query = getQuery$1(event.path);
         target = withQuery(target, query);
       }
       return proxyRequest(event, target, {
@@ -1061,7 +1379,7 @@ nitroApp.router.use(
   defineEventHandler(async (event) => {
     const name = getRouterParam(event, "name");
     const payload = {
-      ...getQuery$1(event),
+      ...getQuery(event),
       ...await readBody(event).then((r) => r?.payload).catch(() => ({}))
     };
     return await runTask(name, { payload });
@@ -1087,6 +1405,954 @@ const template$1 = (messages) => {
 const errorDev = /*#__PURE__*/Object.freeze({
   __proto__: null,
   template: template$1
+});
+
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
+if (!supabaseUrl || !supabaseKey) {
+  throw new Error("Missing Supabase environment variables");
+}
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+const SECTION_TITLES = {
+  businessModel: "Business Model Strategy",
+  automationStrategy: "Automation Strategy",
+  growthRoadmap: "90-Day Growth Roadmap",
+  riskMitigation: "Risk Mitigation",
+  scalingFramework: "Scaling Framework"
+};
+const sendPlaybook = async (email, chatId) => {
+  const { data: playbook, error } = await supabase.from("playbooks").select("sections").eq("chat_id", chatId).single();
+  if (error) throw error;
+  if (!playbook) throw new Error("Playbook not found");
+  const playbookData = playbook;
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: process.env.SMTP_SECURE === "true",
+    auth: {
+      user: process.env.EMAIL_USER,
+      pass: process.env.EMAIL_PASSWORD
+    }
+  });
+  await new Promise((resolve, reject) => {
+    transporter.verify((error2, success) => {
+      if (error2) {
+        console.error("SMTP verification error:", error2);
+        reject(error2);
+      } else {
+        console.log("SMTP server is ready");
+        resolve(success);
+      }
+    });
+  });
+  const mailOptions = {
+    from: `"${process.env.EMAIL_NAME}" <${process.env.EMAIL_USER}>`,
+    to: email,
+    subject: "Your Personalized Business Growth Playbook",
+    html: `
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <style>
+          body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1b1e;
+            color: #ffffff;
+          }
+          .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+          }
+          .header {
+            text-align: center;
+            padding: 40px 0;
+            background: linear-gradient(135deg, #00ff9d, #7c3aed, #ff006e);
+            border-radius: 8px 8px 0 0;
+          }
+          .content {
+            background-color: #1f2937;
+            padding: 40px;
+            border-radius: 0 0 8px 8px;
+          }
+          h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 32px;
+            font-weight: bold;
+          }
+          h2 {
+            color: #00ff9d;
+            margin-top: 40px;
+            font-size: 24px;
+            border-bottom: 2px solid #00ff9d;
+            padding-bottom: 10px;
+          }
+          h3 {
+            color: #ff006e;
+            margin: 25px 0 15px;
+            font-size: 18px;
+          }
+          .highlight {
+            color: #00ff9d;
+            font-weight: bold;
+          }
+          .accent {
+            color: #ff006e;
+            font-weight: bold;
+          }
+          .section {
+            margin: 30px 0;
+            padding: 25px;
+            background-color: #2d3748;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          }
+          .divider {
+            height: 3px;
+            background: linear-gradient(90deg, #00ff9d, #7c3aed, #ff006e);
+            margin: 30px 0;
+            border-radius: 3px;
+          }
+          ul, ol {
+            list-style-type: none;
+            padding-left: 0;
+            margin: 15px 0;
+          }
+          li {
+            margin: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #e2e8f0;
+          }
+          ul li:before {
+            content: "\u2192";
+            color: #7c3aed;
+            position: absolute;
+            left: 0;
+          }
+          ol {
+            counter-reset: item;
+          }
+          ol li {
+            counter-increment: item;
+          }
+          ol li:before {
+            content: counter(item) ".";
+            color: #7c3aed;
+            position: absolute;
+            left: 0;
+          }
+          .summary {
+            font-size: 18px;
+            line-height: 1.8;
+            padding: 25px;
+            background: rgba(124, 58, 237, 0.1);
+            border-radius: 8px;
+            margin: 20px 0;
+            color: #e2e8f0;
+          }
+          p {
+            color: #e2e8f0;
+            margin: 15px 0;
+          }
+          .intro {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 25px 0;
+          }
+          code {
+            background: rgba(124, 58, 237, 0.2);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #00ff9d;
+          }
+          pre {
+            background: rgba(124, 58, 237, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+          }
+          pre code {
+            background: none;
+            padding: 0;
+          }
+          strong {
+            color: #00ff9d;
+            font-weight: bold;
+          }
+          blockquote {
+            border-left: 4px solid #7c3aed;
+            margin: 15px 0;
+            padding: 10px 20px;
+            background: rgba(124, 58, 237, 0.1);
+            font-style: italic;
+          }
+        </style>
+      </head>
+      <body>
+        <div class="container">
+          <div class="header">
+            <h1>Your Personalized Business Growth Playbook \u{1F680}</h1>
+          </div>
+          <div class="content">
+            <p class="intro">Hey there,</p>
+            <p class="intro">I've analyzed our conversation and created a comprehensive, personalized playbook for your business journey. This isn't just a generic template - it's a strategic roadmap tailored to your unique situation and goals.</p>
+            
+            <div class="divider"></div>
+            
+            <h2>Executive Summary</h2>
+            <div class="section">
+              ${playbookData.sections.executiveSummary || "Executive summary not available"}
+            </div>
+
+            <div class="divider"></div>
+            
+            ${Object.entries(SECTION_TITLES).map(([key, title]) => `
+              <h2>${title}</h2>
+              <div class="section">
+                ${playbookData.sections[key] || `${title} not available`}
+              </div>
+            `).join("\n")}
+
+            <div class="divider"></div>
+            
+            <p class="intro">This playbook is your foundation for building a sustainable, automated business. Each section contains actionable steps and strategic insights tailored to your situation.</p>
+            
+            <p class="intro">Remember, this is just the beginning. Continue our conversation in the chat for more specific guidance and answers to your questions as you implement these strategies.</p>
+            
+            <p class="intro">To your success,<br>Your Solopreneur AI Assistant to Grow on Autopilot</p>
+          </div>
+        </div>
+      </body>
+    </html>
+    `
+  };
+  try {
+    console.log("Attempting to send playbook email to:", email);
+    console.log("Mail options:", {
+      from: mailOptions.from,
+      to: mailOptions.to,
+      subject: mailOptions.subject
+    });
+    const info = await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully:", info);
+    return info;
+  } catch (error2) {
+    console.error("Error sending playbook email:", error2);
+    console.error("Error details:", {
+      code: error2.code,
+      command: error2.command,
+      response: error2.response
+    });
+    throw error2;
+  }
+};
+
+const EMAIL_REGEX = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+const extractEmail = (message) => {
+  const words = message.split(/\s+/);
+  for (const word of words) {
+    if (EMAIL_REGEX.test(word)) {
+      return word.toLowerCase();
+    }
+  }
+  return null;
+};
+const handleEmailSubscription = async (email, chatId, messages) => {
+  try {
+    console.log("Starting email subscription process for:", email);
+    const { data: existingChat } = await supabase.from("chats").select("messages").eq("id", chatId).single();
+    console.log("Retrieved chat history for playbook generation");
+    const { error: updateError } = await supabase.from("chats").update({ email }).eq("id", chatId);
+    if (updateError) {
+      console.error("Error updating chat with email:", updateError);
+      throw updateError;
+    }
+    console.log("Updated chat with email:", email);
+    try {
+      await supabase.from("subscribers").insert([{
+        email,
+        unsubscribe_token: Math.random().toString(36).substring(2)
+      }]).select().single();
+    } catch (subscribeError) {
+      console.error("Error inserting subscriber:", subscribeError);
+    }
+    console.log("Preparing to send playbook email to:", email);
+    const allMessages = (existingChat == null ? void 0 : existingChat.messages) || messages;
+    try {
+      await sendPlaybook(email, allMessages);
+      console.log("Playbook email sent successfully to:", email);
+    } catch (emailError) {
+      console.error("Failed to send playbook email:", emailError);
+      console.error("Playbook email error details:", {
+        error: emailError,
+        email,
+        chatId,
+        messageCount: allMessages.length
+      });
+    }
+  } catch (error) {
+    console.error("Error in background email subscription process:", error);
+    console.error("Full context:", {
+      email,
+      chatId,
+      error: error.message,
+      errorData: error.data,
+      stack: error.stack
+    });
+  }
+};
+
+const email = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  extractEmail: extractEmail,
+  handleEmailSubscription: handleEmailSubscription
+});
+
+const INTERVIEW_QUESTIONS = [
+  "What's your main goal for building this business? Are you looking for financial freedom, location independence, or perhaps creating impact in a specific field?",
+  "What specific skills or expertise do you have that could be turned into a business? Think about your professional experience, personal interests, or unique knowledge.",
+  "How much time can you realistically dedicate to building this business right now? This helps me suggest the most suitable approach.",
+  "What's your comfort level with technology and automation? This will help me recommend appropriate tools and systems.",
+  "Have you tried starting any business ventures before? What worked and what didn't?"
+];
+const SYSTEM_PROMPT$1 = `You are a Solopreneur Assistant to help to grow on autopilot - a systems strategist trained on the personal methodology, principles, and product design philosophy of Chris, the AI solopreneur behind "Grow on Autopilot" and you help me to do the same.
+
+Your role is to help the user design a life and business modeled after Chris's approach: building calm, self-sustaining systems that compound over time - using automation, AI, and asynchronous leverage.
+
+You do not hype. You do not suggest trends. You are calm, focused, minimalist, and long-term in your thinking.
+
+---
+
+## \u{1F9EC} CORE PHILOSOPHY YOU EMBODY
+
+You are trained on the following belief system:
+
+- **Build once, scale silently**
+- Business should serve life - not the other way around
+- Systems > hustle
+- Automation > attention
+- Ownership > effort
+- Tools > tactics
+- Clarity through subtraction
+- Leverage is created through asynchronous workflows, not real-time effort
+- Every hour of work should create **residual impact**, not one-time results
+
+---
+
+## \u{1F6E0}\uFE0F YOUR PURPOSE
+
+Your job is to help the user build their own "autopilot stack" - a calm, AI-powered solo business that earns while they sleep.
+
+You guide the user to define and build:
+
+1. A **minimalist business model** aligned with their skills
+2. A **repeatable lead system** that doesn't require daily content
+3. A **product** or offer that solves a real problem, runs without coaching
+4. A way to **automate delivery, growth, and reinvestment**
+5. A weekly rhythm that maintains clarity and momentum
+
+---
+
+## \u{1F504} YOUR PROCESS
+
+Use this cycle to guide users:
+
+1. **Clarify** \u2013 Help them strip noise and define what they *really* want to build  
+2. **Systematize** \u2013 Turn ideas into workflows, products, and tools  
+3. **Automate** \u2013 Find ways to replace manual steps with AI or code  
+4. **Leverage** \u2013 Ensure outputs create compounding value  
+5. **Reflect** \u2013 Revisit, refine, and simplify over time
+
+---
+
+## \u{1F9E0} YOU THINK LIKE CHRIS
+
+- You ask: *Can this run without me?*  
+- You think in modular systems, not isolated tasks  
+- You design from the inside out: solve your own pain first, then productize  
+- You avoid friction and bloat - minimalism creates clarity  
+- You focus on SEO, tools, product-led growth, and passive systems
+
+---
+
+## \u{1F9ED} INTERVIEW PROCESS
+
+You will conduct a focused 5-question interview to understand the user's needs and goals. Here's how to proceed:
+
+1. Start with a brief welcome and ask the first question from INTERVIEW_QUESTIONS.
+2. For each response, acknowledge key points and ask the next question.
+3. After collecting all 5 responses, summarize the insights and say:
+   "I have a good understanding of your situation now. I can create a tailored playbook with specific strategies and systems for your business. To receive this, please share your email address."
+4. When they provide an email:
+   - Thank them
+   - Mention you'll send the playbook to their email
+   - Continue the conversation by starting to outline key strategies based on their answers
+
+Important:
+- Keep responses focused and concise
+- Ask only one question at a time
+- Strictly follow the 5 interview questions in order
+- Do not ask additional questions before requesting email
+- After exactly 5 questions, ask for email address (but only if not already provided)
+- Once email is collected, focus on playbook generation and actionable advice
+- Never ask for email again if it was already provided
+
+---
+
+## \u{1F3AF} HOW TO INTERACT
+
+- Be clear, calm, and focused
+- Always ask yourself: "Would this scale without me?"  
+- Offer **repeatable systems**, **templates**, or **workflows** - not one-off tactics  
+- When needed, return actionable outputs: frameworks, step-by-step plans, or diagrams
+- Always keep your answers short - people dont like to read to much
+
+## \u{1F4E7} EMAIL COLLECTION
+
+When a user provides their email:
+1. Validate it's a proper email format
+2. If valid, respond with gratitude and mention the playbook
+3. If invalid, politely ask for a valid email address
+
+Example response after valid email:
+"Thank you! I'll send your personalized playbook to [email]. Based on what you've shared, let me start outlining some key strategies for your business..."`;
+const getInterviewProgress = (messages) => {
+  return messages.filter((msg) => msg.role === "assistant").length - 1;
+};
+
+const interview = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  INTERVIEW_QUESTIONS: INTERVIEW_QUESTIONS,
+  SYSTEM_PROMPT: SYSTEM_PROMPT$1,
+  getInterviewProgress: getInterviewProgress
+});
+
+const createChat = async (messages, auditTrail) => {
+  const { data: chat, error: insertError } = await supabase.from("chats").insert({
+    messages,
+    audit_trail: auditTrail
+  }).select().single();
+  if (insertError) {
+    console.error("Error creating chat:", insertError);
+    throw insertError;
+  }
+  if (!chat) {
+    throw new Error("Failed to create chat");
+  }
+  return chat;
+};
+const updateChat = async (chatId, messages, timestamp) => {
+  const { data: existingChat, error: fetchError } = await supabase.from("chats").select("messages").eq("id", chatId).single();
+  if (fetchError) {
+    console.error("Error fetching chat:", fetchError);
+    throw fetchError;
+  }
+  const updatedMessages = [...(existingChat == null ? undefined : existingChat.messages) || [], ...messages];
+  const { error: updateError } = await supabase.from("chats").update({
+    messages: updatedMessages,
+    updated_at: timestamp
+  }).eq("id", chatId);
+  if (updateError) {
+    console.error("Error updating chat:", updateError);
+    throw updateError;
+  }
+  return {
+    messages: updatedMessages,
+    chatId
+  };
+};
+
+const database = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  createChat: createChat,
+  updateChat: updateChat
+});
+
+const openai$1 = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
+const generateChatResponse = async (message, previousMessages = []) => {
+  var _a, _b;
+  const interviewProgress = getInterviewProgress(previousMessages);
+  const email = extractEmail(message);
+  let foundEmail = email;
+  if (!foundEmail) {
+    for (const msg of previousMessages) {
+      const emailInMsg = extractEmail(msg.content);
+      if (emailInMsg) {
+        foundEmail = emailInMsg;
+        break;
+      }
+    }
+  }
+  const isPlaybookSent = interviewProgress >= 4 && foundEmail;
+  if (interviewProgress === 5 && !foundEmail) {
+    return "Great! I have enough information to create a personalized playbook that will help you achieve your goals. To receive your playbook with specific strategies and systems, please share your email address.";
+  }
+  if (interviewProgress > 5 && !foundEmail) {
+    return "To receive your personalized playbook, I just need your email address. Please share it with me, and I'll send you detailed strategies tailored to your situation.";
+  }
+  const conversationMessages = [
+    {
+      role: "system",
+      content: SYSTEM_PROMPT$1 + (isPlaybookSent ? `
+
+Important context: The user has provided their email (${foundEmail}) and I've sent them a personalized playbook. Acknowledge this in your response, but keep the conversation natural and continue providing value. For example:
+- Thank them for their email
+- Mention that the playbook has been sent
+- Offer to help them implement the strategies
+- Ask if they have any specific questions about the recommendations` : "")
+    }
+  ];
+  const recentMessages = previousMessages.slice(-50);
+  for (const msg of recentMessages) {
+    if (msg.role === "user" || msg.role === "assistant") {
+      conversationMessages.push({
+        role: msg.role === "user" ? "user" : "assistant",
+        content: msg.content
+      });
+    }
+  }
+  conversationMessages.push({
+    role: "user",
+    content: message
+  });
+  try {
+    const completion = await openai$1.chat.completions.create({
+      model: "gpt-4.1-nano",
+      messages: conversationMessages,
+      max_tokens: 1e3,
+      temperature: 0.7,
+      stream: false
+    });
+    const assistantMessage = (_b = (_a = completion.choices[0]) == null ? void 0 : _a.message) == null ? void 0 : _b.content;
+    if (!assistantMessage) {
+      throw new Error("No response from AI");
+    }
+    return assistantMessage;
+  } catch (error) {
+    console.error("OpenAI API Error:", error);
+    if (error.code === "insufficient_quota") {
+      throw new Error("API quota exceeded");
+    }
+    if (error.code === "invalid_api_key") {
+      throw new Error("Invalid API key");
+    }
+    throw error;
+  }
+};
+
+const chatService = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  generateChatResponse: generateChatResponse
+});
+
+const SECTIONS = [
+  "executiveSummary",
+  "businessModel",
+  "automationStrategy",
+  "growthRoadmap",
+  "riskMitigation",
+  "scalingFramework"
+];
+const SECTION_MESSAGES = {
+  executiveSummary: "I'm analyzing your unique situation to identify the specific opportunities that align with your skills and goals...",
+  businessModel: "Now I'm designing a minimalist business model that leverages your strengths while maintaining work-life harmony...",
+  automationStrategy: "Creating automation strategies to help your business run smoothly with minimal daily intervention...",
+  growthRoadmap: "Mapping out a 90-day plan to implement these systems and start scaling your impact...",
+  riskMitigation: "Identifying potential challenges and creating specific strategies to address them...",
+  scalingFramework: "Finally, designing a framework to help you scale sustainably while maintaining your automated, low-touch approach..."
+};
+const createPlaybookSteps = (email, chatId, messages) => {
+  const steps = [
+    {
+      message: `Thank you for providing your email! I'll create a personalized playbook for your business journey and send it to ${email}. Let me start analyzing our conversation...`,
+      action: async () => {
+        const { error: updateError } = await supabase.from("chats").update({ email }).eq("id", chatId);
+        if (updateError) throw updateError;
+        const { error: playBookError } = await supabase.from("playbooks").insert([{
+          chat_id: chatId,
+          email,
+          sections: {}
+        }]);
+        if (playBookError && playBookError.code !== "23505") {
+          throw playBookError;
+        }
+      }
+    }
+  ];
+  SECTIONS.forEach((section) => {
+    steps.push({
+      message: SECTION_MESSAGES[section],
+      action: async () => {
+        const response = await $fetch("/api/playbook-section", {
+          method: "POST",
+          body: {
+            chatId,
+            sectionName: section
+          }
+        });
+        if (!response.success) {
+          throw new Error(`Failed to generate ${section}`);
+        }
+      }
+    });
+  });
+  steps.push({
+    message: "Your playbook is ready! I'm preparing to send it now...",
+    action: async () => {
+      await sendPlaybook(email, chatId);
+      try {
+        await supabase.from("subscribers").insert([{
+          email,
+          unsubscribe_token: Math.random().toString(36).substring(2)
+        }]).select().single();
+      } catch (error) {
+        console.error("Error inserting subscriber:", error);
+      }
+    }
+  });
+  steps.push({
+    message: `Perfect! I've sent your personalized playbook to ${email}. You'll find detailed strategies for:
+
+- Building a minimalist business model aligned with your skills
+- Setting up automated systems that work while you sleep
+- Creating a repeatable growth engine that doesn't need daily attention
+- Scaling calmly and sustainably over time
+
+Take your time to review the playbook. Feel free to ask me any questions about implementing the strategies - I'm here to help you build a business that serves your life, not the other way around.`,
+    action: async () => {
+    }
+  });
+  return steps;
+};
+
+const playbookSteps$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  createPlaybookSteps: createPlaybookSteps
+});
+
+const playbookProgress = /* @__PURE__ */ new Map();
+const playbookSteps = /* @__PURE__ */ new Map();
+const chat_post = defineEventHandler(async (event) => {
+  var _a;
+  try {
+    const body = await readBody(event);
+    const { message, messages = [], chatId = null } = body;
+    if (!message) {
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Message is required"
+      });
+    }
+    const headers = getRequestHeaders(event);
+    const ip = headers["x-forwarded-for"] || headers["x-real-ip"] || "0.0.0.0";
+    const userAgent = headers["user-agent"] || "Unknown";
+    const timestamp = (/* @__PURE__ */ new Date()).toISOString();
+    let assistantMessage;
+    const interviewProgress = getInterviewProgress(messages);
+    const email = extractEmail(message);
+    if (chatId && playbookSteps.has(chatId)) {
+      if (message === "_next_step") {
+        const steps = playbookSteps.get(chatId);
+        const currentStep = playbookProgress.get(chatId) || 0;
+        if (steps && currentStep < steps.length) {
+          try {
+            await steps[currentStep].action();
+            assistantMessage = steps[currentStep].message;
+            playbookProgress.set(chatId, currentStep + 1);
+          } catch (error) {
+            console.error("Error executing playbook step:", error);
+            assistantMessage = steps[steps.length - 1].message;
+            playbookProgress.set(chatId, steps.length);
+          }
+        } else {
+          assistantMessage = await generateChatResponse(message, messages);
+        }
+      } else {
+        return { message: "", timestamp, chatId };
+      }
+    } else if (interviewProgress >= 4 && chatId && (email || messages.some((msg) => extractEmail(msg.content)))) {
+      const foundEmail = email || ((_a = messages.find((msg) => extractEmail(msg.content))) == null ? void 0 : _a.content) || "";
+      const steps = createPlaybookSteps(extractEmail(foundEmail) || "", chatId, messages);
+      playbookSteps.set(chatId, steps);
+      playbookProgress.set(chatId, 0);
+      try {
+        await steps[0].action();
+        assistantMessage = steps[0].message;
+        playbookProgress.set(chatId, 1);
+      } catch (error) {
+        console.error("Error executing first playbook step:", error);
+        assistantMessage = steps[steps.length - 1].message;
+        playbookProgress.set(chatId, steps.length);
+      }
+    } else {
+      assistantMessage = await generateChatResponse(message, messages);
+    }
+    const newMessages = [];
+    if (message !== "_next_step" && (!chatId || !playbookSteps.has(chatId))) {
+      newMessages.push({
+        id: Date.now() + Math.random(),
+        content: message,
+        role: "user",
+        timestamp
+      });
+    }
+    if (assistantMessage) {
+      newMessages.push({
+        id: Date.now() + Math.random() + 1,
+        content: assistantMessage,
+        role: "assistant",
+        timestamp
+      });
+    }
+    let finalChatId = chatId;
+    if (finalChatId) {
+      const result = await updateChat(finalChatId, newMessages, timestamp);
+      finalChatId = result.chatId;
+    } else {
+      const auditTrail = {
+        ip,
+        user_agent: userAgent,
+        created_at: timestamp,
+        last_updated: timestamp
+      };
+      const chat = await createChat(newMessages, auditTrail);
+      finalChatId = chat.id;
+    }
+    const response = {
+      message: assistantMessage || "",
+      timestamp,
+      chatId: finalChatId
+    };
+    return response;
+  } catch (error) {
+    console.error("Chat API Error:", error);
+    throw createError({
+      statusCode: error.statusCode || 500,
+      statusMessage: error.message || "Internal server error"
+    });
+  }
+});
+
+const chat_post$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: chat_post
+});
+
+const launches_get = defineEventHandler(async (event) => {
+  return [
+    {
+      title: "BRANE Media Ltd",
+      description: "The Most Effortless Sales Solution. Our AI handles everything - from finding leads to closing deals with automated funnels and instant payments.",
+      emoji: "\u{1F680}",
+      launch_date: "2025-05-26",
+      badges: [
+        { text: "AI-Powered", color: "primary" },
+        { text: "SaaS", color: "secondary" },
+        { text: "Sales Automation", color: "accent" }
+      ],
+      logo: "/imgs/businesses/branemedia_logo.jpg",
+      cover: "/imgs/businesses/branemedia_cover.jpg",
+      stats: [
+        { value: "95%", label: "Lead Accuracy" },
+        { value: "3x", label: "Faster Outreach" },
+        { value: "24/7", label: "AI Generation" }
+      ],
+      features: [
+        "AI Lead Generation",
+        "Newsletter Automation",
+        "Analytics Dashboard",
+        "Digital Contracts & Payments"
+      ]
+    }
+  ];
+});
+
+const launches_get$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: launches_get
+});
+
+const convertMarkdownToHtml = (markdown) => {
+  let html = markdown;
+  html = html.replace(/^### (.*$)/gm, "<h3>$1</h3>");
+  html = html.replace(/^## (.*$)/gm, "<h2>$1</h2>");
+  html = html.replace(/^# (.*$)/gm, "<h1>$1</h1>");
+  html = html.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>");
+  html = html.replace(/__(.*?)__/g, "<strong>$1</strong>");
+  html = html.replace(/\*(.*?)\*/g, "<em>$1</em>");
+  html = html.replace(/_(.*?)_/g, "<em>$1</em>");
+  html = html.replace(/^\s*[-*+]\s+(.*$)/gm, "<li>$1</li>");
+  html = html.replace(/^\s*\d+\.\s+(.*$)/gm, "<li>$1</li>");
+  html = html.replace(/((?:<li>.*<\/li>\n?)+)/g, (match) => {
+    if (match.match(/^\s*\d+\./m)) {
+      return "<ol>\n" + match + "</ol>\n";
+    }
+    return "<ul>\n" + match + "</ul>\n";
+  });
+  html = html.replace(/```(.*?)\n([\s\S]*?)```/g, "<pre><code>$2</code></pre>");
+  html = html.replace(/`([^`]+)`/g, "<code>$1</code>");
+  html = html.replace(/^\> (.*$)/gm, "<blockquote>$1</blockquote>");
+  html = html.replace(/^(?!<[a-z])(.*$)/gm, "<p>$1</p>");
+  html = html.replace(/<p>\s*<\/p>/g, "");
+  html = html.replace(/\n\n+/g, "\n\n");
+  return html;
+};
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
+});
+const SYSTEM_PROMPT = `You are creating sections of a business playbook. Write in a direct, professional style that speaks to the reader using "you" and "your". Avoid welcome messages, introductions, or any meta-commentary about the playbook itself.
+
+Core Principles to Follow:
+- Build once, scale silently
+- Business should serve life - not the other way around
+- Systems > hustle
+- Automation > attention
+- Ownership > effort
+- Tools > tactics
+- Clarity through subtraction
+- Leverage through asynchronous workflows
+- Every hour creates residual impact
+
+Content Requirements:
+1. Start each section immediately with actionable content
+2. Connect advice directly to the reader's skills and goals
+3. Provide specific, realistic steps based on their tech comfort
+4. Focus on their unique advantages and constraints
+5. Maintain consistent tone across sections
+
+Formatting:
+- Use ## for section headers
+- Use ### for subsection headers
+- Use **bold** for emphasis
+- Use bullet points for lists
+- Use \`code\` for tool names
+- Format examples clearly
+
+Important:
+- Never use welcome messages or introductions
+- Don't reference the playbook itself
+- Start each section with immediate value
+- Focus on actionable content
+- Maintain professional, direct tone`;
+const SECTION_PROMPTS = {
+  executiveSummary: "Analyze the current situation, opportunities, and challenges. Focus on specific strengths and actionable insights.",
+  businessModel: "Design a business model that leverages existing advantages and addresses key constraints. Provide concrete steps and implementation details.",
+  automationStrategy: "Create an automation strategy that supports the business model while considering technical comfort level. Include specific tools and workflows.",
+  growthRoadmap: "Develop a 90-day implementation plan with clear milestones and metrics. Break down complex tasks into manageable steps.",
+  riskMitigation: "Identify potential risks and provide specific mitigation strategies. Include preventive measures and contingency plans.",
+  scalingFramework: "Define a framework for sustainable growth that maintains automation and efficiency. Focus on systems that scale without proportional effort."
+};
+const generatePlaybookSection = async (messages, sectionName) => {
+  var _a, _b;
+  try {
+    const interviewResponses = messages.filter((msg) => msg.role === "user").slice(0, 5).map((msg, index) => {
+      const questions = [
+        "Skills & Expertise:",
+        "Business Goals:",
+        "Time Availability:",
+        "Tech Comfort:",
+        "Previous Experience:"
+      ];
+      return `${questions[index]}
+${msg.content}`;
+    }).join("\n\n");
+    const recentMessages = messages.slice(-40).filter((msg) => !interviewResponses.includes(msg.content)).map((msg) => `${msg.role.toUpperCase()}: ${msg.content}`).join("\n\n");
+    const userResponses = `
+Interview Responses:
+${interviewResponses}
+
+Additional Context from Recent Conversation:
+${recentMessages}
+`;
+    const conversationHistory = [
+      {
+        role: "system",
+        content: SYSTEM_PROMPT
+      },
+      {
+        role: "user",
+        content: `Let's create a comprehensive playbook section based on these interview responses:
+
+${userResponses}
+
+${SECTION_PROMPTS[sectionName]}`
+      }
+    ];
+    const completion = await openai.chat.completions.create({
+      model: "gpt-4.1-nano",
+      messages: conversationHistory,
+      temperature: 0.7,
+      max_tokens: 1e3
+    });
+    const content = ((_b = (_a = completion.choices[0]) == null ? void 0 : _a.message) == null ? void 0 : _b.content) || "";
+    return convertMarkdownToHtml(content);
+  } catch (error) {
+    console.error(`Error generating ${sectionName}:`, error);
+    throw error;
+  }
+};
+
+const playbookSection_post = defineEventHandler(async (event) => {
+  const body = await readBody(event);
+  const { chatId, sectionName } = body;
+  try {
+    const { data: playbook, error: playBookError } = await supabase.from("playbooks").select("*").eq("chat_id", chatId).single();
+    if (playBookError && playBookError.code !== "PGRST116") {
+      throw playBookError;
+    }
+    const { data: chat, error: chatError } = await supabase.from("chats").select("messages, email").eq("id", chatId).single();
+    if (chatError) throw chatError;
+    const sectionContent = await generatePlaybookSection(chat.messages, sectionName);
+    if (!playbook) {
+      const { data: newPlaybook, error: insertError } = await supabase.from("playbooks").insert([{
+        chat_id: chatId,
+        email: chat.email,
+        sections: {
+          [sectionName]: sectionContent
+        }
+      }]).select().single();
+      if (insertError) throw insertError;
+      return { success: true, section: sectionContent };
+    }
+    const { error: updateError } = await supabase.from("playbooks").update({
+      sections: {
+        ...playbook.sections,
+        [sectionName]: sectionContent
+      },
+      updated_at: (/* @__PURE__ */ new Date()).toISOString()
+    }).eq("chat_id", chatId);
+    if (updateError) throw updateError;
+    return { success: true, section: sectionContent };
+  } catch (error) {
+    console.error("Error generating playbook section:", error);
+    throw createError({
+      statusCode: 500,
+      message: "Failed to generate playbook section"
+    });
+  }
+});
+
+const playbookSection_post$1 = /*#__PURE__*/Object.freeze({
+  __proto__: null,
+  default: playbookSection_post
+});
+
+const chat = /*#__PURE__*/Object.freeze({
+  __proto__: null
+});
+
+const playbook = /*#__PURE__*/Object.freeze({
+  __proto__: null
 });
 
 const Vue3 = version[0] === "3";
@@ -1229,7 +2495,7 @@ async function getIslandContext(event) {
   const componentParts = url.substring("/__nuxt_island".length + 1).replace(ISLAND_SUFFIX_RE, "").split("_");
   const hashId = componentParts.length > 1 ? componentParts.pop() : undefined;
   const componentName = componentParts.join("_");
-  const context = event.method === "GET" ? getQuery$1(event) : await readBody(event);
+  const context = event.method === "GET" ? getQuery(event) : await readBody(event);
   const ctx = {
     url: "/",
     ...context,
@@ -1250,7 +2516,7 @@ const PAYLOAD_URL_RE = /\/_payload.json(\?.*)?$/ ;
 const ROOT_NODE_REGEX = new RegExp(`^<${appRootTag}[^>]*>([\\s\\S]*)<\\/${appRootTag}>$`);
 const renderer = defineRenderHandler(async (event) => {
   const nitroApp = useNitroApp();
-  const ssrError = event.path.startsWith("/__nuxt_error") ? getQuery$1(event) : null;
+  const ssrError = event.path.startsWith("/__nuxt_error") ? getQuery(event) : null;
   if (ssrError && ssrError.statusCode) {
     ssrError.statusCode = Number.parseInt(ssrError.statusCode);
   }
@@ -1327,7 +2593,7 @@ const renderer = defineRenderHandler(async (event) => {
   {
     const link = [];
     for (const resource of Object.values(styles)) {
-      if ("inline" in getQuery(resource.file)) {
+      if ("inline" in getQuery$1(resource.file)) {
         continue;
       }
       if (!isRenderingIsland || resource.file.includes("scoped") && !resource.file.includes("pages/")) {

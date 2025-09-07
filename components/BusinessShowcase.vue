@@ -13,7 +13,7 @@
      <!--  <div class="max-w-3xl mx-auto mb-12 text-center bg-base-100 p-8 rounded-xl shadow-lg" data-aos="fade-up" data-aos-delay="200">
         <h3 class="text-2xl font-bold mb-4">⚡ Featured: Time Automation Suite</h3>
         <p class="text-base-content/80 mb-6">
-          Introducing the <strong>Time Automation Suite</strong> — an integrated system combining AI, custom coding, and crypto automation. Built to handle complex tasks, manage digital assets, and optimize processes automatically. Your personal time-buying machine.
+          Introducing the <strong>Time Automation Suite</strong> - an integrated system combining AI, custom coding, and crypto automation. Built to handle complex tasks, manage digital assets, and optimize processes automatically. Your personal time-buying machine.
         </p>
         <div class="inline-flex items-center gap-2 text-primary">
           <span class="text-xl">🔄</span>

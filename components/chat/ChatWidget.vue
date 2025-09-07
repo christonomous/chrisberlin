@@ -183,7 +183,7 @@ watch(isFullscreen, () => {
 // Initial scroll and greeting when component mounts
 onMounted(() => {
   if (messages.value.length === 0) {
-    addMessage("Hi! I'm Chris's AI Assistant, and I would love to help you grow on autopilot. What's your overall goal? I can create a personalized playbook to help you get there, with specific strategies and systems tailored to your situation.", 'assistant')
+    addMessage("Hi - I'm Chris's AI Assistant! Tell me what you need and I'll figure our how we can help you.", 'assistant')
   }
   nextTick(() => {
     scrollToBottom()

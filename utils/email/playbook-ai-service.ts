@@ -11,7 +11,7 @@ const SYSTEM_PROMPT = `You are creating sections of a business playbook. Write i
 
 Core Principles to Follow:
 - Build once, scale silently
-- Business should serve life — not the other way around
+- Business should serve life - not the other way around
 - Systems > hustle
 - Automation > attention
 - Ownership > effort
