@@ -74,10 +74,7 @@ function formatDate(date?: string, style: 'full' | 'short' = 'full') {
     weekday: 'short',
     month: 'short',
     day: 'numeric',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    timeZoneName: 'short'
+    year: 'numeric'
   }).format(d)
 }
 </script>
