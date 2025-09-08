@@ -29,7 +29,7 @@ export function useReports() {
     {
       path: '/reports/eth-etf-outflows-agentic-execution-rwa-tvl-2025-09-08',
       date: '2025-09-08T09:00:00+02:00',
-      title: ' ETH ETF Outflows, Agentic Execution & RWA TVL — Sep 8, 2025',
+      title: ' ETH ETF Outflows, Agentic Execution & RWA TVL',
       tags: ['ETFs', 'Agents', 'RWA', 'PayFi', 'Security', 'Market Pulse']
     }
   ])
