@@ -75,7 +75,7 @@
         <div class="card-body grid md:grid-cols-3 gap-6">
           <div>
             <h2 class="text-2xl font-bold mb-2">Hi, I'm Chris</h2>
-            <p class="opacity-80">I help DeFi hedge funds and LPs <b>use AI to identify and capture cross-chain yield and arbitrage opportunities in real time</b>, so they can outperform the market without manual monitoring.</p>
+            <p class="opacity-80">I help DeFi hedge funds, DAOs and LPs <b>use AI to identify and capture cross-chain yield and arbitrage opportunities in real time</b>, so they can outperform the market without manual monitoring.</p>
           </div>
           <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
