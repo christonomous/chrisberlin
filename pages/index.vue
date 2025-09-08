@@ -80,19 +80,19 @@
           <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
               <h3 class="font-semibold">Workflow Automation</h3>
-              <p class="text-sm opacity-80">We map a bottleneck → blueprint an AI agent → estimate ROI and timeline.</p>
+              <p class="text-sm opacity-80">I map your bottleneck and automate your workflows.</p>
             </li>
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
               <h3 class="font-semibold">AI Implementation</h3>
-              <p class="text-sm opacity-80">You get architecture, prompts, model choices, and a build plan - fast.</p>
+              <p class="text-sm opacity-80">I develop you AI Bots, AI OS, and AI Infrastructure to make your business smart.</p>
             </li>
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
               <h3 class="font-semibold">Dashboard Development</h3>
-              <p class="text-sm opacity-80">Hands‑on development or advisory - your choice, same velocity.</p>
+              <p class="text-sm opacity-80">Get a custom dashboard to analyze insights and make decisions precise.</p>
             </li>
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
               <h3 class="font-semibold">MVP Developement</h3>
-              <p class="text-sm opacity-80">Clear milestones; if we miss them, you don’t carry the risk.</p>
+              <p class="text-sm opacity-80">Get an app you can launch and validate on your market.</p>
             </li>
           </ul>
         </div>
