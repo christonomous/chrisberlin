@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout name="reports">
+
     <!-- KPI / Stats with Sparklines (no hero/header) -->
     <section class="relative z-10 container mx-auto px-4 py-8">
       <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -37,13 +38,13 @@
     <!-- Charts Row (fixed heights, colorful) -->
     <section class="relative z-10 container mx-auto px-4 pb-6">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
-        <!-- Bar: AI Basket 24h Movers -->
+        <!-- Bar: Pillar Impact Scores -->
         <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
           <div class="card-body">
             <div class="flex flex-wrap items-center justify-between">
-              <h3 class="card-title">AI Basket — 24h Movers</h3>
+              <h3 class="card-title">Pillar Impact Scores (0–100)</h3>
               <div class="flex gap-2">
-                <a v-for="m in moversBadges" :key="m.url" :href="m.url" target="_blank" class="badge badge-outline">{{ m.label }}</a>
+                <a v-for="m in impactBadges" :key="m.url" :href="m.url" target="_blank" class="badge badge-outline">{{ m.label }}</a>
               </div>
             </div>
             <ClientOnly>
@@ -51,24 +52,24 @@
                 <canvas ref="barEl" class="w-full h-full"></canvas>
               </div>
             </ClientOnly>
-            <p class="mt-3 text-xs opacity-70">Directional snapshot from cited market coverage (not investment advice).</p>
+            <p class="mt-3 text-xs opacity-70">Editorial synthesis from linked sources; validate definitions as needed.</p>
           </div>
         </div>
 
-        <!-- Scatter: Impact vs. Readiness -->
+        <!-- Scatter: Impact vs. Maturity -->
         <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
           <div class="card-body">
-            <h3 class="card-title">Impact vs. Readiness — This Week’s Themes</h3>
+            <h3 class="card-title">Impact vs. Maturity — Launches & Themes</h3>
             <ClientOnly>
               <div class="mt-4 h-[300px]">
                 <canvas ref="scatterEl" class="w-full h-full"></canvas>
               </div>
             </ClientOnly>
-            <p class="mt-3 text-xs opacity-70">Higher = more potential impact; right = closer to production-readiness.</p>
+            <p class="mt-3 text-xs opacity-70">Higher = more potential impact; right = more production-ready today.</p>
           </div>
         </div>
 
-        <!-- Donut: Theme Weighting -->
+        <!-- Donut: Thematic Weighting -->
         <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
           <div class="card-body">
             <h3 class="card-title">Theme Weighting (Editorial)</h3>
@@ -77,7 +78,7 @@
                 <canvas ref="donutEl" class="w-full h-full"></canvas>
               </div>
             </ClientOnly>
-            <div class="mt-3 text-xs opacity-70">Short, bias-aware allocation of reader attention for this report.</div>
+            <div class="mt-3 text-xs opacity-70">Subjective split to guide attention for this report.</div>
           </div>
         </div>
       </div>
@@ -88,7 +89,7 @@
       <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
         <div class="card-body">
           <div class="flex items-center justify-between">
-            <h3 class="card-title">What Moved — Agents, Infra, Platforms, Markets, RWA</h3>
+            <h3 class="card-title">What Moved — Adoption, Agents, Infra, Research, Macro</h3>
           </div>
 
           <div class="overflow-x-auto rounded-2xl">
@@ -103,7 +104,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr v-for="row in rows" :key="row.id">
+                <tr v-for="row in filteredRows" :key="row.id">
                   <td>
                     <div :class="['badge badge-outline', areaBadge(row.area)]">{{ row.area }}</div>
                   </td>
@@ -142,7 +143,7 @@
         <div class="card-body">
           <div class="flex items-center justify-between">
             <h3 class="card-title">All Sources</h3>
-            <div class="text-sm opacity-70">Every visualization above links back to these.</div>
+            <div class="text-sm opacity-70">Always verify definitions and methodology.</div>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
             <div
@@ -172,170 +173,221 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'reports',
-  title: 'AI × DeFi — Weekly Pulse (Sep 8, 2025)',
-  description: 'Agent UX, data infrastructure, Keet expansion, AI token rebound & luxury RWA — visualized for decision-makers. Fixed-height colorful charts with linked sources.',
+  title: 'AI × DeFi — Key Developments (Aug 30, 2025)',
+  description: 'Adoption, AI agents, Uniswap v4 hooks, The Graph, research, and macro/RWA—visualized for decision-makers. Fixed-height colorful charts with linked sources.',
 })
 
-import { onMounted, onBeforeUnmount, ref } from 'vue'
+import { onMounted, onBeforeUnmount, ref, computed } from 'vue'
 
 // ===== Sources (from your content) =====
 const sources = ref([
-  { title: 'Blazpay × Pilot AI Simplify Crypto Interaction', url: 'https://blockchainreporter.net/blazpay-and-pilot-ai-simplify-crypto-interaction-for-users/?utm_source=chatgpt.com', domain: 'blockchainreporter.net', topic: 'Agents' }, // [1]
-  { title: 'Blockchain & AI: Who Controls the Data Future?', url: 'https://www.ainvest.com/news/blockchain-ai-collide-controls-data-future-2509/?utm_source=chatgpt.com', domain: 'ainvest.com', topic: 'Infra' }, // [2]
-  { title: "AI-Crypto Projects vs Macro Signals (OpenAI/NVIDIA)", url: 'https://www.dlnews.com/articles/markets/why-arent-ai-crypto-projects-surging-despite-bullish-market-signals-from-openai-and-nvidia/?utm_source=chatgpt.com', domain: 'dlnews.com', topic: 'Markets' }, // [3]
-  { title: 'Tether Expands Keet into Multilingual AI Hub', url: 'https://blockchain.news/flashnews/tether-expands-keet-into-multilingual-ai-crypto-hub?utm_source=chatgpt.com', domain: 'blockchain.news', topic: 'Platforms' }, // [4]
-  { title: 'AI & Meme Sectors Surge (24h Basket +3.5%)', url: 'https://www.ainvest.com/news/dogecoin-news-today-investors-rebalance-portfolios-ai-meme-sectors-surge-2509/?utm_source=chatgpt.com', domain: 'ainvest.com', topic: 'Markets' }, // [5]
-  { title: 'KuCoin Lists LiveArt $ART (Luxury Tokenization)', url: 'https://coinfomania.com/kucoin-art-world-premiere-tokenization/?utm_source=chatgpt.com', domain: 'coinfomania.com', topic: 'RWA' }, // [6]
+  { title: "JPMorgan's $500M Bet on Numerai", url: 'https://www.ainvest.com/news/jpmorgan-500m-bet-numerai-wall-street-driven-catalyst-ai-powered-crypto-growth-2508/?utm_source=chatgpt.com', domain: 'ainvest.com', topic: 'Adoption' }, // [1]
+  { title: 'The Emergence of Integrating AI in Crypto', url: 'https://cryptoadventure.com/the-emergence-of-integrating-ai-in-crypto/?utm_source=chatgpt.com', domain: 'cryptoadventure.com', topic: 'Adoption' }, // [2]
+  { title: 'The Rise of AI Agents in Crypto', url: 'https://tokenminds.co/blog/knowledge-base/ai-agents-for-crypto?utm_source=chatgpt.com', domain: 'tokenminds.co', topic: 'Agents' }, // [3]
+  { title: 'AI Agents in Crypto: Complete Guide', url: 'https://webisoft.com/articles/ai-agents-in-crypto/?utm_source=chatgpt.com', domain: 'webisoft.com', topic: 'Agents' }, // [4]
+  { title: 'Uniswap', url: 'https://en.wikipedia.org/wiki/Uniswap?utm_source=chatgpt.com', domain: 'wikipedia.org', topic: 'Infra' }, // [5]
+  { title: 'The Graph', url: 'https://en.wikipedia.org/wiki/The_Graph?utm_source=chatgpt.com', domain: 'wikipedia.org', topic: 'Data' }, // [6]
+  { title: 'AI-Driven Vulnerability Analysis (Smart Contracts)', url: 'https://arxiv.org/abs/2506.06735?utm_source=chatgpt.com', domain: 'arxiv.org', topic: 'Security' }, // [7]
+  { title: 'AI Risk Mgmt for Distributed Arbitrage', url: 'https://arxiv.org/abs/2503.18265?utm_source=chatgpt.com', domain: 'arxiv.org', topic: 'Arbitrage' }, // [8]
+  { title: 'Hybrid Stabilization Protocol (Cross-Chain + AI)', url: 'https://arxiv.org/abs/2506.05708?utm_source=chatgpt.com', domain: 'arxiv.org', topic: 'Cross-chain' }, // [9]
+  { title: 'Top DeFi Trends 2025 (RWA, AI, Interop)', url: 'https://www.blockchainappfactory.com/blog/2025-biggest-defi-trends-real-world-assets-to-ai-protocols/?utm_source=chatgpt.com', domain: 'blockchainappfactory.com', topic: 'Macro' }, // [10]
+  { title: 'Altcoins Drive 2025 AI × DeFi Innovation', url: 'https://www.ainvest.com/news/altcoins-drive-2025-crypto-innovation-ai-defi-real-world-assets-2507/?utm_source=chatgpt.com', domain: 'ainvest.com', topic: 'Altcoins' }, // [11]
 ])
 
 // ===== KPI data (editorial, directional) =====
 const kpis = ref([
   {
-    id: 'agents',
-    title: 'Agent UX Momentum',
-    displayValue: '86',
-    numericValue: 86,
+    id: 'adoption',
+    title: 'AI × DeFi Adoption',
+    displayValue: '88',
+    numericValue: 88,
     unit: '/100',
-    caption: 'NL prompts → wallet actions',
-    footnote: 'Blazpay × Pilot AI',
-    source: { label: 'blockchainreporter', url: sources.value[0].url },
-    spark: [48, 55, 61, 72, 79, 86],
+    caption: 'Institutional conviction (Numerai)',
+    footnote: 'Directional index; see AInvest.',
+    source: { label: 'AInvest', url: sources.value[0].url },
+    spark: [52, 58, 64, 70, 79, 88],
   },
   {
-    id: 'aibasket',
-    title: 'AI Token Basket (24h)',
-    displayValue: '+3.5',
-    numericValue: 3.5,
-    unit: '%',
-    caption: 'WLD, FET, TAO leadership',
-    footnote: 'As reported by AInvest',
-    source: { label: 'AInvest', url: sources.value[4].url },
-    spark: [-2.1, 0.6, 0.9, 1.7, 2.4, 3.5],
+    id: 'agents',
+    title: 'Agentic Workflows',
+    displayValue: '84',
+    numericValue: 84,
+    unit: '/100',
+    caption: 'Trading • LP • DAO • AML',
+    footnote: 'TokenMinds/Webisoft coverage.',
+    source: { label: 'TokenMinds', url: sources.value[2].url },
+    spark: [40, 49, 59, 68, 77, 84],
   },
   {
     id: 'infra',
-    title: 'Data Infra Signal',
-    displayValue: '82',
-    numericValue: 82,
+    title: 'Protocol Innovation',
+    displayValue: '79',
+    numericValue: 79,
     unit: '/100',
-    caption: 'Blockchain → AI data rails',
-    footnote: 'AInvest + DLNews view',
-    source: { label: 'AInvest', url: sources.value[1].url },
-    spark: [50, 58, 63, 71, 77, 82],
+    caption: 'Uniswap v4 hooks • The Graph',
+    footnote: 'Hooks & indexing stack.',
+    source: { label: 'Wikipedia', url: sources.value[4].url },
+    spark: [33, 45, 58, 66, 73, 79],
   },
   {
-    id: 'platforms',
-    title: 'Platform Expansion',
-    displayValue: '78',
-    numericValue: 78,
-    unit: '/100',
-    caption: 'Keet multilingual AI hub',
-    footnote: 'Translate • Transcribe • Pay',
-    source: { label: 'Blockchain News', url: sources.value[3].url },
-    spark: [42, 49, 57, 63, 71, 78],
-  },
-  {
-    id: 'rwa',
-    title: 'RWA Tokenization',
+    id: 'research',
+    title: 'AI-first Security',
     displayValue: '74',
     numericValue: 74,
     unit: '/100',
-    caption: 'LiveArt $ART (KuCoin, Sep 9)',
-    footnote: 'BASE-ERC20 listing',
-    source: { label: 'Coinfomania', url: sources.value[5].url },
-    spark: [38, 46, 53, 60, 67, 74],
+    caption: 'GNNs • Transformers',
+    footnote: 'arXiv snapshots.',
+    source: { label: 'arXiv', url: sources.value[6].url },
+    spark: [28, 38, 44, 57, 66, 74],
+  },
+  {
+    id: 'macro',
+    title: 'Macro & RWA',
+    displayValue: '70',
+    numericValue: 70,
+    unit: '/100',
+    caption: 'RWA tokenization & interop',
+    footnote: 'BAppFactory view.',
+    source: { label: 'BlockAppFactory', url: sources.value[9].url },
+    spark: [24, 30, 41, 52, 62, 70],
   },
 ])
 
 // ===== Table rows =====
 const rows = ref([
   {
+    id: 'adopt-1',
+    area: 'Adoption',
+    title: 'Wall Street steps in (JPMorgan → Numerai)',
+    insight: 'Institutional belief in AI-driven DeFi accelerates adoption.',
+    priority: 8,
+    actions: ['Prepare enterprise-grade data rooms', 'Map compliance for AI-exec strategies'],
+    sources: [
+      { label: 'AInvest', url: sources.value[0].url },
+      { label: 'CryptoAdventure', url: sources.value[1].url },
+    ],
+  },
+  {
     id: 'agents-1',
     area: 'Agents',
-    title: 'Blazpay × Pilot AI: NL prompts for on/off-chain actions',
-    insight: 'Lower onboarding friction; bridges web2 commands to DeFi ops.',
+    title: 'Autonomous agents manage trading, LP, DAO, fraud',
+    insight: 'Full-stack architecture: data → logic → execution → feedback.',
     priority: 9,
-    actions: ['Ship guardrails (limits, kill-switch)', 'Add audit logs & anomaly detection'],
+    actions: ['Ship guardrails (kill-switch, velocity limits)', 'Add anomaly detection & audit logs'],
     sources: [
-      { label: 'blockchainreporter', url: sources.value[0].url },
+      { label: 'TokenMinds', url: sources.value[2].url },
+      { label: 'Webisoft', url: sources.value[3].url },
     ],
   },
   {
     id: 'infra-1',
     area: 'Infra',
-    title: 'Blockchain hardens as AI data backbone',
-    insight: 'Decentralized pipelines for training/inference telemetry & provenance.',
+    title: 'Uniswap v4 hooks enable adaptive on-chain behavior',
+    insight: 'AI can drive dynamic fees & smart liquidity logic at AMM layer.',
     priority: 8,
-    actions: ['Adopt standardized data schemas', 'Design multi-source fallbacks'],
+    actions: ['Prototype hook strategies', 'Evaluate gas/slippage trade-offs per chain'],
     sources: [
-      { label: 'AInvest', url: sources.value[1].url },
-      { label: 'DL News', url: sources.value[2].url },
+      { label: 'Uniswap (Wiki)', url: sources.value[4].url },
     ],
   },
   {
-    id: 'platforms-1',
-    area: 'Platforms',
-    title: 'Tether’s Keet becomes multilingual AI hub',
-    insight: 'Super-app trajectory: translate, transcribe, chat, pay.',
+    id: 'data-1',
+    area: 'Data',
+    title: 'The Graph as decentralized data layer',
+    insight: 'Real-time indexing across chains powers AI agents.',
     priority: 7,
-    actions: ['Scope partner integrations', 'Evaluate privacy & model governance'],
+    actions: ['Adopt Subgraphs/Substreams', 'Design multi-source fallback plans'],
     sources: [
-      { label: 'Blockchain News', url: sources.value[3].url },
+      { label: 'The Graph (Wiki)', url: sources.value[5].url },
     ],
   },
   {
-    id: 'markets-1',
-    area: 'Markets',
-    title: 'AI-linked tokens rebound ~+3.5% (24h)',
-    insight: 'Narrative rotation into AI sector; leadership by WLD, FET, TAO.',
-    priority: 6,
-    actions: ['Map liquidity/volatility corridors', 'Stress-test treasury exposures'],
+    id: 'research-1',
+    area: 'Research',
+    title: 'AI-first security for smart contracts',
+    insight: 'GNNs/Transformers outperform traditional static analysis on classes of bugs.',
+    priority: 8,
+    actions: ['Blend fuzzing + ML triage', 'Build vuln classifiers for CI'],
     sources: [
-      { label: 'AInvest (24h)', url: sources.value[4].url },
+      { label: 'arXiv 2506.06735', url: sources.value[6].url },
     ],
   },
   {
-    id: 'rwa-1',
-    area: 'RWA',
-    title: 'KuCoin lists LiveArt $ART (luxury tokenization)',
-    insight: 'Expands tradable RWA narratives; BASE-ERC20 for distribution.',
-    priority: 6,
-    actions: ['Assess custody/oracle design', 'Model fee economics & creator splits'],
+    id: 'arbitrage-1',
+    area: 'Arbitrage',
+    title: 'AI-enhanced arb with risk-managed design',
+    insight: 'Caching & resilience improve low-latency DeFi strategies.',
+    priority: 7,
+    actions: ['Productize arb orchestration', 'Define failover SLOs & monitoring'],
     sources: [
-      { label: 'Coinfomania', url: sources.value[5].url },
+      { label: 'arXiv 2503.18265', url: sources.value[7].url },
+      { label: 'arXiv 2506.05708', url: sources.value[8].url },
+    ],
+  },
+  {
+    id: 'macro-1',
+    area: 'Macro',
+    title: 'RWA tokenization & interop drive maturation',
+    insight: 'Non-crypto beta flows enter DeFi; altcoins as innovation labs.',
+    priority: 6,
+    actions: ['Model RWA valuation/oracle redundancy', 'Assess partnerships with AI-DeFi alt protocols'],
+    sources: [
+      { label: 'BAppFactory', url: sources.value[9].url },
+      { label: 'AInvest (Altcoins)', url: sources.value[10].url },
     ],
   },
 ])
 
+const query = ref('')
+const filteredRows = computed(() => {
+  const q = query.value.toLowerCase().trim()
+  if (!q) return rows.value
+  return rows.value.filter(r => (
+    r.area.toLowerCase().includes(q) ||
+    r.title.toLowerCase().includes(q) ||
+    r.insight.toLowerCase().includes(q) ||
+    r.sources.some(s => s.label.toLowerCase().includes(q))
+  ))
+})
+
 // ===== Color helpers (DaisyUI → hex) =====
-function getThemeColors() {
-  const root = getComputedStyle(document.documentElement)
-  const keys = { primary: '--p', secondary: '--s', accent: '--a', info: '--in', success: '--su', warning: '--wa', error: '--er' }
-  const parse = (cssVar: string) => {
-    const raw = root.getPropertyValue(cssVar).trim() // '259 94% 51%'
+function cssVars() {
+  const s = getComputedStyle(document.documentElement)
+  function hslToHex(h: string, sV: string, l: string) {
+    const hue = parseFloat(h)
+    const sat = parseFloat(sV) / 100
+    const lig = parseFloat(l) / 100
+    const c = (1 - Math.abs(2 * lig - 1)) * sat
+    const x = c * (1 - Math.abs((hue / 60) % 2 - 1))
+    const m = lig - c / 2
+    let r = 0, g = 0, b = 0
+    if (0 <= hue && hue < 60) { r = c; g = x; b = 0 }
+    else if (60 <= hue && hue < 120) { r = x; g = c; b = 0 }
+    else if (120 <= hue && hue < 180) { r = 0; g = c; b = x }
+    else if (180 <= hue && hue < 240) { r = 0; g = x; b = c }
+    else if (240 <= hue && hue < 300) { r = x; g = 0; b = c }
+    else { r = c; g = 0; b = x }
+    const toHex = (n: number) => {
+      const hex = Math.round((n + m) * 255).toString(16)
+      return hex.length === 1 ? '0' + hex : hex
+    }
+    return `#${toHex(r)}${toHex(g)}${toHex(b)}`
+  }
+  const parse = (key: string) => {
+    const raw = s.getPropertyValue(key).trim() // '259 94% 51%'
     if (!raw) return '#7c3aed'
-    const [h, s, l] = raw.split(' ')
-    return hslToHex(parseFloat(h), parseFloat(s), parseFloat(l))
+    const [h, sv, lv] = raw.split(' ')
+    return hslToHex(h, sv.replace('%',''), lv.replace('%',''))
   }
-  return Object.fromEntries(Object.entries(keys).map(([k, v]) => [k, parse(v)])) as Record<string,string>
-}
-function hslToHex(h: number, s: number, l: number) {
-  s /= 100; l /= 100
-  const c = (1 - Math.abs(2*l - 1)) * s
-  const x = c * (1 - Math.abs((h/60) % 2 - 1))
-  const m = l - c/2
-  let r=0,g=0,b=0
-  if (0<=h && h<60){ r=c; g=x; b=0 }
-  else if (60<=h && h<120){ r=x; g=c; b=0 }
-  else if (120<=h && h<180){ r=0; g=c; b=x }
-  else if (180<=h && h<240){ r=0; g=x; b=c }
-  else if (240<=h && h<300){ r=x; g=0; b=c }
-  else { r=c; g=0; b=x }
-  const toHex = (n:number)=> {
-    const v = Math.round((n+m)*255).toString(16)
-    return v.length===1?'0'+v:v
+  return {
+    primary: parse('--p'),
+    secondary: parse('--s'),
+    accent: parse('--a'),
+    info: parse('--in'),
+    success: parse('--su'),
+    warning: parse('--wa'),
+    error: parse('--er'),
   }
-  return `#${toHex(r)}${toHex(g)}${toHex(b)}`
 }
 
 function areaBadge(area: string) {
@@ -344,9 +396,9 @@ function areaBadge(area: string) {
     case 'Data': return 'badge-info'
     case 'Agents': return 'badge-success'
     case 'Adoption': return 'badge-primary'
-    case 'Platforms': return 'badge-accent'
-    case 'Markets': return 'badge-warning'
-    case 'RWA': return 'badge-primary'
+    case 'Research': return 'badge-info'
+    case 'Arbitrage': return 'badge-warning'
+    case 'Macro': return 'badge-accent'
     default: return 'badge-ghost'
   }
 }
@@ -356,9 +408,9 @@ function areaProgress(area: string) {
     case 'Data': return 'progress-info'
     case 'Agents': return 'progress-success'
     case 'Adoption': return 'progress-primary'
-    case 'Platforms': return 'progress-accent'
-    case 'Markets': return 'progress-warning'
-    case 'RWA': return 'progress-primary'
+    case 'Research': return 'progress-info'
+    case 'Arbitrage': return 'progress-warning'
+    case 'Macro': return 'progress-accent'
     default: return 'progress-primary'
   }
 }
@@ -368,21 +420,24 @@ const barEl = ref<HTMLCanvasElement | null>(null)
 const scatterEl = ref<HTMLCanvasElement | null>(null)
 const donutEl = ref<HTMLCanvasElement | null>(null)
 const sparkRefs = new Map<string, HTMLCanvasElement>()
-
 let barChart: any = null
 let scatterChart: any = null
 let donutChart: any = null
 const sparkCharts: Record<string, any> = {}
 
-const moversBadges = [
-  { label: 'AInvest (24h)', url: sources.value[4].url },
+const impactBadges = [
+  { label: 'AInvest', url: sources.value[0].url },
+  { label: 'TokenMinds', url: sources.value[2].url },
+  { label: 'Wikipedia', url: sources.value[4].url },
+  { label: 'arXiv', url: sources.value[6].url },
+  { label: 'BAppFactory', url: sources.value[9].url },
 ]
 
 onMounted(async () => {
   try {
     const ChartModule: any = await import('chart.js/auto')
     const Chart = ChartModule.default || ChartModule
-    const c = getThemeColors()
+    const c = cssVars()
 
     // Gradient helper
     function makeGrad(ctx: CanvasRenderingContext2D, from: string, to: string) {
@@ -392,21 +447,23 @@ onMounted(async () => {
       return g
     }
 
-    // 1) Bar chart: AI Basket 24h movers
+    // Bar chart: Pillar Impact
     if (barEl.value) {
       const ctx = barEl.value.getContext('2d')!
       barChart = new Chart(ctx, {
         type: 'bar',
         data: {
-          labels: ['WLD', 'FET', 'TAO'],
+          labels: ['Adoption', 'Agents', 'Infra', 'Research', 'Macro'],
           datasets: [
             {
-              label: '24h %',
-              data: [13.2, 3.1, 2.9],
+              label: 'Impact',
+              data: [88, 84, 79, 74, 70],
               backgroundColor: [
                 makeGrad(ctx, c.primary, c.accent),
-                makeGrad(ctx, c.secondary, c.info),
                 makeGrad(ctx, c.success, c.primary),
+                makeGrad(ctx, c.secondary, c.info),
+                makeGrad(ctx, c.info, c.secondary),
+                makeGrad(ctx, c.accent, c.primary),
               ],
               borderRadius: 12,
               borderSkipped: false,
@@ -416,24 +473,28 @@ onMounted(async () => {
         options: {
           responsive: true,
           maintainAspectRatio: false,
-          plugins: { legend: { display: false }, tooltip: { callbacks: { label: (x:any)=> `${x.raw}%` } } },
+          plugins: { legend: { display: false } },
           scales: {
             x: { ticks: { color: '#a6adbb' }, grid: { display: false } },
-            y: { beginAtZero: true, ticks: { color: '#a6adbb', callback: (v:any)=> `${v}%` }, grid: { color: 'rgba(166,173,187,0.18)' } },
+            y: {
+              beginAtZero: true, max: 100,
+              ticks: { color: '#a6adbb', callback: (v: any) => `${v}` },
+              grid: { color: 'rgba(166,173,187,0.18)' }
+            },
           },
         },
       })
     }
 
-    // 2) Scatter: Impact vs Readiness
+    // Scatter: Impact vs Maturity
     if (scatterEl.value) {
       const ctx = scatterEl.value.getContext('2d')!
       const points = [
-        { x: 8.7, y: 8.3, label: 'Agent UX', color: c.success, src: sources.value[0].url },
-        { x: 8.2, y: 8.6, label: 'Data Infra', color: c.secondary, src: sources.value[1].url },
-        { x: 7.6, y: 7.8, label: 'Platforms (Keet)', color: c.accent, src: sources.value[3].url },
-        { x: 6.5, y: 6.9, label: 'Markets (AI Basket)', color: c.primary, src: sources.value[4].url },
-        { x: 6.8, y: 7.1, label: 'RWA ($ART)', color: c.info, src: sources.value[5].url },
+        { x: 8.5, y: 8.8, label: 'Adoption momentum', color: c.primary, src: sources.value[0].url },
+        { x: 7.8, y: 8.4, label: 'Agent workflows', color: c.success, src: sources.value[2].url },
+        { x: 7.2, y: 7.9, label: 'Uniswap v4 hooks', color: c.secondary, src: sources.value[4].url },
+        { x: 6.5, y: 7.4, label: 'AI security research', color: c.info, src: sources.value[6].url },
+        { x: 6.8, y: 7.0, label: 'RWA & macro tailwinds', color: c.accent, src: sources.value[9].url },
       ]
       scatterChart = new Chart(ctx, {
         type: 'scatter',
@@ -452,23 +513,23 @@ onMounted(async () => {
           maintainAspectRatio: false,
           plugins: { legend: { display: false } },
           scales: {
-            x: { min: 0, max: 10, title: { display: true, text: 'Readiness' }, ticks: { color: '#a6adbb' }, grid: { color: 'rgba(166,173,187,0.15)' } },
+            x: { min: 0, max: 10, title: { display: true, text: 'Maturity' }, ticks: { color: '#a6adbb' }, grid: { color: 'rgba(166,173,187,0.15)' } },
             y: { min: 0, max: 10, title: { display: true, text: 'Impact' }, ticks: { color: '#a6adbb' }, grid: { color: 'rgba(166,173,187,0.15)' } },
           },
         },
       })
     }
 
-    // 3) Donut: Theme weighting
+    // Donut: Theme Weighting
     if (donutEl.value) {
       const ctx = donutEl.value.getContext('2d')!
       donutChart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: ['Agents', 'Data Infra', 'Platforms', 'Markets', 'RWA'],
+          labels: ['Adoption', 'Agents', 'Infra', 'Research', 'Macro'],
           datasets: [{
             data: [26, 24, 18, 16, 16],
-            backgroundColor: [c.success, c.secondary, c.accent, c.primary, c.info],
+            backgroundColor: [c.primary, c.success, c.secondary, c.info, c.accent],
             borderWidth: 0,
           }],
         },
@@ -476,10 +537,7 @@ onMounted(async () => {
           responsive: true,
           maintainAspectRatio: false,
           cutout: '65%',
-          plugins: {
-            legend: { position: 'bottom', labels: { color: '#a6adbb' } },
-            tooltip: { callbacks: { label: (ctx:any) => `${ctx.label}: ${ctx.parsed}%` } }
-          },
+          plugins: { legend: { position: 'bottom', labels: { color: '#a6adbb' } } },
         },
       })
     }
@@ -496,11 +554,11 @@ onMounted(async () => {
       if (!el) return
       const ctx = el.getContext('2d')!
       const color =
-        k.id === 'agents' ? getThemeColors().success :
-        k.id === 'aibasket' ? getThemeColors().primary :
-        k.id === 'infra' ? getThemeColors().secondary :
-        k.id === 'platforms' ? getThemeColors().accent :
-        getThemeColors().info
+        k.id === 'adoption' ? cssVars().primary :
+        k.id === 'agents' ? cssVars().success :
+        k.id === 'infra' ? cssVars().secondary :
+        k.id === 'research' ? cssVars().info :
+        cssVars().accent
       sparkCharts[k.id] = Spark(ctx, color, k.spark)
     })
   } catch (error) {
