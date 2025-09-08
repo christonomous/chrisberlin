@@ -26,12 +26,12 @@ export function useReports() {
       title: 'Uniswap v4 Hooks, Permissioned Agents, RWA Growth & Ethereum ETF Flows',
       tags: ['Programmable AMMs', 'Indexing', 'Agents', 'ETFs', 'RWA', 'Security']
     },
-    {
+    /* {
       path: '/reports/ai-defi-agents-data-keet-ai-tokens-rwa-2025-09-08',
       date: '2025-09-08T09:00:00+02:00',
       title: 'AI × DeFi: Agents, Data Infrastructure, Keet Expansion, AI-Token Rebound & Luxury RWA',
       tags: ['Agents', 'Infrastructure', 'AI Tokens', 'RWA', 'Exchanges', 'UX']
-    }
+    } */
   ])
 
   // Get metadata for current report based on route
