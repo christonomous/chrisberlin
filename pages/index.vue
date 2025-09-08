@@ -30,10 +30,10 @@
           <p class="opacity-80 text-lg md:text-xl max-w-2xl">
             Time is <span class="font-semibold">the most valuable asset</span>.
           </p>
-          <!-- <div class="mt-8 flex flex-wrap gap-3">
-            <a class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0" @click="toggleWidget">Buy some Time</a>
-            <a href="#work" class="btn btn-outline">See Proof</a>
-          </div> -->
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#reports" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Market Reports</a>
+            <a href="#work" class="btn btn-outline">Businesses</a>
+          </div>
           <div class="mt-6 text-sm opacity-70">
             <span class="inline-flex items-center gap-2">The Future is Automated & Decentralized</span>
           </div>
@@ -75,7 +75,7 @@
         <div class="card-body grid md:grid-cols-3 gap-6">
           <div>
             <h2 class="text-2xl font-bold mb-2">Hi, I'm Chris</h2>
-            <p class="opacity-80">I identify a high‑leverage for you, so you can <span class="font-semibold">make the most out of your time</span> using AI & DeFi.</p>
+            <p class="opacity-80">I help DeFi hedge funds and LPs <b>use AI to identify and capture cross-chain yield and arbitrage opportunities in real time</b>, so they can outperform the market without manual monitoring.</p>
           </div>
           <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
@@ -167,7 +167,7 @@
             </div>
             <p class="opacity-80">AI‑driven DAOs: autonomous org tooling, agent governance, and cross‑chain execution.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://www.linkedin.com/company/autonomousenterprises" target="_blank">Discuss Agents</a>
+              <a class="btn btn-sm btn-outline" href="https://www.linkedin.com/company/autonomousenterprises" target="_blank">Follow LinkedIn</a>
             </div>
           </div>
         </article>
@@ -179,7 +179,7 @@
             </div>
             <p class="opacity-80">On‑chain AI algo‑trader: data ingestion, risk rails, strategy orchestration.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://zillions.app/" target="_blank">Talk Trading</a>
+              <a class="btn btn-sm btn-outline" href="https://zillions.app/" target="_blank">Get Early Access</a>
             </div>
           </div>
         </article>
@@ -191,7 +191,7 @@
             </div>
             <p class="opacity-80">AI‑driven leadgen + funnel builder: agents that research, write, launch, and iterate.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://brane.media/" target="_blank">Scale Leads</a>
+              <a class="btn btn-sm btn-outline" href="https://brane.media/" target="_blank">Get Early Access</a>
             </div>
           </div>
         </article>
@@ -203,7 +203,7 @@
             </div>
             <p class="opacity-80">Text‑to‑SaaS: turn specs into shipped MVPs with agentic scaffolding.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://nujin.ai/" target="_blank">Ship Faster</a>
+              <a class="btn btn-sm btn-outline" href="https://nujin.ai/" target="_blank">Get Early Access</a>
             </div>
           </div>
         </article>
@@ -211,7 +211,7 @@
     </section>
 
     <!-- Reports -->
-    <section class="container mx-auto max-w-6xl px-4 mt-16">
+    <section class="container mx-auto max-w-6xl px-4 mt-16" id="reports">
       <h2 class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">Latest Reports</h2>
       <ReportsGrid />
     </section>
