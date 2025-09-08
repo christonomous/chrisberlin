@@ -17,21 +17,21 @@ export function useReports() {
     {
       path: '/reports/ai-defi-adoption-agents-uniswap-v4-the-graph-rwa-2025-08-30',
       date: '2025-08-30T09:00:00+02:00',
-      title: 'AI × DeFi Key Developments: Adoption, Agents, Uniswap v4 Hooks, The Graph & RWA',
+      title: 'Adoption, Agents, Uniswap v4 Hooks, The Graph & RWA',
       tags: ['Adoption', 'Agents', 'Programmable AMMs', 'Indexing', 'Security', 'RWA']
     },
     {
-      path: '/reports/ai-defi-uniswap-v4-permissioned-agents-rwa-ethereum-etf-2025-09-07',
+      path: '/reports/uniswap-v4-permissioned-agents-rwa-ethereum-etf-2025-09-07',
       date: '2025-09-07T09:00:00+02:00',
       title: 'Uniswap v4 Hooks, Permissioned Agents, RWA Growth & Ethereum ETF Flows',
       tags: ['Programmable AMMs', 'Indexing', 'Agents', 'ETFs', 'RWA', 'Security']
     },
-    /* {
-      path: '/reports/ai-defi-agents-data-keet-ai-tokens-rwa-2025-09-08',
+    {
+      path: '/reports/eth-etf-outflows-agentic-execution-rwa-tvl-2025-09-08',
       date: '2025-09-08T09:00:00+02:00',
-      title: 'AI × DeFi: Agents, Data Infrastructure, Keet Expansion, AI-Token Rebound & Luxury RWA',
-      tags: ['Agents', 'Infrastructure', 'AI Tokens', 'RWA', 'Exchanges', 'UX']
-    } */
+      title: ' ETH ETF Outflows, Agentic Execution & RWA TVL — Sep 8, 2025',
+      tags: ['ETFs', 'Agents', 'RWA', 'PayFi', 'Security', 'Market Pulse']
+    }
   ])
 
   // Get metadata for current report based on route
