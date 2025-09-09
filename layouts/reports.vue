@@ -49,7 +49,7 @@
     <!-- Footer -->
     <footer class="relative z-10 py-10 border-t border-base-300/60">
       <div class="container mx-auto px-4 text-sm opacity-70">
-        <p>For decision support. Not financial advice.</p>
+        <p>For decision support. Not financial advice. <b>Generated autonomously by AI</b></p>
       </div>
     </footer>
   </div>
