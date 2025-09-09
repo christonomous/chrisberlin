@@ -130,13 +130,13 @@
         <li class="step step-secondary">
           <div class="flex flex-col items-center">
             <span class="text-lg font-semibold">2025</span>
-            <span class="text-sm text-base-content/80">AI x DeFi</span>
+            <span class="text-sm text-base-content/80">AI x DeFi (DeFAI)</span>
           </div>
         </li>
         <li class="step">
           <div class="flex flex-col items-center">
             <span class="text-lg font-semibold">Future</span>
-            <span class="text-sm text-base-content/80">DAO 2.0</span>
+            <span class="text-sm text-base-content/80">Autonomous Enterprises (DAO 2.0)</span>
           </div>
         </li>
       </ul>
