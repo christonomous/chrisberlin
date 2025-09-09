@@ -15,10 +15,16 @@ export function useReports() {
   // For now, we'll hardcode the one report we have
   const reports = ref<ReportMeta[]>([
     {
-      path: '/reports/ai-defi-adoption-agents-uniswap-v4-the-graph-rwa-2025-08-30',
-      date: '2025-08-30T09:00:00+02:00',
-      title: 'Adoption, Agents, Uniswap v4 Hooks, The Graph & RWA',
-      tags: ['Adoption', 'Agents', 'Programmable AMMs', 'Indexing', 'Security', 'RWA']
+      path: '/reports/ai-token-rally-worldcoin-privacy-agents-2025-09-09',
+      date: '2025-09-09T09:00:00+02:00',
+      title: 'AI Token Rally, Worldcoin Surge, Privacy Tools & Autonomous Agents',
+      tags: ['AI Tokens', 'Worldcoin', 'Privacy', 'Transparency', 'Agents', 'Market Pulse']
+    },
+    {
+      path: '/reports/eth-etf-outflows-agentic-execution-rwa-tvl-2025-09-08',
+      date: '2025-09-08T09:00:00+02:00',
+      title: ' ETH ETF Outflows, Agentic Execution & RWA TVL',
+      tags: ['ETFs', 'Agents', 'RWA', 'PayFi', 'Security', 'Market Pulse']
     },
     {
       path: '/reports/uniswap-v4-permissioned-agents-rwa-ethereum-etf-2025-09-07',
@@ -27,10 +33,10 @@ export function useReports() {
       tags: ['Programmable AMMs', 'Indexing', 'Agents', 'ETFs', 'RWA', 'Security']
     },
     {
-      path: '/reports/eth-etf-outflows-agentic-execution-rwa-tvl-2025-09-08',
-      date: '2025-09-08T09:00:00+02:00',
-      title: ' ETH ETF Outflows, Agentic Execution & RWA TVL',
-      tags: ['ETFs', 'Agents', 'RWA', 'PayFi', 'Security', 'Market Pulse']
+      path: '/reports/ai-defi-adoption-agents-uniswap-v4-the-graph-rwa-2025-08-30',
+      date: '2025-08-30T09:00:00+02:00',
+      title: 'Adoption, Agents, Uniswap v4 Hooks, The Graph & RWA',
+      tags: ['Adoption', 'Agents', 'Programmable AMMs', 'Indexing', 'Security', 'RWA']
     }
   ])
 
