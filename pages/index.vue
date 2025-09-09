@@ -75,24 +75,25 @@
         <div class="card-body grid md:grid-cols-3 gap-6">
           <div>
             <h2 class="text-2xl font-bold mb-2">Hi, I'm Chris</h2>
-            <p class="opacity-80">I help DeFi hedge funds, DAOs and LPs <b>use AI to identify and capture cross-chain yield and arbitrage opportunities in real time</b>, so they can outperform the market without manual monitoring.</p>
+            <p class="opacity-80">I’m building wealth and sovereignty in the AI age by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
+            <p class="opacity-80 pt-4"><b>I help you on the path from worker to owner before AI closes the gap.</b></p>
           </div>
           <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">Workflow Automation</h3>
-              <p class="text-sm opacity-80">I map your bottleneck and automate your workflows.</p>
+              <h3 class="font-semibold">AI Mastery</h3>
+              <p class="text-sm opacity-80">Not just hype, but deep technical and strategic understanding of how AI will reshape industries.</p>
             </li>
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">AI Implementation</h3>
-              <p class="text-sm opacity-80">I develop you AI Bots, AI OS, and AI Infrastructure to make your business smart.</p>
+              <h3 class="font-semibold">DeFi Sovereignty</h3>
+              <p class="text-sm opacity-80">Full control over capital and yield through decentralized, permissionless systems.</p>
             </li>
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">Dashboard Development</h3>
-              <p class="text-sm opacity-80">Get a custom dashboard to analyze insights and make decisions precise.</p>
+              <h3 class="font-semibold">Asset Ownership Philosophy</h3>
+              <p class="text-sm opacity-80">The conviction that in the AI economy, ownership beats employment.</p>
             </li>
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">MVP Developement</h3>
-              <p class="text-sm opacity-80">Get an app you can launch and validate on your market.</p>
+              <h3 class="font-semibold">Autonomous Wealth Creation</h3>
+              <p class="text-sm opacity-80">Leveraging AI agents, algorithms, and protocols to create compounding income streams.</p>
             </li>
           </ul>
         </div>
@@ -145,7 +146,7 @@
     <section id="work" class="container mx-auto max-w-6xl px-4 mt-16">
       <h2 class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">My Businesses</h2>
       <div class="grid gap-6 pb-6">
-        <article class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col">
+        <a href="https://revoro.consulting" target="_blank" class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:bg-base-300 hover:outline">
           <div class="card-body flex flex-col gap-4">
             <div class="flex items-center gap-4">
               <img src="https://revoro.consulting/logo_light.svg" alt="Revoro Consulting" class="w-10 h-10 object-contain rounded-full" />
@@ -153,25 +154,25 @@
             </div>
             <p class="opacity-80">We help founders, teams, and enterprises research, design, and deploy AI‑powered solutions - from workflow automation to full‑stack SaaS. <br> <b>Whether you need an AI integration, a training program, or a shipped MVP, we make it happen.</b></p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://www.linkedin.com/company/autonomousenterprises" target="_blank">Get Free Consultation</a>
+              <button class="btn btn-sm btn-outline">Get Free Consultation</button>
             </div>
           </div>
-        </article>
+        </a>
       </div>
       <div class="grid md:grid-cols-2 gap-6">
-        <article class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col">
+        <a href="https://www.linkedin.com/company/autonomousenterprises" target="_blank" class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:bg-base-300 hover:outline">
           <div class="card-body flex flex-col gap-4">
             <div class="flex items-center gap-4">
               <img src="https://media.licdn.com/dms/image/v2/D4D0BAQF0S4VAwbLFUQ/company-logo_200_200/company-logo_200_200/0/1704713473491/autonomousenterprises_logo?e=1759363200&v=beta&t=imLwotHyFMKG6gHJJLKskJ_MHpqdUiO-GOB7z-k1qeU" alt="Autonomous Enterprises" class="w-10 h-10 object-contain rounded-full" />
               <h3 class="card-title">Autonomous Enterprises</h3>
             </div>
-            <p class="opacity-80">AI‑driven DAOs: autonomous org tooling, agent governance, and cross‑chain execution.</p>
+            <p class="opacity-80">AI‑driven DAOs: autonomous on-chain businesses accessible to everyone.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://www.linkedin.com/company/autonomousenterprises" target="_blank">Follow LinkedIn</a>
+              <button class="btn btn-sm btn-outline">Follow LinkedIn</button>
             </div>
           </div>
-        </article>
-        <article class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col">
+        </a>
+        <a href="https://zillions.app/" target="_blank" class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:bg-base-300 hover:outline">
           <div class="card-body flex flex-col gap-4">
             <div class="flex items-center gap-4">
               <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFl_4AuSLroyw/company-logo_200_200/company-logo_200_200/0/1680593144768/cunoro_logo?e=1759363200&v=beta&t=px9sHdAmPFDJKgIb7yF14sJySpZCEbU-3V0YImfkFxI" alt="Zillions" class="w-10 h-10 object-contain rounded-full" />
@@ -179,11 +180,11 @@
             </div>
             <p class="opacity-80">On‑chain AI algo‑trader: data ingestion, risk rails, strategy orchestration.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://zillions.app/" target="_blank">Get Early Access</a>
+              <button class="btn btn-sm btn-outline">Get Early Access</button>
             </div>
           </div>
-        </article>
-        <article class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col">
+        </a>
+        <a href="https://brane.media/" target="_blank" class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:bg-base-300 hover:outline">
           <div class="card-body flex flex-col gap-4">
             <div class="flex items-center gap-4">
               <img src="https://brane.media/logo_light.png" alt="BRANE Media" class="w-10 h-10 object-contain rounded-full" />
@@ -191,28 +192,28 @@
             </div>
             <p class="opacity-80">AI‑driven leadgen + funnel builder: agents that research, write, launch, and iterate.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://brane.media/" target="_blank">Get Early Access</a>
+              <button class="btn btn-sm btn-outline">Gets a revamp</button>
             </div>
           </div>
-        </article>
-        <article class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col">
+        </a>
+        <a href="https://nujin.ai/" target="_blank" class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:bg-base-300 hover:outline">
           <div class="card-body flex flex-col gap-4">
             <div class="flex items-center gap-4">
               <img src="https://media.licdn.com/dms/image/v2/D4D0BAQEU4b6OdQGRgA/company-logo_200_200/company-logo_200_200/0/1725449672013/nujindevelopment_logo?e=1759363200&v=beta&t=XTIce-doDUorX5A9pFBl35P5tlmHfK7x8f5wz77_Kys" alt="Nujins" class="w-10 h-10 object-contain rounded-full" />
               <h3 class="card-title">Nujin</h3>
             </div>
-            <p class="opacity-80">Text‑to‑SaaS: turn specs into shipped MVPs with agentic scaffolding.</p>
+            <p class="opacity-80">Text‑to‑SaaS: Prompt your MVPs ready to monitize.</p>
             <div class="card-actions justify-end mt-auto">
-              <a class="btn btn-sm btn-outline" href="https://nujin.ai/" target="_blank">Get Early Access</a>
+              <button class="btn btn-sm btn-outline">Under development</button>
             </div>
           </div>
-        </article>
+        </a>
       </div>
     </section>
 
     <!-- Reports -->
     <section class="container mx-auto max-w-6xl px-4 mt-16" id="reports">
-      <h2 class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">Latest Reports</h2>
+      <h2 class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">Latest Market Reports</h2>
       <ReportsGrid />
     </section>
 
