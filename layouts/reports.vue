@@ -21,7 +21,7 @@
             </div>
           </div>
           <div class="flex md:justify-end items-center gap-2">
-            <NuxtLink class="btn btn-ghost btn-outline btn-sm" to="/">Back</NuxtLink>
+            <NuxtLink class="btn btn-ghost btn-outline btn-sm" to="/">Home</NuxtLink>
             <div class="dropdown dropdown-end">
               <label tabindex="0" class="btn btn-secondary btn-sm shadow-lg shadow-secondary/20">
                 Reports
