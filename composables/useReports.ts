@@ -15,6 +15,12 @@ export function useReports() {
   // For now, we'll hardcode the one report we have
   const reports = ref<ReportMeta[]>([
     {
+      path: '/reports/ai-defi-worldcoin-agents-tvl-privacy-2025-09-12',
+      date: '2025-09-12T09:00:00+02:00',
+      title: 'AI Tokens, Worldcoin Surge, DeFi Agents & Privacy Advances',
+      tags: ['AI Tokens', 'Agents', 'Worldcoin', 'Privacy', 'Transparency', 'Creator Economy']
+    },
+    {
       path: '/reports/ai-capex-automation-labor-sp500-concentration-2025-09-09',
       date: '2025-09-09T09:00:00+02:00',
       title: 'AI Capex, Automation Risk & S&P 500 Concentration',

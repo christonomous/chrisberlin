@@ -12,16 +12,6 @@
         <div class="stat-desc">Full-stack Developer</div>
       </div>
 
-      <!-- Entrepreneurship -->
-      <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
-        <div class="stat-title text-white"><b>Entrepreneurship</b></div>
-        <div class="flex items-center justify-center gap-1">
-          <div class="stat-value leading-none text-secondary">{{ yearsPlus(starts.entrepreneurship) }}</div>
-          <span class="text-base-content/60 text-xl">y</span>
-        </div>
-        <div class="stat-desc">Founder</div>
-      </div>
-
       <!-- DeFi -->
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
         <div class="stat-title text-white"><b>DeFi</b></div>
@@ -30,6 +20,16 @@
           <span class="text-base-content/60 text-xl">y</span>
         </div>
         <div class="stat-desc">On-chain native</div>
+      </div>
+      
+      <!-- Entrepreneurship -->
+      <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
+        <div class="stat-title text-white"><b>Entrepreneurship</b></div>
+        <div class="flex items-center justify-center gap-1">
+          <div class="stat-value leading-none text-secondary">{{ yearsPlus(starts.entrepreneurship) }}</div>
+          <span class="text-base-content/60 text-xl">y</span>
+        </div>
+        <div class="stat-desc">Founder</div>
       </div>
 
       <!-- AI & Automation -->
