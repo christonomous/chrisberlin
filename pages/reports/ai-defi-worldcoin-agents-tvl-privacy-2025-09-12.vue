@@ -13,7 +13,9 @@
             <div class="flex items-start justify-between">
               <div>
                 <h2 class="card-title text-base">{{ k.title }}</h2>
-                <p class="text-xs opacity-70" v-if="k.caption">{{ k.caption }}</p>
+                <p class="text-xs opacity-70" v-if="k.caption">
+                  <a :href="k.source" target="_blank" class="link link-primary">{{ k.caption }}</a>
+                </p>
               </div>
               <div class="badge badge-secondary badge-outline">{{ k.tag }}</div>
             </div>
@@ -31,6 +33,9 @@
           <canvas id="tvlForecastChart" height="200"></canvas>
           <p class="text-xs opacity-70 mt-2">
             Autonomous agents are projected to manage up to $100B by 2028.
+            <a href="https://www.ainvest.com/news/ai-driven-defi-innovation-token-economics-assessing-mignal-mgl-high-growth-entry-point-2509/?utm_source=chatgpt.com"
+               target="_blank"
+               class="link link-primary">[Source]</a>
           </p>
         </div>
       </div>
@@ -51,7 +56,10 @@
             <tbody>
               <tr v-for="row in summary" :key="row.trend">
                 <td>{{ row.trend }}</td>
-                <td>{{ row.insight }}</td>
+                <td>
+                  {{ row.insight }}
+                  <a v-if="row.source" :href="row.source" target="_blank" class="link link-primary">[Source]</a>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -78,8 +86,6 @@
 import { onMounted } from "vue";
 import {
   Chart,
-  BarController,
-  BarElement,
   LineController,
   LineElement,
   PointElement,
@@ -91,8 +97,6 @@ import {
 } from "chart.js";
 
 Chart.register(
-  BarController,
-  BarElement,
   LineController,
   LineElement,
   PointElement,
@@ -103,47 +107,26 @@ Chart.register(
   Legend
 );
 
-// KPI values
+// KPI values with sources
 const kpis = [
-  { id: 1, title: "AI Sector Surge", value: "+14.38%", tag: "24h", caption: "CryptoRank" },
-  { id: 2, title: "Worldcoin Gain", value: "+50%", tag: "24h", caption: "NY Post" },
-  { id: 3, title: "Identities Verified", value: "16M", tag: "Worldcoin", caption: "Target 100M" },
-  { id: 4, title: "Agent-Managed TVL", value: "$100B", tag: "2028", caption: "Theoriq" },
+  { id: 1, title: "AI Sector Surge", value: "+14.38%", tag: "24h", caption: "CryptoRank", source: "https://cryptorank.io/news/feed/2dbd4-live-crypto-news-today-latest-updates-for-sept-9-2025?utm_source=chatgpt.com" },
+  { id: 2, title: "Worldcoin Gain", value: "+50%", tag: "24h", caption: "NY Post", source: "https://nypost.com/2025/09/08/business/why-sam-altmans-worldcoin-is-suddenly-skyrocketing/?utm_source=chatgpt.com" },
+  { id: 3, title: "Identities Verified", value: "16M", tag: "Worldcoin", caption: "NY Post", source: "https://nypost.com/2025/09/08/business/why-sam-altmans-worldcoin-is-suddenly-skyrocketing/?utm_source=chatgpt.com" },
+  { id: 4, title: "Agent-Managed TVL", value: "$100B", tag: "2028", caption: "AInvest", source: "https://www.ainvest.com/news/ai-driven-defi-innovation-token-economics-assessing-mignal-mgl-high-growth-entry-point-2509/?utm_source=chatgpt.com" },
 ];
 
-// Summary snapshot
+// Summary snapshot with sources
 const summary = [
-  { trend: "AI Token Surge", insight: "+14.38%, Worldcoin ~+50%" },
-  { trend: "AI-DeFi Creator Ecosystem", insight: "Blazpay × StarAI partnership" },
-  { trend: "Trading Transparency", insight: "On-chain AI builds via MAPB" },
-  { trend: "Privacy in AI-DeFi", insight: "iExec TEE-enabled on Arbitrum" },
-  { trend: "AI Betting Tools", insight: "Hype rises, performance lags" },
-  { trend: "Identity Tokenization", insight: "Worldcoin: $270M buy, 16M verified" },
-  { trend: "Agent-Managed TVL Forecast", insight: "$100B by 2028 (Theoriq)" },
+  { trend: "AI Token Surge", insight: "+14.38%, Worldcoin ~+50%", source: "https://cryptorank.io/news/feed/2dbd4-live-crypto-news-today-latest-updates-for-sept-9-2025?utm_source=chatgpt.com" },
+  { trend: "AI-DeFi Creator Ecosystem", insight: "Blazpay × StarAI partnership", source: "https://blockchainreporter.net/blazpay-and-starai-forge-alliance-to-build-creator-centric-ai-defi-ecosystem/?utm_source=chatgpt.com" },
+  { trend: "Trading Transparency", insight: "On-chain AI builds via MAPB", source: "https://www.openpr.com/news/4174314/marlinn-group-elevates-transparency-in-ai-powered-defi-trading?utm_source=chatgpt.com" },
+  { trend: "Privacy in AI-DeFi", insight: "iExec TEE-enabled on Arbitrum", source: "https://blockchainreporter.net/iexec-brings-confidential-computing-to-arbitrum-privacy-for-defi-ai-and-gaming/?utm_source=chatgpt.com" },
+  { trend: "AI Betting Tools", insight: "Hype rises, performance lags", source: "https://www.wired.com/story/sports-betting-crypto-artificial-intelligence-agents?utm_source=chatgpt.com" },
+  { trend: "Identity Tokenization", insight: "Worldcoin: $270M buy, 16M verified", source: "https://nypost.com/2025/09/08/business/why-sam-altmans-worldcoin-is-suddenly-skyrocketing/?utm_source=chatgpt.com" },
+  { trend: "Agent-Managed TVL Forecast", insight: "$100B by 2028 (Theoriq)", source: "https://www.ainvest.com/news/ai-driven-defi-innovation-token-economics-assessing-mignal-mgl-high-growth-entry-point-2509/?utm_source=chatgpt.com" },
 ];
 
 onMounted(() => {
-  // AI Token Surge chart
-  new Chart(document.getElementById("aiTokensChart"), {
-    type: "bar",
-    data: {
-      labels: ["AI Sector", "Worldcoin"],
-      datasets: [
-        {
-          label: "24h Gain (%)",
-          data: [14.38, 50],
-          backgroundColor: ["#7c3aed", "#00ff9d"],
-        },
-      ],
-    },
-    options: {
-      responsive: true,
-      plugins: { legend: { display: false } },
-      scales: { y: { beginAtZero: true } },
-    },
-  });
-
-  // Forecast chart
   new Chart(document.getElementById("tvlForecastChart"), {
     type: "line",
     data: {
