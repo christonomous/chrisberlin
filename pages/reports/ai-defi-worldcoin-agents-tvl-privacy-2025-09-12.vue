@@ -24,16 +24,7 @@
     </section>
 
     <!-- Charts Section -->
-    <section class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
-      <div class="card bg-base-100/80 border border-base-300/60 shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title">AI Token Surge (24h % Gains)</h2>
-          <canvas id="aiTokensChart" height="200"></canvas>
-          <p class="text-xs opacity-70 mt-2">
-            AI tokens outperformed the market, with Worldcoin leading.
-          </p>
-        </div>
-      </div>
+    <section class="container mx-auto px-4 py-8 grid grid-cols-1 lg:grid-cols-1 gap-6">
       <div class="card bg-base-100/80 border border-base-300/60 shadow-xl">
         <div class="card-body">
           <h2 class="card-title">Forecast: Agent-Managed TVL (B$)</h2>
