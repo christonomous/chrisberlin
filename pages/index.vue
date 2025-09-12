@@ -71,39 +71,7 @@
     </section>
 
     <AiDefiIntersectSection class="container mx-auto"/>
-
-    <!-- OFFER / HOOK -->
-    <section id="offer" class="container mx-auto max-w-6xl px-4">
-      <div class="card bg-base-200/50 shadow-xl border border-base-300/30">
-        <div class="card-body grid md:grid-cols-3 gap-6">
-          <div>
-            <h2 class="text-2xl font-bold mb-2">Hi, I'm Chris</h2>
-            <p class="opacity-80">I’m building autonomous AI Agents managing Capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
-            <p class="opacity-80 pt-4"><b>I help you on the path to become an owner before AI closes the gap.</b></p>
-          </div>
-          <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
-            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">AI Mastery</h3>
-              <p class="text-sm opacity-80">Training and consulting on how to use AI the right way to nail it.</p>
-            </li>
-            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">DeFi Sovereignty</h3>
-              <p class="text-sm opacity-80">DeFi and DAO development and strategies for investment optimization.</p>
-            </li>
-            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">AI Automation</h3>
-              <p class="text-sm opacity-80">Custom AI OS implementation as well as AI Agent development and worflow automation.</p>
-            </li>
-            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-              <h3 class="font-semibold">Market Research</h3>
-              <p class="text-sm opacity-80">Agile go-to buisness strategies to be prepared for market trends.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SOCIAL PROOF / BRANDS -->
+    
     <section class="container mx-auto max-w-6xl px-4 my-16 pt-16">
       <ul class="steps steps-vertical lg:steps-horizontal w-full mb-12 text-center" data-aos="fade-up" data-aos-delay="200">
         <li class="step step-primary">
@@ -145,17 +113,46 @@
       </ul>
     </section>
 
-    <section class="container mx-auto max-w-6xl px-4 pb-2">
-      <div class="card bg-base-200/80 border border-base-300/60 shadow-xl">
-        <div class="card-body">
-          <h2 class="card-title">Forecast: Agent-Managed TVL (B$)</h2>
-          <canvas id="tvlForecastChart" height="200"></canvas>
-          <p class="text-xs opacity-70 mt-2">
-            Autonomous agents are projected to manage up to $100B by 2028.
-            <a href="https://www.ainvest.com/news/ai-driven-defi-innovation-token-economics-assessing-mignal-mgl-high-growth-entry-point-2509/?utm_source=chatgpt.com"
-               target="_blank"
-               class="link link-primary">[Source]</a>
-          </p>
+    <!-- OFFER / HOOK -->
+    <section id="offer" class="container mx-auto max-w-6xl px-4">
+      <div class="card bg-base-200/50 shadow-xl border border-base-300/30">
+        <div class="card-body grid md:grid-cols-3 gap-6">
+          <div>
+            <h2 class="text-2xl font-bold mb-2">Hi, I'm Chris</h2>
+            <p class="opacity-80">I’m building autonomous AI Agents managing Capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
+            <p class="opacity-80 pt-4"><b>I help you on the path to become an owner before AI closes the gap.</b></p>
+          </div>
+          <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
+            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
+              <h3 class="font-semibold">AI Mastery</h3>
+              <p class="text-sm opacity-80">Training and consulting on how to use AI the right way to nail it.</p>
+            </li>
+            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
+              <h3 class="font-semibold">DeFi Sovereignty</h3>
+              <p class="text-sm opacity-80">DeFi and DAO development and strategies for investment optimization.</p>
+            </li>
+            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
+              <h3 class="font-semibold">AI Automation</h3>
+              <p class="text-sm opacity-80">Custom AI OS implementation as well as AI Agent development and worflow automation.</p>
+            </li>
+            <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
+              <h3 class="font-semibold">Market Research</h3>
+              <p class="text-sm opacity-80">Agile go-to buisness strategies to be prepared for market trends.</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="">
+          <div class="card-body">
+            <h2 class="card-title">Forecast: Agent-Managed TVL (B$)</h2>
+            <canvas id="tvlForecastChart" height="200"></canvas>
+            <p class="text-xs opacity-70 mt-2">
+              Autonomous agents are projected to manage up to $100B by 2028.
+              <a href="https://www.ainvest.com/news/ai-driven-defi-innovation-token-economics-assessing-mignal-mgl-high-growth-entry-point-2509/?utm_source=chatgpt.com"
+                target="_blank"
+                class="link link-primary">[Source]</a>
+            </p>
+          </div>
         </div>
       </div>
     </section>
