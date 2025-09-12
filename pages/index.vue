@@ -104,7 +104,7 @@
     </section>
 
     <!-- SOCIAL PROOF / BRANDS -->
-    <section class="container mx-auto max-w-6xl px-4 my-16">
+    <section class="container mx-auto max-w-6xl px-4 my-16 pt-16">
       <ul class="steps steps-vertical lg:steps-horizontal w-full mb-12 text-center" data-aos="fade-up" data-aos-delay="200">
         <li class="step step-primary">
           <div class="flex flex-col items-center">
@@ -143,6 +143,21 @@
           </div>
         </li>
       </ul>
+    </section>
+
+    <section class="container mx-auto max-w-6xl px-4 pb-2">
+      <div class="card bg-base-200/80 border border-base-300/60 shadow-xl">
+        <div class="card-body">
+          <h2 class="card-title">Forecast: Agent-Managed TVL (B$)</h2>
+          <canvas id="tvlForecastChart" height="200"></canvas>
+          <p class="text-xs opacity-70 mt-2">
+            Autonomous agents are projected to manage up to $100B by 2028.
+            <a href="https://www.ainvest.com/news/ai-driven-defi-innovation-token-economics-assessing-mignal-mgl-high-growth-entry-point-2509/?utm_source=chatgpt.com"
+               target="_blank"
+               class="link link-primary">[Source]</a>
+          </p>
+        </div>
+      </div>
     </section>
 
     <!-- WORK HIGHLIGHTS -->
@@ -397,6 +412,28 @@ import ChatWidget from '~/components/chat/ChatWidget.vue'
 import ReportsGrid from '~/components/ReportsGrid.vue'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import {
+  Chart,
+  LineController,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend,
+} from "chart.js";
+
+Chart.register(
+  LineController,
+  LineElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Title,
+  Tooltip,
+  Legend
+);
 
 onMounted(() => {
   AOS.init({
@@ -405,6 +442,28 @@ onMounted(() => {
     once: true,
     offset: 50
   })
+
+  new Chart(document.getElementById("tvlForecastChart"), {
+    type: "line",
+    data: {
+      labels: ["2025", "2026", "2027", "2028"],
+      datasets: [
+        {
+          label: "Agent-Managed TVL ($B)",
+          data: [5, 20, 45, 100],
+          borderColor: "#ff006e",
+          backgroundColor: "rgba(255,0,110,0.2)",
+          fill: true,
+          tension: 0.4,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      plugins: { legend: { position: "bottom" } },
+      scales: { y: { beginAtZero: true } },
+    },
+  });
 })
 
 const props = defineProps<{ profileImage?: string }>()
