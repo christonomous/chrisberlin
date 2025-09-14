@@ -25,10 +25,10 @@
       <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-20 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
         <div>
           <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-            Buy Back Your Time
+            Agentic Vaults
           </h1>
           <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-            Time is <span class="font-semibold">the most valuable asset</span>.
+            Let <span class="font-semibold">AI Agents & Money work for you</span>.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="#reports" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Market Reports</a>
@@ -119,7 +119,7 @@
         <div class="card-body grid md:grid-cols-3 gap-6">
           <div>
             <h2 class="text-2xl font-bold mb-2">Hi, I'm Chris</h2>
-            <p class="opacity-80">I’m building autonomous AI Agents managing Capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
+            <p class="opacity-80">I’m building autonomous AI Agents managing capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
             <p class="opacity-80 pt-4"><b>I help you on the path to become an owner before AI closes the gap.</b></p>
           </div>
           <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
