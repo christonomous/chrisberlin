@@ -25,10 +25,10 @@
       <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-20 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
         <div>
           <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-            Chris
+            Agentiv Vaults
           </h1>
           <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-            Building <b>Agentic community-owned on-chain Vaults</b>. Let <span class="font-semibold">AI Agents & Money work for you</span>.
+            Hi, I am Chris and I am building <b>Agentic Community-owned On-chain Vaults</b>. Let <span class="font-semibold">AI Agents & Capital work for you</span>.
           </p>
           <div class="mt-8 flex flex-wrap gap-3">
             <a href="#reports" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Market Reports</a>
@@ -118,7 +118,7 @@
       <div class="card bg-base-200/50 shadow-xl border border-base-300/30">
         <div class="card-body grid md:grid-cols-3 gap-6">
           <div>
-            <h2 class="text-2xl font-bold mb-2">Hi, I'm Chris</h2>
+            <h2 class="text-2xl font-bold mb-2">What I Do</h2>
             <p class="opacity-80">I’m building autonomous AI Agents managing capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
             <p class="opacity-80 pt-4"><b>I help you on the path to become an owner before AI closes the gap.</b></p>
           </div>
@@ -384,6 +384,14 @@
           <div class="collapse-title text-lg font-medium">How do AI agents manage money?</div>
           <div class="collapse-content opacity-80">
             <p>Think of them as 24/7 financial co-pilots. They monitor markets, rebalance portfolios, and deploy capital into DeFi strategies or tokenized assets - always with explainability and risk controls built-in. The goal isn’t chasing yield, it’s building sustainable ownership.</p>
+          </div>
+        </div>
+
+        <div class="collapse collapse-arrow join-item border border-base-300/20 bg-base-200/60">
+          <input type="radio" name="faq" />
+          <div class="collapse-title text-lg font-medium">Isn’t it risky to let AI handle capital?</div>
+          <div class="collapse-content opacity-80">
+            <p>That’s exactly why a human layer is always included. AI generates research, strategies, and actionable proposals — but the owner reviews and approves before anything is executed. It’s a balance of AI efficiency with human judgment and accountability.</p>
           </div>
         </div>
 
