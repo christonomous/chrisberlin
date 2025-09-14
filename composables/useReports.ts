@@ -15,6 +15,12 @@ export function useReports() {
   // For now, we'll hardcode the one report we have
   const reports = ref<ReportMeta[]>([
     {
+        path: '/reports/ai-defi-future-work-investing-2025-09-14',
+        date: '2025-09-14T09:00:00+02:00',
+        title: 'AI × DeFi and the Future of Work & Investing',
+        tags: ['AI', 'Jobs', 'Retail Investing', 'DeFi', 'RWA', 'Forecasts']
+      },
+    {
       path: '/reports/ai-defi-market-forecast-tvl-agents-2025-09-13',
       date: '2025-09-13T09:00:00+02:00',
       title: 'AI × DeFi: TVLs, Market Forecast, Agents & Investments',
