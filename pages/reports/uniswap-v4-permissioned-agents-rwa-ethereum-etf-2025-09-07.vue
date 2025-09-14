@@ -52,7 +52,7 @@
         <!-- Scatter: Impact vs. Maturity (colored points) -->
         <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)] lg:col-span-1">
           <div class="card-body">
-            <h3 class="card-title">Impact vs. Maturity — Launches & Themes</h3>
+            <h3 class="card-title">Impact vs. Maturity  -  Launches & Themes</h3>
             <ClientOnly>
               <div class="mt-4 h-[300px]">
                 <canvas ref="scatterEl" class="w-full h-full"></canvas>
@@ -82,7 +82,7 @@
       <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
         <div class="card-body">
           <div class="flex items-center justify-between">
-            <h3 class="card-title">What Moved — Infrastructure, Agents, Capital & Risk</h3>
+            <h3 class="card-title">What Moved  -  Infrastructure, Agents, Capital & Risk</h3>
             <div class="form-control">
               <label class="input input-bordered input-sm flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 opacity-60"><path fill-rule="evenodd" d="M10.5 3.75a6.75 6.75 0 104.27 12.037l3.221 3.222a.75.75 0 101.06-1.06l-3.222-3.222A6.75 6.75 0 0010.5 3.75zm0 1.5a5.25 5.25 0 100 10.5 5.25 5.25 0 000-10.5z" clip-rule="evenodd" /></svg>
@@ -175,7 +175,7 @@ const sources = ref([
   { title: '2025 Crypto Crime Mid-Year Update', url: 'https://www.chainalysis.com/blog/2025-crypto-crime-mid-year-update/?utm_source=chatgpt.com', domain: 'chainalysis.com', topic: 'Security' },
   { title: 'Ether Resurgence Gains Steam (Citi view)', url: 'https://www.coindesk.com/markets/2025/08/20/ether-resurgence-gains-steam-backed-by-spot-etf-demand-and-on-chain-growth-citi?utm_source=chatgpt.com', domain: 'coindesk.com', topic: 'Markets' },
   { title: 'Uniswap v4 launches on 12 chains', url: 'https://cointelegraph.com/news/uniswap-v4-launches-12-chains?utm_source=chatgpt.com', domain: 'cointelegraph.com', topic: 'DEX' },
-  { title: 'Lit Protocol — Vincent Agents', url: 'https://www.cryptoninjas.net/news/1b-defi-potential-unlocked-lit-protocols-vincent-lets-ai-agents-trade/?utm_source=chatgpt.com', domain: 'cryptoninjas.net', topic: 'Agents' },
+  { title: 'Lit Protocol  -  Vincent Agents', url: 'https://www.cryptoninjas.net/news/1b-defi-potential-unlocked-lit-protocols-vincent-lets-ai-agents-trade/?utm_source=chatgpt.com', domain: 'cryptoninjas.net', topic: 'Agents' },
   { title: 'State of The Graph Q2 2025', url: 'https://messari.io/report/state-of-the-graph-q2-2025?utm_source=chatgpt.com', domain: 'messari.io', topic: 'Indexing' },
   { title: 'The Graph: Hypergraph is live', url: 'https://thegraph.com/blog/hypergraph-is-live/?utm_source=chatgpt.com', domain: 'thegraph.com', topic: 'Indexing' },
   { title: 'Tokenization of Real-World Assets: Opportunities & Challenges', url: 'https://katten.com/tokenization-of-real-world-assets-opportunities-challenges-and-the-path-ahead?utm_source=chatgpt.com', domain: 'katten.com', topic: 'RWA' },
@@ -554,7 +554,7 @@ function favicon(url: string) {
 }
 
 function downloadJSON() {
-  const payload = { meta: { title: 'AI × DeFi — Daily Market Insights', date: '2025-09-07T09:00:00+02:00' }, kpis: kpis.value, rows: rows.value, sources: sources.value }
+  const payload = { meta: { title: 'AI × DeFi  -  Daily Market Insights', date: '2025-09-07T09:00:00+02:00' }, kpis: kpis.value, rows: rows.value, sources: sources.value }
   const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' })
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')

@@ -33,12 +33,12 @@
         <div class="card bg-base-100/80 backdrop-blur border border-base-300/60">
           <div class="card-body">
             <div class="flex items-start justify-between">
-              <h3 class="card-title">Corporate AI Capex — Base vs. Aggressive Scenarios (2025–2030)</h3>
+              <h3 class="card-title">Corporate AI Capex  -  Base vs. Aggressive Scenarios (2025–2030)</h3>
               <div class="badge badge-outline">Capex</div>
             </div>
             <p class="text-sm opacity-80">
               Enterprises are in a capex super-cycle: ~\$360B in 2025 with scenarios reaching the trillions by 2030. The runway
-              matters more than the exact path—direction is up.
+              matters more than the exact path - direction is up.
             </p>
             <div class="w-full h-72"><canvas ref="capexEl"></canvas></div>
             <div class="mt-2 text-xs opacity-70">
@@ -51,11 +51,11 @@
         <div class="card bg-base-100/80 backdrop-blur border border-base-300/60">
           <div class="card-body">
             <div class="flex items-start justify-between">
-              <h3 class="card-title">S&P 500 Concentration — Mega-caps vs. The Rest</h3>
+              <h3 class="card-title">S&P 500 Concentration  -  Mega-caps vs. The Rest</h3>
               <div class="badge badge-outline">Market Structure</div>
             </div>
             <p class="text-sm opacity-80">
-              A handful of AI leaders now comprise roughly a third of the index. Concentration risk is real—alpha hides in
+              A handful of AI leaders now comprise roughly a third of the index. Concentration risk is real - alpha hides in
               select cash-flowing assets.
             </p>
             <div class="relative w-full h-72">
@@ -82,7 +82,7 @@
               <div class="badge badge-outline">Labor</div>
             </div>
             <p class="text-sm opacity-80">
-              Employers expect 69M roles created and 83M eliminated by 2027—net –14M (≈–2%).
+              Employers expect 69M roles created and 83M eliminated by 2027 - net –14M (≈–2%).
             </p>
             <div class="w-full h-72"><canvas ref="jobsEl"></canvas></div>
             <div class="mt-2 text-xs opacity-70">
@@ -118,7 +118,7 @@
               <div class="badge badge-outline">Automation</div>
             </div>
             <p class="text-sm opacity-80">
-              Leaders anticipate 42% task automation by 2027—automation-first operating models are becoming default.
+              Leaders anticipate 42% task automation by 2027 - automation-first operating models are becoming default.
             </p>
             <div class="w-full h-72"><canvas ref="tasksEl"></canvas></div>
             <div class="mt-2 text-xs opacity-70">
@@ -135,7 +135,7 @@
               <div class="badge badge-outline">Adoption</div>
             </div>
             <p class="text-sm opacity-80">
-              71% of organizations report regular use. The adoption curve is steep—and cost takeouts show up in earnings.
+              71% of organizations report regular use. The adoption curve is steep - and cost takeouts show up in earnings.
             </p>
             <div class="relative w-full h-72">
               <canvas ref="adoptionEl"></canvas>
@@ -254,7 +254,7 @@ let tasksChart: Chart | null = null
 let adoptionChart: Chart | null = null
 
 onMounted(() => {
-  // 1) AI Capex — illustrative scenarios (billions USD)
+  // 1) AI Capex  -  illustrative scenarios (billions USD)
   if (capexEl.value) {
     const labels = ['2025', '2026', '2027', '2028', '2029', '2030']
     capexChart = new Chart(capexEl.value, {
@@ -300,7 +300,7 @@ onMounted(() => {
     })
   }
 
-  // 2) S&P Concentration — doughnut
+  // 2) S&P Concentration  -  doughnut
   if (spxEl.value) {
     spxChart = new Chart(spxEl.value, {
       type: 'doughnut',
@@ -352,7 +352,7 @@ onMounted(() => {
     })
   }
 
-  // 4) Exposure & risk — stacked bar
+  // 4) Exposure & risk  -  stacked bar
   if (exposureEl.value) {
     exposureChart = new Chart(exposureEl.value, {
       type: 'bar',
@@ -380,7 +380,7 @@ onMounted(() => {
     })
   }
 
-  // 5) Tasks automated — single bar
+  // 5) Tasks automated  -  single bar
   if (tasksEl.value) {
     tasksChart = new Chart(tasksEl.value, {
       type: 'bar',
@@ -404,7 +404,7 @@ onMounted(() => {
     })
   }
 
-  // 6) Organizational adoption — doughnut
+  // 6) Organizational adoption  -  doughnut
   if (adoptionEl.value) {
     adoptionChart = new Chart(adoptionEl.value, {
       type: 'doughnut',

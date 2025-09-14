@@ -59,7 +59,7 @@
         <!-- Scatter: Impact vs. Maturity -->
         <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
           <div class="card-body">
-            <h3 class="card-title">Impact vs. Maturity — Launches & Themes</h3>
+            <h3 class="card-title">Impact vs. Maturity  -  Launches & Themes</h3>
             <ClientOnly>
               <div class="mt-4 h-[300px]">
                 <canvas ref="scatterEl" class="w-full h-full"></canvas>
@@ -89,7 +89,7 @@
       <div class="card bg-base-100/80 backdrop-blur border border-base-300/60 shadow-[0_0_0_1px_rgba(255,255,255,0.04)]">
         <div class="card-body">
           <div class="flex items-center justify-between">
-            <h3 class="card-title">What Moved — Adoption, Agents, Infra, Research, Macro</h3>
+            <h3 class="card-title">What Moved  -  Adoption, Agents, Infra, Research, Macro</h3>
           </div>
 
           <div class="overflow-x-auto rounded-2xl">
@@ -173,8 +173,8 @@
 <script setup lang="ts">
 definePageMeta({
   layout: 'reports',
-  title: 'AI × DeFi — Key Developments (Aug 30, 2025)',
-  description: 'Adoption, AI agents, Uniswap v4 hooks, The Graph, research, and macro/RWA—visualized for decision-makers. Fixed-height colorful charts with linked sources.',
+  title: 'AI × DeFi  -  Key Developments (Aug 30, 2025)',
+  description: 'Adoption, AI agents, Uniswap v4 hooks, The Graph, research, and macro/RWA - visualized for decision-makers. Fixed-height colorful charts with linked sources.',
 })
 
 import { onMounted, onBeforeUnmount, ref, computed } from 'vue'

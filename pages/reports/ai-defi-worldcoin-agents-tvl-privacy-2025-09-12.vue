@@ -70,11 +70,11 @@
     <!-- Conclusion -->
     <section class="container mx-auto px-4 py-8 prose prose-invert">
       <p>
-        <b>AI is pushing DeFi into an era of autonomy, transparency, and specialization </b>—
+        <b>AI is pushing DeFi into an era of autonomy, transparency, and specialization </b> - 
         evident in token surges, creator-centric ecosystems, privacy frameworks, and
         agent-managed vaults. Yet, credibility remains thin in volatile areas like AI gambling
         and biometric-driven growth. The path forward must balance
-        <strong>innovation with verification</strong>—real, auditable metrics,
+        <strong>innovation with verification</strong> - real, auditable metrics,
         privacy-preserving compute, and scalable agent infrastructure.
       </p>
     </section>

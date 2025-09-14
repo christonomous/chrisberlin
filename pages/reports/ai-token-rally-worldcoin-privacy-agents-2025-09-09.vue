@@ -51,7 +51,7 @@
       <div class="card bg-base-100/80 border border-base-300/60">
         <div class="card-body">
           <div class="flex items-center justify-between">
-            <h3 class="card-title">AI Tokens — 24h Performance Snapshot</h3>
+            <h3 class="card-title">AI Tokens  -  24h Performance Snapshot</h3>
             <div class="flex gap-2">
               <a
                 v-for="s in sources.performance"
@@ -88,7 +88,7 @@
       <div class="card bg-base-100/80 border border-base-300/60">
         <div class="card-body">
           <div class="flex items-center justify-between">
-            <h3 class="card-title">Identity Momentum — Verified vs. Target (Worldcoin)</h3>
+            <h3 class="card-title">Identity Momentum  -  Verified vs. Target (Worldcoin)</h3>
             <div class="flex gap-2">
               <a
                 v-for="s in sources.worldcoin"
@@ -214,7 +214,7 @@
               >🔗 BlockchainReporter</a>
             </div>
             <p class="text-sm opacity-80">
-              iExec brings TEE-based privacy to Arbitrum—useful for sensitive model inference, private orderflow, and data-protected strategies.
+              iExec brings TEE-based privacy to Arbitrum - useful for sensitive model inference, private orderflow, and data-protected strategies.
             </p>
           </div>
         </div>

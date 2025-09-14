@@ -134,7 +134,7 @@
             <canvas ref="neobrokersChartEl" class="absolute inset-0"></canvas>
           </div>
           <p class="text-xs opacity-70 mt-2">
-            ~20%+ of US adults have accounts — roughly double EU share.
+            ~20%+ of US adults have accounts  -  roughly double EU share.
             <a class="link link-primary" target="_blank" href="https://www.esma.europa.eu/sites/default/files/2024-07/ESMA50-524821-3402_TRV_Article_Neo-brokers_in_the_EU.pdf">ESMA 2024</a>.
           </p>
         </div>
@@ -179,7 +179,7 @@
             <canvas ref="exploitsChartEl" class="absolute inset-0"></canvas>
           </div>
           <p class="text-xs opacity-70 mt-2">
-            >$2B lost to exploits this year — risk mitigation remains the differentiator.
+            >$2B lost to exploits this year  -  risk mitigation remains the differentiator.
             <a class="link link-primary" target="_blank" href="https://immunefi.com">Immunefi 2025</a>.
           </p>
         </div>

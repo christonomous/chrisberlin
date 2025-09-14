@@ -51,7 +51,7 @@
           <div class="card-body">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="card-title">ETH Spot ETF Net Flows — Last 4 Sessions</h3>
+                <h3 class="card-title">ETH Spot ETF Net Flows  -  Last 4 Sessions</h3>
                 <p class="text-xs opacity-70">Total: -$787.6M (pressure on liquidity proxies)</p>
               </div>
               <div class="flex gap-2">
@@ -111,7 +111,7 @@
           <div class="card-body">
             <div class="flex items-start justify-between">
               <div>
-                <h3 class="card-title">RWA TVL Composition — Aug 2025 (Est.)</h3>
+                <h3 class="card-title">RWA TVL Composition  -  Aug 2025 (Est.)</h3>
                 <p class="text-xs opacity-70">Total ~$26.6B with tokenized U.S. bills as core base</p>
               </div>
               <div class="flex gap-2">
@@ -210,7 +210,7 @@
             </div>
             <div class="alert alert-info">
               <span class="font-medium">Agent Rails:</span>
-              <span class="opacity-80"> Move toward verifiable, policy-bound agents—think “HTTPS for agents”—to unlock institutional flows.</span>
+              <span class="opacity-80"> Move toward verifiable, policy-bound agents - think “HTTPS for agents” - to unlock institutional flows.</span>
             </div>
             <div class="alert alert-success">
               <span class="font-medium">RWA Base:</span>
@@ -362,7 +362,7 @@ const tableRows = [
   {
     theme: 'Narratives',
     badgeClass: 'badge-outline',
-    summary: '“Trusted network” rails for verifiable, accountable agents—akin to HTTPS for the web—gaining mindshare.',
+    summary: '“Trusted network” rails for verifiable, accountable agents - akin to HTTPS for the web - gaining mindshare.',
     links: [{ label: 'CoinDesk', href: sources.coindeskTrusted }]
   },
   {
@@ -377,7 +377,7 @@ const tableRows = [
   {
     theme: 'AI Gambling',
     badgeClass: 'badge-warning',
-    summary: 'Rapid growth and unverified performance claims in AI-driven betting tools—volatile edge case for agentic finance.',
+    summary: 'Rapid growth and unverified performance claims in AI-driven betting tools - volatile edge case for agentic finance.',
     links: [{ label: 'WIRED', href: sources.wired }]
   },
   {
