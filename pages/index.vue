@@ -25,7 +25,7 @@
       <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-20 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
         <div>
           <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-            Agentiv Vaults
+            Agentic Vaults
           </h1>
           <p class="opacity-80 text-lg md:text-xl max-w-2xl">
             Hi, I am Chris and I am building <b>Agentic Community-owned On-chain Vaults</b>. Let <span class="font-semibold">AI Agents & Capital work for you</span>.
