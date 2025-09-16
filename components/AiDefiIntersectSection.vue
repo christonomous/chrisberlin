@@ -1,7 +1,7 @@
 <!-- BrandMetrics.vue -->
 <template>
   <section class="w-full mb-16">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
       <!-- Coding -->
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
         <div class="stat-title text-white"><b>Coding</b></div>
@@ -62,6 +62,15 @@
             <polyline :points="linePoints" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
         </div>
+      </div>
+
+      <!-- Followers -->
+      <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
+        <div class="stat-title text-white"><b>Followers</b></div>
+        <div class="flex items-center justify-center gap-1">
+          <div class="stat-value leading-none text-secondary">2447+</div>
+        </div>
+        <div class="stat-desc">Growing community</div>
       </div>
     </div>
   </section>
