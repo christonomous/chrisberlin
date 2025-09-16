@@ -122,8 +122,8 @@
         <div class="card-body grid md:grid-cols-3 gap-6">
           <div>
             <h2 class="text-2xl font-bold mb-2">What I Do</h2>
-            <p class="opacity-80">I’m building autonomous AI Agents managing capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
-            <p class="opacity-80 pt-4"><b>I help you on the path to become an owner before AI closes the gap.</b></p>
+            <p class="opacity-80">I’m building autonomous AI Agents managing on-chain capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
+            <!-- <p class="opacity-80 pt-4"><b>I help you on the path to become an owner before AI closes the gap.</b></p> -->
           </div>
           <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
             <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
