@@ -73,7 +73,7 @@
       </div>
     </section>
 
-    <AiDefiIntersectSection class="container mx-auto"/>
+    <AiDefiIntersectSection class="container mx-auto" data-aos="fade-up" data-aos-delay="800"/>
     
     <section class="container mx-auto max-w-6xl px-4 my-16 pt-16">
       <ul class="steps steps-vertical lg:steps-horizontal w-full mb-12 text-center" data-aos="fade-up" data-aos-delay="200">
@@ -117,7 +117,7 @@
     </section>
 
     <!-- OFFER / HOOK -->
-    <section id="offer" class="container mx-auto max-w-6xl px-4">
+    <section id="offer" class="container mx-auto max-w-6xl px-4" data-aos="fade-up" data-aos-delay="800">
       <div class="card bg-base-200/50 shadow-xl border border-base-300/30">
         <div class="card-body grid md:grid-cols-3 gap-6">
           <div>
@@ -145,7 +145,7 @@
           </ul>
         </div>
 
-        <div class="">
+        <div class="" data-aos="fade-up" data-aos-delay="800">
           <div class="card-body">
             <h2 class="card-title">Forecast: Agent-Managed TVL (B$)</h2>
             <canvas id="tvlForecastChart" height="200"></canvas>
@@ -161,7 +161,7 @@
     </section>
 
     <!-- WORK HIGHLIGHTS -->
-    <section id="work" class="container mx-auto max-w-6xl px-4 mt-16">
+    <section id="work" class="container mx-auto max-w-6xl px-4 mt-16" data-aos="fade-up" data-aos-delay="800">
       <h2 class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">My Businesses</h2>
       <div class="grid gap-6 pb-6">
         <div class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:shadow-xl">
@@ -208,7 +208,7 @@
           </div>
         </div>
       </div>
-      <div class="grid md:grid-cols-2 gap-6">
+      <div class="grid md:grid-cols-2 gap-6" data-aos="fade-up" data-aos-delay="800">
         <div target="_blank" class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:shadow-xl">
           <div class="card-body flex flex-col gap-4">
             <div class="flex items-center gap-4">
@@ -364,13 +364,13 @@
     </section>
 
     <!-- Reports -->
-    <section class="container mx-auto max-w-6xl px-4 mt-16" id="reports">
+    <section class="container mx-auto max-w-6xl px-4 mt-16" id="reports" data-aos="fade-up" data-aos-delay="800">
       <h2 class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">Latest Market Reports</h2>
       <ReportsGrid />
     </section>
 
     <!-- FAQ -->
-    <section id="faq" class="container mx-auto max-w-6xl px-4 mt-16 mb-24">
+    <section id="faq" class="container mx-auto max-w-6xl px-4 mt-16 mb-24" data-aos="fade-up" data-aos-delay="800">
       <h2 class="text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">FAQ</h2>
       <div class="join join-vertical w-full">
 
@@ -426,7 +426,7 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="border-t border-base-300/30 py-10">
+    <footer class="border-t border-base-300/30 py-10" data-aos="fade-up" data-aos-delay="800">
       <div class="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row items-center justify-between gap-4">
         <p class="opacity-70">© {{ new Date().getFullYear() }} Chris - AI & Crypto Entrepreneur</p>
       </div>
