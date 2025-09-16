@@ -1,7 +1,7 @@
 <template>
   <div>
     <NuxtPage />
-    <CookieConsent />
+    <!-- <CookieConsent /> -->
   </div>
 </template>
 
