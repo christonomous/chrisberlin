@@ -15,6 +15,12 @@ export function useReports() {
   // For now, we'll hardcode the one report we have
   const reports = ref<ReportMeta[]>([
     {
+      path: '/reports/agentic-vaults-ai-managed-defi-funds-2025-09-16',
+      date: '2025-09-16T09:00:00+02:00',
+      title: 'Agentic Vaults: Why AI-Managed DeFi Funds Are the Future',
+      tags: ['Agentic Vaults', 'AI', 'DeFi', 'Institutional Adoption', 'ETFs', 'Productivity']
+    },
+    {
         path: '/reports/ai-defi-future-work-investing-2025-09-14',
         date: '2025-09-14T09:00:00+02:00',
         title: 'AI × DeFi and the Future of Work & Investing',
