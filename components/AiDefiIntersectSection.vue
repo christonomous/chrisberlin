@@ -86,7 +86,7 @@ const props = defineProps({
     default: () => ({
       coding: '2016-01-01',
       entrepreneurship: '2020-01-01',
-      defi: '2017-01-01',
+      defi: '2018-01-01',
       ai: '2023-01-01'
     })
   },
