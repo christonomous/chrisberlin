@@ -169,43 +169,64 @@
           <div class="card bg-base-100 shadow-xl border border-base-300">
             <div class="card-body">
               <div class="flex items-center justify-between gap-4">
-                <h4 class="card-title text-lg font-bold">Ecosystem Health: TVL by Chain</h4>
-                <span class="badge badge-outline">DeFiLlama</span>
+                <h4 class="card-title text-lg font-bold">Wallet Retention Comparison</h4>
+                <span class="badge badge-outline">ndlabs.dev</span>
               </div>
               <div class="h-80">
-                <canvas ref="tvlCanvas"></canvas>
+                <canvas ref="retentionCanvas"></canvas>
               </div>
-              <p class="mt-4 text-sm opacity-70">Comparative TVL over time for selected chains (Ethereum, Solana, Arbitrum). Shows momentum and
-                where builders & liquidity concentrate. Fallback enabled.</p>
+              <div class="mt-4 overflow-x-auto">
+                <table class="table table-xs">
+                  <thead>
+                    <tr>
+                      <th>Wallet</th>
+                      <th class="text-right">1-day</th>
+                      <th class="text-right">7-day</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Binance Web3 Wallet</td>
+                      <td class="text-right font-medium">24%</td>
+                      <td class="text-right font-medium">13%</td>
+                    </tr>
+                    <tr>
+                      <td>Uniswap Smart Wallet</td>
+                      <td class="text-right font-medium">40%</td>
+                      <td class="text-right font-medium">30%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p class="mt-4 text-sm opacity-70">Source: "Understanding User Retention in Crypto Wallets" (ndlabs.dev)</p>
+              </div>
             </div>
           </div>
         </div>
         <article class="lg:col-span-5">
           <h3 class="text-2xl lg:text-4xl font-black leading-tight bg-gradient-to-br from-base-content to-base-content/70 bg-clip-text text-transparent">
-            From Hype to Evidence
+            With Hype → Evidence
           </h3>
           <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-            Tokenization and DeFi should be evaluated with evidence: where is liquidity growing, and where is it
-            consolidating? Placing comparative context beside narrative lets readers understand market structure without
-            sifting through raw tables.
+            Web3 hype gets attention. But retention reveals what's real. For example: of all new wallets using <span class="font-medium">Binance Web3 Wallet</span>, only about <span class="text-primary font-bold">24% return after one day</span>, and just <span class="text-primary font-bold">13% after seven days</span>. Uniswap's smart wallet does better, but still only around <span class="text-primary font-bold">40% after one day</span> and <span class="text-primary font-bold">30% after a week</span>.
           </p>
-          <div class="mt-8 grid grid-cols-3 gap-4">
+          <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
+            These numbers show that acquiring users is not the hard part — keeping them is. Reports and dashboards that track retention, cohort behavior, drop-off points and engagement curves turn hype into actionable evidence.
+          </p>
+          <div class="mt-8 grid grid-cols-2 gap-4">
             <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
-              <div class="stat-title font-medium">Chains compared</div>
-              <div class="stat-value text-primary">3</div>
-              <div class="stat-desc text-sm">Eth • Sol • Arb</div>
+              <div class="stat-title font-medium">Binance Web3 Wallet</div>
+              <div class="stat-value text-primary">24%</div>
+              <div class="stat-desc text-sm">1-day retention</div>
             </div>
             <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
-              <div class="stat-title font-medium">Update cadence</div>
-              <div class="stat-value text-primary">Weekly</div>
-              <div class="stat-desc text-sm">Auto-refresh</div>
-            </div>
-            <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
-              <div class="stat-title font-medium">Perspective</div>
-              <div class="stat-value text-primary">Neutral</div>
-              <div class="stat-desc text-sm">Evidence‑based</div>
+              <div class="stat-title font-medium">Uniswap Smart Wallet</div>
+              <div class="stat-value text-primary">40%</div>
+              <div class="stat-desc text-sm">1-day retention</div>
             </div>
           </div>
+          <p class="mt-8 text-lg opacity-90 font-medium">
+            <span class="text-primary">What I can bring:</span> dashboards + narrative that reveal <em>where</em> users leave, <em>why</em>, and <em>how small changes</em> (onboarding, UX, incentive loops) can shift those curves upward. Data not just to brag, but to build.
+          </p>
         </article>
       </div>
     </section>
@@ -219,27 +240,68 @@
               Builders as a Leading Indicator
             </h3>
             <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              Adoption isn't only capital — it's creators. Where developers gather, sustainable ecosystems emerge. If a
-              Token Terminal API key is supplied, the chart renders live developer activity; otherwise a curated demo
-              snapshot appears.
+              Adoption isn't only capital — it's creators. Where developers gather, sustainable ecosystems emerge. Monthly active developers contributing to open-source Web3 projects have grown from <span class="font-bold text-primary">~18,000 in 2019</span> to over <span class="font-bold text-primary">25,000 in 2021</span>, then settled at <span class="font-bold text-primary">~25,419 in 2023</span>, before adjusting to <span class="font-bold text-primary">~23,615 in 2024</span>.
             </p>
-            <div class="mt-8">
-              <label class="label"><span class="label-text font-medium">Token Terminal API Key (optional)</span></label>
-              <input v-model="tokenTerminalKey" type="password" placeholder="paste key to enable live dev chart" 
-                class="input input-bordered w-full max-w-md bg-base-100"/>
+            <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
+              This trend illustrates that developer activity leads market cycles: growth phases bring new builders; plateaus (or declines) warn of friction, waning incentive or attention diversion. With sharp dashboards, Onchain could spot early when an ecosystem is losing builder momentum — and help redirect support, tools, or research to keep that flame alive.
+            </p>
+            <div class="mt-8 grid grid-cols-2 gap-4">
+              <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
+                <div class="stat-title font-medium">Peak Developers</div>
+                <div class="stat-value text-primary">25.4k</div>
+                <div class="stat-desc text-sm">2023 high point</div>
+              </div>
+              <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
+                <div class="stat-title font-medium">Growth from 2019</div>
+                <div class="stat-value text-primary">+41%</div>
+                <div class="stat-desc text-sm">Over 5 years</div>
+              </div>
             </div>
           </article>
           <div class="lg:col-span-7 order-1 lg:order-2">
             <div class="card bg-base-100 shadow-xl border border-base-300">
               <div class="card-body">
                 <div class="flex items-center justify-between gap-4">
-                  <h4 class="card-title text-lg font-bold">Developer Activity (Monthly Active Devs)</h4>
-                  <span class="badge badge-outline">Token Terminal / Demo</span>
+                  <h4 class="card-title text-lg font-bold">Monthly Active Web3 Developers</h4>
+                  <span class="badge badge-outline">Electric Capital</span>
                 </div>
                 <div class="h-80">
                   <canvas ref="devCanvas"></canvas>
                 </div>
-                <p class="mt-4 text-sm opacity-70">Fallback demo series for major ecosystems when live API is unavailable.</p>
+                <div class="mt-4 overflow-x-auto">
+                  <table class="table table-xs">
+                    <thead>
+                      <tr>
+                        <th>Year</th>
+                        <th class="text-right">Active Devs</th>
+                        <th>Trend</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>2019</td>
+                        <td class="text-right font-medium">~18,000</td>
+                        <td class="text-sm opacity-70">Baseline</td>
+                      </tr>
+                      <tr>
+                        <td>2021</td>
+                        <td class="text-right font-medium">~25,000</td>
+                        <td class="text-sm opacity-70">Peak growth period</td>
+                      </tr>
+                      <tr>
+                        <td>2023</td>
+                        <td class="text-right font-medium">25,419</td>
+                        <td class="text-sm opacity-70">Nominal high</td>
+                      </tr>
+                      <tr>
+                        <td>2024</td>
+                        <td class="text-right font-medium">23,615</td>
+                        <td class="text-sm opacity-70">7% decline from peak</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <p class="mt-4 text-sm opacity-70">Source: Electric Capital Developer Report, via Crypto Council for Innovation & Hashlock</p>
+                </div>
               </div>
             </div>
           </div>
@@ -310,7 +372,9 @@ import {
   Chart,
   LineController,
   DoughnutController,
+  BarController,
   LineElement,
+  BarElement,
   ArcElement,
   PointElement,
   CategoryScale,
@@ -323,7 +387,9 @@ import {
 Chart.register(
   LineController,
   DoughnutController,
+  BarController,
   LineElement,
+  BarElement,
   ArcElement,
   PointElement,
   CategoryScale,
@@ -335,11 +401,11 @@ Chart.register(
 
 // Canvas refs
 const walletCanvas = ref<HTMLCanvasElement | null>(null)
-const tvlCanvas = ref<HTMLCanvasElement | null>(null)
+const retentionCanvas = ref<HTMLCanvasElement | null>(null)
 const devCanvas = ref<HTMLCanvasElement | null>(null)
 
 let walletChart: Chart | null = null
-let tvlChart: Chart | null = null
+let retentionChart: Chart | null = null
 let devChart: Chart | null = null
 
 const tokenTerminalKey = ref<string>('')
@@ -417,69 +483,58 @@ async function renderWalletDistribution() {
   })
 }
 
-// ---------- TVL by Chain (DeFiLlama) ----------
-const chains = ['Ethereum', 'Solana', 'Arbitrum']
-
-async function getChainSeries(chain: string) {
-  const url = `https://api.llama.fi/v2/historicalChainTvl/${encodeURIComponent(chain)}`
-  const rows = await fetchJSON(url)
-  return rows.map((r: any) => ({ date: r.date, tvl: r.totalLiquidityUSD }))
-}
-
-async function renderTVL() {
+// ---------- Retention Comparison ----------
+async function renderRetention() {
   await nextTick()
-  const ctx = tvlCanvas.value?.getContext('2d')
+  const ctx = retentionCanvas.value?.getContext('2d')
   if (!ctx) return
-  destroyChart(tvlChart)
+  destroyChart(retentionChart)
 
-  let labels: string[] = []
-  const datasets: any[] = []
-
-  try {
-    const seriesList = await Promise.all(chains.map(async c => {
-      try { return await getChainSeries(c) } catch { return [] }
-    }))
-
-    const minLen = Math.min(...seriesList.map(s => s.length).filter(n => n > 0))
-    const aligned = seriesList.map(s => s.slice(-minLen))
-    labels = aligned[0].map(d => fmtDate(d.date))
-
-    aligned.forEach((s, idx) => {
-      datasets.push({
-        label: chains[idx],
-        data: s.map(d => Math.round(d.tvl / 1e9 * 100) / 100),
-        tension: 0.3,
-        borderWidth: 2,
-        pointRadius: 0,
-        fill: false
-      })
-    })
-  } catch (e) {
-    // fallback demo
-    const now = Math.floor(Date.now() / 1000)
-    const points = 24
-    labels = Array.from({ length: points }, (_, i) => fmtDate(now - (points - i) * 86400 * 30))
-    const base = [80, 18, 12]
-    chains.forEach((name, i) => {
-      datasets.push({
-        label: name,
-        data: Array.from({ length: points }, (_, j) => base[i] + j * (i + 0.4) + Math.sin(j / (i + 1)) * 1.2),
-        tension: 0.3, borderWidth: 2, pointRadius: 0, fill: false
-      })
-    })
+  const data = {
+    labels: ['1-day Retention', '7-day Retention'],
+    datasets: [
+      {
+        label: 'Binance Web3 Wallet',
+        data: [24, 13],
+        backgroundColor: 'rgba(59, 130, 246, 0.9)', // Primary blue
+        borderColor: 'rgba(255,255,255,0.1)',
+        borderWidth: 2
+      },
+      {
+        label: 'Uniswap Smart Wallet',
+        data: [40, 30],
+        backgroundColor: 'rgba(139, 92, 246, 0.9)', // Purple
+        borderColor: 'rgba(255,255,255,0.1)',
+        borderWidth: 2
+      }
+    ]
   }
 
-  tvlChart = new Chart(ctx, {
-    type: 'line',
-    data: { labels, datasets },
+  retentionChart = new Chart(ctx, {
+    type: 'bar',
+    data,
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' }, tooltip: { mode: 'index', intersect: false } },
-      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { padding: 20 }
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => `${context.dataset.label}: ${context.raw}% retention`
+          }
+        }
+      },
       scales: {
-        x: { ticks: { maxTicksLimit: 8 } },
-        y: { beginAtZero: false, ticks: { callback: (v) => `$${v}B` } }
+        y: {
+          beginAtZero: true,
+          max: 100,
+          ticks: {
+            callback: (value) => `${value}%`
+          }
+        }
       }
     }
   })
@@ -492,45 +547,62 @@ async function renderDevelopers() {
   if (!ctx) return
   destroyChart(devChart)
 
-  let labels: string[] = []
-  const datasets: any[] = []
-
-  async function fetchDevSeries() {
-    if (!tokenTerminalKey.value) throw new Error('No key')
-    // TODO: Replace with real Token Terminal endpoint + mapping when key is available.
-    throw new Error('demo')
-  }
-
-  try {
-    await fetchDevSeries()
-  } catch {
-    const months = 18
-    const now = new Date()
-    labels = Array.from({ length: months }, (_, i) => {
-      const d = new Date(now.getFullYear(), now.getMonth() - (months - 1 - i), 1)
-      return d.toLocaleDateString(undefined, { month: 'short', year: '2-digit' })
-    })
-    const series = {
-      Ethereum: Array.from({ length: months }, (_, i) => 1600 + Math.round(i * 12 + Math.sin(i / 2) * 25)),
-      Solana: Array.from({ length: months }, (_, i) => 720 + Math.round(i * 10 + Math.cos(i / 3) * 20)),
-      Arbitrum: Array.from({ length: months }, (_, i) => 380 + Math.round(i * 9 + Math.sin(i / 4) * 10))
-    }
-    Object.entries(series).forEach(([name, vals]) => {
-      datasets.push({ label: name, data: vals, tension: 0.3, borderWidth: 2, pointRadius: 0, fill: false })
-    })
+  const data = {
+    labels: ['2019', '2021', '2023', '2024'],
+    values: [18000, 25000, 25419, 23615]
   }
 
   devChart = new Chart(ctx, {
     type: 'line',
-    data: { labels, datasets },
+    data: {
+      labels: data.labels,
+      datasets: [{
+        label: 'Monthly Active Developers',
+        data: data.values,
+        borderColor: 'rgba(59, 130, 246, 0.9)',
+        backgroundColor: (context) => {
+          const chart = context.chart
+          const { ctx, chartArea } = chart
+          if (!chartArea) return 'rgba(59, 130, 246, 0.1)'
+          const gradient = ctx.createLinearGradient(0, chartArea.bottom, 0, chartArea.top)
+          gradient.addColorStop(0, 'rgba(59, 130, 246, 0.1)')
+          gradient.addColorStop(1, 'rgba(59, 130, 246, 0.3)')
+          return gradient
+        },
+        fill: true,
+        tension: 0.4,
+        borderWidth: 3,
+        pointRadius: 6,
+        pointBackgroundColor: 'rgba(59, 130, 246, 0.9)',
+        pointBorderColor: 'rgba(255, 255, 255, 0.8)',
+        pointBorderWidth: 2
+      }]
+    },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { position: 'bottom' }, tooltip: { mode: 'index', intersect: false } },
-      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (context) => {
+              const value = context.raw as number
+              return `${value.toLocaleString()} active developers`
+            }
+          }
+        }
+      },
       scales: {
-        x: { ticks: { maxTicksLimit: 9 } },
-        y: { beginAtZero: false }
+        x: {
+          grid: { display: false }
+        },
+        y: {
+          beginAtZero: false,
+          min: 15000,
+          ticks: {
+            callback: (value) => `${(value as number / 1000).toFixed(0)}k`
+          }
+        }
       }
     }
   })
@@ -538,7 +610,7 @@ async function renderDevelopers() {
 
 onMounted(async () => {
   await renderWalletDistribution()
-  await renderTVL()
+  await renderRetention()
   await renderDevelopers()
 })
 
