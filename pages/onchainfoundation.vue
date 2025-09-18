@@ -13,7 +13,7 @@
               <div class="h-[2px] flex-1 bg-gradient-to-r from-primary/30 to-transparent"></div>
             </div>
             <h1 class="text-5xl lg:text-7xl xl:text-8xl font-black leading-[1.05] tracking-tight bg-[#f34336] bg-clip-text text-transparent">
-              Why <span class="text-base-content">Onchain</span> × Chris<br/>
+              Why <span class="text-base-content">Onchain Foundation</span> × Chris<br/>
               is a Fit
             </h1>
             <p class="mt-8 text-xl lg:text-2xl opacity-90 max-w-3xl font-light leading-relaxed">
