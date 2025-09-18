@@ -1,8 +1,5 @@
 <template>
   <div v-if="!isAuthenticated" class="min-h-screen flex items-center justify-center bg-gradient-to-b from-base-100 to-base-200/30">
-    <div class="absolute top-4 right-4 text-sm opacity-70">
-      Password: onchain2025
-    </div>
     <div class="card w-96 bg-base-100 shadow-xl border border-base-300">
       <div class="card-body">
         <h2 class="card-title text-2xl font-black">Password Protected</h2>

@@ -21,21 +21,14 @@
             </p>
           </header>
           <aside class="lg:col-span-4">
-            <div class="grid grid-cols-3 lg:grid-cols-1 gap-4">
+            <div class="flex flex-col items-center gap-6">
+              <div class="w-32 h-32 lg:w-40 lg:h-40 rounded-full overflow-hidden border-4 border-base-100/50 shadow-xl">
+                <img src="/chris.jpg" alt="Chris" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+              </div>
               <div class="stat bg-base-100/50 backdrop-blur-sm rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Years in Web3</div>
                 <div class="stat-value text-[#f34336]">7+</div>
                 <div class="stat-desc text-sm">DeFi • Tokenization • AI</div>
-              </div>
-              <div class="stat bg-base-100/50 backdrop-blur-sm rounded-box shadow-lg border border-base-300">
-                <div class="stat-title font-medium">Reports/Dashboards</div>
-                <div class="stat-value text-[#f34336]">50+</div>
-                <div class="stat-desc text-sm">Evidence over hype</div>
-              </div>
-              <div class="stat bg-base-100/50 backdrop-blur-sm rounded-box shadow-lg border border-base-300">
-                <div class="stat-title font-medium">Focus</div>
-                <div class="stat-value text-[#f34336]">Clarity</div>
-                <div class="stat-desc text-sm">Transparent methods</div>
               </div>
             </div>
           </aside>
@@ -468,12 +461,12 @@ async function renderWalletDistribution() {
       datasets: [{
         data: data.values,
         backgroundColor: [
-          'rgba(59, 130, 246, 0.9)',   // Primary blue
-          'rgba(99, 102, 241, 0.9)',   // Indigo
-          'rgba(139, 92, 246, 0.9)',   // Purple
-          'rgba(236, 72, 153, 0.9)',   // Pink
-          'rgba(248, 113, 113, 0.9)',  // Red
-          'rgba(156, 163, 175, 0.9)'   // Gray
+          'rgba(243, 67, 54, 0.9)',    // Red
+          'rgba(211, 47, 47, 0.9)',    // Dark Red
+          'rgba(229, 57, 53, 0.9)',    // Light Red
+          'rgba(239, 83, 80, 0.9)',    // Lighter Red
+          'rgba(244, 67, 54, 0.8)',    // Faded Red
+          'rgba(198, 40, 40, 0.9)'     // Deep Red
         ],
         borderWidth: 2,
         borderColor: 'rgba(255,255,255,0.1)'
