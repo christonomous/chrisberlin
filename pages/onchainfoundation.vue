@@ -1,5 +1,6 @@
 <template>
-  <main class="min-h-screen bg-gradient-to-b from-base-100 to-base-200/30 text-base-content">
+  <PasswordProtection correctPassword="onchain2025">
+    <main class="min-h-screen bg-gradient-to-b from-base-100 to-base-200/30 text-base-content">
     <!-- ================= HERO / MAGAZINE COVER ================= -->
     <section class="relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
@@ -53,9 +54,9 @@
             My Path to Here
           </h2>
           <p class="mt-8 text-lg lg:text-xl leading-relaxed opacity-90 font-light">
-            I've been building and experimenting in Web3 for years — from DeFi to tokenization. Some may remember me
+            I've been building and experimenting in Web3 for years  -  from DeFi to tokenization. Some may remember me
             from a panel appearance at the <span class="font-medium">Lisk Center in Berlin</span>. Not every startup I launched took off, but each added
-            practical insight into what accelerates — and what blocks — real adoption. That journey, combined with my
+            practical insight into what accelerates  -  and what blocks  -  real adoption. That journey, combined with my
             current AI work, sharpened my focus: dedicate the next chapter to research, reporting, and data‑driven
             transparency.
           </p>
@@ -63,7 +64,7 @@
         <blockquote class="lg:col-span-5 rounded-2xl bg-base-100 p-8 lg:p-10 shadow-xl border border-base-300 relative overflow-hidden">
           <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
           <p class="text-2xl lg:text-3xl font-semibold leading-relaxed relative">
-            "Good research doesn't just <em>describe</em> the chain — it <span class="underline decoration-[#f34336] decoration-2">explains</span> it.
+            "Good research doesn't just <em>describe</em> the chain  -  it <span class="underline decoration-[#f34336] decoration-2">explains</span> it.
             My job is to turn raw metrics into decisions people can trust."
           </p>
         </blockquote>
@@ -79,7 +80,7 @@
               Web3 Adoption & Why Reports Matter
             </h3>
             <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              Web3 adoption is no longer hypothetical — by 2025, there are around <span class="font-bold text-[#f34336]">820 million active wallets worldwide</span>. Nearly <span class="font-bold text-[#f34336]">43% are in Asia-Pacific (~350M)</span>, while <span class="font-bold text-[#f34336]">Europe (~140M)</span> and <span class="font-bold text-[#f34336]">Africa (~75M)</span> are catching up fast.
+              Web3 adoption is no longer hypothetical  -  by 2025, there are around <span class="font-bold text-[#f34336]">820 million active wallets worldwide</span>. Nearly <span class="font-bold text-[#f34336]">43% are in Asia-Pacific (~350M)</span>, while <span class="font-bold text-[#f34336]">Europe (~140M)</span> and <span class="font-bold text-[#f34336]">Africa (~75M)</span> are catching up fast.
             </p>
             <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
               But raw numbers don't equal understanding. Without clear reports and dashboards, it's impossible to see where adoption is real, where users drop off, and which regions face friction. That's why transparent, data-driven reporting is critical: it turns wallet counts into <span class="font-medium">insights that guide policy, strategy, and real-world adoption</span>.
@@ -210,7 +211,7 @@
             Web3 hype gets attention. But retention reveals what's real. For example: of all new wallets using <span class="font-medium">Binance Web3 Wallet</span>, only about <span class="text-[#f34336] font-bold">24% return after one day</span>, and just <span class="text-[#f34336] font-bold">13% after seven days</span>. Uniswap's smart wallet does better, but still only around <span class="text-[#f34336] font-bold">40% after one day</span> and <span class="text-[#f34336] font-bold">30% after a week</span>.
           </p>
           <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-            These numbers show that acquiring users is not the hard part — keeping them is. Reports and dashboards that track retention, cohort behavior, drop-off points and engagement curves turn hype into actionable evidence.
+            These numbers show that acquiring users is not the hard part  -  keeping them is. Reports and dashboards that track retention, cohort behavior, drop-off points and engagement curves turn hype into actionable evidence.
           </p>
           <div class="mt-8 grid grid-cols-2 gap-4">
             <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
@@ -240,13 +241,13 @@
               Builders as a Leading Indicator
             </h3>
             <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              Adoption isn't only capital — it's creators. Where developers gather, sustainable ecosystems emerge. Monthly active developers contributing to open-source Web3 projects have grown from <span class="font-bold text-[#f34336]">~18,000 in 2019</span> to over <span class="font-bold text-[#f34336]">25,000 in 2021</span>, then settled at <span class="font-bold text-[#f34336]">~25,419 in 2023</span>, before adjusting to <span class="font-bold text-[#f34336]">~23,615 in 2024</span>.
+              Adoption isn't only capital  -  it's creators. Where developers gather, sustainable ecosystems emerge. Monthly active developers contributing to open-source Web3 projects have grown from <span class="font-bold text-[#f34336]">~18,000 in 2019</span> to over <span class="font-bold text-[#f34336]">25,000 in 2021</span>, then settled at <span class="font-bold text-[#f34336]">~25,419 in 2023</span>, before adjusting to <span class="font-bold text-[#f34336]">~23,615 in 2024</span>.
             </p>
             <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
               This trend illustrates that developer activity leads market cycles: growth phases bring new builders; plateaus (or declines) warn of friction, waning incentive or attention diversion.
             </p>
             <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              <b>With sharp dashboards, Onchain could spot early when an ecosystem is losing builder momentum — and help redirect support, tools, or research to keep that flame alive</b>
+              <b>With sharp dashboards, Onchain could spot early when an ecosystem is losing builder momentum  -  and help redirect support, tools, or research to keep that flame alive</b>
             </p>
             <div class="mt-8 grid grid-cols-2 gap-4">
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
@@ -357,7 +358,7 @@
           <div class="card-body">
             <h4 class="card-title text-2xl font-black">Let's Build</h4>
             <p class="text-lg opacity-90">Onchain is building the credibility Web3 needs. I'd love to help ensure every report is not just written,
-              but <em>felt</em> — through data, visuals, and narrative.</p>
+              but <em>felt</em>  -  through data, visuals, and narrative.</p>
             <div class="mt-6 flex flex-wrap gap-4">
               <a href="mailto:chris@revoro.consulting" class="btn bg-[#f34336] btn-lg">Email Me</a>
               <a href="/" class="btn btn-outline btn-lg">Back to Home</a>
@@ -385,10 +386,12 @@
       </div>
     </section>
   </main>
+  </PasswordProtection>
 </template>
 
 <script setup lang="ts">
 import { ref, onMounted, watch, nextTick } from 'vue'
+import PasswordProtection from '../components/PasswordProtection.vue'
 import {
   Chart,
   LineController,
