@@ -3,15 +3,15 @@
     <!-- ================= HERO / MAGAZINE COVER ================= -->
     <section class="relative overflow-hidden">
       <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
-      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-base-100/10 via-transparent to-transparent"></div>
       <div class="mx-auto max-w-7xl px-6 pt-20 pb-16 lg:pt-28 lg:pb-24 relative">
         <div class="grid gap-12 lg:grid-cols-12 items-end">
           <header class="lg:col-span-8">
             <div class="flex items-center gap-4 mb-6">
-              <p class="badge badge-primary badge-lg">Special Report</p>
+              <p class="badge bg-[#f34336] badge-lg">Special Report</p>
               <div class="h-[2px] flex-1 bg-gradient-to-r from-primary/30 to-transparent"></div>
             </div>
-            <h1 class="text-5xl lg:text-7xl xl:text-8xl font-black leading-[1.05] tracking-tight bg-gradient-to-br from-primary to-primary-focus bg-clip-text text-transparent">
+            <h1 class="text-5xl lg:text-7xl xl:text-8xl font-black leading-[1.05] tracking-tight bg-[#f34336] bg-clip-text text-transparent">
               Why <span class="text-base-content">Onchain</span> × Chris<br/>
               is a Fit
             </h1>
@@ -23,17 +23,17 @@
             <div class="grid grid-cols-3 lg:grid-cols-1 gap-4">
               <div class="stat bg-base-100/50 backdrop-blur-sm rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Years in Web3</div>
-                <div class="stat-value text-primary">7+</div>
+                <div class="stat-value text-[#f34336]">7+</div>
                 <div class="stat-desc text-sm">DeFi • Tokenization • AI</div>
               </div>
               <div class="stat bg-base-100/50 backdrop-blur-sm rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Reports/Dashboards</div>
-                <div class="stat-value text-primary">50+</div>
+                <div class="stat-value text-[#f34336]">50+</div>
                 <div class="stat-desc text-sm">Evidence over hype</div>
               </div>
               <div class="stat bg-base-100/50 backdrop-blur-sm rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Focus</div>
-                <div class="stat-value text-primary">Clarity</div>
+                <div class="stat-value text-[#f34336]">Clarity</div>
                 <div class="stat-desc text-sm">Transparent methods</div>
               </div>
             </div>
@@ -63,7 +63,7 @@
         <blockquote class="lg:col-span-5 rounded-2xl bg-base-100 p-8 lg:p-10 shadow-xl border border-base-300 relative overflow-hidden">
           <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
           <p class="text-2xl lg:text-3xl font-semibold leading-relaxed relative">
-            "Good research doesn't just <em>describe</em> the chain — it <span class="underline decoration-primary decoration-2">explains</span> it.
+            "Good research doesn't just <em>describe</em> the chain — it <span class="underline decoration-[#f34336] decoration-2">explains</span> it.
             My job is to turn raw metrics into decisions people can trust."
           </p>
         </blockquote>
@@ -79,7 +79,7 @@
               Web3 Adoption & Why Reports Matter
             </h3>
             <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              Web3 adoption is no longer hypothetical — by 2025, there are around <span class="font-bold text-primary">820 million active wallets worldwide</span>. Nearly <span class="font-bold text-primary">43% are in Asia-Pacific (~350M)</span>, while <span class="font-bold text-primary">Europe (~140M)</span> and <span class="font-bold text-primary">Africa (~75M)</span> are catching up fast.
+              Web3 adoption is no longer hypothetical — by 2025, there are around <span class="font-bold text-[#f34336]">820 million active wallets worldwide</span>. Nearly <span class="font-bold text-[#f34336]">43% are in Asia-Pacific (~350M)</span>, while <span class="font-bold text-[#f34336]">Europe (~140M)</span> and <span class="font-bold text-[#f34336]">Africa (~75M)</span> are catching up fast.
             </p>
             <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
               But raw numbers don't equal understanding. Without clear reports and dashboards, it's impossible to see where adoption is real, where users drop off, and which regions face friction. That's why transparent, data-driven reporting is critical: it turns wallet counts into <span class="font-medium">insights that guide policy, strategy, and real-world adoption</span>.
@@ -87,17 +87,17 @@
             <div class="mt-8 grid grid-cols-3 gap-4">
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Total Wallets</div>
-                <div class="stat-value text-primary">820M</div>
+                <div class="stat-value text-[#f34336]">820M</div>
                 <div class="stat-desc text-sm">Worldwide</div>
               </div>
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Top Region</div>
-                <div class="stat-value text-primary">43%</div>
+                <div class="stat-value text-[#f34336]">43%</div>
                 <div class="stat-desc text-sm">Asia-Pacific</div>
               </div>
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Growth Areas</div>
-                <div class="stat-value text-primary">3</div>
+                <div class="stat-value text-[#f34336]">3</div>
                 <div class="stat-desc text-sm">Major regions</div>
               </div>
             </div>
@@ -125,32 +125,32 @@
                       <tr>
                         <td>Asia-Pacific</td>
                         <td class="text-right font-medium">350</td>
-                        <td class="text-right text-primary">43%</td>
+                        <td class="text-right text-[#f34336]">43%</td>
                       </tr>
                       <tr>
                         <td>Europe</td>
                         <td class="text-right font-medium">140</td>
-                        <td class="text-right text-primary">17%</td>
+                        <td class="text-right text-[#f34336]">17%</td>
                       </tr>
                       <tr>
                         <td>North America</td>
                         <td class="text-right font-medium">120</td>
-                        <td class="text-right text-primary">15%</td>
+                        <td class="text-right text-[#f34336]">15%</td>
                       </tr>
                       <tr>
                         <td>Latin America</td>
                         <td class="text-right font-medium">95</td>
-                        <td class="text-right text-primary">12%</td>
+                        <td class="text-right text-[#f34336]">12%</td>
                       </tr>
                       <tr>
                         <td>Africa</td>
                         <td class="text-right font-medium">75</td>
-                        <td class="text-right text-primary">9%</td>
+                        <td class="text-right text-[#f34336]">9%</td>
                       </tr>
                       <tr>
                         <td>Other</td>
                         <td class="text-right font-medium">40</td>
-                        <td class="text-right text-primary">5%</td>
+                        <td class="text-right text-[#f34336]">5%</td>
                       </tr>
                     </tbody>
                   </table>
@@ -207,7 +207,7 @@
             With Hype → Evidence
           </h3>
           <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-            Web3 hype gets attention. But retention reveals what's real. For example: of all new wallets using <span class="font-medium">Binance Web3 Wallet</span>, only about <span class="text-primary font-bold">24% return after one day</span>, and just <span class="text-primary font-bold">13% after seven days</span>. Uniswap's smart wallet does better, but still only around <span class="text-primary font-bold">40% after one day</span> and <span class="text-primary font-bold">30% after a week</span>.
+            Web3 hype gets attention. But retention reveals what's real. For example: of all new wallets using <span class="font-medium">Binance Web3 Wallet</span>, only about <span class="text-[#f34336] font-bold">24% return after one day</span>, and just <span class="text-[#f34336] font-bold">13% after seven days</span>. Uniswap's smart wallet does better, but still only around <span class="text-[#f34336] font-bold">40% after one day</span> and <span class="text-[#f34336] font-bold">30% after a week</span>.
           </p>
           <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
             These numbers show that acquiring users is not the hard part — keeping them is. Reports and dashboards that track retention, cohort behavior, drop-off points and engagement curves turn hype into actionable evidence.
@@ -215,17 +215,17 @@
           <div class="mt-8 grid grid-cols-2 gap-4">
             <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
               <div class="stat-title font-medium">Binance Web3 Wallet</div>
-              <div class="stat-value text-primary">24%</div>
+              <div class="stat-value text-[#f34336]">24%</div>
               <div class="stat-desc text-sm">1-day retention</div>
             </div>
             <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
               <div class="stat-title font-medium">Uniswap Smart Wallet</div>
-              <div class="stat-value text-primary">40%</div>
+              <div class="stat-value text-[#f34336]">40%</div>
               <div class="stat-desc text-sm">1-day retention</div>
             </div>
           </div>
           <p class="mt-8 text-lg opacity-90 font-medium">
-            <span class="text-primary">What I can bring:</span> dashboards + narrative that reveal <em>where</em> users leave, <em>why</em>, and <em>how small changes</em> (onboarding, UX, incentive loops) can shift those curves upward. Data not just to brag, but to build.
+            <span class="text-[#f34336]">What I can bring:</span> dashboards + narrative that reveal <em>where</em> users leave, <em>why</em>, and <em>how small changes</em> (onboarding, UX, incentive loops) can shift those curves upward. Data not just to brag, but to build.
           </p>
         </article>
       </div>
@@ -240,20 +240,23 @@
               Builders as a Leading Indicator
             </h3>
             <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              Adoption isn't only capital — it's creators. Where developers gather, sustainable ecosystems emerge. Monthly active developers contributing to open-source Web3 projects have grown from <span class="font-bold text-primary">~18,000 in 2019</span> to over <span class="font-bold text-primary">25,000 in 2021</span>, then settled at <span class="font-bold text-primary">~25,419 in 2023</span>, before adjusting to <span class="font-bold text-primary">~23,615 in 2024</span>.
+              Adoption isn't only capital — it's creators. Where developers gather, sustainable ecosystems emerge. Monthly active developers contributing to open-source Web3 projects have grown from <span class="font-bold text-[#f34336]">~18,000 in 2019</span> to over <span class="font-bold text-[#f34336]">25,000 in 2021</span>, then settled at <span class="font-bold text-[#f34336]">~25,419 in 2023</span>, before adjusting to <span class="font-bold text-[#f34336]">~23,615 in 2024</span>.
             </p>
             <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              This trend illustrates that developer activity leads market cycles: growth phases bring new builders; plateaus (or declines) warn of friction, waning incentive or attention diversion. With sharp dashboards, Onchain could spot early when an ecosystem is losing builder momentum — and help redirect support, tools, or research to keep that flame alive.
+              This trend illustrates that developer activity leads market cycles: growth phases bring new builders; plateaus (or declines) warn of friction, waning incentive or attention diversion.
+            </p>
+            <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
+              <b>With sharp dashboards, Onchain could spot early when an ecosystem is losing builder momentum — and help redirect support, tools, or research to keep that flame alive</b>
             </p>
             <div class="mt-8 grid grid-cols-2 gap-4">
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Peak Developers</div>
-                <div class="stat-value text-primary">25.4k</div>
+                <div class="stat-value text-[#f34336]">25.4k</div>
                 <div class="stat-desc text-sm">2023 high point</div>
               </div>
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
                 <div class="stat-title font-medium">Growth from 2019</div>
-                <div class="stat-value text-primary">+41%</div>
+                <div class="stat-value text-[#f34336]">+41%</div>
                 <div class="stat-desc text-sm">Over 5 years</div>
               </div>
             </div>
@@ -356,11 +359,29 @@
             <p class="text-lg opacity-90">Onchain is building the credibility Web3 needs. I'd love to help ensure every report is not just written,
               but <em>felt</em> — through data, visuals, and narrative.</p>
             <div class="mt-6 flex flex-wrap gap-4">
-              <a href="mailto:hello@chris.berlin" class="btn btn-primary btn-lg">Email Chris</a>
+              <a href="mailto:chris@revoro.consulting" class="btn bg-[#f34336] btn-lg">Email Me</a>
               <a href="/" class="btn btn-outline btn-lg">Back to Home</a>
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="flex justify-center gap-4">
+      <!-- <button class="btn btn-lg btn-gradient">Explore My Work</button> -->
+      <div class="flex flex-wrap justify-center gap-3 py-16" data-aos="fade-up" data-aos-delay="800">
+        <a href="https://www.linkedin.com/in/christonomous/" target="_blank" class="btn btn-circle btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://medium.com/@christonomous" target="_blank" class="btn btn-circle btn-lg"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1633.77 1150.51" class="h-6 w-6" fill="currentColor"><g id="Symbol"><path d="M883.45,576.26c0,163.67-131.78,296.35-294.33,296.35S294.78,739.93,294.78,576.26,426.56,279.9,589.12,279.9,883.45,412.59,883.45,576.26"></path><path d="M1206.34,576.26c0,154.06-65.89,279-147.17,279S912,730.32,912,576.26s65.88-279,147.16-279,147.17,124.9,147.17,279"></path><path d="M1338.41,576.26c0,138-23.17,249.94-51.76,249.94s-51.75-111.91-51.75-249.94,23.17-249.94,51.75-249.94,51.76,111.9,51.76,249.94"></path></g></svg>
+        </a>
+        <a href="https://x.com/Christonomous" target="_blank" class="btn btn-circle btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <a href="https://github.com/christonomous" target="_blank" class="btn btn-circle btn-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
       </div>
     </section>
   </main>
