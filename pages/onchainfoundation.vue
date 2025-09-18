@@ -240,7 +240,7 @@
               This trend illustrates that developer activity leads market cycles: growth phases bring new builders; plateaus (or declines) warn of friction, waning incentive or attention diversion.
             </p>
             <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              <b>With sharp dashboards, Onchain Fundation could spot early when an ecosystem is losing builder momentum  -  and help redirect support, tools, or research to keep that flame alive</b>
+              <b>With sharp dashboards, Onchain Fundation could spot early when an ecosystem is gaining or losing builder momentum  -  and help redirect support, tools, or research to keep that flame alive</b>
             </p>
             <div class="mt-8 grid grid-cols-2 gap-4">
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
