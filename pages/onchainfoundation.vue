@@ -341,10 +341,8 @@
         <aside class="lg:col-span-5">
           <div class="card bg-base-100 shadow-xl border border-base-300" id="methodology">
             <div class="card-body">
-              <h4 class="card-title font-bold">Methodology & Notes</h4>
-              <p class="text-base opacity-90">Data sources include DeFiLlama (stablecoins & chain TVL) and optionally Token Terminal (developer
-                activity). Charts refresh on load and gracefully fall back to demo data when APIs or CORS are
-                unavailable.</p>
+              <h4 class="card-title font-bold">Why Onchain Foundation</h4>
+              <p class="text-base opacity-90 italic">"I've been following Onchain Foundation for a while now, and something deep inside me says it feels like home. Your commitment to clarity and truth in Web3 resonates with everything I believe in."</p>
             </div>
           </div>
         </aside>
