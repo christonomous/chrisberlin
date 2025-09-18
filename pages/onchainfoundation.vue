@@ -240,7 +240,7 @@
               This trend illustrates that developer activity leads market cycles: growth phases bring new builders; plateaus (or declines) warn of friction, waning incentive or attention diversion.
             </p>
             <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              <b>With sharp dashboards, Onchain could spot early when an ecosystem is losing builder momentum  -  and help redirect support, tools, or research to keep that flame alive</b>
+              <b>With sharp dashboards, Onchain Fundation could spot early when an ecosystem is losing builder momentum  -  and help redirect support, tools, or research to keep that flame alive</b>
             </p>
             <div class="mt-8 grid grid-cols-2 gap-4">
               <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
@@ -461,12 +461,12 @@ async function renderWalletDistribution() {
       datasets: [{
         data: data.values,
         backgroundColor: [
-          'rgba(243, 67, 54, 0.9)',    // Red
-          'rgba(211, 47, 47, 0.9)',    // Dark Red
-          'rgba(229, 57, 53, 0.9)',    // Light Red
-          'rgba(239, 83, 80, 0.9)',    // Lighter Red
-          'rgba(244, 67, 54, 0.8)',    // Faded Red
-          'rgba(198, 40, 40, 0.9)'     // Deep Red
+          'rgba(59, 130, 246, 0.9)',   // Primary blue
+          'rgba(99, 102, 241, 0.9)',   // Indigo
+          'rgba(139, 92, 246, 0.9)',   // Purple
+          'rgba(236, 72, 153, 0.9)',   // Pink
+          'rgba(248, 113, 113, 0.9)',  // Red
+          'rgba(156, 163, 175, 0.9)'   // Gray
         ],
         borderWidth: 2,
         borderColor: 'rgba(255,255,255,0.1)'
