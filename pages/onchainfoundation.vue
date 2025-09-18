@@ -8,7 +8,7 @@
         <div class="grid gap-12 lg:grid-cols-12 items-end">
           <header class="lg:col-span-8">
             <div class="flex items-center gap-4 mb-6">
-              <p class="badge badge-primary badge-lg">Special</p>
+              <p class="badge badge-primary badge-lg">Special Report</p>
               <div class="h-[2px] flex-1 bg-gradient-to-r from-primary/30 to-transparent"></div>
             </div>
             <h1 class="text-5xl lg:text-7xl xl:text-8xl font-black leading-[1.05] tracking-tight bg-gradient-to-br from-primary to-primary-focus bg-clip-text text-transparent">
@@ -16,7 +16,7 @@
               is a Fit
             </h1>
             <p class="mt-8 text-xl lg:text-2xl opacity-90 max-w-3xl font-light leading-relaxed">
-              Weaveing narrative with live on‑chain metrics to make insights actionable.
+              Weaving narrative with live on‑chain metrics to make insights actionable.
             </p>
           </header>
           <aside class="lg:col-span-4">
@@ -76,41 +76,85 @@
         <div class="grid gap-12 lg:grid-cols-12 items-start">
           <article class="lg:col-span-5 order-2 lg:order-1">
             <h3 class="text-2xl lg:text-4xl font-black leading-tight bg-gradient-to-br from-base-content to-base-content/70 bg-clip-text text-transparent">
-              Dashboards that Advance the Mission
+              Web3 Adoption & Why Reports Matter
             </h3>
             <p class="mt-6 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
-              Onchain stands for clarity in a noisy space. My contribution is to make data not just available, but
-              <span class="font-medium">understandable and actionable</span>. The stablecoin view on the right embeds
-              evidence directly into the narrative — the kind of chart that helps policymakers and enterprises grasp
-              real‑world impact at a glance.
+              Web3 adoption is no longer hypothetical — by 2025, there are around <span class="font-bold text-primary">820 million active wallets worldwide</span>. Nearly <span class="font-bold text-primary">43% are in Asia-Pacific (~350M)</span>, while <span class="font-bold text-primary">Europe (~140M)</span> and <span class="font-bold text-primary">Africa (~75M)</span> are catching up fast.
             </p>
-            <ul class="mt-8 space-y-4 text-base">
-              <li class="flex items-start gap-3">
-                <span class="badge badge-primary badge-sm">1</span>
-                <span class="opacity-90">Source‑linked, reproducible methods</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="badge badge-primary badge-sm">2</span>
-                <span class="opacity-90">Narrative annotations that explain the "why"</span>
-              </li>
-              <li class="flex items-start gap-3">
-                <span class="badge badge-primary badge-sm">3</span>
-                <span class="opacity-90">Auto‑refresh cadence for longevity</span>
-              </li>
-            </ul>
+            <p class="mt-4 text-lg lg:text-xl opacity-90 font-light leading-relaxed">
+              But raw numbers don't equal understanding. Without clear reports and dashboards, it's impossible to see where adoption is real, where users drop off, and which regions face friction. That's why transparent, data-driven reporting is critical: it turns wallet counts into <span class="font-medium">insights that guide policy, strategy, and real-world adoption</span>.
+            </p>
+            <div class="mt-8 grid grid-cols-3 gap-4">
+              <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
+                <div class="stat-title font-medium">Total Wallets</div>
+                <div class="stat-value text-primary">820M</div>
+                <div class="stat-desc text-sm">Worldwide</div>
+              </div>
+              <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
+                <div class="stat-title font-medium">Top Region</div>
+                <div class="stat-value text-primary">43%</div>
+                <div class="stat-desc text-sm">Asia-Pacific</div>
+              </div>
+              <div class="stat bg-base-200 rounded-box shadow-lg border border-base-300">
+                <div class="stat-title font-medium">Growth Areas</div>
+                <div class="stat-value text-primary">3</div>
+                <div class="stat-desc text-sm">Major regions</div>
+              </div>
+            </div>
           </article>
           <div class="lg:col-span-7 order-1 lg:order-2">
             <div class="card bg-base-100 shadow-xl border border-base-300">
               <div class="card-body">
                 <div class="flex items-center justify-between gap-4">
-                  <h4 class="card-title text-lg font-bold">Stablecoin Adoption Over Time</h4>
-                  <span class="badge badge-outline">DeFiLlama</span>
+                  <h4 class="card-title text-lg font-bold">Wallet Adoption by Region (2025)</h4>
+                  <span class="badge badge-outline">Global Data</span>
                 </div>
                 <div class="h-80">
-                  <canvas ref="stablecoinCanvas"></canvas>
+                  <canvas ref="walletCanvas"></canvas>
                 </div>
-                <p class="mt-4 text-sm opacity-70">Data: stablecoins.llama.fi — total circulating USD across tracked assets.
-                  Graceful fallback if API/CORS unavailable.</p>
+                <div class="mt-4 overflow-x-auto">
+                  <table class="table table-xs">
+                    <thead>
+                      <tr>
+                        <th>Region</th>
+                        <th class="text-right">Users (M)</th>
+                        <th class="text-right">Share</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Asia-Pacific</td>
+                        <td class="text-right font-medium">350</td>
+                        <td class="text-right text-primary">43%</td>
+                      </tr>
+                      <tr>
+                        <td>Europe</td>
+                        <td class="text-right font-medium">140</td>
+                        <td class="text-right text-primary">17%</td>
+                      </tr>
+                      <tr>
+                        <td>North America</td>
+                        <td class="text-right font-medium">120</td>
+                        <td class="text-right text-primary">15%</td>
+                      </tr>
+                      <tr>
+                        <td>Latin America</td>
+                        <td class="text-right font-medium">95</td>
+                        <td class="text-right text-primary">12%</td>
+                      </tr>
+                      <tr>
+                        <td>Africa</td>
+                        <td class="text-right font-medium">75</td>
+                        <td class="text-right text-primary">9%</td>
+                      </tr>
+                      <tr>
+                        <td>Other</td>
+                        <td class="text-right font-medium">40</td>
+                        <td class="text-right text-primary">5%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -265,7 +309,9 @@ import { ref, onMounted, watch, nextTick } from 'vue'
 import {
   Chart,
   LineController,
+  DoughnutController,
   LineElement,
+  ArcElement,
   PointElement,
   CategoryScale,
   LinearScale,
@@ -274,14 +320,25 @@ import {
   Legend
 } from 'chart.js'
 
-Chart.register(LineController, LineElement, PointElement, CategoryScale, LinearScale, Filler, Tooltip, Legend)
+Chart.register(
+  LineController,
+  DoughnutController,
+  LineElement,
+  ArcElement,
+  PointElement,
+  CategoryScale,
+  LinearScale,
+  Filler,
+  Tooltip,
+  Legend
+)
 
 // Canvas refs
-const stablecoinCanvas = ref<HTMLCanvasElement | null>(null)
+const walletCanvas = ref<HTMLCanvasElement | null>(null)
 const tvlCanvas = ref<HTMLCanvasElement | null>(null)
 const devCanvas = ref<HTMLCanvasElement | null>(null)
 
-let stablecoinChart: Chart | null = null
+let walletChart: Chart | null = null
 let tvlChart: Chart | null = null
 let devChart: Chart | null = null
 
@@ -304,55 +361,57 @@ async function fetchJSON(url: string, init?: RequestInit, timeoutMs = 12000) {
   } finally { clearTimeout(id) }
 }
 
-// ---------- Stablecoins (DeFiLlama) ----------
-async function renderStablecoins() {
+// ---------- Wallet Distribution ----------
+async function renderWalletDistribution() {
   await nextTick()
-  const ctx = stablecoinCanvas.value?.getContext('2d')
+  const ctx = walletCanvas.value?.getContext('2d')
   if (!ctx) return
-  destroyChart(stablecoinChart)
+  destroyChart(walletChart)
 
-  let labels: string[] = []
-  let values: number[] = []
-
-  try {
-    const data = await fetchJSON('https://stablecoins.llama.fi/stablecoincharts/all')
-    labels = data.map((d: any) => fmtDate(d.date))
-    values = data.map((d: any) => Math.round(d.totalCirculatingUSD / 1e9 * 100) / 100)
-  } catch (e) {
-    // fallback demo
-    const now = Math.floor(Date.now() / 1000)
-    const points = 36
-    labels = Array.from({ length: points }, (_, i) => fmtDate(now - (points - i) * 86400 * 30))
-    values = Array.from({ length: points }, (_, i) => 50 + i * 2 + (Math.sin(i / 2) * 3))
+  const data = {
+    labels: ['Asia-Pacific', 'Europe', 'North America', 'Latin America', 'Africa', 'Other'],
+    values: [350, 140, 120, 95, 75, 40]
   }
 
-  stablecoinChart = new Chart(ctx, {
-    type: 'line',
-    data: { labels, datasets: [{
-      label: 'Stablecoin Market Cap ($B)',
-      data: values,
-      tension: 0.35,
-      fill: true,
-      borderWidth: 2,
-      pointRadius: 0,
-      backgroundColor: (c) => {
-        const { chart } = c
-        const { ctx: g, chartArea } = chart
-        if (!chartArea) return 'rgba(59,130,246,0.15)'
-        const grad = g.createLinearGradient(0, chartArea.top, 0, chartArea.bottom)
-        grad.addColorStop(0, 'rgba(59,130,246,0.25)')
-        grad.addColorStop(1, 'rgba(59,130,246,0.03)')
-        return grad
-      }
-    }] },
+  walletChart = new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: data.labels,
+      datasets: [{
+        data: data.values,
+        backgroundColor: [
+          'rgba(59, 130, 246, 0.9)',   // Primary blue
+          'rgba(99, 102, 241, 0.9)',   // Indigo
+          'rgba(139, 92, 246, 0.9)',   // Purple
+          'rgba(236, 72, 153, 0.9)',   // Pink
+          'rgba(248, 113, 113, 0.9)',  // Red
+          'rgba(156, 163, 175, 0.9)'   // Gray
+        ],
+        borderWidth: 2,
+        borderColor: 'rgba(255,255,255,0.1)'
+      }]
+    },
     options: {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: { legend: { display: false }, tooltip: { mode: 'index', intersect: false } },
-      interaction: { mode: 'index', intersect: false },
-      scales: {
-        x: { ticks: { maxTicksLimit: 8 } },
-        y: { beginAtZero: false, ticks: { callback: (v) => `$${v}B` } }
+      plugins: {
+        legend: {
+          position: 'right',
+          labels: {
+            padding: 20,
+            font: { size: 13 }
+          }
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => {
+              const value = context.raw as number
+              const total = data.values.reduce((a, b) => a + b, 0)
+              const percentage = Math.round((value / total) * 100)
+              return `${context.label}: ${value}M (${percentage}%)`
+            }
+          }
+        }
       }
     }
   })
@@ -478,7 +537,7 @@ async function renderDevelopers() {
 }
 
 onMounted(async () => {
-  await renderStablecoins()
+  await renderWalletDistribution()
   await renderTVL()
   await renderDevelopers()
 })
