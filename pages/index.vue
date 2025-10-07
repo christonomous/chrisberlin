@@ -78,7 +78,7 @@ function onSubmit(){
 }
 </script>
 
-<style scoped>
+<style>
 /* Animated brand gradient utility (used by headings & buttons) */
 .animate-gradient{ background-size:300% 300%; animation:gradientShift 8s ease infinite; }
 @keyframes gradientShift{ 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
