@@ -3,10 +3,10 @@
     <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-20 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-          Agentic Vaults
+          Agentic Crypto
         </h1>
         <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-          Hi, I am Chris and I am building <b>Agentic Community-owned On-chain Vaults</b>. Let <span class="font-semibold">AI Agents & Capital work for you</span>.
+          Hi, I’m Chris, and I contribute to shaping the future of <b>AI x Crypto</b>. Let <span class="font-semibold">AI agents & capital work for you</span>.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#reports" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Market Reports</a>

@@ -3,25 +3,25 @@
     <div class="card bg-base-200/50 shadow-xl border border-base-300/30">
       <div class="card-body grid md:grid-cols-3 gap-6">
         <div>
-          <h2 class="text-2xl font-bold mb-2">What I Do</h2>
-          <p class="opacity-80">I'm building autonomous AI Agents managing on-chain capital by <b>combining decentralized finance and artificial intelligence</b> to own the assets powering the future economy.</p>
+          <h2 class="text-2xl font-bold mb-2">About Me</h2>
+          <p class="opacity-80">I help crypto businesses implement AI to unlock new value and outperform competitors.</p>
         </div>
         <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
           <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">AI Mastery</h3>
-            <p class="text-sm opacity-80">Training and consulting on how to use AI the right way to nail it.</p>
+            <h3 class="font-semibold">AI Implementation</h3>
+            <p class="text-sm opacity-80">Empowering buisnesses through AI training, consulting, and development.</p>
           </li>
           <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">DeFi Sovereignty</h3>
-            <p class="text-sm opacity-80">DeFi and DAO development and strategies for investment optimization.</p>
+            <h3 class="font-semibold">DeFi strategies</h3>
+            <p class="text-sm opacity-80">Research and development of DeFi yield farming strategies.</p>
           </li>
           <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">AI Automation</h3>
-            <p class="text-sm opacity-80">Custom AI OS implementation as well as AI Agent development and worflow automation.</p>
+            <h3 class="font-semibold">Algo Trading</h3>
+            <p class="text-sm opacity-80">Development and execution of algorithmic trading strategies in crypto.</p>
           </li>
           <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">Market Research</h3>
-            <p class="text-sm opacity-80">Agile go-to buisness strategies to be prepared for market trends.</p>
+            <h3 class="font-semibold">Web3 Research & Development</h3>
+            <p class="text-sm opacity-80">Discovering emerging trends, innovative projects, and untapped niches.</p>
           </li>
         </ul>
       </div>

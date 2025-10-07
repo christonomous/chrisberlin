@@ -17,8 +17,8 @@
     <AiDefiIntersectSection class="container mx-auto" />
     <TimelineSection />
     <OfferSection />
-    <WorkHighlights />
     <JourneySection />
+    <WorkHighlights />
     <ReportsSection />
     <FAQSection />
     <FooterSection />
