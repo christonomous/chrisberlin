@@ -108,7 +108,7 @@
             <img src="/autonomousenterprises_logo.jpg" alt="Autonomous Enterprises" class="w-10 h-10 object-contain rounded-full" />
             <h3 class="card-title">Autonomous Enterprises</h3>
           </div>
-          <p class="opacity-80"> ??? </p>
+          <p class="opacity-80 italic">More soon Q4 2025</p>
           <div class="card-actions justify-end mt-auto">
             <a
               href="https://www.linkedin.com/company/autonomousenterprises/"
