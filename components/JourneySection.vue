@@ -61,6 +61,7 @@
         <div class="card bg-base-200/60 border border-base-300/20 shadow-xl">
           <div class="card-body">
             <h3 class="text-xl font-semibold mb-4">Cunoro Finance (Disolved)</h3>
+            <p>Cunoro Finane is now rebranded to Zillions App.</p>
             <div class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center border-2 border-dashed border-base-300/50">
               <img src="/imgs/startups/photo_2025-10-07_12-24-56.jpg" alt="">
             </div>
@@ -98,6 +99,7 @@
         <div class="card bg-base-200/60 border border-base-300/20 shadow-xl">
           <div class="card-body">
             <h3 class="text-xl font-semibold mb-4">Builders on the Block Interview</h3>
+            <p>ecosis Network is now rebranded to Autonomous Enterprises.</p>
             <div class="aspect-video bg-gradient-to-br from-secondary/20 to-accent/20 rounded-lg flex items-center justify-center border-2 border-dashed border-base-300/50">
               <iframe width="560" height="315" src="https://www.youtube.com/embed/vn4Z-F8iuWg?si=qsaEPAqGjCQ2vYvd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
