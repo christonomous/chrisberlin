@@ -47,10 +47,10 @@
       <div class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:shadow-xl">
         <div class="card-body flex flex-col gap-4">
           <div class="flex items-center gap-4">
-            <img src="https://media.licdn.com/dms/image/v2/D4D0BAQF0S4VAwbLFUQ/company-logo_200_200/company-logo_200_200/0/1704713473491/autonomousenterprises_logo?e=1759363200&v=beta&t=imLwotHyFMKG6gHJJLKskJ_MHpqdUiO-GOB7z-k1qeU" alt="Autonomous Enterprises" class="w-10 h-10 object-contain rounded-full" />
+            <img src="/autonomousenterprises_logo.jpg" alt="Autonomous Enterprises" class="w-10 h-10 object-contain rounded-full" />
             <h3 class="card-title">Autonomous Enterprises</h3>
           </div>
-          <p class="opacity-80">AI‑driven DAOs: autonomous on-chain businesses accessible to everyone.</p>
+          <p class="opacity-80"> ??? </p>
           <div class="card-actions justify-end mt-auto">
             <a
               href="https://www.linkedin.com/company/autonomousenterprises/"
@@ -107,10 +107,10 @@
       <div class="card bg-base-200/60 border border-base-300/20 shadow flex flex-col hover:shadow-xl">
         <div class="card-body flex flex-col gap-4">
           <div class="flex items-center gap-4">
-            <img src="https://media.licdn.com/dms/image/v2/D4E0BAQFl_4AuSLroyw/company-logo_200_200/company-logo_200_200/0/1680593144768/cunoro_logo?e=1759363200&v=beta&t=px9sHdAmPFDJKgIb7yF14sJySpZCEbU-3V0YImfkFxI" alt="Zillions" class="w-10 h-10 object-contain rounded-full" />
+            <img src="/cunoro_logo.jpg" alt="Zillions" class="w-10 h-10 object-contain rounded-full" />
             <h3 class="card-title">Zillions</h3>
           </div>
-          <p class="opacity-80">On‑chain AI algo‑trader: data ingestion, risk rails, strategy orchestration.</p>
+          <p class="opacity-80">On‑chain AI Trading Bot: Regime Detection, OBOS, Risk Management, ICO Sniper</p>
           <div class="card-actions justify-end mt-auto">
             <a
               href="https://www.linkedin.com/company/zillionsapp/"
