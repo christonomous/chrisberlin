@@ -18,6 +18,7 @@
     <TimelineSection />
     <OfferSection />
     <WorkHighlights />
+    <JourneySection />
     <ReportsSection />
     <FAQSection />
     <FooterSection />
@@ -32,6 +33,7 @@ import SocialLinks from '~/components/SocialLinks.vue'
 import TimelineSection from '~/components/TimelineSection.vue'
 import OfferSection from '~/components/OfferSection.vue'
 import WorkHighlights from '~/components/WorkHighlights.vue'
+import JourneySection from '~/components/JourneySection.vue'
 import ReportsSection from '~/components/ReportsSection.vue'
 import FAQSection from '~/components/FAQSection.vue'
 import FooterSection from '~/components/FooterSection.vue'
