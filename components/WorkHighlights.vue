@@ -50,7 +50,7 @@
             <img src="/cunoro_logo.jpg" alt="Zillions" class="w-10 h-10 object-contain rounded-full" />
             <h3 class="card-title">Zillions</h3>
           </div>
-          <p class="opacity-80">On‑chain AI Trading Bot: Regime Detection, OBOS, Risk Management, ICO Sniper</p>
+          <p class="opacity-80">On‑chain AI Trading Bot: Regime Detection, OBOS, Risk Management, and ICO Sniper.</p>
           <div class="card-actions justify-end mt-auto">
             <a
               href="https://www.linkedin.com/company/zillionsapp/"

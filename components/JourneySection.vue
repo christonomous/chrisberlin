@@ -1,15 +1,15 @@
 <template>
-  <section class="container mx-auto max-w-6xl px-4 mt-16 mb-16">
-    <div class="text-center mb-12 w-full">
-      <h2 class="text-3xl text-left font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
+  <section class="container mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 mt-16 mb-16">
+    <div class="text-center sm:text-left mb-8 sm:mb-12">
+      <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
         My Journey
       </h2>
-      <p class="text-lg text-left opacity-80 max-w-3xl">
+      <p class="text-base sm:text-lg lg:text-xl opacity-80 max-w-3xl mx-auto lg:mx-0 leading-relaxed">
         A story of relentless learning, bold pivots, and the unwavering belief in automating the future for everyone
       </p>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start mb-12 lg:mb-16">
       <!-- Story Content -->
       <div class="space-y-6">
         <div class="card bg-base-200/40 border border-base-300/20 shadow-lg">
@@ -57,18 +57,18 @@
       </div>
 
       <!-- Visual Content -->
-      <div class="space-y-6">
+      <div class="space-y-4 sm:space-y-6">
         <div class="card bg-base-200/60 border border-base-300/20 shadow-xl">
-          <div class="card-body">
-            <h3 class="text-xl font-semibold mb-4">Cunoro Finance (Disolved)</h3>
-            <p>Cunoro Finane is now rebranded to Zillions App.</p>
-            <div class="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg flex items-center justify-center border-2 border-dashed border-base-300/50">
-              <img src="/imgs/startups/photo_2025-10-07_12-24-56.jpg" alt="">
+          <div class="card-body p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Cunoro Finance (Disolved)</h3>
+            <p class="text-sm sm:text-base mb-4">Cunoro Finance is now rebranded to Zillions App.</p>
+            <div class="relative w-full aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 rounded-lg overflow-hidden border-2 border-dashed border-base-300/50 mb-4">
+              <img src="/imgs/startups/photo_2025-10-07_12-24-56.jpg" alt="Cunoro Finance App Screenshot" class="w-full h-full object-cover">
             </div>
-            <div class="mt-4 flex flex-wrap gap-3">
+            <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
               <a href="https://github.com/zillionsapp/contracts"
                  target="_blank"
-                 class="btn btn-outline btn-sm">
+                 class="btn btn-outline btn-sm w-full sm:w-auto text-center">
                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
                   0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
@@ -77,11 +77,12 @@
                   2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
                   0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>
-                Treasury Smart Contracts
+                <span class="hidden sm:inline">Treasury Smart Contracts</span>
+                <span class="sm:hidden">Contracts</span>
               </a>
               <a href="https://github.com/zillionsapp/application"
                  target="_blank"
-                 class="btn btn-outline btn-sm">
+                 class="btn btn-outline btn-sm w-full sm:w-auto text-center">
                 <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 16 16">
                   <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
                   0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01
@@ -90,18 +91,27 @@
                   2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48
                   0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
                 </svg>
-                Treasury App
+                <span class="hidden sm:inline">Treasury App</span>
+                <span class="sm:hidden">App</span>
               </a>
             </div>
           </div>
         </div>
 
         <div class="card bg-base-200/60 border border-base-300/20 shadow-xl">
-          <div class="card-body">
-            <h3 class="text-xl font-semibold mb-4">Builders on the Block Interview</h3>
-            <p>ecosis Network is now rebranded to Autonomous Enterprises.</p>
-            <div class="aspect-video bg-gradient-to-br from-secondary/20 to-accent/20 rounded-lg flex items-center justify-center border-2 border-dashed border-base-300/50">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/vn4Z-F8iuWg?si=qsaEPAqGjCQ2vYvd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <div class="card-body p-4 sm:p-6">
+            <h3 class="text-lg sm:text-xl font-semibold mb-3 sm:mb-4">Builders on the Block Interview</h3>
+            <p class="text-sm sm:text-base mb-4">ecosis Network is now rebranded to Autonomous Enterprises.</p>
+            <div class="relative w-full aspect-video bg-gradient-to-br from-secondary/20 to-accent/20 rounded-lg overflow-hidden border-2 border-dashed border-base-300/50">
+              <iframe
+                class="w-full h-full"
+                src="https://www.youtube.com/embed/vn4Z-F8iuWg?si=qsaEPAqGjCQ2vYvd"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
             </div>
           </div>
         </div>
