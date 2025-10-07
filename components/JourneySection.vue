@@ -143,7 +143,7 @@
           </div>
           <h3 class="text-lg font-semibold mb-2">Ecosystem Building</h3>
           <p class="opacity-80 text-sm">
-            From 140 LinkedIn followers to a network of builders, each connection expanded my vision for autonomous systems.
+            With a network of builders, each connection expanded my vision for autonomous systems.
           </p>
         </div>
       </div>
