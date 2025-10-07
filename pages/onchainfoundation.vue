@@ -58,7 +58,7 @@
           <div class="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent"></div>
           <p class="text-2xl lg:text-3xl font-semibold leading-relaxed relative">
             "Good research doesn't just <em>describe</em> the chain  -  it <span class="underline decoration-[#f34336] decoration-2">explains</span> it.
-            That's why I want to turn raw metrics into decisions people can trust."
+            That's why I want to turn raw metrics into visualized insights people can trust & understand."
           </p>
         </blockquote>
       </div>

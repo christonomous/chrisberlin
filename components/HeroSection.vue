@@ -1,67 +1,35 @@
 <template>
-  <div class="hero min-h-screen bg-gradient-to-br from-base-300 via-base-200 to-base-300">
-    <div class="hero-content text-center flex flex-col">
-      <div class="flex justify-center py-8" data-aos="fade-up">
+  <section class="relative isolate">
+    <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-20 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
+          Agentic Vaults
+        </h1>
+        <p class="opacity-80 text-lg md:text-xl max-w-2xl">
+          Hi, I am Chris and I am building <b>Agentic Community-owned On-chain Vaults</b>. Let <span class="font-semibold">AI Agents & Capital work for you</span>.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#reports" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Market Reports</a>
+          <a href="#work" class="btn btn-outline">Businesses</a>
+        </div>
+        <div class="mt-6 text-sm opacity-70">
+          <span class="inline-flex items-center gap-2">The Future is Automated & Decentralized</span>
+        </div>
+      </div>
+      <div class="flex justify-center">
         <div class="avatar">
-          <div class="w-36 rounded-full ring-gradient">
-            <img src="/profile.jpg" />
-          </div>
-        </div>
-      </div>
-      <div class="max-w-3xl">
-        <h1 class="text-5xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient" data-aos="fade-down" data-aos-delay="200">Chris</h1>
-        <div class="text-3xl font-bold mb-6 flex items-center justify-center gap-2" data-aos="fade-up" data-aos-delay="400">
-          <span class="bg-clip-text text-transparent bg-gradient-to-r from-success to-accent animate-gradient">Buy back your time</span>
-        </div>
-        <p class="py-6 text-xl text-base-content/80" data-aos="fade-up" data-aos-delay="600">Time is Your Most Valuable Asset</p>
-        <div class="flex justify-center gap-4">
-          <!-- <button class="btn btn-lg btn-gradient">Explore My Work</button> -->
-          <div class="flex gap-3" data-aos="fade-up" data-aos-delay="800">
-            <a href="https://www.linkedin.com/in/christonomous/" target="_blank" class="btn btn-circle btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/@Christonomous" target="_blank" class="btn btn-circle btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-            </a>
-            <a href="https://soundcloud.com/equaliser" target="_blank" class="btn btn-circle btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7 17.939h-1v-8.068c.308-.231.639-.429 1-.566v8.634zm3 0h1v-9.224c-.229.265-.443.548-.621.857l-.379-.184v8.551zm-2 0h1v-8.848c-.508-.079-.623-.05-1-.01v8.858zm-4 0h1v-7.02c-.312.458-.555.971-.692 1.535l-.308-.182v5.667zm-3-5.25c-.606.547-1 1.354-1 2.268 0 .914.394 1.721 1 2.268v-4.536zm18.879-.671c-.204-2.837-2.404-5.079-5.117-5.079-1.022 0-1.964.328-2.762.877v10.123h9.089c1.607 0 2.911-1.393 2.911-3.106 0-2.233-2.168-3.772-4.121-2.815zm-16.879-.027c-.302-.024-.526-.03-1 .122v5.689c.446.143.636.138 1 .138v-5.949z"/></svg>
-            </a>
-            <a href="https://github.com/christonomous" target="_blank" class="btn btn-circle btn-lg">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="container mx-auto px-4 mt-8">
-        <div class="card bg-base-100 shadow-xl max-w-4xl mx-auto" data-aos="zoom-in" data-aos-delay="1000">
-          <div class="card-body text-center">
-            <div class="flex flex-col justify-center items-center text-2xl space-y-2">
-                <svg width="32px" height="32px" viewBox="0 0 192 192" xmlns="http://www.w3.org/2000/svg" fill="none">
-                  <g transform="translate(16 16)">
-                    <circle cx="80" cy="80" r="74" style="fill:none;stroke:#fff;stroke-width:12;stroke-linejoin:round;stroke-opacity:1"/>
-                    <path d="M80 30v50l40 32" style="fill:none;stroke:#fff;stroke-width:12;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"/>
-                  </g>
-                </svg>
-              <p class="leading-relaxed">
-                I turn opportunities into reality before anyone else even knows it exists.
-              </p>
-            </div>
+          <div class="w-48 rounded-2xl ring-gradient ringring-offset-2 ring-offset-base-100 shadow-xl rounded-full">
+            <img :src="profileImage" alt="Chris profile" class=""/>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
-<style scoped>
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+<script setup lang="ts">
+import { computed } from 'vue'
 
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient 8s ease infinite;
-}
-</style>
+const props = defineProps<{ profileImage?: string }>()
+const profileImage = computed(() => props.profileImage ?? '/profile.jpg')
+</script>
