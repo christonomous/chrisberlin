@@ -2,7 +2,7 @@
   <section class="container mx-auto max-w-6xl px-4 py-16">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-        Why Work With Me / What I Bring
+        Why Work With Me
       </h2>
     </div>
 

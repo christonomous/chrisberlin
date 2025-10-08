@@ -7,7 +7,7 @@
         <input type="radio" name="faq" checked />
         <div class="collapse-title text-lg font-medium">What problem are you solving?</div>
         <div class="collapse-content opacity-80">
-          <p>AI is automating jobs at scale, while investing is becoming the new default way people participate in the economy. But most can't access the same tools as institutions. I'm building autonomous AI agents and community-owned on-chain vaults that make sophisticated investing transparent, secure, and accessible for everyone.</p>
+          <p>AI is automating jobs at scale, while investing is becoming the new default way people participate in the economy. I'm building autonomous AI agents on-chain vaults that make sophisticated investing transparent, secure, and accessible for everyone.</p>
         </div>
       </div>
 

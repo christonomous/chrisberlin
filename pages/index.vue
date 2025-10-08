@@ -19,7 +19,6 @@
     <OfferSection />
     <DifferentiatorsSection />
     <CollaborationSection />
-    <JourneySection />
     <WorkHighlights />
     <ReportsSection />
     <FAQSection />

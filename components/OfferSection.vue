@@ -1,9 +1,9 @@
 <template>
   <section id="offer" class="container mx-auto max-w-6xl px-4">
     <div class="card bg-base-200/50 shadow-xl border border-base-300/30">
-      <div class="card-body grid md:grid-cols-3 gap-6">
+      <h2 class="card-title text-2xl font-bold p-8">About Me</h2>
+      <div class="card-body grid md:grid-cols-2 gap-6">
         <div>
-          <h2 class="text-2xl font-bold mb-2">About Me</h2>
           <p class="text-lg mb-4 opacity-90">
             Hi, I'm <strong class="text-primary">Chris</strong>.
           </p>
@@ -17,13 +17,17 @@
             I believe the future of capital is <strong class="text-primary">autonomous and composable.</strong>
           </p>
         </div>
-        <h3 class="text-xl font-semibold mb-4 text-secondary">Strategy Performance (Backtest)</h3>
-        <canvas id="strategyChart" height="200"></canvas>
-        <p class="text-xs opacity-70 mt-2">
-          Mock backtest data for illustration •
-          <span class="text-accent">~85% win rate</span> •
-          <span class="text-primary">Controlled drawdown</span>
-        </p>
+        <div>
+          <h3 class="text-xl font-semibold mb-4">Strategy Performance (Backtest)</h3>
+          <div class="w-full" style="height: 300px;">
+            <canvas id="strategyChart"></canvas>
+          </div>
+          <p class="text-xs opacity-70 mt-2">
+            Mock backtest data for illustration •
+            <span class="text-accent">~85% win rate</span> •
+            <span class="text-primary">Controlled drawdown</span>
+          </p>
+        </div>
       </div>
 
       <div class="">
@@ -67,12 +71,14 @@ Chart.register(
   Legend
 );
 
-let chartInstance: Chart | null = null;
+let tvlChartInstance: Chart | null = null;
+let strategyChartInstance: Chart | null = null;
 
 onMounted(() => {
+  // TVL Forecast Chart
   const canvasForecast = document.getElementById("tvlForecastChart") as HTMLCanvasElement;
-  if (canvasForecast && !chartInstance) {
-    chartInstance = new Chart(canvasForecast, {
+  if (canvasForecast && !tvlChartInstance) {
+    tvlChartInstance = new Chart(canvasForecast, {
       type: "line",
       data: {
         labels: ["2025", "2026", "2027", "2028"],
@@ -95,9 +101,10 @@ onMounted(() => {
     });
   }
 
+  // Strategy Performance Chart
   const canvasPerformance = document.getElementById("strategyChart") as HTMLCanvasElement;
-  if (canvasPerformance && !chartInstance) {
-    chartInstance = new Chart(canvasPerformance, {
+  if (canvasPerformance && !strategyChartInstance) {
+    strategyChartInstance = new Chart(canvasPerformance, {
       type: "line",
       data: {
         labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -122,8 +129,15 @@ onMounted(() => {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         plugins: {
-          legend: { position: "bottom" },
+          legend: {
+            position: "bottom",
+            labels: {
+              padding: 20,
+              usePointStyle: true
+            }
+          },
           tooltip: {
             mode: 'index',
             intersect: false,
@@ -135,12 +149,20 @@ onMounted(() => {
             title: {
               display: true,
               text: 'Cumulative Returns (%)'
+            },
+            grid: {
+              display: true,
+              color: 'rgba(255, 255, 255, 0.1)'
             }
           },
           x: {
             title: {
               display: true,
               text: 'Month'
+            },
+            grid: {
+              display: true,
+              color: 'rgba(255, 255, 255, 0.1)'
             }
           }
         },
@@ -155,9 +177,13 @@ onMounted(() => {
 })
 
 onUnmounted(() => {
-  if (chartInstance) {
-    chartInstance.destroy();
-    chartInstance = null;
+  if (tvlChartInstance) {
+    tvlChartInstance.destroy();
+    tvlChartInstance = null;
+  }
+  if (strategyChartInstance) {
+    strategyChartInstance.destroy();
+    strategyChartInstance = null;
   }
 })
 </script>
