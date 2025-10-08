@@ -8,7 +8,7 @@
             Hi, I'm <strong class="text-primary">Chris</strong>.
           </p>
           <p class="opacity-80 mb-4 leading-relaxed">
-            I'm a technologist in the trading trenches - combining <strong class="text-secondary">9+ years of software engineering</strong> with <strong class="text-secondary">7+ years in on-chain & DeFi systems</strong>, and 2+ years of deep work in AI and automation.
+            I'm a technologist in the crypto trenches - combining <strong class="text-secondary">9+ years of software engineering</strong> with <strong class="text-secondary">7+ years in on-chain & DeFi systems</strong>, and 2+ years of deep work in AI and automation.
           </p>
           <p class="opacity-80 mb-4 leading-relaxed">
             I build <strong class="text-accent">autonomous agents</strong> and algorithmic strategies that run capital on-chain, executing trades, adapting to regimes, and managing risk - all transparently and with accountability.
