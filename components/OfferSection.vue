@@ -4,26 +4,26 @@
       <div class="card-body grid md:grid-cols-3 gap-6">
         <div>
           <h2 class="text-2xl font-bold mb-2">About Me</h2>
-          <p class="opacity-80">I help crypto businesses implement AI to unlock new value and outperform competitors.</p>
+          <p class="text-lg mb-4 opacity-90">
+            Hi, I'm <strong class="text-primary">Chris</strong>.
+          </p>
+          <p class="opacity-80 mb-4 leading-relaxed">
+            I'm a technologist in the trading trenches - combining <strong class="text-secondary">9+ years of software engineering</strong> with <strong class="text-secondary">7+ years in on-chain & DeFi systems</strong>, and 2+ years of deep work in AI and automation.
+          </p>
+          <p class="opacity-80 mb-4 leading-relaxed">
+            I build <strong class="text-accent">autonomous agents</strong> and algorithmic strategies that run capital on-chain, executing trades, adapting to regimes, and managing risk - all transparently and with accountability.
+          </p>
+          <p class="opacity-80 leading-relaxed">
+            I believe the future of capital is <strong class="text-primary">autonomous and composable.</strong>
+          </p>
         </div>
-        <ul class="md:col-span-2 grid sm:grid-cols-2 gap-4">
-          <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">AI Implementation</h3>
-            <p class="text-sm opacity-80">Empowering buisnesses through AI training, consulting, and development.</p>
-          </li>
-          <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">DeFi strategies</h3>
-            <p class="text-sm opacity-80">Research and development of DeFi yield farming strategies.</p>
-          </li>
-          <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">Algo Trading</h3>
-            <p class="text-sm opacity-80">Development and execution of algorithmic trading strategies in crypto.</p>
-          </li>
-          <li class="p-4 rounded-xl bg-base-100/60 border border-base-300/20">
-            <h3 class="font-semibold">Web3 Research & Development</h3>
-            <p class="text-sm opacity-80">Discovering emerging trends, innovative projects, and untapped niches.</p>
-          </li>
-        </ul>
+        <h3 class="text-xl font-semibold mb-4 text-secondary">Strategy Performance (Backtest)</h3>
+        <canvas id="strategyChart" height="200"></canvas>
+        <p class="text-xs opacity-70 mt-2">
+          Mock backtest data for illustration •
+          <span class="text-accent">~85% win rate</span> •
+          <span class="text-primary">Controlled drawdown</span>
+        </p>
       </div>
 
       <div class="">
@@ -70,9 +70,9 @@ Chart.register(
 let chartInstance: Chart | null = null;
 
 onMounted(() => {
-  const canvas = document.getElementById("tvlForecastChart") as HTMLCanvasElement;
-  if (canvas && !chartInstance) {
-    chartInstance = new Chart(canvas, {
+  const canvasForecast = document.getElementById("tvlForecastChart") as HTMLCanvasElement;
+  if (canvasForecast && !chartInstance) {
+    chartInstance = new Chart(canvasForecast, {
       type: "line",
       data: {
         labels: ["2025", "2026", "2027", "2028"],
@@ -91,6 +91,64 @@ onMounted(() => {
         responsive: true,
         plugins: { legend: { position: "bottom" } },
         scales: { y: { beginAtZero: true } },
+      },
+    });
+  }
+
+  const canvasPerformance = document.getElementById("strategyChart") as HTMLCanvasElement;
+  if (canvasPerformance && !chartInstance) {
+    chartInstance = new Chart(canvasPerformance, {
+      type: "line",
+      data: {
+        labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+        datasets: [
+          {
+            label: "Strategy Returns (%)",
+            data: [5.2, 8.1, 12.3, 9.8, 15.2, 18.7, 22.1, 19.3, 25.8, 28.4, 31.2, 34.8],
+            borderColor: "#00ff88",
+            backgroundColor: "rgba(0,255,136,0.1)",
+            fill: true,
+            tension: 0.4,
+          },
+          {
+            label: "Benchmark (Buy & Hold)",
+            data: [2.1, 4.3, 6.8, 8.2, 10.1, 12.5, 14.8, 16.2, 18.9, 21.3, 23.7, 26.1],
+            borderColor: "#ff6b6b",
+            backgroundColor: "rgba(255,107,107,0.1)",
+            fill: true,
+            tension: 0.4,
+          }
+        ],
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: "bottom" },
+          tooltip: {
+            mode: 'index',
+            intersect: false,
+          }
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'Cumulative Returns (%)'
+            }
+          },
+          x: {
+            title: {
+              display: true,
+              text: 'Month'
+            }
+          }
+        },
+        interaction: {
+          mode: 'nearest',
+          axis: 'x',
+          intersect: false
+        }
       },
     });
   }
