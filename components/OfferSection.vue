@@ -4,9 +4,6 @@
       <h2 class="card-title text-2xl font-bold pt-8 pl-8">About Me</h2>
       <div class="card-body grid md:grid-cols-2 gap-6">
         <div>
-          <p class="text-lg mb-4 opacity-90">
-            Hi, I'm <strong class="text-primary">Chris</strong>.
-          </p>
           <p class="opacity-80 mb-4 leading-relaxed">
             I'm a technologist in the crypto trenches - combining <strong class="text-secondary">9+ years of software engineering</strong> with <strong class="text-secondary">7+ years in on-chain & DeFi systems</strong>, and 2+ years of deep work in AI and automation.
           </p>
