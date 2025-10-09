@@ -31,7 +31,7 @@
               </div>
               <div class="flex items-start gap-3">
                 <span class="text-primary text-xl">•</span>
-                <span class="opacity-80">Available for consulting, development, or partnership opportunities.</span>
+                <span class="opacity-80">I can help with research, analytics and dashboards.</span>
               </div>
             </div>
           </div>
@@ -46,7 +46,8 @@
           </div>
 
           <p class="text-sm opacity-70 mt-6">
-            Let's explore how we can work together to build the future of autonomous capital management.
+            Let's explore how we can work together to build the future of smart capital management. <br>
+            I'm available for consulting, research and development, or partnership opportunities.
           </p>
         </div>
       </div>
