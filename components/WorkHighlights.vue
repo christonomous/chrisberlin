@@ -163,5 +163,92 @@
         </div>
       </div>
     </div>
+
+    <!-- Cunoro Finance Section -->
+    <div class="mt-8">
+      <h3 class="text-2xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">My First DeFi Project</h3>
+      <div class="card bg-base-200/60 border border-base-300/20 shadow">
+        <div class="card-body">
+          <div class="flex items-start gap-4">
+            <div class="flex-1">
+              <h4 class="card-title text-lg mb-2">Cunoro Finance</h4>
+              <p class="opacity-80 mb-4">
+                My very first DeFi app launched beginning 2022 called Cunoro Finance deployed on Avalanche Blockchain with a ~$79k Marketcap. It was a bonding treasury (Olympus DAO Fork) with arbitrage trading and a reflective token called Bend.
+              </p>
+
+              <!-- Links Section -->
+              <div class="flex flex-wrap gap-3 mb-4">
+                <a
+                  href="https://x.com/cunorofinance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline gap-2"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                  </svg>
+                  Twitter
+                </a>
+
+                <a
+                  href="https://medium.com/@christonomous/cunoro-not-just-another-olympusdao-fork-e1efb1663144"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-sm btn-outline gap-2"
+                >
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 1.32-1.03 2.4-2.31 2.4-1.28 0-2.31-1.08-2.31-2.4 0-1.32 1.03-2.4 2.31-2.4 1.28 0 2.31 1.08 2.31 2.4z"/>
+                  </svg>
+                  Medium Article
+                </a>
+              </div>
+
+              <!-- GitHub Repos -->
+              <div class="mb-4">
+                <h5 class="font-semibold mb-2 opacity-90">GitHub Repositories:</h5>
+                <div class="flex flex-wrap gap-2">
+                  <a
+                    href="https://github.com/zillionsapp/contracts"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link link-primary text-sm hover:underline"
+                  >
+                    📁 zillionsapp/contracts
+                  </a>
+                  <a
+                    href="https://github.com/zillionsapp/application"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link link-primary text-sm hover:underline"
+                  >
+                    📁 zillionsapp/application
+                  </a>
+                  <a
+                    href="https://github.com/zillionsapp/RewardVault"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link link-primary text-sm hover:underline"
+                  >
+                    📁 zillionsapp/RewardVault
+                  </a>
+                  <a
+                    href="https://github.com/autonomousEnterprises/bend"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link link-primary text-sm hover:underline"
+                  >
+                    📁 autonomousEnterprises/bend
+                  </a>
+                </div>
+              </div>
+
+              <p class="opacity-70 text-sm">
+                Unfortunately this project was dissolved due to the crypto winter at the end of 2022, but it has been a big learning experience for me. Now with my extensive experience in AI Automation, I have made a comeback to build towards the new era of crypto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 </template>
