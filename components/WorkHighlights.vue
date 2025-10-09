@@ -243,7 +243,7 @@
               </div>
 
               <p class="opacity-70 text-sm">
-                Unfortunately this project was dissolved due to the crypto winter at the end of 2022, but it has been a big learning experience for me. Now with my extensive experience in AI Automation, I have made a comeback to build towards the new era of crypto.
+                Unfortunately this project was dissolved due to the crypto winter at the end of 2022, but it has been a big learning experience for me. Now with my extensive experience in AI Automation, I have made a comeback to build towards the new era of crypto and Cunoro Finance is now rebranded to Zillions.
               </p>
             </div>
           </div>
