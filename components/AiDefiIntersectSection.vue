@@ -94,7 +94,7 @@ const props = defineProps({
   // Replace with your own series (same format) if you have it.
   roiPoints: {
     type: Array,
-    default: () => [120, 180, 260, 210, 350, 520, 740, 980, 1120] // ~1k+%
+    default: () => [9, 40, 60, 760, 71, 120, 520, 2070] // ~1k+%
   }
 })
 

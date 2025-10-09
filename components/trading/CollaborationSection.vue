@@ -27,7 +27,7 @@
             <div class="space-y-3 text-left">
               <div class="flex items-start gap-3">
                 <span class="text-primary text-xl">•</span>
-                <span class="opacity-80">If you're building autonomous capital or need quantum edge, let's talk.</span>
+                <span class="opacity-80">If you're building autonomous capital, DeFi Apps, Vaults or need quantum edge, let's talk.</span>
               </div>
               <div class="flex items-start gap-3">
                 <span class="text-primary text-xl">•</span>

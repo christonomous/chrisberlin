@@ -75,7 +75,7 @@
             </div>
             <h3 class="text-lg font-semibold mb-2">Proven Track Record</h3>
             <p class="opacity-80 text-sm">
-              1,120% crypto ROI across cycles, 85%+ strategy win rates, and multiple successful product launches.
+              2,070%+ crypto ROI across cycles, 85%+ strategy win rates, and multiple successful product launches.
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 <template>
   <section id="offer" class="container mx-auto max-w-6xl px-4">
     <div class="card bg-base-200/50 shadow-xl border border-base-300/30">
-      <h2 class="card-title text-2xl font-bold p-8">About Me</h2>
+      <h2 class="card-title text-2xl font-bold pt-8 pl-8">About Me</h2>
       <div class="card-body grid md:grid-cols-2 gap-6">
         <div>
           <p class="text-lg mb-4 opacity-90">
@@ -18,14 +18,14 @@
           </p>
         </div>
         <div>
-          <h3 class="text-xl font-semibold mb-4">Strategy Performance (Backtest)</h3>
+          <h3 class="text-xl font-semibold mb-4">Strategy Performance</h3>
           <div class="w-full" style="height: 300px;">
             <canvas id="strategyChart"></canvas>
           </div>
-          <p class="text-xs opacity-70 mt-2">
-            Mock backtest data for illustration •
-            <span class="text-accent">~85% win rate</span> •
-            <span class="text-primary">Controlled drawdown</span>
+          <p class="flex justify-center text-xs opacity-70 mt-2">
+            <span class="text-primary">~2.070% PnL</span> •
+            <span class="text-primary">~85% win rate</span> •
+            <span class="text-accent">Controlled drawdown</span>
           </p>
         </div>
       </div>
@@ -107,11 +107,11 @@ onMounted(() => {
     strategyChartInstance = new Chart(canvasPerformance, {
       type: "line",
       data: {
-        labels: ["Nov 2024", "Dec 2024", "Jan 2025", "Feb 2025", "Mar 2025", "Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025", "Sep 2025", "Oct 2025"],
+        labels: ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
         datasets: [
           {
             label: "Strategy Returns (%)",
-            data: [5.2, 8.1, 12.3, 9.8, 15.2, 18.7, 22.1, 19.3, 25.8, 28.4, 31.2, 34.8],
+            data: [9, 40, 60, 760, 71, 120, 520, 2070],
             borderColor: "#00ff88",
             backgroundColor: "rgba(0,255,136,0.1)",
             fill: true,
@@ -119,7 +119,7 @@ onMounted(() => {
           },
           {
             label: "Benchmark (Buy & Hold)",
-            data: [2.1, 4.3, 6.8, 8.2, 10.1, 12.5, 14.8, 16.2, 18.9, 21.3, 23.7, 26.1],
+            data: [8, 30, 45, 600, 160, 300, 750, 1466],
             borderColor: "#ff6b6b",
             backgroundColor: "rgba(255,107,107,0.1)",
             fill: true,
@@ -158,7 +158,7 @@ onMounted(() => {
           x: {
             title: {
               display: true,
-              text: 'Month'
+              text: 'Year'
             },
             grid: {
               display: true,
