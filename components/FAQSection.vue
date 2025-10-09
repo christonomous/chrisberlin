@@ -7,7 +7,7 @@
         <input type="radio" name="faq" checked />
         <div class="collapse-title text-lg font-medium">What problem are you solving?</div>
         <div class="collapse-content opacity-80">
-          <p>AI is automating jobs at scale, while investing is becoming the new default way people participate in the economy. I'm building autonomous AI agents on-chain vaults that make sophisticated investing transparent, secure, and accessible for everyone.</p>
+          <p>AI is automating jobs at scale, while investing is becoming the new default way people participate in the economy. I'm building on-chain automations that make investing and trading sophisticated.</p>
         </div>
       </div>
 
@@ -32,14 +32,6 @@
         <div class="collapse-title text-lg font-medium">Isn't DeFi too risky?</div>
         <div class="collapse-content opacity-80">
           <p>Yes, risk is real - over $2B was lost to exploits this year. That's why the edge isn't just yield, but risk mitigation: AI-driven monitoring, on-chain transparency, diversification, and community governance to protect capital. Security and trust are the differentiators.</p>
-        </div>
-      </div>
-
-      <div class="collapse collapse-arrow join-item border border-base-300/20 bg-base-200/60">
-        <input type="radio" name="faq" />
-        <div class="collapse-title text-lg font-medium">Who can participate?</div>
-        <div class="collapse-content opacity-80">
-          <p>Anyone with a wallet. We're building vaults that are community-owned, permissionless, and designed for retail investors who want to become owners before AI closes the gap between institutions and individuals.</p>
         </div>
       </div>
 
