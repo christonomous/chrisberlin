@@ -27,7 +27,7 @@
               </div>
             </div>
             <p class="text-sm opacity-70 mt-4">
-              I believe in full transparency — I'm working toward publishing a live / audited dashboard and risk reports so you can see exactly how capital is handled.
+              I believe in full transparency - I'm working toward publishing a live / audited dashboard and risk reports so you can see exactly how capital is handled.
             </p>
           </div>
         </div>

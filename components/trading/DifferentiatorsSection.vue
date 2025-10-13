@@ -15,7 +15,7 @@
             </div>
             <h3 class="text-lg font-semibold mb-2">Hybrid Skill Set</h3>
             <p class="opacity-80 text-sm">
-              I code, research, and trade — bridging software engineering with quant finance and DeFi systems.
+              I code, research, and trade - bridging software engineering with quant finance and DeFi systems.
             </p>
           </div>
         </div>
@@ -63,7 +63,7 @@
             </div>
             <h3 class="text-lg font-semibold mb-2">Product Mindset</h3>
             <p class="opacity-80 text-sm">
-              Not just scripts and signals — I build scalable, maintainable systems with proper architecture.
+              Not just scripts and signals - I build scalable, maintainable systems with proper architecture.
             </p>
           </div>
         </div>

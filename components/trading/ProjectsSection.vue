@@ -62,7 +62,7 @@
             <div class="badge badge-secondary ml-auto">Q4 2025</div>
           </div>
           <p class="opacity-80 flex-grow">
-            A vision and upcoming platform for autonomous capital managers / agents — enabling others to deploy their own AI-based capital strategies on-chain.
+            A vision and upcoming platform for autonomous capital managers / agents - enabling others to deploy their own AI-based capital strategies on-chain.
           </p>
           <div class="card-actions justify-end mt-auto">
             <a href="https://github.com/autonomousEnterprises/" target="_blank" class="btn btn-sm btn-outline">

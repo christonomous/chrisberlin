@@ -23,7 +23,7 @@
         <input type="radio" name="faq" />
         <div class="collapse-title text-lg font-medium">Isn't it risky to let AI handle capital?</div>
         <div class="collapse-content opacity-80">
-          <p>That's exactly why a human layer is always included. AI generates research, strategies, and actionable proposals — but the owner reviews and approves before anything is executed. It's a balance of AI efficiency with human judgment and accountability.</p>
+          <p>That's exactly why a human layer is always included. AI generates research, strategies, and actionable proposals - but the owner reviews and approves before anything is executed. It's a balance of AI efficiency with human judgment and accountability.</p>
         </div>
       </div>
 
