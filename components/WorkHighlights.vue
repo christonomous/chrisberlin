@@ -1,5 +1,5 @@
 <template>
-  <section id="offer" class="relative py-20 overflow-hidden">
+  <section id="service" class="relative py-20 overflow-hidden">
     <!-- Background Elements -->
     <div class="absolute inset-0 bg-gradient-to-br from-base-100 via-base-200/30 to-base-100"></div>
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>

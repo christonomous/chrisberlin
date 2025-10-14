@@ -1,6 +1,6 @@
 <template>
-  <section class="relative isolate">
-    <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-20 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
+  <section class="relative isolate py-36">
+    <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-36 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
           Agentic Crypto
@@ -9,8 +9,8 @@
           Hi, I’m Chris, and I contribute to shaping the future of <b>AI x Crypto</b>. Let <span class="font-semibold">AI agents & capital work for you</span>.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#reports" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Market Reports</a>
-          <a href="#work" class="btn btn-outline">Businesses</a>
+          <a href="#service" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Your Solutions</a>
+          <a href="#about" class="btn btn-outline">About Me</a>
         </div>
         <div class="mt-6 text-sm opacity-70">
           <span class="inline-flex items-center gap-2">The Future is Automated & Decentralized</span>
