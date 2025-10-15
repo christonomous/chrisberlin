@@ -1,6 +1,6 @@
 <template>
-  <section class="relative isolate py-36">
-    <div class="container mx-auto max-w-6xl px-4 pt-12 md:pt-36 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
+  <section class="relative isolate pt-16 md:py-36">
+    <div class="container mx-auto max-w-6xl px-4 md:pt-12 md:pt-36 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
           Agentic Crypto

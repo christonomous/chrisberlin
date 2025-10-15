@@ -12,8 +12,10 @@
     </div>
 
     <!-- Page Sections -->
-    <HeroSection :profile-image="profileImage" />
-    <SocialLinks />
+    <div class="min-h-screen">
+      <HeroSection :profile-image="profileImage" />
+      <SocialLinks />
+    </div>
     <AiDefiIntersectSection class="container mx-auto" />
     <TimelineSection />
     <OfferSection />
