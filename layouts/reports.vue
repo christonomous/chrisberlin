@@ -1,10 +1,9 @@
 <template>
   <div class="min-h-screen bg-base-100 text-base-content relative overflow-hidden">
     <!-- Background Accents (match index.vue vibe) -->
-    <div class="pointer-events-none absolute inset-0">
-      <div class="absolute -top-40 -right-32 w-[42rem] h-[42rem] rounded-full blur-3xl opacity-30 bg-gradient-to-br from-primary/40 via-secondary/40 to-accent/40 animate-gradient"></div>
-      <div class="absolute -bottom-40 -left-24 w-[36rem] h-[36rem] rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-accent/30 via-secondary/20 to-primary/20 animate-gradient [animation-delay:1.6s]"></div>
-      <div class="absolute inset-x-0 top-1/2 h-px bg-gradient-to-r from-transparent via-base-300/60 to-transparent"></div>
+    <div class="pointer-events-none fixed inset-0 opacity-40">
+      <div class="absolute -top-24 -right-24 w-[40rem] h-[40rem] rounded-full blur-3xl bg-gradient-to-r from-primary/30 via-secondary/30 to-accent/30 animate-gradient"></div>
+      <div class="absolute -bottom-24 -left-24 w-[32rem] h-[32rem] rounded-full blur-3xl bg-gradient-to-r from-accent/20 via-secondary/20 to-primary/20 animate-gradient [animation-delay:2s]"></div>
     </div>
 
     <!-- Header / Hero -->

@@ -1,20 +1,20 @@
 <template>
   <section id="about" class="relative py-20 overflow-hidden">
     <!-- Animated Background -->
-    <div class="absolute inset-0 bg-gradient-to-br from-base-100 via-base-200/20 to-base-100"></div>
+    <!-- <div class="absolute inset-0 bg-gradient-to-br from-base-100 via-base-200/20 to-base-100"></div>
     <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse"></div>
     <div class="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/3 rounded-full blur-2xl animate-pulse delay-500"></div>
+    <div class="absolute top-1/2 left-1/2 w-64 h-64 bg-accent/3 rounded-full blur-2xl animate-pulse delay-500"></div> -->
 
     <div class="container mx-auto max-w-7xl px-4 relative z-10">
       <!-- Hero Story Section -->
       <div class="text-center mb-20">
         <div class="inline-block bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-3 mb-8">
-          <span class="text-primary font-semibold">CRYPTO NATIVE • AI EXPERT • BUSINESS BUILDER</span>
+          <span class="text-primary font-semibold">CRYPTO NATIVE • AI EXPERT</span>
         </div>
 
-        <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight">
-          From Code to Crypto Empire
+        <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight animate-gradient">
+          From Code over Crypto to AI 
         </h2>
 
         <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-12">
@@ -28,7 +28,7 @@
       <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 mb-16 lg:mb-20">
         <!-- Story Narrative -->
         <div class="space-y-8">
-          <div class="bg-base-200 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
+          <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
             <h3 class="text-3xl font-bold mb-6 text-primary">The Origin Story</h3>
             <div class="space-y-6 text-lg leading-relaxed">
               <p class="flex items-start gap-4">
@@ -43,38 +43,42 @@
                 <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">3</span>
                 <span><strong class="text-accent">2023:</strong> AI revolution hits. Combined my development expertise with crypto knowledge to build intelligent automation systems.</span>
               </p>
+              <p class="flex items-start gap-4">
+                <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">4</span>
+                <span><strong class="text-primary">2025:</strong> Step back into trading with learning from AI & automation to develop <em>agentic crypto</em>.</span>
+              </p>
             </div>
           </div>
 
-          <div class="bg-base-200 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
+          <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
             <h3 class="text-3xl font-bold mb-6 text-secondary">What I Do For Businesses</h3>
             <div class="grid md:grid-cols-2 gap-6">
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                  <span class="font-semibold">Market Intelligence</span>
+                  <span class="font-semibold">Algo Development</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">Automated Trading</span>
+                  <span class="font-semibold">Process Automation</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">Risk Management</span>
+                  <span class="font-semibold">Crypto Training</span>
                 </div>
               </div>
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-100"></div>
-                  <span class="font-semibold">AI Integration</span>
+                  <span class="font-semibold">AI Automation Training</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-500"></div>
-                  <span class="font-semibold">Strategy Development</span>
+                  <span class="font-semibold">Dashboard Development</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-900"></div>
-                  <span class="font-semibold">Performance Analytics</span>
+                  <span class="font-semibold">Product Strategy</span>
                 </div>
               </div>
             </div>
@@ -84,7 +88,7 @@
         <!-- Interactive Charts -->
         <div class="space-y-8">
           <!-- Experience Radar Chart -->
-          <div class="bg-base-200 backdrop-blur-sm border border-base-300/30 rounded-3xl p-6 md:p-8 shadow-xl">
+          <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-6 md:p-8 shadow-xl">
             <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">Expertise Matrix</h3>
             <div class="relative" style="height: 250px;">
               <canvas id="expertiseChart"></canvas>
@@ -106,7 +110,7 @@
           </div>
 
           <!-- Performance Timeline -->
-          <div class="bg-base-200 backdrop-blur-sm border border-base-300/30 rounded-3xl p-6 md:p-8 shadow-xl">
+          <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-6 md:p-8 shadow-xl">
             <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">Growth Trajectory</h3>
             <div class="relative" style="height: 200px;">
               <canvas id="growthChart"></canvas>
@@ -130,7 +134,7 @@
       </div>
 
       <!-- Impact Stats -->
-      <div class="grid md:grid-cols-4 gap-8 mb-16">
+      <!-- <div class="grid md:grid-cols-4 gap-8 mb-16">
         <div class="text-center p-6 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl border border-primary/20">
           <div class="text-4xl font-bold text-primary mb-2">50+</div>
           <div class="text-base-content/70">Projects Delivered</div>
@@ -147,7 +151,7 @@
           <div class="text-4xl font-bold text-base-content mb-2">24/7</div>
           <div class="text-base-content/70">Automated Monitoring</div>
         </div>
-      </div>
+      </div> -->
 
       <!-- Call to Action -->
       <div class="text-center">
@@ -159,15 +163,15 @@
             <span class="text-accent font-semibold">2 years of AI mastery</span> to accelerate your business.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <button class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
-              Start Your Journey
+            <NuxtLink to="#service" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
+              What I offer
               <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
               </svg>
-            </button>
-            <button class="btn btn-outline btn-lg px-8 py-4 rounded-full border-2 hover:bg-base-100/50 transition-all duration-300">
+            </NuxtLink>
+            <!-- <button class="btn btn-outline btn-lg px-8 py-4 rounded-full border-2 hover:bg-base-100/50 transition-all duration-300">
               View Case Studies
-            </button>
+            </button> -->
           </div>
         </div>
       </div>

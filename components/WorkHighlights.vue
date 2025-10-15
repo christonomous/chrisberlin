@@ -1,14 +1,14 @@
 <template>
   <section id="service" class="relative py-20 overflow-hidden">
     <!-- Background Elements -->
-    <div class="absolute inset-0 bg-gradient-to-br from-base-100 via-base-200/30 to-base-100"></div>
+    <!-- <div class="absolute inset-0 bg-gradient-to-br from-base-100 via-base-200/30 to-base-100"></div>
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div> -->
 
     <div class="container mx-auto max-w-7xl px-4 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-16">
-        <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+        <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
           Choose Your Path to Success
         </h2>
         <p class="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
@@ -44,12 +44,12 @@
                   Build your crypto business with the <strong class="text-primary">smart edge</strong> through advanced AI and automation solutions. From intelligent market analysis to automated trading systems.
                 </p>
 
-                <button class="btn btn-primary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
+                <a href="https://revoro.consulting" target="_blank" class="btn btn-primary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
                   Start Building
                   <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
-                </button>
+                </a>
               </div>
 
               <div class="relative">
@@ -101,12 +101,12 @@
                   <strong class="text-secondary">Grow your portfolio on autopilot</strong> with sophisticated algorithmic trading strategies. Let AI handle the complexity while you focus on the results.
                 </p>
 
-                <button class="btn btn-secondary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-secondary/25 transition-all duration-300">
+                <a href="https://zillions.app" target="_blank" class="btn btn-secondary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-secondary/25 transition-all duration-300">
                   Start Trading
                   <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
-                </button>
+                </a>
               </div>
 
               <div class="relative">
@@ -157,12 +157,12 @@
                   <strong class="text-accent">Become the go-to solution for crypto</strong> through our exclusive network of elite developers, investors, and industry leaders. Unlock premium opportunities.
                 </p>
 
-                <button class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
+                <a href="https://linkedin.com/company/autonomousenterprises" target="_blank" class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
                   Join Network
                   <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
-                </button>
+                </a>
               </div>
 
               <div class="relative">
@@ -190,11 +190,11 @@
         <!-- Call to Action Footer -->
         <div class="text-center mt-16">
           <p class="text-base-content/60 mb-6 text-lg">
-            Ready to transform your crypto business?
+            Do you need something specific?
           </p>
-          <button class="btn btn-outline btn-lg text-xl px-12 py-6 rounded-full border-2 hover:bg-gradient-to-r hover:from-primary hover:via-secondary hover:to-accent transition-all duration-300">
-            Get Started Today
-          </button>
+          <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-lg bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">
+            Book an Appointment
+          </a>
         </div>
       </div>
     </div>
