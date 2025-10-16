@@ -56,11 +56,11 @@
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                  <span class="font-semibold">Algo Development</span>
+                  <span class="font-semibold">Market Research</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">Process Automation</span>
+                  <span class="font-semibold">MVP Development</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
@@ -70,7 +70,7 @@
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-100"></div>
-                  <span class="font-semibold">AI Automation Training</span>
+                  <span class="font-semibold">Product Strategy</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-500"></div>
@@ -78,7 +78,7 @@
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-900"></div>
-                  <span class="font-semibold">Product Strategy</span>
+                  <span class="font-semibold">AI Traning</span>
                 </div>
               </div>
             </div>
@@ -92,20 +92,6 @@
             <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-center">Expertise Matrix</h3>
             <div class="relative" style="height: 250px;">
               <canvas id="expertiseChart"></canvas>
-            </div>
-            <div class="flex flex-wrap justify-center gap-3 md:gap-6 mt-3 md:mt-4 text-xs md:text-sm">
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full"></div>
-                <span>Technical Skills</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 md:w-4 md:h-4 bg-secondary rounded-full"></div>
-                <span>Market Knowledge</span>
-              </div>
-              <div class="flex items-center gap-2">
-                <div class="w-3 h-3 md:w-4 md:h-4 bg-accent rounded-full"></div>
-                <span>AI Integration</span>
-              </div>
             </div>
           </div>
 
@@ -155,20 +141,25 @@
 
       <!-- Call to Action -->
       <div class="text-center">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
+            Let's Build Alpha Together
+          </h2>
+        </div>
         <div class="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-12 max-w-4xl mx-auto">
           <h3 class="text-4xl font-bold mb-6">Ready to Build Your Smart Edge?</h3>
-          <p class="text-xl text-base-content/70 mb-8 leading-relaxed">
-            Let's combine my <span class="text-primary font-semibold">9 years of development expertise</span>,
-            <span class="text-secondary font-semibold">7 years of crypto experience</span>, and
-            <span class="text-accent font-semibold">2 years of AI mastery</span> to accelerate your business.
+          <p class="text-xl text-base-content mb-8 leading-relaxed">
+            I can help you with <span class="text-primary font-semibold">market insights</span> and <span class="text-primary font-semibold">interactive dashboards</span> to visualize your big data,
+            <span class="text-secondary font-semibold">MVP development</span>, and
+            <span class="text-accent font-semibold">AI implementation</span> to accelerate your business.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <NuxtLink to="#service" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
-              What I offer
+            <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
+              Book an Appointment
               <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
               </svg>
-            </NuxtLink>
+            </a>
             <!-- <button class="btn btn-outline btn-lg px-8 py-4 rounded-full border-2 hover:bg-base-100/50 transition-all duration-300">
               View Case Studies
             </button> -->
@@ -218,7 +209,7 @@ onMounted(() => {
     expertiseChartInstance = new Chart(expertiseCanvas, {
       type: "radar",
       data: {
-        labels: ["Software Dev", "Blockchain", "AI/ML", "Trading", "Automation", "Strategy"],
+        labels: ["Coding", "DeFi", "Automation", "Trading", "AI", "Strategy"],
         datasets: [
           {
             label: "Technical Skills",
@@ -240,7 +231,7 @@ onMounted(() => {
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgb(168, 85, 247)",
           },
-          {
+/*           {
             label: "AI Integration",
             data: [70, 75, 95, 80, 90, 85],
             borderColor: "rgb(236, 72, 153)",
@@ -249,7 +240,7 @@ onMounted(() => {
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgb(236, 72, 153)",
-          }
+          } */
         ],
       },
       options: {

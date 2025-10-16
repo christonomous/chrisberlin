@@ -6,14 +6,14 @@
           Agentic Crypto
         </h1>
         <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-          Hi, I’m Chris, and I contribute to shaping the future of <b>AI x Crypto</b>. Let <span class="font-semibold">AI agents & capital work for you</span>.
+          Hi, I´m Chris. I´m <b>a crypto native with years of experience in AI</b>, and can help you <span class="font-semibold">become smart on-chain</span>.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#service" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Solutions</a>
           <a href="#about" class="btn btn-outline">About Me</a>
         </div>
         <div class="mt-6 text-sm opacity-70">
-          <span class="inline-flex items-center gap-2">The Future is Automated & Decentralized</span>
+          <span class="inline-flex items-center gap-2">The Future is Automated & Decentralized.</span>
         </div>
       </div>
       <div class="flex justify-center">

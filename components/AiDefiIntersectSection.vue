@@ -14,7 +14,7 @@
 
       <!-- DeFi -->
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
-        <div class="stat-title text-white"><b>DeFi</b></div>
+        <div class="stat-title text-white"><b>Web3</b></div>
         <div class="flex items-center justify-center gap-1">
           <div class="stat-value leading-none text-secondary">{{ yearsPlus(starts.defi) }}</div>
           <span class="text-base-content/60 text-xl">y</span>
@@ -44,24 +44,11 @@
 
       <!-- Crypto ROI (sparkline) -->
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
-        <div class="stat-title text-white pb-4"><b>Crypto</b> ROI</div>
+        <div class="stat-title text-white"><b>Crypto</b> ROI</div>
         <div class="flex items-center justify-center gap-1">
           <div class="stat-value leading-none text-secondary">~{{ formatPct(roiLast) }}</div>
         </div>
-        <div class="mt-2 text-primary w-full">
-          <svg :viewBox="`0 0 ${chartW} ${chartH}`" class="w-full h-10">
-            <defs>
-              <linearGradient id="roiFill" x1="0" y1="0" :x2="chartW" :y2="chartH">
-                <stop offset="0%" stop-opacity="0.25" />
-                <stop offset="100%" stop-opacity="0" />
-              </linearGradient>
-            </defs>
-            <!-- Area -->
-            <path :d="areaPath" fill="url(#roiFill)" />
-            <!-- Line -->
-            <polyline :points="linePoints" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-        </div>
+        <div class="stat-desc">Since 2018</div>
       </div>
 
       <!-- Followers -->
@@ -70,7 +57,7 @@
         <div class="flex items-center justify-center gap-1">
           <div class="stat-value leading-none text-secondary">2447+</div>
         </div>
-        <div class="stat-desc">Growing community</div>
+        <div class="stat-desc">Across social medias</div>
       </div>
     </div>
   </section>
