@@ -51,7 +51,7 @@
           </div>
 
           <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
-            <h3 class="text-3xl font-bold mb-6 text-secondary">What I Do For Businesses</h3>
+            <h3 class="text-3xl font-bold mb-6 text-secondary">What I Can Help With</h3>
             <div class="grid md:grid-cols-2 gap-6">
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
