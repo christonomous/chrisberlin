@@ -15,6 +15,12 @@ export function useReports() {
   // For now, we'll hardcode the one report we have
   const reports = ref<ReportMeta[]>([
     {
+      path: '/reports/defi-opportunity-diligence-ethena-susde-pendle-2025-10-22',
+      date: '2025-10-22T09:00:00+02:00',
+      title: 'DeFi Opportunity Diligence - Ethena sUSDe',
+      tags: ['DeFi Diligence', 'delta-neutral', 'locked fixed yield']
+    },
+    {
       path: '/reports/agentic-vaults-ai-managed-defi-funds-2025-09-16',
       date: '2025-09-16T09:00:00+02:00',
       title: 'Agentic Vaults: Why AI-Managed DeFi Funds Are the Future',
