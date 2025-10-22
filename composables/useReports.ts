@@ -27,11 +27,11 @@ export function useReports() {
       tags: ['Agentic Vaults', 'AI', 'DeFi', 'Institutional Adoption', 'ETFs', 'Productivity']
     },
     {
-        path: '/reports/ai-defi-future-work-investing-2025-09-14',
-        date: '2025-09-14T09:00:00+02:00',
-        title: 'AI × DeFi and the Future of Work & Investing',
-        tags: ['AI', 'Jobs', 'Retail Investing', 'DeFi', 'RWA', 'Forecasts']
-      },
+      path: '/reports/ai-defi-future-work-investing-2025-09-14',
+      date: '2025-09-14T09:00:00+02:00',
+      title: 'AI × DeFi and the Future of Work & Investing',
+      tags: ['AI', 'Jobs', 'Retail Investing', 'DeFi', 'RWA', 'Forecasts']
+    },
     {
       path: '/reports/ai-defi-market-forecast-tvl-agents-2025-09-13',
       date: '2025-09-13T09:00:00+02:00',

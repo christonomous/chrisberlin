@@ -100,103 +100,207 @@
     <!-- Project Fundamentals -->
     <section class="container mx-auto px-4 py-12">
       <div class="card bg-base-200 p-6 shadow-xl">
-        <h2 class="text-xl font-semibold mb-4">Project Fundamentals: How Ethena Works</h2>
-        <p class="mb-4">
-          Ethena's USDe is minted by depositing BTC or ETH, with the protocol simultaneously shorting equal-notional perpetuals to maintain delta neutrality. This cash-and-carry strategy generates yield from perp funding rates and staking rewards, resulting in sUSDe, which accrues this yield without direct exposure to underlying asset prices.
-        </p>
-        <p class="mb-4">
-          The mechanism ensures that in normal conditions, the portfolio's delta is approximately zero, making it suitable for delta-neutral funds. Ethena's risk framework addresses funding, liquidation, custodial, and smart-contract risks, using off-exchange settlement to minimize exchange dependencies.
-        </p>
-        <p>
-          Transparency is a key feature, with public dashboards displaying TVL and real-time APY, currently around 2.4% live and 4.2% over 30 days, though this varies with market conditions.
-        </p>
+        <h2 class="text-xl font-semibold mb-6 text-center">Project Fundamentals: How Ethena Works</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Core Mechanism</h3>
+            <p class="text-sm leading-relaxed">
+              Ethena's USDe is minted by depositing BTC or ETH collateral. The protocol then shorts an equivalent notional value in perpetual futures to hedge delta exposure. This <em>cash-and-carry</em> arbitrage captures funding rate premiums and staking rewards, accruing to sUSDe holders without direct price risk to the underlying assets.
+            </p>
+            <blockquote class="border-l-4 border-primary pl-4 italic text-sm opacity-80">
+              "Delta neutrality is achieved by balancing long spot positions with short perp hedges, ensuring yield generation independent of BTC/ETH price movements."
+            </blockquote>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Risk Management & Transparency</h3>
+            <p class="text-sm leading-relaxed">
+              In standard operations, the portfolio maintains a delta near zero, ideal for delta-neutral strategies. Ethena's comprehensive risk framework covers funding volatility, liquidation events, custodial dependencies, and smart-contract vulnerabilities, mitigated via off-exchange settlement providers.
+            </p>
+            <p class="text-sm leading-relaxed">
+              Public dashboards provide real-time insights into TVL and APY (e.g., ~2.4% live, ~4.2% 30-day average), fostering transparency amid variable market conditions.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Expected Yield & Duration -->
     <section class="container mx-auto px-4 py-12">
       <div class="card bg-base-200 p-6 shadow-xl">
-        <h2 class="text-xl font-semibold mb-4">Expected Yield & Duration</h2>
-        <h3 class="text-lg font-medium mb-2">Base Yield (sUSDe)</h3>
-        <p class="mb-4">
-          The floating APY for sUSDe typically ranges from 2-4%, driven by perp funding rates. This yield is variable and depends on market conditions, making it suitable for short-term allocations but less predictable for long-term planning.
-        </p>
-        <h3 class="text-lg font-medium mb-2">Locking Fixed Yield (Pendle)</h3>
-        <p class="mb-4">
-          By purchasing PT-sUSDe on Pendle, investors can lock in fixed yields until maturity, converting floating returns into predictable carry. This is particularly valuable for delta-neutral funds seeking stability.
-        </p>
-        <p>
-          For enhanced returns, mild leverage can be applied by posting PT-sUSDe as collateral on Aave or Morpho, borrowing stablecoins, and acquiring more PT-sUSDe, while maintaining conservative LTV ratios below 35%.
-        </p>
+        <h2 class="text-xl font-semibold mb-6 text-center">Expected Yield & Duration</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Base Yield (sUSDe)</h3>
+            <p class="text-sm leading-relaxed">
+              The floating APY for sUSDe typically ranges from 2-4%, primarily driven by perpetual funding rates. This variable yield reflects market dynamics, making it ideal for short-term tactical allocations but challenging for long-term forecasting due to its sensitivity to funding regime shifts.
+            </p>
+            <blockquote class="border-l-4 border-primary pl-4 italic text-sm opacity-80">
+              "sUSDe's yield is a direct function of perp funding premiums, offering real-time responsiveness to market sentiment."
+            </blockquote>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Locking Fixed Yield (Pendle)</h3>
+            <p class="text-sm leading-relaxed">
+              Purchasing PT-sUSDe on Pendle allows investors to secure fixed yields until maturity, transforming variable returns into stable carry. This mechanism is invaluable for delta-neutral funds prioritizing predictability over variability.
+            </p>
+            <p class="text-sm leading-relaxed">
+              To amplify returns, consider mild leverage by collateralizing PT-sUSDe on platforms like Aave or Morpho, borrowing stablecoins to acquire additional PT-sUSDe. Maintain strict LTV ratios below 35% to ensure resilience against market volatility.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Key Risks & Mitigations -->
     <section class="container mx-auto px-4 py-12">
       <div class="card bg-base-200 p-6 shadow-xl">
-        <h2 class="text-xl font-semibold mb-4">Key Risks & Mitigations</h2>
-        <div class="space-y-4">
-          <div v-for="risk in risks" :key="risk.name">
-            <h3 class="text-lg font-medium">{{ risk.name }}</h3>
-            <p class="mb-2"><strong>What:</strong> {{ risk.description }}</p>
-            <p><strong>Mitigations:</strong></p>
-            <ul class="list-disc list-inside ml-4">
-              <li v-for="mitigation in risk.mitigations" :key="mitigation">{{ mitigation }}</li>
-            </ul>
-          </div>
+        <h2 class="text-xl font-semibold mb-6 text-center">Key Risks & Mitigations</h2>
+        <div class="overflow-x-auto">
+          <table class="table table-zebra w-full">
+            <thead>
+              <tr>
+                <th>Risk Category</th>
+                <th>Description</th>
+                <th>Mitigation Strategies</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="risk in risks" :key="risk.name">
+                <td class="font-medium">{{ risk.name }}</td>
+                <td class="text-sm">{{ risk.description }}</td>
+                <td>
+                  <ul class="list-disc list-inside text-sm">
+                    <li v-for="mitigation in risk.mitigations" :key="mitigation">{{ mitigation }}</li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+        <p class="mt-4 text-sm opacity-80 text-center">
+          Each risk is addressed through proactive measures, ensuring robust operational resilience in dynamic market conditions.
+        </p>
       </div>
     </section>
 
     <!-- Strategy Design -->
     <section class="container mx-auto px-4 py-12">
       <div class="card bg-base-200 p-6 shadow-xl">
-        <h2 class="text-xl font-semibold mb-4">Strategy Design for Re7</h2>
-        <h3 class="text-lg font-medium mb-2">Base Sleeve (No Leverage)</h3>
-        <p class="mb-4">
-          Hold sUSDe for floating yield and rotate into PT-sUSDe when fixed rates are attractive. Start with a pilot allocation of 2-5% of fund NAV, scaling based on risk metrics.
-        </p>
-        <h3 class="text-lg font-medium mb-2">Optional Enhancement (Low-Gear Leverage)</h3>
-        <p class="mb-4">
-          Use PT-sUSDe as collateral for borrowing and looping, with LTV under 35% and auto-delever triggers. This requires risk committee approval.
-        </p>
-        <h3 class="text-lg font-medium mb-2">Execution Checklist</h3>
-        <ul class="list-disc list-inside">
-          <li>Pre-Trade: Confirm APY term-structure and venue depth.</li>
-          <li>During Trade: Use TWAP and multi-venue routing.</li>
-          <li>Post-Trade: Set monitoring alerts and document unwind paths.</li>
-        </ul>
+        <h2 class="text-xl font-semibold mb-6 text-center">Strategy Design for Re7</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Base Sleeve (No Leverage)</h3>
+            <p class="text-sm leading-relaxed">
+              Maintain a core holding in sUSDe to capture floating yield, with opportunistic rotations into PT-sUSDe when fixed rates offer a premium. Initiate with a conservative pilot allocation of 2-5% of fund NAV, dynamically scaling in response to evolving risk metrics and market conditions.
+            </p>
+            <blockquote class="border-l-4 border-primary pl-4 italic text-sm opacity-80">
+              "This unlevered approach emphasizes stability and predictability, aligning with delta-neutral objectives."
+            </blockquote>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Optional Enhancement (Low-Gear Leverage)</h3>
+            <p class="text-sm leading-relaxed">
+              For amplified exposure, collateralize PT-sUSDe on platforms like Aave or Morpho to borrow stablecoins and reinvest in additional PT-sUSDe. Enforce strict LTV limits below 35% and implement automated deleveraging mechanisms. This strategy mandates prior approval from the risk committee to ensure alignment with fund guidelines.
+            </p>
+          </div>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-lg font-medium text-primary mb-2">Execution Checklist</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="card bg-base-100 p-4">
+              <h4 class="font-semibold">Pre-Trade</h4>
+              <ul class="list-disc list-inside text-sm">
+                <li>Confirm APY term-structure</li>
+                <li>Assess venue depth and liquidity</li>
+              </ul>
+            </div>
+            <div class="card bg-base-100 p-4">
+              <h4 class="font-semibold">During Trade</h4>
+              <ul class="list-disc list-inside text-sm">
+                <li>Employ TWAP for execution</li>
+                <li>Utilize multi-venue routing</li>
+              </ul>
+            </div>
+            <div class="card bg-base-100 p-4">
+              <h4 class="font-semibold">Post-Trade</h4>
+              <ul class="list-disc list-inside text-sm">
+                <li>Activate monitoring alerts</li>
+                <li>Document unwind paths</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Monitoring & Risk Rails -->
     <section class="container mx-auto px-4 py-12">
       <div class="card bg-base-200 p-6 shadow-xl">
-        <h2 class="text-xl font-semibold mb-4">Monitoring & Risk Rails</h2>
-        <h3 class="text-lg font-medium mb-2">Daily</h3>
-        <ul class="list-disc list-inside mb-4">
-          <li>Monitor sUSDe APY, peg deviations, and TVL. Trigger actions on deviations.</li>
-        </ul>
-        <h3 class="text-lg font-medium mb-2">Weekly</h3>
-        <ul class="list-disc list-inside mb-4">
-          <li>Review Pendle curves and custodian health.</li>
-        </ul>
-        <h3 class="text-lg font-medium mb-2">Event-Driven</h3>
-        <ul class="list-disc list-inside">
-          <li>On outages or abnormal prints, halt mints and consider unwinds.</li>
-        </ul>
+        <h2 class="text-xl font-semibold mb-6 text-center">Monitoring & Risk Rails</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="card bg-base-100 p-4">
+            <h3 class="text-lg font-medium text-primary mb-2">Daily Monitoring</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>Track sUSDe APY and funding rates</li>
+              <li>Monitor peg deviations across venues</li>
+              <li>Review TVL and open interest</li>
+              <li>Trigger alerts on predefined thresholds</li>
+            </ul>
+            <p class="mt-2 text-xs opacity-80">Ensure real-time responsiveness to market shifts.</p>
+          </div>
+          <div class="card bg-base-100 p-4">
+            <h3 class="text-lg font-medium text-primary mb-2">Weekly Reviews</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>Analyze Pendle yield curves</li>
+              <li>Assess custodian and exchange health</li>
+              <li>Evaluate off-exchange settlement status</li>
+              <li>Rebalance allocations if needed</li>
+            </ul>
+            <p class="mt-2 text-xs opacity-80">Focus on strategic adjustments and compliance.</p>
+          </div>
+          <div class="card bg-base-100 p-4">
+            <h3 class="text-lg font-medium text-primary mb-2">Event-Driven Actions</h3>
+            <ul class="list-disc list-inside text-sm">
+              <li>Respond to venue outages or disruptions</li>
+              <li>Address abnormal price prints</li>
+              <li>Halt new mints in crises</li>
+              <li>Execute contingency unwinds</li>
+            </ul>
+            <p class="mt-2 text-xs opacity-80">Prepare for high-impact scenarios with predefined protocols.</p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm opacity-80 text-center">
+          This structured monitoring framework ensures proactive risk management and operational efficiency.
+        </p>
       </div>
     </section>
 
     <!-- Investment Recommendation -->
     <section class="container mx-auto px-4 py-12">
       <div class="card bg-base-200 p-6 shadow-xl">
-        <h2 class="text-xl font-semibold mb-4">Investment Recommendation</h2>
-        <p class="mb-4">
-          Proceed with a measured pilot allocation of 2-5% NAV, focusing on unlevered core and selective PT-sUSDe for fixed carry. Set risk limits: alert on peg deviations >50-100 bps, reduce exposure if funding <0.5%, and cap per-venue exposure at 30%.
-        </p>
-        <p>
-          This approach capitalizes on the accelerating institutional adoption of market-neutral DeFi, leveraging tools like Pendle and Aave for efficient, transparent implementations.
+        <h2 class="text-xl font-semibold mb-6 text-center">Investment Recommendation</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Recommended Allocation</h3>
+            <p class="text-sm leading-relaxed">
+              Initiate a conservative pilot allocation of 2-5% of fund NAV, emphasizing unlevered sUSDe for core yield and selectively incorporating PT-sUSDe for fixed carry. This balanced approach minimizes risk while capturing upside potential in a delta-neutral framework.
+            </p>
+            <blockquote class="border-l-4 border-primary pl-4 italic text-sm opacity-80">
+              "A measured entry allows for real-time assessment and scaling based on performance metrics."
+            </blockquote>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-lg font-medium text-primary">Risk Limits & Rationale</h3>
+            <p class="text-sm leading-relaxed">
+              Establish strict risk parameters: trigger alerts for peg deviations exceeding 50-100 basis points, reduce exposure if 7-day average funding falls below 0.5%, and limit per-venue exposure to 30%. These controls ensure resilience against market volatility.
+            </p>
+            <p class="text-sm leading-relaxed">
+              This strategy aligns with the rapid institutional embrace of market-neutral DeFi, utilizing platforms like Pendle and Aave to deliver capital-efficient, transparent outcomes.
+            </p>
+          </div>
+        </div>
+        <p class="mt-4 text-sm opacity-80 text-center">
+          Overall, this recommendation positions the fund to benefit from innovative yield mechanisms while maintaining operational integrity.
         </p>
       </div>
     </section>
