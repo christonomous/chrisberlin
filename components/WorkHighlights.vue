@@ -9,10 +9,10 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
-          Choose Your Path to Success
+          Choose Your Path
         </h2>
         <p class="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-          Three specialized offerings designed to accelerate your crypto business with cutting-edge AI and automation
+          Three specialized offerings designed to accelerate your business with cutting-edge AI Automation, App or Quant Development.
         </p>
       </div>
 
