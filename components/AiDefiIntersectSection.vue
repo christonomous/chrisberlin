@@ -16,7 +16,7 @@
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
         <div class="stat-title text-white"><b>Web3</b></div>
         <div class="flex items-center justify-center gap-1">
-          <div class="stat-value leading-none text-secondary">{{ yearsPlus(starts.defi) }}</div>
+          <div class="stat-value leading-none text-secondary">{{ yearsPlus(starts.web3) }}</div>
           <span class="text-base-content/60 text-xl">y</span>
         </div>
         <div class="stat-desc">On-chain native</div>
@@ -55,8 +55,8 @@ const props = defineProps({
     default: () => ({
       coding: '2016-01-01',
       trading: '2025-09-01',
-      defi: '2018-01-01',
-      ai: '2023-01-01'
+      web3: '2018-01-01',
+      ai: '2024-01-01'
     })
   }
 })

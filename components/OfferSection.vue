@@ -10,11 +10,11 @@
       <!-- Hero Story Section -->
       <div class="text-center mb-20">
         <div class="inline-block bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-3 mb-8">
-          <span class="text-primary font-semibold">CRYPTO NATIVE • AI EXPERT</span>
+          <span class="text-primary font-semibold">CRYPTO NATIVE • AI EXPERT • Trading Rookie</span>
         </div>
 
         <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight animate-gradient">
-          From Code over Crypto to AI 
+          From Code over Crypto & AI to Smart Trading 
         </h2>
 
         <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-12">
@@ -37,15 +37,23 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-secondary-content font-bold text-sm mt-1">2</span>
-                <span><strong class="text-secondary">2017:</strong> Discovered Bitcoin and Ethereum. The rabbit hole began - spent countless nights understanding blockchain fundamentals.</span>
+                <span><strong class="text-secondary">2017:</strong> Discovered Bitcoin and Ethereum. The rabbit hole began - spent countless nights understanding blockchain fundamentals and building DeFi protocols.</span>
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">3</span>
-                <span><strong class="text-accent">2023:</strong> AI revolution hits. Combined my development expertise with crypto knowledge to build intelligent automation systems.</span>
+                <span><strong class="text-accent">2020:</strong> Founded blockchain and DeFi projects, learning the realities of crypto entrepreneurship through market cycles.</span>
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">4</span>
-                <span><strong class="text-primary">2025:</strong> Step back into trading with learning from AI & automation to develop a <em>trading bot</em>.</span>
+                <span><strong class="text-primary">2024:</strong> Ran AI automation agency, building marketing funnels, process automation, and chatbots while studying trading strategies at night.</span>
+              </p>
+              <p class="flex items-start gap-4">
+                <span class="flex-shrink-0 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-secondary-content font-bold text-sm mt-1">5</span>
+                <span><strong class="text-secondary">2025:</strong> Went all-in on crypto trading, stress-testing strategies with paper trading.</span>
+              </p>
+              <p class="flex items-start gap-4">
+                <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">6</span>
+                <span><strong class="text-accent">2026:</strong> Building advanced onchain trading bots and trade prop firm accounts.</span>
               </p>
             </div>
           </div>
@@ -329,6 +337,16 @@ onMounted(() => {
           {
             label: "AI Expertise",
             data: [0, 0, 0, 5, 10, 15, 25, 40, 65, 80, 85],
+            borderColor: "rgb(236, 72, 153)",
+            backgroundColor: "rgba(236, 72, 153, 0.1)",
+            fill: false,
+            tension: 0.4,
+            pointRadius: 6,
+            pointHoverRadius: 8,
+          },
+          {
+            label: "Trading",
+            data: [0, 0, 0, 2, 3, 4, 4, 5, 5, 11, 70],
             borderColor: "rgb(236, 72, 153)",
             backgroundColor: "rgba(236, 72, 153, 0.1)",
             fill: false,
