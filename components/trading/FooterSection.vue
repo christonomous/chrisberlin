@@ -2,7 +2,7 @@
   <footer class="border-t border-base-300/30 py-10">
     <div class="container mx-auto max-w-6xl px-4">
       <div class="text-center space-y-4">
-        <p class="opacity-70">© {{ new Date().getFullYear() }} Chris - AI & Crypto Entrepreneur</p>
+        <p class="opacity-70">© {{ new Date().getFullYear() }} Chris - Zillionaire</p>
 
         <div class="divider opacity-30"></div>
 

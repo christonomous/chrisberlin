@@ -28,13 +28,13 @@
       <li class="step step-secondary">
         <div class="flex flex-col items-center">
           <span class="text-lg font-semibold">2026</span>
-          <span class="text-sm text-base-content/80">Hybrid Systematic Trading</span>
+          <span class="text-sm text-base-content/80">Hybrid Trading</span>
         </div>
       </li>
       <li class="step">
         <div class="flex flex-col items-center">
           <span class="text-lg font-semibold">Future</span>
-          <span class="text-sm text-base-content/80">Ultimate Trading Platform</span>
+          <span class="text-sm text-base-content/80">Ultimate Trading Bot</span>
         </div>
       </li>
     </ul>

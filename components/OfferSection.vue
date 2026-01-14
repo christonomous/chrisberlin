@@ -56,7 +56,7 @@
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">App/Strategy Development</span>
+                  <span class="font-semibold">App/Quant Development</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
@@ -133,11 +133,11 @@
           </h2>
         </div>
         <div class="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-12 max-w-4xl mx-auto">
-          <h3 class="text-4xl font-bold mb-6">Ready to Build Your Smart Edge?</h3>
+          <h3 class="text-4xl font-bold mb-6">Ready to Automate Your Edge?</h3>
           <p class="text-xl text-base-content mb-8 leading-relaxed">
-            I can help you with <span class="text-primary font-semibold">market insights</span> and <span class="text-primary font-semibold">interactive dashboards</span> to visualize your big data,
-            <span class="text-secondary font-semibold">MVP development</span>, and
-            <span class="text-accent font-semibold">AI implementation</span> to accelerate your business.
+            I can help you deploy <span class="text-primary font-semibold">advanced onchain trading bots</span> with custom strategies,
+            build <span class="text-secondary font-semibold">DeFi automation systems</span>, or develop
+            <span class="text-accent font-semibold">AI-powered solutions</span> that generate alpha while you sleep.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
@@ -199,7 +199,7 @@ onMounted(() => {
         datasets: [
           {
             label: "Technical Skills",
-            data: [95, 90, 20, 85, 92],
+            data: [95, 90, 80, 70, 92],
             borderColor: "rgb(59, 130, 246)",
             backgroundColor: "rgba(59, 130, 246, 0.2)",
             pointBackgroundColor: "rgb(59, 130, 246)",

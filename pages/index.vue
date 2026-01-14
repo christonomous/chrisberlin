@@ -21,6 +21,7 @@
     <OfferSection />
     <DifferentiatorsSection />
     <WorkHighlights />
+    <SocialLinks />
     <FooterSection />
   </div>
 </template>

@@ -41,7 +41,7 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  Build your crypto business with the <strong class="text-primary">smart edge</strong> through advanced AI and automation solutions. From intelligent market analysis to automated trading systems.
+                  Build your business with the <strong class="text-primary">smart edge</strong> through advanced AI and automation solutions or custom apps.
                 </p>
 
                 <a href="https://revoro.consulting" target="_blank" class="btn btn-primary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
@@ -64,7 +64,7 @@
                       <div class="text-xs text-base-content/60">Real-time</div>
                     </div>
                     <div class="bg-primary/10 rounded-lg p-3 text-center">
-                      <div class="font-semibold text-primary">Risk Management</div>
+                      <div class="font-semibold text-primary">Process Execution</div>
                       <div class="text-xs text-base-content/60">Automated</div>
                     </div>
                   </div>
@@ -98,7 +98,7 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  <strong class="text-secondary">Grow your portfolio on autopilot</strong> with sophisticated algorithmic trading strategies. Let AI handle the complexity while you focus on the results.
+                  <strong class="text-secondary">Grow your portfolio on autopilot</strong> with sophisticated algorithmic trading strategies. Let the bot handle the complexity while you focus on the results.
                 </p>
 
                 <a href="https://zillions.app" target="_blank" class="btn btn-secondary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-secondary/25 transition-all duration-300">

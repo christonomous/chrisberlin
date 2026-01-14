@@ -11,11 +11,11 @@
         <div class="card bg-base-200/50 border border-base-300/20 shadow-lg hover:shadow-xl transition-shadow">
           <div class="card-body text-center">
             <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl">⚡</span>
+              <span class="text-2xl">🤖</span>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Hybrid Skill Set</h3>
+            <h3 class="text-lg font-semibold mb-2">Automated Trading</h3>
             <p class="opacity-80 text-sm">
-              I code, research, and trade - bridging software engineering with quant finance and DeFi systems.
+              Advanced onchain bots combining smart money concepts, orderflow analysis, and AI automation for 24/7 alpha generation.
             </p>
           </div>
         </div>
@@ -23,11 +23,11 @@
         <div class="card bg-base-200/50 border border-base-300/20 shadow-lg hover:shadow-xl transition-shadow">
           <div class="card-body text-center">
             <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl">🎯</span>
+              <span class="text-2xl">🔄</span>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Deep Expertise</h3>
+            <h3 class="text-lg font-semibold mb-2">Startup Veteran</h3>
             <p class="opacity-80 text-sm">
-              Specialized in AI + quant + DeFi convergence. 9+ years engineering, 7+ years on-chain experience.
+              Learned from building DeFi protocols and blockchain networks - now applying that depth to automated trading systems.
             </p>
           </div>
         </div>
@@ -35,11 +35,11 @@
         <div class="card bg-base-200/50 border border-base-300/20 shadow-lg hover:shadow-xl transition-shadow">
           <div class="card-body text-center">
             <div class="w-16 h-16 bg-gradient-to-r from-accent to-primary rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl">🚀</span>
+              <span class="text-2xl">📊</span>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Future Vision</h3>
+            <h3 class="text-lg font-semibold mb-2">Stress-Tested Strategies</h3>
             <p class="opacity-80 text-sm">
-              Building autonomous capital managers and scaled AI agents for democratized alpha generation.
+              Paper trading validated, prop firm battle-tested. Combining algorithmic strategies with real market execution.
             </p>
           </div>
         </div>
@@ -47,11 +47,11 @@
         <div class="card bg-base-200/50 border border-base-300/20 shadow-lg hover:shadow-xl transition-shadow">
           <div class="card-body text-center">
             <div class="w-16 h-16 bg-gradient-to-r from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl">🔒</span>
+              <span class="text-2xl">⚙️</span>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Transparent & Accountable</h3>
+            <h3 class="text-lg font-semibold mb-2">Automation Expert</h3>
             <p class="opacity-80 text-sm">
-              Building for trust with full transparency. Working toward live dashboards and audited risk reports.
+              From marketing funnels to trading bots - I build intelligent systems that work while you sleep.
             </p>
           </div>
         </div>
@@ -59,11 +59,11 @@
         <div class="card bg-base-200/50 border border-base-300/20 shadow-lg hover:shadow-xl transition-shadow">
           <div class="card-body text-center">
             <div class="w-16 h-16 bg-gradient-to-r from-accent to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl">🏗️</span>
+              <span class="text-2xl">🔗</span>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Product Mindset</h3>
+            <h3 class="text-lg font-semibold mb-2">DeFi Native</h3>
             <p class="opacity-80 text-sm">
-              Not just scripts and signals - I build scalable, maintainable systems with proper architecture.
+              Deep protocol knowledge from yield farming to DEX arbitrage - building bots that understand onchain dynamics.
             </p>
           </div>
         </div>
@@ -71,11 +71,11 @@
         <div class="card bg-base-200/50 border border-base-300/20 shadow-lg hover:shadow-xl transition-shadow">
           <div class="card-body text-center">
             <div class="w-16 h-16 bg-gradient-to-r from-secondary to-primary rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl">💎</span>
+              <span class="text-2xl">🎯</span>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Proven Track Record</h3>
+            <h3 class="text-lg font-semibold mb-2">Results-Driven</h3>
             <p class="opacity-80 text-sm">
-              2,070%+ crypto ROI across cycles, 85%+ strategy win rates, and multiple successful product launches.
+              Focused on sustainable alpha through smart money concepts and orderflow.
             </p>
           </div>
         </div>

@@ -1,7 +1,7 @@
 <!-- BrandMetrics.vue -->
 <template>
   <section class="w-full mb-16">
-    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-3">
       <!-- Coding -->
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
         <div class="stat-title text-white"><b>Coding</b></div>
@@ -21,20 +21,10 @@
         </div>
         <div class="stat-desc">On-chain native</div>
       </div>
-      
-      <!-- Entrepreneurship -->
-      <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
-        <div class="stat-title text-white"><b>Entrepreneurship</b></div>
-        <div class="flex items-center justify-center gap-1">
-          <div class="stat-value leading-none text-secondary">{{ yearsPlus(starts.entrepreneurship) }}</div>
-          <span class="text-base-content/60 text-xl">y</span>
-        </div>
-        <div class="stat-desc">Founder</div>
-      </div>
 
       <!-- AI & Automation -->
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
-        <div class="stat-title text-white"><b>AI & Automation</b></div>
+        <div class="stat-title text-white"><b>AI</b></div>
         <div class="flex items-center justify-center gap-1">
           <div class="stat-value leading-none text-secondary">{{ yearsPlus(starts.ai) }}</div>
           <span class="text-base-content/60 text-xl">y</span>
@@ -44,20 +34,12 @@
 
       <!-- Crypto ROI (sparkline) -->
       <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
-        <div class="stat-title text-white"><b>Crypto</b> ROI</div>
+        <div class="stat-title text-white"><b>Trading</b></div>
         <div class="flex items-center justify-center gap-1">
-          <div class="stat-value leading-none text-secondary">~{{ formatPct(roiLast) }}</div>
+          <div class="stat-value leading-none text-secondary">~{{ yearsPlus(starts.trading) }}</div>
+          <span class="text-base-content/60 text-xl">y</span>
         </div>
-        <div class="stat-desc">Since 2018</div>
-      </div>
-
-      <!-- Followers -->
-      <div class="stat bg-base-200/80 backdrop-blur rounded-box shadow p-4 text-center">
-        <div class="stat-title text-white"><b>Followers</b></div>
-        <div class="flex items-center justify-center gap-1">
-          <div class="stat-value leading-none text-secondary">2447+</div>
-        </div>
-        <div class="stat-desc">Across social medias</div>
+        <div class="stat-desc">Smart Money Concepts</div>
       </div>
     </div>
   </section>
@@ -72,16 +54,10 @@ const props = defineProps({
     type: Object,
     default: () => ({
       coding: '2016-01-01',
-      entrepreneurship: '2020-01-01',
+      trading: '2025-09-01',
       defi: '2018-01-01',
       ai: '2023-01-01'
     })
-  },
-  // Example cumulative ROI points in %, left→right = older→newer.
-  // Replace with your own series (same format) if you have it.
-  roiPoints: {
-    type: Array,
-    default: () => [9, 40, 60, 760, 71, 120, 520, 2070] // ~1k+%
   }
 })
 
@@ -101,7 +77,7 @@ function yearsPlus(dateish) {
   const m = now.getMonth() - start.getMonth()
   if (m < 0 || (m === 0 && now.getDate() < start.getDate())) years--
 
-  if (years < 1) return '<1'
+  if (years < 1) return '1'
   return `${years}+`
 }
 
