@@ -40,20 +40,20 @@
                 <span><strong class="text-secondary">2017:</strong> Discovered Bitcoin and Ethereum. The rabbit hole began - spent countless nights understanding blockchain fundamentals and building DeFi protocols.</span>
               </p>
               <p class="flex items-start gap-4">
-                <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">3</span>
-                <span><strong class="text-accent">2020:</strong> Founded blockchain and DeFi projects, learning the realities of crypto entrepreneurship through market cycles.</span>
+                <span class="flex-shrink-0 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-secondary-content font-bold text-sm mt-1">3</span>
+                <span><strong class="text-secondary">2020:</strong> Founded blockchain and DeFi projects, learning the realities of crypto entrepreneurship through market cycles.</span>
               </p>
               <p class="flex items-start gap-4">
-                <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">4</span>
-                <span><strong class="text-primary">2024:</strong> Ran AI automation agency, building marketing funnels, process automation, and chatbots while studying trading strategies at night.</span>
+                <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">4</span>
+                <span><strong class="text-accent">2024:</strong> Ran AI automation agency, building marketing funnels, process automation, and chatbots while studying trading strategies at night.</span>
               </p>
               <p class="flex items-start gap-4">
-                <span class="flex-shrink-0 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-secondary-content font-bold text-sm mt-1">5</span>
-                <span><strong class="text-secondary">2025:</strong> Went all-in on crypto trading, stress-testing strategies with paper trading.</span>
+                <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">5</span>
+                <span><strong class="text-primary">2025:</strong> Went all-in on trading, stress-testing strategies with paper trading.</span>
               </p>
               <p class="flex items-start gap-4">
-                <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-accent">2026:</strong> Building advanced onchain trading bots and trade prop firm accounts.</span>
+                <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
+                <span><strong class="text-primary">2026:</strong> Building advanced onchain trading bots and trade prop firm accounts.</span>
               </p>
             </div>
           </div>
@@ -63,15 +63,15 @@
             <div class="grid md:grid-cols-2 gap-6">
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-300"></div>
+                  <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-300"></div>
                   <span class="font-semibold">App/Quant Development</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
+                  <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
                   <span class="font-semibold">Crypto Training</span>
                 </div>
                 <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-700"></div>
+                  <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
                   <span class="font-semibold">AI Training</span>
                 </div>
               </div>
@@ -95,18 +95,22 @@
             <div class="relative" style="height: 200px;">
               <canvas id="growthChart"></canvas>
             </div>
-            <div class="grid grid-cols-3 gap-2 md:gap-4 mt-3 md:mt-4 text-center">
+            <div class="grid grid-cols-4 gap-2 md:gap-4 mt-3 md:mt-4 text-center">
               <div>
-                <div class="text-xl md:text-2xl font-bold text-primary">9+</div>
+                <div class="text-xl md:text-2xl font-bold text-primary">10+</div>
                 <div class="text-xs text-base-content/60">Years Dev</div>
               </div>
               <div>
-                <div class="text-xl md:text-2xl font-bold text-secondary">7+</div>
+                <div class="text-xl md:text-2xl font-bold text-secondary">8+</div>
                 <div class="text-xs text-base-content/60">Years Crypto</div>
               </div>
               <div>
                 <div class="text-xl md:text-2xl font-bold text-accent">2+</div>
                 <div class="text-xs text-base-content/60">Years AI</div>
+              </div>
+              <div>
+                <div class="text-xl md:text-2xl font-bold text-primary">~1</div>
+                <div class="text-xs text-base-content/60">Year Trading</div>
               </div>
             </div>
           </div>
@@ -347,8 +351,8 @@ onMounted(() => {
           {
             label: "Trading",
             data: [0, 0, 0, 2, 3, 4, 4, 5, 5, 11, 70],
-            borderColor: "rgb(236, 72, 153)",
-            backgroundColor: "rgba(236, 72, 153, 0.1)",
+            borderColor: "rgb(2, 233, 144)",
+            backgroundColor: "rgba(59, 130, 246, 0.1)",
             fill: false,
             tension: 0.4,
             pointRadius: 6,
