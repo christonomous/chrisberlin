@@ -21,8 +21,6 @@
     <OfferSection />
     <DifferentiatorsSection />
     <WorkHighlights />
-    <ReportsSection />
-    <FAQSection />
     <FooterSection />
   </div>
 </template>
@@ -36,8 +34,6 @@ import TimelineSection from '~/components/TimelineSection.vue'
 import OfferSection from '~/components/OfferSection.vue'
 import DifferentiatorsSection from '~/components/trading/DifferentiatorsSection.vue'
 import WorkHighlights from '~/components/WorkHighlights.vue'
-import ReportsSection from '~/components/ReportsSection.vue'
-import FAQSection from '~/components/FAQSection.vue'
 import FooterSection from '~/components/FooterSection.vue'
 import AiDefiIntersectSection from '~/components/AiDefiIntersectSection.vue'
 import AOS from 'aos'

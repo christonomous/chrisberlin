@@ -3,10 +3,10 @@
     <div class="container mx-auto max-w-6xl px-4 md:pt-12 md:pt-36 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-          Agentic Crypto
+          Hybrid Systematic Trader
         </h1>
         <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-          Hi, I´m Chris. I´m <b>a crypto native with years of experience in AI</b>, and can help you <span class="font-semibold">become smart on-chain</span>.
+          I'm Chris, and <b>I am building an onchain trading bot</b> with advanced smart money concepts and orderflow strategies.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#service" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Solutions</a>

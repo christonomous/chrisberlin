@@ -45,7 +45,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">4</span>
-                <span><strong class="text-primary">2025:</strong> Step back into trading with learning from AI & automation to develop <em>agentic crypto</em>.</span>
+                <span><strong class="text-primary">2025:</strong> Step back into trading with learning from AI & automation to develop a <em>trading bot</em>.</span>
               </p>
             </div>
           </div>
@@ -55,30 +55,16 @@
             <div class="grid md:grid-cols-2 gap-6">
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                  <span class="font-semibold">Market Research</span>
-                </div>
-                <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">MVP Development</span>
+                  <span class="font-semibold">App/Strategy Development</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
                   <span class="font-semibold">Crypto Training</span>
                 </div>
-              </div>
-              <div class="space-y-4">
                 <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-100"></div>
-                  <span class="font-semibold">Product Strategy</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-500"></div>
-                  <span class="font-semibold">Dashboard Development</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-900"></div>
-                  <span class="font-semibold">AI Traning</span>
+                  <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-700"></div>
+                  <span class="font-semibold">AI Training</span>
                 </div>
               </div>
             </div>
@@ -209,11 +195,11 @@ onMounted(() => {
     expertiseChartInstance = new Chart(expertiseCanvas, {
       type: "radar",
       data: {
-        labels: ["Coding", "DeFi", "Automation", "Trading", "AI", "Strategy"],
+        labels: ["Coding", "DeFi", "Automation", "Trading", "AI"],
         datasets: [
           {
             label: "Technical Skills",
-            data: [95, 90, 85, 88, 92, 87],
+            data: [95, 90, 20, 85, 92],
             borderColor: "rgb(59, 130, 246)",
             backgroundColor: "rgba(59, 130, 246, 0.2)",
             pointBackgroundColor: "rgb(59, 130, 246)",
@@ -221,7 +207,7 @@ onMounted(() => {
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgb(59, 130, 246)",
           },
-          {
+/*           {
             label: "Market Knowledge",
             data: [80, 95, 75, 90, 85, 88],
             borderColor: "rgb(168, 85, 247)",
@@ -230,7 +216,7 @@ onMounted(() => {
             pointBorderColor: "#fff",
             pointHoverBackgroundColor: "#fff",
             pointHoverBorderColor: "rgb(168, 85, 247)",
-          },
+          }, */
 /*           {
             label: "AI Integration",
             data: [70, 75, 95, 80, 90, 85],

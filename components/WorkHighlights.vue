@@ -133,11 +133,9 @@
 
         <!-- Bottom of Funnel - Exclusive Network -->
         <div class="relative">
-          <!-- Funnel Connector Line -->
           <div class="absolute left-1/2 top-0 w-1 h-8 bg-gradient-to-b from-accent/50 to-transparent transform -translate-x-1/2 z-0"></div>
 
           <div class="relative z-10 bg-gradient-to-br from-accent/10 to-accent/5 backdrop-blur-sm border border-accent/20 rounded-3xl p-8 md:p-12 shadow-2xl hover:shadow-accent/10 transition-all duration-500 hover:scale-[1.02]">
-            <!-- Icon/Number -->
             <div class="absolute -top-4 -left-4 w-12 h-12 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-lg shadow-lg">
               3
             </div>
