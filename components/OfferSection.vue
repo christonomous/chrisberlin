@@ -316,11 +316,11 @@ onMounted(() => {
     growthChartInstance = new Chart(growthCanvas, {
       type: "line",
       data: {
-        labels: ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"],
+        labels: ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025", "2026"],
         datasets: [
           {
             label: "Development Skills",
-            data: [20, 35, 50, 65, 75, 80, 85, 88, 90, 93, 95],
+            data: [20, 35, 50, 65, 75, 80, 85, 88, 90, 93, 95, 95],
             borderColor: "rgb(59, 130, 246)",
             backgroundColor: "rgba(59, 130, 246, 0.1)",
             fill: false,
@@ -330,7 +330,7 @@ onMounted(() => {
           },
           {
             label: "Crypto Knowledge",
-            data: [0, 5, 25, 45, 60, 70, 75, 80, 85, 88, 90],
+            data: [0, 5, 25, 45, 60, 70, 75, 80, 85, 88, 90, 95],
             borderColor: "rgb(168, 85, 247)",
             backgroundColor: "rgba(168, 85, 247, 0.1)",
             fill: false,
@@ -340,7 +340,7 @@ onMounted(() => {
           },
           {
             label: "AI Expertise",
-            data: [0, 0, 0, 5, 10, 15, 25, 40, 65, 80, 85],
+            data: [0, 0, 0, 5, 10, 15, 25, 40, 65, 80, 85, 90],
             borderColor: "rgb(236, 72, 153)",
             backgroundColor: "rgba(236, 72, 153, 0.1)",
             fill: false,
@@ -350,7 +350,7 @@ onMounted(() => {
           },
           {
             label: "Trading",
-            data: [0, 0, 0, 2, 3, 4, 4, 5, 5, 11, 70],
+            data: [0, 0, 0, 2, 3, 4, 4, 5, 5, 11, 40, 65],
             borderColor: "rgb(2, 233, 144)",
             backgroundColor: "rgba(59, 130, 246, 0.1)",
             fill: false,
