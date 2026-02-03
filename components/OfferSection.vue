@@ -30,6 +30,18 @@
         <div class="space-y-8">
           <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
             <h3 class="text-3xl font-bold mb-6 text-primary">The Origin Story</h3>
+            <div class="mb-6 -mt-4">
+              <a 
+                href="https://medium.com/@christonomous/from-crypto-startups-to-building-an-advanced-onchain-trading-bot-54a2ec1a2f6b" 
+                target="_blank" 
+                class="text-primary hover:text-primary-focus inline-flex items-center gap-2 font-medium transition-colors"
+              >
+                <span>Read my story here on Medium</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
+            </div>
             <div class="space-y-6 text-lg leading-relaxed">
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">1</span>
