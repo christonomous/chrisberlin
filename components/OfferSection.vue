@@ -10,7 +10,7 @@
       <!-- Hero Story Section -->
       <div class="text-center mb-20">
         <div class="inline-block bg-gradient-to-r from-primary/20 to-secondary/20 backdrop-blur-sm border border-primary/20 rounded-full px-6 py-3 mb-8">
-          <span class="text-primary font-semibold">CRYPTO NATIVE • AI EXPERT • Trading Rookie</span>
+          <span class="text-primary font-semibold">CRYPTO NATIVE • AI EXPERT • TRADING ROOKIE</span>
         </div>
 
         <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight animate-gradient">
