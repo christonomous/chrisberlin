@@ -144,7 +144,7 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    EXCLUSIVE NETWORK
+                    ONCHAIN AI ECOSYSTEM
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-accent">
                     Autonomous Enterprises
@@ -152,11 +152,11 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  <strong class="text-accent">Become the go-to solution for crypto</strong> through our exclusive network of elite developers, investors, and industry leaders. Unlock premium opportunities.
+                  Build and scale <strong class="text-accent">fully automated AI-driven online businesses</strong>. Deploy autonomous AI agents that operate 24/7 to handle complex on-chain operations and drive growth.
                 </p>
 
                 <a href="https://linkedin.com/company/autonomousenterprises" target="_blank" class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
-                  Join Network
+                  Explore Ecosystem
                   <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
@@ -167,16 +167,16 @@
                 <div class="bg-base-100/50 backdrop-blur-sm rounded-2xl p-6 border border-accent/10">
                   <div class="text-center">
                     <div class="text-6xl font-bold text-accent mb-2">▲</div>
-                    <div class="text-sm text-base-content/60 uppercase tracking-wider">Elite Access</div>
+                    <div class="text-sm text-base-content/60 uppercase tracking-wider">AI Economy</div>
                   </div>
                   <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
                     <div class="bg-accent/10 rounded-lg p-3 text-center">
-                      <div class="font-semibold text-accent">Premium Connections</div>
-                      <div class="text-xs text-base-content/60">Exclusive</div>
+                      <div class="font-semibold text-accent">AI Agents</div>
+                      <div class="text-xs text-base-content/60">Autonomous</div>
                     </div>
                     <div class="bg-accent/10 rounded-lg p-3 text-center">
-                      <div class="font-semibold text-accent">Direct Access</div>
-                      <div class="text-xs text-base-content/60">Opportunities</div>
+                      <div class="font-semibold text-accent">Businesses</div>
+                      <div class="text-xs text-base-content/60">Automated</div>
                     </div>
                   </div>
                 </div>
