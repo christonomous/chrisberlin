@@ -165,9 +165,6 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
               </svg>
             </a>
-            <!-- <button class="btn btn-outline btn-lg px-8 py-4 rounded-full border-2 hover:bg-base-100/50 transition-all duration-300">
-              View Case Studies
-            </button> -->
           </div>
         </div>
       </div>
