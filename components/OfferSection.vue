@@ -12,11 +12,24 @@
           From Code over Crypto & AI to Smart Trading 
         </h2>
 
-        <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-12">
+        <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-6">
           A journey of <strong class="text-primary">9+ years</strong> in software development,
           <strong class="text-secondary">7+ years</strong> deep in blockchain, and
           <strong class="text-accent">2+ years</strong> mastering AI automation
         </p>
+
+        <div class="mb-12">
+          <a 
+            href="https://medium.com/@christonomous/the-end-of-labor-why-the-future-of-work-is-protocol-participation-5e2f3707dfe3" 
+            target="_blank" 
+            class="text-primary hover:text-primary-focus inline-flex items-center gap-2 text-lg font-medium transition-colors"
+          >
+            <span>Read my 'Why' here on Medium</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </a>
+        </div>
       </div>
 
       <!-- Experience Timeline & Story Grid -->
@@ -79,7 +92,11 @@
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">AI Training</span>
+                  <span class="font-semibold">AI Training & Implementation</span>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
+                  <span class="font-semibold">Market Analysis</span>
                 </div>
               </div>
             </div>
