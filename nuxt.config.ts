@@ -1,18 +1,18 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Chris | Agentic Vaults',
+      title: 'Chris | Smart Money',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'I am building Agentic Community-owned On-chain Vaults' },
-        { property: 'og:title', content: 'Chris | Agentic Vaults' },
-        { property: 'og:description', content: 'I am building Agentic Community-owned On-chain Vaults' },
+        { name: 'description', content: 'Smart Money Concepts & Orderflow for Hybrid Trading' },
+        { property: 'og:title', content: 'Chris | Smart Money' },
+        { property: 'og:description', content: 'Smart Money Concepts & Orderflow for Hybrid Trading' },
         { property: 'og:type', content: 'website' },
         { property: 'og:image', content: process.env.SITE_URL + '/profile.jpg' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:title', content: 'Chris | Agentic Vaults' },
-        { name: 'twitter:description', content: 'I am building Agentic Community-owned On-chain Vaults' },
+        { name: 'twitter:title', content: 'Chris | Smart Money' },
+        { name: 'twitter:description', content: 'Smart Money Concepts & Orderflow for Hybrid Trading' },
         { name: 'twitter:image', content: process.env.SITE_URL + '/profile.jpg' }
       ],
       link: [
