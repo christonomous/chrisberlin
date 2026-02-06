@@ -69,11 +69,11 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">5</span>
-                <span><strong class="text-primary">2025:</strong> Went all-in on trading, stress-testing strategies with paper trading.</span>
+                <span><strong class="text-primary">2025:</strong> Spent countless nights learning Smart Money Concepts and Orderflow.</span>
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-primary">2026:</strong> Building advanced onchain trading bots and trade prop firm accounts.</span>
+                <span><strong class="text-primary">2026:</strong> Building advanced onchain trading bots and trading prop firm accounts.</span>
               </p>
             </div>
           </div>
