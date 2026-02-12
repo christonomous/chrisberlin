@@ -6,14 +6,14 @@
           Smart Money
         </h1>
         <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-          Hi, I'm Chris and <b>I am  an analyst and developer building an onchain orderflow trading bot</b>.
+          Hi, I'm Chris and <b>I am a quantitative analyst and developer</b>.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#service" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Service</a>
           <a href="#about" class="btn btn-outline">About Me</a>
         </div>
         <div class="mt-6 text-sm opacity-70">
-          <span class="inline-flex items-center gap-2">The Future is Automated & Decentralized.</span>
+          <span class="inline-flex items-center gap-2">The Future is Automated Smart Money.</span>
         </div>
       </div>
       <div class="flex justify-center">
