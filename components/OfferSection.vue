@@ -9,7 +9,7 @@
         </div>
 
         <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight animate-gradient">
-          From Code over Crypto & AI to Smart Trading 
+          From Code over Crypto & AI to Smart Money Analysis 
         </h2>
 
         <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-6">
@@ -73,7 +73,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-primary">2026:</strong> Building advanced onchain trading bots and trading prop firm accounts.</span>
+                <span><strong class="text-primary">2026:</strong> Coding Smart Money analytics and trading prop firm accounts.</span>
               </p>
             </div>
           </div>
@@ -172,8 +172,8 @@
           <h3 class="text-4xl font-bold mb-6">Ready to Automate Your Edge?</h3>
           <p class="text-xl text-base-content mb-8 leading-relaxed">
             I can help you deploy <span class="text-primary font-semibold">advanced onchain trading bots</span> with custom strategies,
-            build <span class="text-secondary font-semibold">DeFi automation systems</span>, or develop
-            <span class="text-accent font-semibold">AI-powered solutions</span> that generate alpha while you sleep.
+            build <span class="text-secondary font-semibold">automation systems</span>, or develop
+            <span class="text-accent font-semibold">AI-powered solutions</span> that generate alpha.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
