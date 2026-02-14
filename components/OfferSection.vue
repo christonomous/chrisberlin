@@ -9,7 +9,7 @@
         </div>
 
         <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight animate-gradient">
-          From Code over Crypto & AI to Smart Money Analysis 
+          From Code over Crypto & AI to Smart Money Algos 
         </h2>
 
         <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-6">
@@ -84,7 +84,7 @@
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">App/Quant Development</span>
+                  <span class="font-semibold">Quant/Automation Development</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
