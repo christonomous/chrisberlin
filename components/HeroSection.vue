@@ -6,7 +6,7 @@
           Smart Money
         </h1>
         <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-          Hi, I'm Chris and <b>I am a quantitative analyst and developer</b>.
+          Hi, I'm Chris and <b>I am a Crypto & AI Consultant</b>.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#service" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Service</a>

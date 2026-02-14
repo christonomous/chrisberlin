@@ -169,7 +169,7 @@
           </h2>
         </div>
         <div class="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-12 max-w-4xl mx-auto">
-          <h3 class="text-4xl font-bold mb-6">Ready to Automate Your Edge?</h3>
+          <h3 class="text-4xl font-bold mb-6">Ready to find your edge?</h3>
           <p class="text-xl text-base-content mb-8 leading-relaxed">
             I can help you deploy <span class="text-primary font-semibold">advanced onchain trading bots</span> with custom strategies,
             build <span class="text-secondary font-semibold">automation systems</span>, or develop
