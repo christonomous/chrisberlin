@@ -65,7 +65,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">4</span>
-                <span><strong class="text-accent">2024:</strong> Ran AI automation agency, building marketing funnels, process automation, and chatbots while studying trading strategies at night.</span>
+                <span><strong class="text-accent">2024:</strong> Started an AI automation agency, building marketing funnels, process automation, and chatbots while studying trading strategies at night.</span>
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">5</span>
@@ -73,7 +73,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-primary">2026:</strong> Coding Smart Money analytics and trading prop firm accounts.</span>
+                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms.</span>
               </p>
             </div>
           </div>
