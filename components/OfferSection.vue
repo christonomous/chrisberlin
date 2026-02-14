@@ -171,10 +171,7 @@
         <div class="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-12 max-w-4xl mx-auto">
           <h3 class="text-4xl font-bold mb-6">Ready to find your edge?</h3>
           <p class="text-xl text-base-content mb-8 leading-relaxed">
-            I can help you deploy <span class="text-primary font-semibold">advanced onchain trading bots</span> with custom strategies,
-            build <span class="text-secondary font-semibold">automation systems</span>, or develop
-            <span class="text-accent font-semibold">AI-powered solutions</span> that generate alpha.
-          </p>
+            I can help you <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient font-semibold">develop your alpha</span>.
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
               Book an Appointment
