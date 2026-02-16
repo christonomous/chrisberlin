@@ -34,7 +34,7 @@
       <li class="step">
         <div class="flex flex-col items-center">
           <span class="text-lg font-semibold">Future</span>
-          <span class="text-sm text-base-content/80">Autonomous Enterprises</span>
+          <span class="text-sm text-base-content/80">Sovereignty</span>
         </div>
       </li>
     </ul>
