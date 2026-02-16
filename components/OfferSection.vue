@@ -73,7 +73,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms & dive deep into Flag Theory.</span>
+                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms, quantitative macro analysis & dive deep into Flag Theory.</span>
               </p>
             </div>
           </div>
