@@ -23,7 +23,6 @@
 
 <script setup lang="ts">
 import { reactive, ref, computed, onMounted } from 'vue'
-import ChatWidget from '~/components/chat/ChatWidget.vue'
 import HeroSection from '~/components/HeroSection.vue'
 import SocialLinks from '~/components/SocialLinks.vue'
 import TimelineSection from '~/components/TimelineSection.vue'

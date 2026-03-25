@@ -9,7 +9,7 @@
         </div>
 
         <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight animate-gradient">
-          From Code over Crypto & AI to Trading
+          From Code to Crypto, AI, and Trading
         </h2>
 
         <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-6">
@@ -69,7 +69,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">5</span>
-                <span><strong class="text-primary">2025:</strong> Spent countless nights learning Smart Money Concepts and Orderflow.</span>
+                <span><strong class="text-primary">2025:</strong> Spent countless nights learning Smart Money Concepts and Order Flow.</span>
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
@@ -171,11 +171,11 @@
         <div class="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-12 max-w-4xl mx-auto">
           <h3 class="text-4xl font-bold mb-6">Ready to stop grinding and <br> start using the right tools?</h3>
           <p class="text-xl text-base-content mb-8 leading-relaxed">
-            I can help you <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient font-semibold">setup your techstack to start breathing again</span>.
+            I can help you <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient font-semibold">set up your tech stack to start breathing again</span>.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
-              Book a free Appointment
+              Book a Free Appointment
               <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
               </svg>

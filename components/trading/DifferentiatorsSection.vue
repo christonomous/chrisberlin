@@ -13,9 +13,9 @@
             <div class="w-16 h-16 bg-gradient-to-r from-primary to-secondary rounded-full flex items-center justify-center mx-auto mb-4">
               <span class="text-2xl">⏳</span>
             </div>
-            <h3 class="text-lg font-semibold mb-2">Gettig Time Back</h3>
+            <h3 class="text-lg font-semibold mb-2">Getting Time Back</h3>
             <p class="opacity-80 text-sm">
-              Especially the Attention Economy is full of fluff prommisig you the world but delivering nothing usefull, and burn your time. 
+              Especially the Attention Economy is full of fluff promising you the world but delivering nothing useful, and burns your time. 
             </p>
           </div>
         </div>
@@ -23,11 +23,11 @@
         <div class="card bg-base-200/50 border border-base-300/20 shadow-lg hover:shadow-xl transition-shadow">
           <div class="card-body text-center">
             <div class="w-16 h-16 bg-gradient-to-r from-secondary to-accent rounded-full flex items-center justify-center mx-auto mb-4">
-              <span class="text-2xl">�</span>
+              <span class="text-2xl">💰</span>
             </div>
             <h3 class="text-lg font-semibold mb-2">Getting Money Back</h3>
             <p class="opacity-80 text-sm">
-              Having thousands of SaaS costs subscriptions but making your life not really easier
+              Having thousands of SaaS costs subscriptions but making your life not really easier.
             </p>
           </div>
         </div>

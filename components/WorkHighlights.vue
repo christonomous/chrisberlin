@@ -12,7 +12,7 @@
           Choose Your Path
         </h2>
         <p class="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-          Three specialized offerings designed to cut grinding and build true freedom.
+          Three specialized offerings designed to cut the grinding and build true freedom.
         </p>
       </div>
 
