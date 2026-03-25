@@ -6,11 +6,6 @@
       <div class="absolute -bottom-24 -left-24 w-[32rem] h-[32rem] rounded-full blur-3xl bg-gradient-to-r from-accent/20 via-secondary/20 to-primary/20 animate-gradient [animation-delay:2s]"></div>
     </div>
 
-    <!-- Chat Widget -->
-    <div v-if="isOpen" class="fixed bottom-24 right-5 z-50 w-[400px]">
-      <ChatWidget @close="closeWidget" />
-    </div>
-
     <!-- Page Sections -->
     <div class="min-h-screen">
       <HeroSection :profile-image="profileImage" />

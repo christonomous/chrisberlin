@@ -12,7 +12,7 @@
           Choose Your Path
         </h2>
         <p class="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-          Three specialized offerings designed to accelerate your business with cutting-edge AI Automation, App or Quant Development.
+          Three specialized offerings designed to cut grinding and build true freedom.
         </p>
       </div>
 
@@ -33,7 +33,7 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    RESEARCH & DEVELOPMENT
+                    TECH STACK BLUEPRINTS
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-primary">
                     Revoro Consulting
@@ -41,7 +41,7 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  Build your business with the <strong class="text-primary">smart edge</strong> through advanced AI and automation solutions or custom apps.
+                  Helping Entrepreneurs and Investors to <strong class="text-primary">cut the noise and find the signal</strong> with blueprints for the new economy.
                 </p>
 
                 <a href="https://revoro.consulting" target="_blank" class="btn btn-primary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
@@ -90,7 +90,7 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-secondary/20 text-secondary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    TRADING AUTOMATION
+                    TRADING BOT
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-secondary">
                     Zillions.app
@@ -144,19 +144,19 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    ONCHAIN AI ECOSYSTEM
+                    AI AGENTS
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-accent">
-                    Autonomous Enterprises
+                    Nujin.AI
                   </h3>
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  Build and scale <strong class="text-accent">fully automated AI-driven online businesses</strong>. Deploy autonomous AI agents that operate 24/7 to handle complex on-chain operations and drive growth.
+                  Build and scale <strong class="text-accent">fully autonomous AI agents</strong>. Deploy autonomous AI agents that operate 24/7 to make you money while you sleep.
                 </p>
 
-                <a href="https://linkedin.com/company/autonomousenterprises" target="_blank" class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
-                  Explore Ecosystem
+                <a href="https://nujin.ai" target="_blank" class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
+                  Explore Nujin
                   <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
                   </svg>
@@ -167,7 +167,7 @@
                 <div class="bg-base-100/50 backdrop-blur-sm rounded-2xl p-6 border border-accent/10">
                   <div class="text-center">
                     <div class="text-6xl font-bold text-accent mb-2">▲</div>
-                    <div class="text-sm text-base-content/60 uppercase tracking-wider">AI Economy</div>
+                    <div class="text-sm text-base-content/60 uppercase tracking-wider">AI Agents</div>
                   </div>
                   <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
                     <div class="bg-accent/10 rounded-lg p-3 text-center">

@@ -9,7 +9,7 @@
         </div>
 
         <h2 class="text-5xl md:text-7xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent leading-tight animate-gradient">
-          From Code over Crypto & AI to Smart Money Algos 
+          From Code over Crypto & AI to Trading
         </h2>
 
         <p class="text-xl md:text-2xl text-base-content/70 max-w-4xl mx-auto leading-relaxed mb-6">
@@ -73,30 +73,30 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms, quantitative macro analysis & dive deep into Flag Theory.</span>
+                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms and AI Agents that actually make money.</span>
               </p>
             </div>
           </div>
 
           <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
-            <h3 class="text-3xl font-bold mb-6 text-secondary">What I Can Help With</h3>
+            <h3 class="text-3xl font-bold mb-6 text-secondary">I can help with</h3>
             <div class="grid md:grid-cols-2 gap-6">
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">Quant/Automation Development</span>
+                  <span class="font-semibold">using AI for free</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">Crypto Training</span>
+                  <span class="font-semibold">using AI with ease</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">AI Training & Implementation</span>
+                  <span class="font-semibold">get your time back</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">Market Analysis</span>
+                  <span class="font-semibold">not getting behind</span>
                 </div>
               </div>
             </div>
@@ -165,17 +165,17 @@
       <div class="text-center">
         <div class="text-center mb-12">
           <h2 class="text-3xl md:text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-            Let's Build Alpha Together
+            Let's Build Sovereignty Together
           </h2>
         </div>
         <div class="bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-sm border border-primary/20 rounded-3xl p-12 max-w-4xl mx-auto">
-          <h3 class="text-4xl font-bold mb-6">Ready to find your edge?</h3>
+          <h3 class="text-4xl font-bold mb-6">Ready to stop grinding and <br> start using the right tools?</h3>
           <p class="text-xl text-base-content mb-8 leading-relaxed">
-            I can help you <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient font-semibold">develop your alpha</span>.
+            I can help you <span class="bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient font-semibold">setup your techstack to start breathing again</span>.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-primary btn-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
-              Book an Appointment
+              Book a free Appointment
               <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
               </svg>
