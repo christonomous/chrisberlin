@@ -144,7 +144,7 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    AI AGENTS
+                    AUTONOMOUS AI AGENT
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-accent">
                     Nujin.AI
@@ -152,7 +152,7 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  Build and scale <strong class="text-accent">fully autonomous AI agents</strong>. Deploy autonomous AI agents that operate 24/7 to make you money while you sleep.
+                  An <strong class="text-accent">onchain autonomous AI agents</strong> that makes you money while you sleep.
                 </p>
 
                 <a href="https://nujin.ai" target="_blank" class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
@@ -167,7 +167,7 @@
                 <div class="bg-base-100/50 backdrop-blur-sm rounded-2xl p-6 border border-accent/10">
                   <div class="text-center">
                     <div class="text-6xl font-bold text-accent mb-2">▲</div>
-                    <div class="text-sm text-base-content/60 uppercase tracking-wider">AI Agents</div>
+                    <div class="text-sm text-base-content/60 uppercase tracking-wider">AI Agent</div>
                   </div>
                   <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
                     <div class="bg-accent/10 rounded-lg p-3 text-center">
@@ -175,8 +175,8 @@
                       <div class="text-xs text-base-content/60">Autonomous</div>
                     </div>
                     <div class="bg-accent/10 rounded-lg p-3 text-center">
-                      <div class="font-semibold text-accent">Businesses</div>
-                      <div class="text-xs text-base-content/60">Automated</div>
+                      <div class="font-semibold text-accent">Crypto</div>
+                      <div class="text-xs text-base-content/60">Onchain</div>
                     </div>
                   </div>
                 </div>
