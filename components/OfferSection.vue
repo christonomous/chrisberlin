@@ -65,7 +65,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-accent rounded-full flex items-center justify-center text-accent-content font-bold text-sm mt-1">4</span>
-                <span><strong class="text-accent">2024:</strong> Started an AI automation agency, building marketing funnels, process automation, and chatbots while studying trading strategies at night.</span>
+                <span><strong class="text-accent">2024:</strong> Started an AI automation agency, building marketing funnels, process automation, and chatbots.</span>
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">5</span>
@@ -84,19 +84,15 @@
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">using AI for free</span>
+                  <span class="font-semibold">Autonomous AI Agent Insights</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">using AI with ease</span>
+                  <span class="font-semibold">Crypto Insights</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-accent rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">get your time back</span>
-                </div>
-                <div class="flex items-center gap-3">
-                  <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
-                  <span class="font-semibold">not getting behind</span>
+                  <span class="font-semibold">Trading Insights</span>
                 </div>
               </div>
             </div>

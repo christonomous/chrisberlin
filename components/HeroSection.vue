@@ -13,7 +13,7 @@
           <a href="#about" class="btn btn-outline">About Me</a>
         </div>
         <div class="mt-6 text-sm opacity-70">
-          <span class="inline-flex items-center gap-2">Prepare for the new economy and enjoy your life.</span>
+          <span class="inline-flex items-center gap-2">Enjoy your life with the right techstack in the new economy.</span>
         </div>
       </div>
       <div class="flex justify-center">
