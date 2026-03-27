@@ -57,7 +57,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-secondary-content font-bold text-sm mt-1">2</span>
-                <span><strong class="text-secondary">2017:</strong> Discovered Bitcoin and Ethereum. The rabbit hole began - spent countless nights understanding blockchain fundamentals and building DeFi protocols.</span>
+                <span><strong class="text-secondary">2017:</strong> Discovered Bitcoin and Ethereum. The rabbit hole began - spent countless nights understanding blockchain fundamentals.</span>
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-secondary-content font-bold text-sm mt-1">3</span>
@@ -73,8 +73,20 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms and AI Agents that actually make money.</span>
+                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms and AI Agents.</span>
               </p>
+            </div>
+            <div class="mb-6 -mt-4">
+              <a 
+                href="https://revoro.consulting/aboutus" 
+                target="_blank" 
+                class="text-primary hover:text-primary-focus inline-flex items-center gap-2 font-medium transition-colors"
+              >
+                <span>Checkout my Case Studies</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+              </a>
             </div>
           </div>
 
@@ -87,7 +99,7 @@
               <div class="space-y-4">
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-primary rounded-full animate-pulse delay-300"></div>
-                  <span class="font-semibold">Autonomous AI Agent Insights</span>
+                  <span class="font-semibold">Autonomous AI Agents</span>
                 </div>
                 <div class="flex items-center gap-3">
                   <div class="w-3 h-3 bg-secondary rounded-full animate-pulse delay-700"></div>
