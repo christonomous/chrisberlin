@@ -76,7 +76,7 @@
                 <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms and AI Agents.</span>
               </p>
             </div>
-            <div class="mb-6 -mt-4">
+            <div class="mb-4 mt-6">
               <a 
                 href="https://revoro.consulting/aboutus" 
                 target="_blank" 
