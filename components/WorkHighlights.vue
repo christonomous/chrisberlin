@@ -33,7 +33,7 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-primary/20 text-primary px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    TECH STACK BLUEPRINTS
+                    Custom AI OS Development
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-primary">
                     Revoro Consulting
@@ -41,7 +41,7 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  Helping Entrepreneurs and Investors to <strong class="text-primary">cut the noise and find the signal</strong> with blueprints for the new economy.
+                  Helping you to <strong class="text-primary">build your own custom Autonomous AI Agents</strong> to work for you 24/7.
                 </p>
 
                 <a href="https://revoro.consulting" target="_blank" class="btn btn-primary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
@@ -60,12 +60,12 @@
                   </div>
                   <div class="mt-6 grid grid-cols-2 gap-4 text-sm">
                     <div class="bg-primary/10 rounded-lg p-3 text-center">
-                      <div class="font-semibold text-primary">Market Analysis</div>
-                      <div class="text-xs text-base-content/60">Real-time</div>
+                      <div class="font-semibold text-primary">API Integrations</div>
+                      <div class="text-xs text-base-content/60">Connect to your data</div>
                     </div>
                     <div class="bg-primary/10 rounded-lg p-3 text-center">
-                      <div class="font-semibold text-primary">Process Execution</div>
-                      <div class="text-xs text-base-content/60">Automated</div>
+                      <div class="font-semibold text-primary">Skills & Tools</div>
+                      <div class="text-xs text-base-content/60">Smart Agentic Capabilities</div>
                     </div>
                   </div>
                 </div>
