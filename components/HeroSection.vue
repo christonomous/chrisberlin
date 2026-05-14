@@ -3,17 +3,17 @@
     <div class="container mx-auto max-w-6xl px-4 md:pt-12 md:pt-36 grid md:grid-cols-[1.1fr,0.9fr] gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-6xl leading-tight font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent animate-gradient">
-          Smart Freedom
+          DeFAI OS
         </h1>
         <p class="opacity-80 text-lg md:text-xl max-w-2xl">
-          Hi, I'm Chris and <b>I am a Technology Scout</b>.
+          Hi, I'm Chris and <b>I am building an onchain AI OS</b>.
         </p>
         <div class="mt-8 flex flex-wrap gap-3">
           <a href="#service" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0">Service</a>
           <a href="#about" class="btn btn-outline">About Me</a>
         </div>
         <div class="mt-6 text-sm opacity-70">
-          <span class="inline-flex items-center gap-2">Enjoy your life with the right techstack in the new economy.</span>
+          <span class="inline-flex items-center gap-2">Bridging local Autonomous AI Agents with Decentralized Finance.</span>
         </div>
       </div>
       <div class="flex justify-center">

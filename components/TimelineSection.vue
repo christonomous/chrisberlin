@@ -28,7 +28,7 @@
       <li class="step step-secondary">
         <div class="flex flex-col items-center">
           <span class="text-lg font-semibold">2026</span>
-          <span class="text-sm text-base-content/80">Autonomous Bots</span>
+          <span class="text-sm text-base-content/80">DeFAI OS</span>
         </div>
       </li>
       <li class="step">

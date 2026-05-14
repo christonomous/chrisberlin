@@ -73,7 +73,7 @@
               </p>
               <p class="flex items-start gap-4">
                 <span class="flex-shrink-0 w-8 h-8 bg-primary rounded-full flex items-center justify-center text-primary-content font-bold text-sm mt-1">6</span>
-                <span><strong class="text-primary">2026:</strong> Coding Smart Money Algorithms and AI Agents.</span>
+                <span><strong class="text-primary">2026:</strong> Developing the DeFAI OS to help you achieve personal Sovereignty onchain.</span>
               </p>
             </div>
             <div class="mb-4 mt-6">
@@ -93,7 +93,7 @@
           <div class="bg-base-200/50 backdrop-blur-sm border border-base-300/30 rounded-3xl p-8 shadow-xl">
             <h3 class="text-3xl font-bold mb-6 text-secondary">I can help you</h3>
             <p class="flex items-start gap-4 pb-4">
-                <span>to help yourself, so you become independent and free with</span>
+                <span>to help yourself with</span>
               </p>
             <div class="grid md:grid-cols-1 gap-6">
               <div class="space-y-4">

@@ -144,7 +144,7 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    AUTONOMOUS AI AGENT
+                    DeFAI OS
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-accent">
                     Nujin.AI
@@ -152,7 +152,7 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  An <strong class="text-accent">onchain autonomous AI agents</strong> that makes you money while you sleep.
+                  An <strong class="text-accent">onchain autonomous AI agents</strong> that builds on your Sovereignty.
                 </p>
 
                 <a href="https://nujin.ai" target="_blank" class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
