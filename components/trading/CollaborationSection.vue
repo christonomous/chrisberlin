@@ -40,8 +40,8 @@
             <!-- <a href="mailto:chris@autonomous.enterprises" class="btn bg-gradient-to-r from-primary via-secondary to-accent animate-gradient text-base-100 border-0 btn-lg">
               Get in Touch
             </a> -->
-            <a href="https://calendly.com/chrisberlin/session" target="_blank" class="btn btn-outline btn-lg">
-              Schedule a Call
+            <a href="https://www.linkedin.com/in/christonomous/" target="_blank" class="btn btn-outline btn-lg">
+              Connect on LinkedIn
             </a>
           </div>
 

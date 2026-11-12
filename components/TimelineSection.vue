@@ -28,13 +28,13 @@
       <li class="step step-secondary">
         <div class="flex flex-col items-center">
           <span class="text-lg font-semibold">2026</span>
-          <span class="text-sm text-base-content/80">DeFAI OS</span>
+          <span class="text-sm text-base-content/80">Trading</span>
         </div>
       </li>
       <li class="step">
         <div class="flex flex-col items-center">
           <span class="text-lg font-semibold">Future</span>
-          <span class="text-sm text-base-content/80">Sovereignty</span>
+          <span class="text-sm text-base-content/80">DeFAI OS</span>
         </div>
       </li>
     </ul>
