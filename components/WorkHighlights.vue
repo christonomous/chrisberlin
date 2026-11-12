@@ -12,7 +12,7 @@
           Your Path
         </h2>
         <p class="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-          A step-by-step funnel: connect first for direct insights and access to build or study autonomous alphas.
+          Designed to cut the grinding and build true freedom. Connect first for direct insights and access to build or study autonomous alphas.
         </p>
       </div>
 
