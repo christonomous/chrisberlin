@@ -9,10 +9,10 @@
       <!-- Section Header -->
       <div class="text-center mb-16">
         <h2 class="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent animate-gradient">
-          Choose Your Path
+          Your Path
         </h2>
         <p class="text-xl text-base-content/70 max-w-3xl mx-auto leading-relaxed">
-          Three specialized offerings designed to cut the grinding and build true freedom.
+          A step-by-step funnel: connect first for direct insights and access to build or study autonomous alphas.
         </p>
       </div>
 
