@@ -39,7 +39,7 @@
           <div class="stat-value leading-none text-secondary">~{{ yearsPlus(starts.trading) }}</div>
           <span class="text-base-content/60 text-xl">y</span>
         </div>
-        <div class="stat-desc">Smart Money Concepts</div>
+        <div class="stat-desc">Orderflow</div>
       </div>
     </div>
   </section>
