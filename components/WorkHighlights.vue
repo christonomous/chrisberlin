@@ -41,7 +41,7 @@
                 </div>
 
                 <p class="text-lg text-base-content/80 mb-8 leading-relaxed">
-                  Want to have <strong class="text-primary">insights and early access</strong> to what I'm building? Connect directly with me on LinkedIn to follow the journey, discuss market frameworks, and exchange ideas.
+                  Want to have <strong class="text-primary">insights and early access</strong> to what I'm building? Connect directly with me on LinkedIn to follow the journey, and get access for free.
                 </p>
 
                 <a href="https://www.linkedin.com/in/christonomous/" target="_blank" class="btn btn-primary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-primary/25 transition-all duration-300">
