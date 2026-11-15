@@ -101,7 +101,7 @@
                   An <strong class="text-secondary">AI agent system that conducts quant research and builds profitable trading strategies</strong>. Automate your hypothesis testing, data analysis, and model creation to formulate real edge.
                 </p>
 
-                <a href="https://www.linkedin.com/company/nujinai/" target="_blank" class="btn btn-secondary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-secondary/25 transition-all duration-300">
+                <a href="https://www.nujin.ai/" target="_blank" class="btn btn-secondary btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-secondary/25 transition-all duration-300">
                   Build Your Own Alpha
                   <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
