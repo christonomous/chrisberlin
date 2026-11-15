@@ -144,10 +144,10 @@
               <div>
                 <div class="mb-4">
                   <span class="inline-block bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold mb-4">
-                    Ready-to-Study Strategy
+                    Invite-Only Strategy
                   </span>
                   <h3 class="text-4xl md:text-5xl font-bold mb-4 text-accent">
-                    Zillions.app
+                    Zillions
                   </h3>
                 </div>
 
@@ -155,12 +155,14 @@
                   Gain access to a <strong class="text-accent">ready-to-study, systematic alpha</strong>. Analyze concrete, live algorithmic execution in action to understand how automated frameworks operate in real-world markets.
                 </p>
 
-                <a href="https://www.linkedin.com/company/zillionsapp" target="_blank" class="btn btn-accent btn-lg text-lg px-8 py-4 rounded-full shadow-xl hover:shadow-accent/25 transition-all duration-300">
-                  Study Zillions
-                  <svg class="w-6 h-6 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                  </svg>
-                </a>
+                <div class="tooltip tooltip-bottom" data-tip="Invite-only: requires getting in touch with me">
+                  <button disabled class="btn btn-disabled btn-lg text-lg px-8 py-4 rounded-full border border-base-content/20 opacity-60 cursor-not-allowed">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                    </svg>
+                    Invite Only (Contact Required)
+                  </button>
+                </div>
               </div>
 
               <div class="relative">
