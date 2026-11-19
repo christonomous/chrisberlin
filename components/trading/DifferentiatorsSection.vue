@@ -20,7 +20,7 @@
             </div>
             <h3 class="text-xl font-semibold mb-3">Capital Over Labor</h3>
             <p class="opacity-80 text-sm leading-relaxed">
-              In the AI era, routine labor is disappearing. The new reality is clear: you either run your finances systematically or let the world dictate them. Active market participation with a solid framework should be a universal standard, not a privileged club.
+              Routine labor is disappearing. Systematic market participation should be a universal standard, not a privileged club.
             </p>
           </div>
         </div>
@@ -34,7 +34,7 @@
             </div>
             <h3 class="text-xl font-semibold mb-3">Emotion vs. Framework</h3>
             <p class="opacity-80 text-sm leading-relaxed">
-              Retail market participants lose money not because markets are unnavigable, but because they lack a standardized, disciplined approach. When trading is grounded in rules, frameworks can be automated—letting AI execute without hesitation or fatigue.
+              Retail loses without rules, not because markets are unbeatable. Grounded in rules, AI executes without hesitation or fatigue.
             </p>
           </div>
         </div>
@@ -48,10 +48,24 @@
             </div>
             <h3 class="text-xl font-semibold mb-3">The AI OS for Finance</h3>
             <p class="opacity-80 text-sm leading-relaxed">
-              Born from building production AI solutions, founding crypto ventures, and dissecting order flow. I designed a unified financial AI OS to empower you to construct, test, and automate real edge rather than fighting the market manually.
+              Built from production AI, crypto ventures, and order-flow research—one unified OS to build, test, and automate real edge.
             </p>
           </div>
         </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <p class="text-sm text-base-content/70 mb-3">
+          Want the full thesis on how automated trading solves the Universal Basic Income problem?
+        </p>
+        <a
+          href="https://github.com/christonomous/CodeCapitalFreedom"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-outline btn-sm rounded-full px-6"
+        >
+          Read the Book: Code, Capital &amp; Freedom →
+        </a>
       </div>
     </div>
   </section>
